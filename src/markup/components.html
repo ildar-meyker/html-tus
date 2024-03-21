@@ -1,0 +1,327 @@
+<!-- @@master = ./layouts/default.html-->
+
+<!-- @@block = title-->
+<title>Компоненты</title>
+<!-- @@close-->
+
+<!-- @@block = styles-->
+
+<!-- @@close-->
+
+<!-- @@block = scripts-->
+<!-- @@close-->
+
+<!-- @@block = content-->
+<style>
+    .c {
+        padding: 20px;
+    }
+
+    .c__icons {
+        background: #f3f3f3;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .c__icons .icon {
+        font-size: 40px;
+        width: 1em;
+        height: 1em;
+    }
+
+    .c__350 {
+        max-width: 350px;
+    }
+
+    .c__500 {
+        max-width: 500px;
+    }
+
+    .c__600 {
+        max-width: 600px;
+    }
+
+    .c__800 {
+        max-width: 800px;
+    }
+
+    .c__1000 {
+        max-width: 1000px;
+    }
+
+    .c__1200 {
+        max-width: 1200px;
+    }
+
+    .c__h1 {
+        margin-bottom: 20px;
+        font-weight: 500;
+        font-size: 20px;
+        color: #ccc;
+    }
+
+    .c__h2 {
+        margin-bottom: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        color: #ccc;
+    }
+
+    .c__dark {
+        margin: 0 -20px;
+        background: #333333;
+        padding: 20px;
+    }
+
+    .c__gray {
+        margin: 0 -20px;
+        background: #e3e3e3;
+        padding: 20px;
+    }
+
+    .c__dark .c__h1 {
+        color: #fff;
+        opacity: 0.5;
+    }
+
+    .c__white {
+        margin: 0 -20px;
+        background: #ffffff;
+        padding: 20px;
+    }
+
+    .c__row {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .c__gap {
+        height: 50px;
+    }
+
+    .c__gap-20 {
+        height: 20px;
+    }
+
+    .c__colors {
+        display: flex;
+        gap: 20px;
+    }
+
+    .c__colors__item {
+        flex: 0 0 70px;
+    }
+
+    .c__colors__square {
+        border-radius: 5px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .c__colors__square--border {
+        border: 1px solid #e3e3e3;
+    }
+
+    .c__colors__label {
+        margin-top: 10px;
+    }
+</style>
+
+<main>
+    <div class="c">
+        <nav class="nav-tabs js-tabs" data-history="true">
+            <ul>
+                <li class="active"><a href="#tab-all">all</a></li>
+                <li><a href="#tab-typo">typo</a></li>
+                <li><a href="#tab-colors">colors</a></li>
+                <li><a href="#tab-helpers">helpers</a></li>
+                <li><a href="#tab-buttons">buttons</a></li>
+                <li><a href="#tab-inputs">inputs</a></li>
+                <li><a href="#tab-selects">selects</a></li>
+                <li><a href="#tab-icons">icons</a></li>
+                <li><a href="#tab-articles">articles</a></li>
+                <li><a href="#tab-cards">cards</a></li>
+                <li><a href="#tab-forms">forms</a></li>
+                <li><a href="#tab-grids">grids</a></li>
+                <li><a href="#tab-intros">intros</a></li>
+                <li><a href="#tab-lists">lists</a></li>
+                <li><a href="#tab-maps">maps</a></li>
+                <li><a href="#tab-navs">navs</a></li>
+                <li><a href="#tab-panels">panels</a></li>
+                <li><a href="#tab-popups">popups</a></li>
+                <li><a href="#tab-props">props</a></li>
+                <li><a href="#tab-read">read</a></li>
+                <li><a href="#tab-sections">sections</a></li>
+                <li><a href="#tab-sliders">sliders</a></li>
+                <li><a href="#tab-tables">tables</a></li>
+            </ul>
+        </nav>
+
+        <div class="tabs-content" id="tab-all">
+            <div class="active" id="tab-typo"></div>
+            <div class="active" id="tab-colors">
+                <div class="c__gap"></div>
+                <div class="c__colors">
+                    <div class="c__colors__item">
+                        <div
+                            class="c__colors__square"
+                            style="background: #0e0e0e"
+                        ></div>
+                        <div class="c__colors__label">#0e0e0e</div>
+                    </div>
+                </div>
+            </div>
+            <div class="active" id="tab-helpers">
+                <div class="c__gap"></div>
+                <div class="c__dark">
+                    <div class="c__h1">color-white</div>
+                    <div class="color-white">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit.
+                    </div>
+                </div>
+
+                <div class="c__gap"></div>
+                <div class="c__h1">text-uppercase</div>
+                <div class="text-uppercase">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                </div>
+
+                <div class="c__gap"></div>
+                <div class="c__h1">text-center</div>
+                <div class="c__500">
+                    <div class="text-center">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit.
+                    </div>
+                </div>
+
+                <div class="c__gap"></div>
+                <div class="c__h1">filter-grayscale</div>
+                <div class="c__row">
+                    <div style="width: 200px">
+                        <div class="image-box" style="padding-top: 75%">
+                            <img
+                                src="https://loremflickr.com/500/400/mountains?random=1"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                    <div style="width: 200px">
+                        <div
+                            class="image-box filter-grayscale"
+                            style="padding-top: 75%"
+                        >
+                            <img
+                                src="https://loremflickr.com/500/400/mountains?random=1"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c__gap"></div>
+                <div class="c__h1">flip-x</div>
+                <div class="c__row">
+                    <div style="width: 200px">
+                        <div class="image-box" style="padding-top: 75%">
+                            <img
+                                src="https://loremflickr.com/500/400/mountains?random=1"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                    <div style="width: 200px">
+                        <div class="image-box flip-x" style="padding-top: 75%">
+                            <img
+                                src="https://loremflickr.com/500/400/mountains?random=1"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c__gap"></div>
+                <div class="c__h1">flip-y</div>
+                <div class="c__row">
+                    <div style="width: 200px">
+                        <div class="image-box" style="padding-top: 75%">
+                            <img
+                                src="https://loremflickr.com/500/400/mountains?random=1"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                    <div style="width: 200px">
+                        <div class="image-box flip-y" style="padding-top: 75%">
+                            <img
+                                src="https://loremflickr.com/500/400/mountains?random=1"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c__gap"></div>
+                <div class="c__h1">overlay</div>
+                <div class="c__row">
+                    <div style="width: 200px">
+                        <div class="c__h2">no overlay</div>
+
+                        <div class="image-box" style="padding-top: 75%">
+                            <img
+                                src="https://loremflickr.com/500/400/mountains?random=1"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                    <div style="width: 200px">
+                        <div class="c__h2">overlay default (45%)</div>
+
+                        <div class="image-box" style="padding-top: 75%">
+                            <img
+                                src="https://loremflickr.com/500/400/mountains?random=1"
+                                alt=""
+                            />
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+
+                    <div style="width: 200px">
+                        <div class="c__h2">overlay (70%)</div>
+
+                        <div class="image-box" style="padding-top: 75%">
+                            <img
+                                src="https://loremflickr.com/500/400/mountains?random=1"
+                                alt=""
+                            />
+                            <div class="overlay" style="opacity: 0.7"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="active" id="tab-buttons"></div>
+            <div class="active" id="tab-inputs"></div>
+            <div class="active" id="tab-selects"></div>
+            <div class="active" id="tab-icons"></div>
+            <div class="active" id="tab-articles"></div>
+            <div class="active" id="tab-cards"></div>
+            <div class="active" id="tab-forms"></div>
+            <div class="active" id="tab-grids"></div>
+            <div class="active" id="tab-intros"></div>
+            <div class="active" id="tab-lists"></div>
+            <div class="active" id="tab-maps"></div>
+            <div class="active" id="tab-navs"></div>
+            <div class="active" id="tab-panels"></div>
+            <div class="active" id="tab-popups"></div>
+            <div class="active" id="tab-props"></div>
+            <div class="active" id="tab-read"></div>
+            <div class="active" id="tab-sections"></div>
+            <div class="active" id="tab-sliders"></div>
+            <div class="active" id="tab-tables"></div>
+        </div>
+    </div>
+</main>
+<!-- @@close-->

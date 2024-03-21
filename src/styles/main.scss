@@ -1,0 +1,83 @@
+@import "./vendor/meyer-reset.scss";
+@import "./helpers/reset.scss";
+@import "./helpers/mixins.scss";
+@import "./helpers/helpers.scss";
+@import "./helpers/beauty.scss";
+
+:root {
+    --side-padding: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: clamp(7px, 0.7vw, 10px);
+}
+
+body {
+    text-size-adjust: none;
+    min-width: 320px;
+    font-size: 1.6rem;
+
+    &.locked {
+        overflow: hidden;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+img[data-src] {
+    visibility: hidden;
+}
+
+a,
+button,
+input,
+textarea {
+    transition: all 0.2s;
+    font-family: inherit;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}
+
+@import "./blocks/typo/index.scss";
+@import "./blocks/articles/index.scss";
+@import "./blocks/buttons/index.scss";
+@import "./blocks/cards/index.scss";
+@import "./blocks/forms/index.scss";
+@import "./blocks/grids/index.scss";
+@import "./blocks/inputs/index.scss";
+@import "./blocks/maps/index.scss";
+@import "./blocks/navs/index.scss";
+@import "./blocks/panels/index.scss";
+@import "./blocks/popups/index.scss";
+@import "./blocks/promos/index.scss";
+@import "./blocks/read/index.scss";
+@import "./blocks/selects/index.scss";
+@import "./blocks/sliders/index.scss";
+@import "./blocks/tables/index.scss";
+@import "./blocks/lists/index.scss";
+@import "./blocks/sections/index.scss";
+
+@import "./blocks/header.scss";
+@import "./blocks/footer.scss";
+@import "./blocks/tabs-content.scss";
+@import "./blocks/page.scss";

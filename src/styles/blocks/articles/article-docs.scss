@@ -1,0 +1,28 @@
+.article-docs {
+    padding: 2rem;
+    font-size: 1.6rem;
+
+    p {
+        margin: 2rem 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    b {
+        font-weight: 700;
+    }
+
+    ul {
+        list-style: disc inside;
+
+        li {
+            margin: 1rem 0;
+        }
+    }
+}

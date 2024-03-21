@@ -1,0 +1,28 @@
+.nav-tabs {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    li {
+        &.active {
+            a {
+                font-weight: 600;
+                color: #204a8f;
+            }
+        }
+    }
+
+    a {
+        display: block;
+        font-size: 1.7rem;
+        line-height: 3.8rem;
+        text-align: center;
+        color: #a0a5b9;
+
+        &:hover {
+            color: darken(#a0a5b9, 10%);
+        }
+    }
+}

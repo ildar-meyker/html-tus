@@ -1,0 +1,70 @@
+.underline-to-right {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0 1px;
+    transition: background-size 0.25s ease-out, color 0.2s;
+
+    &:hover {
+        background-size: 100% 1px;
+    }
+
+    &--reverse {
+        background-size: 100% 1px;
+
+        &:hover {
+            background-size: 0 1px;
+        }
+    }
+}
+
+.smooth-end-of-block {
+    width: 10%;
+    max-width: 70px;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: none;
+    pointer-events: none;
+
+    &.active {
+        display: block;
+    }
+
+    &--left {
+        background: linear-gradient(to right, #fff, rgba(#fff, 0));
+    }
+
+    &--right {
+        background: linear-gradient(to left, #fff, rgba(#fff, 0));
+        left: auto;
+        right: 0;
+    }
+}
+
+.zoom-inside-in-on-hover {
+    > * {
+        transition: all 0.5s;
+    }
+
+    &:hover {
+        > * {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.zoom-inside-out-on-hover {
+    > * {
+        transition: all 0.5s;
+        transform: scale(1.2);
+    }
+
+    &:hover {
+        > * {
+            transform: scale(1);
+        }
+    }
+}

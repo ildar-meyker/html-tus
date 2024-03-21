@@ -1,0 +1,23 @@
+.tabs-content {
+    position: relative;
+
+    > div {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        width: 100%;
+        opacity: 0;
+        height: 0;
+        pointer-events: none;
+
+        &.active {
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            opacity: 1;
+            height: auto;
+            pointer-events: all;
+        }
+    }
+}

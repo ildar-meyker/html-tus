@@ -1,0 +1,59 @@
+<!-- @@master = ./layouts/default.html-->
+
+<!-- @@block = title-->
+<title>Документация</title>
+<!-- @@close-->
+
+<!-- @@block = styles-->
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark-reasonable.min.css"
+/>
+<!-- @@close-->
+
+<!-- @@block = scripts-->
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+<script>
+    hljs.highlightAll();
+</script>
+
+<!-- @@close-->
+<!-- @@block = content-->
+<main>
+    <article class="article-docs">
+        <p>
+            <b>API:</b>
+        </p>
+
+        <pre><code class="language-javascript">
+Popup.showSuccess();
+        </code></pre>
+    </article>
+
+    <article class="article-docs">
+        <p>
+            <b>Удалить:</b>
+        </p>
+        <p>Теги для поиска: #demo, #pagelist</p>
+    </article>
+
+    <article class="article-docs">
+        <p><b>Issues:</b></p>
+    </article>
+
+    <article class="article-docs">
+        <p>
+            <b>Pages:</b>
+        </p>
+
+        <ul>
+            <li><a href="main.html">main.html</a></li>
+            <li><a href="components.html">components.html</a></li>
+            <li><a href="404.html">404.html</a></li>
+            <li><a href="ajax-sample.html">ajax-sample.html</a></li>
+        </ul>
+    </article>
+
+    <!-- @@include = ./partials/footer.html -->
+</main>
+<!-- @@close-->

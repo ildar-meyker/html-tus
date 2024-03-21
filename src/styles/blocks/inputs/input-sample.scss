@@ -1,0 +1,39 @@
+.input-sample {
+    input,
+    textarea {
+        transition: border-color 0.2s;
+        width: 100%;
+        padding: 0 calc(20 / 18) + em;
+        height: 6rem;
+        background: #fff;
+        border: 1px solid rgba(0, 71, 186, 0.5);
+        border-radius: 1.2rem;
+        font-size: 1.8rem;
+        line-height: 1.2;
+        color: #21222e;
+
+        &::placeholder {
+            color: #899ab7;
+        }
+
+        &:focus {
+            border-color: #0047ba;
+        }
+
+        &.error {
+            border-color: #f00;
+        }
+    }
+
+    textarea {
+        padding: 1.8rem 1.9rem;
+        height: auto !important;
+    }
+
+    label.error {
+        display: block;
+        font-size: 1.4rem;
+        margin-top: 0.5em;
+        color: #f00;
+    }
+}
