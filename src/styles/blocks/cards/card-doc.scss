@@ -9,13 +9,13 @@
     &__header {
         margin-bottom: 44px;
         display: flex;
-        align-items: center;
         gap: 12px;
         font-size: 24px;
         font-weight: 700;
         line-height: calc(26.4 / 24);
 
         .icon {
+            flex: 0 0 auto;
             font-size: calc(26 / 24) + em;
             opacity: 0.3;
         }

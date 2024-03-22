@@ -1,0 +1,34 @@
+.section-payways {
+    &__header {
+        margin-bottom: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    &__h1 {
+        font-size: 60px;
+        font-weight: 500;
+        line-height: calc(57 / 60);
+    }
+
+    &__nav {
+    }
+}
+
+@media (max-width: 999.98px) {
+    .section-payways {
+        &__header {
+            margin-bottom: 28px;
+        }
+
+        &__h1 {
+            font-size: 32px;
+        }
+
+        &__nav {
+            display: none;
+        }
+    }
+}

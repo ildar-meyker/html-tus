@@ -1,0 +1,27 @@
+.btn-apply {
+    @include reset-btn;
+    padding: 1em 2em;
+    border-radius: 10em;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: calc(21.6 / 18);
+    background: #ff6100;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+
+    .icon {
+        font-size: calc(11 / 18) + em;
+    }
+}
+
+@media (max-width: 999.98px) {
+    .btn-apply {
+        font-size: 14px;
+
+        .icon {
+        }
+    }
+}

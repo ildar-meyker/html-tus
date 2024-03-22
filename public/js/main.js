@@ -106,6 +106,27 @@ $(function () {
 
 /***/ }),
 
+/***/ "./src/js/modules/slider-payways.js":
+/*!******************************************!*\
+  !*** ./src/js/modules/slider-payways.js ***!
+  \******************************************/
+/***/ (function() {
+
+$(function () {
+  $(".slider-payways").each(function () {
+    var $root = $(this).closest(".js-slider-root");
+    var swiper = new Swiper($(this).find(".swiper")[0], {
+      slidesPerView: "auto",
+      navigation: {
+        nextEl: $root.find(".js-slider-next")[0],
+        prevEl: $root.find(".js-slider-prev")[0]
+      }
+    });
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/modules/slider-plans.js":
 /*!****************************************!*\
   !*** ./src/js/modules/slider-plans.js ***!
@@ -271,6 +292,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider_news__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_news__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _modules_slider_docs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/slider-docs */ "./src/js/modules/slider-docs.js");
 /* harmony import */ var _modules_slider_docs__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_docs__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _modules_slider_payways__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/slider-payways */ "./src/js/modules/slider-payways.js");
+/* harmony import */ var _modules_slider_payways__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_payways__WEBPACK_IMPORTED_MODULE_7__);
+
 
 
 

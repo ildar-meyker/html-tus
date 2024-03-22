@@ -650,6 +650,34 @@ a {
   font-size: 12px;
 }
 
+.btn-apply {
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 1em 2em;
+  border-radius: 10em;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  background: #ff6100;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+.btn-apply .icon {
+  font-size: 0.6111111111em;
+}
+
+@media (max-width: 999.98px) {
+  .btn-apply {
+    font-size: 14px;
+  }
+}
 .card-doc {
   background: #fff;
   border: 1px solid #0000001a;
@@ -661,13 +689,13 @@ a {
 .card-doc__header {
   margin-bottom: 44px;
   display: flex;
-  align-items: center;
   gap: 12px;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.1;
 }
 .card-doc__header .icon {
+  flex: 0 0 auto;
   font-size: 1.0833333333em;
   opacity: 0.3;
 }
@@ -770,6 +798,68 @@ a {
   }
   .card-news__date__month {
     font-size: 12px;
+  }
+}
+.card-payway {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #0000001a;
+  border-radius: 16px;
+  padding: 32px;
+}
+.card-payway__icon {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 1px solid #e6e6e6;
+  margin-bottom: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+}
+.card-payway__icon .icon {
+  font-size: 0.45em;
+}
+.card-payway__h1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+.card-payway__desc {
+  margin-bottom: 48px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.card-payway__btn-apply {
+  margin-top: auto;
+}
+
+@media (max-width: 999.98px) {
+  .card-payway__header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  .card-payway__icon {
+    margin: 0;
+    font-size: 45px;
+  }
+  .card-payway__h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  .card-payway__desc {
+    margin-bottom: 28px;
+    font-size: 14px;
+  }
+  .card-payway__btn-apply button,
+.card-payway__btn-apply a {
+    width: 100%;
   }
 }
 .nav-tabs ul {
@@ -892,6 +982,39 @@ a {
     --gap: 8px;
   }
   .slider-docs .swiper-slide {
+    width: 100%;
+  }
+}
+.slider-payways {
+  --gap: 16px;
+}
+.slider-payways .swiper {
+  margin: 0 calc(var(--gap) / 2 * -1);
+}
+.slider-payways .swiper-slide {
+  width: 33.33%;
+  padding: 0 calc(var(--gap) / 2);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+.slider-payways .swiper-slide > * {
+  flex-grow: 1;
+}
+
+@media (max-width: 1399.98px) {
+  .slider-payways .swiper {
+    overflow: visible;
+  }
+  .slider-payways .swiper-slide {
+    width: 50%;
+  }
+}
+@media (max-width: 999.98px) {
+  .slider-payways {
+    --gap: 8px;
+  }
+  .slider-payways .swiper-slide {
     width: 100%;
   }
 }
@@ -1022,6 +1145,29 @@ a {
     font-size: 32px;
   }
   .section-docs__nav {
+    display: none;
+  }
+}
+.section-payways__header {
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.section-payways__h1 {
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 0.95;
+}
+@media (max-width: 999.98px) {
+  .section-payways__header {
+    margin-bottom: 28px;
+  }
+  .section-payways__h1 {
+    font-size: 32px;
+  }
+  .section-payways__nav {
     display: none;
   }
 }

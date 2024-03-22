@@ -1,0 +1,53 @@
+.slider-payways {
+    --gap: 16px;
+
+    .swiper {
+        margin: 0 calc(var(--gap) / 2 * -1);
+    }
+
+    .swiper-slide {
+        width: 33.33%;
+        padding: 0 calc(var(--gap) / 2);
+        display: flex;
+        flex-direction: column;
+        height: auto;
+
+        > * {
+            flex-grow: 1;
+        }
+    }
+}
+
+@media (max-width: 1399.98px) {
+    .slider-payways {
+        .swiper {
+            overflow: visible;
+        }
+
+        .swiper-wrapper {
+        }
+
+        .swiper-slide {
+            width: 50%;
+
+            > * {
+            }
+        }
+    }
+}
+
+@media (max-width: 999.98px) {
+    .slider-payways {
+        --gap: 8px;
+
+        .swiper {
+        }
+
+        .swiper-slide {
+            width: 100%;
+
+            > * {
+            }
+        }
+    }
+}
