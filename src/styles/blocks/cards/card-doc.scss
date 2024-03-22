@@ -16,12 +16,29 @@
         line-height: calc(26.4 / 24);
 
         .icon {
-            font-size: 26px;
+            font-size: calc(26 / 24) + em;
             opacity: 0.3;
         }
     }
 
     &__btn-download {
         margin-top: auto;
+    }
+}
+
+@media (max-width: 999.98px) {
+    .card-doc {
+        padding: 20px;
+
+        &__header {
+            margin-bottom: 40px;
+            font-size: 18px;
+
+            .icon {
+            }
+        }
+
+        &__btn-download {
+        }
     }
 }

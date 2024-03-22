@@ -1,12 +1,13 @@
 .btn-download {
     @include reset-btn;
-    padding: 18px 34px;
+    padding: 1em calc(34 / 18) + em;
     background: #fff;
     border: 1px solid #e6e6e6;
     border-radius: 10em;
     display: inline-flex;
     align-items: center;
     gap: 14px;
+    font-size: 18px;
 
     &:hover {
         border-color: #000000;
@@ -19,5 +20,20 @@
     .icon {
         font-size: 12px;
         color: #808080;
+    }
+}
+
+@media (max-width: 999.98px) {
+    .btn-download {
+        font-size: 14px;
+
+        &:hover {
+        }
+
+        &__ext {
+        }
+
+        .icon {
+        }
     }
 }

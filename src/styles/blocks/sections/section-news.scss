@@ -1,4 +1,6 @@
 .section-news {
+    overflow: hidden;
+
     &__header {
         margin-bottom: 50px;
         display: flex;
@@ -15,5 +17,24 @@
 
     &__btn-more {
         margin-top: 16px;
+    }
+}
+
+@media (max-width: 999.98px) {
+    .section-news {
+        &__header {
+            margin-bottom: 28px;
+        }
+
+        &__nav {
+            display: none;
+        }
+
+        &__h1 {
+            font-size: 32px;
+        }
+
+        &__btn-more {
+        }
     }
 }

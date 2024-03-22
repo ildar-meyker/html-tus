@@ -1,11 +1,8 @@
-.slider-plans {
+.slider-docs {
     --gap: 16px;
 
     .swiper {
         margin: 0 calc(var(--gap) / 2 * -1);
-    }
-
-    .swiper-wrapper {
     }
 
     .swiper-slide {
@@ -22,7 +19,7 @@
 }
 
 @media (max-width: 1399.98px) {
-    .slider-plans {
+    .slider-docs {
         .swiper {
             overflow: visible;
         }
@@ -38,14 +35,12 @@
         }
     }
 }
+
 @media (max-width: 999.98px) {
-    .slider-plans {
+    .slider-docs {
         --gap: 8px;
 
         .swiper {
-        }
-
-        .swiper-wrapper {
         }
 
         .swiper-slide {

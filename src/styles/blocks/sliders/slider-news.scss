@@ -17,3 +17,37 @@
         }
     }
 }
+
+@media (max-width: 1399.98px) {
+    .slider-news {
+        .swiper {
+            overflow: visible;
+        }
+
+        .swiper-wrapper {
+        }
+
+        .swiper-slide {
+            width: 50%;
+
+            > * {
+            }
+        }
+    }
+}
+
+@media (max-width: 999.98px) {
+    .slider-news {
+        --gap: 8px;
+
+        .swiper {
+        }
+
+        .swiper-slide {
+            width: 100%;
+
+            > * {
+            }
+        }
+    }
+}

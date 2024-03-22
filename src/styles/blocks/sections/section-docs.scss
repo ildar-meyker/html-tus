@@ -1,8 +1,31 @@
 .section-docs {
-    &__h1 {
+    &__header {
         margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__h1 {
         font-size: 44px;
         font-weight: 500;
         line-height: calc(41.8 / 44);
+    }
+}
+
+@media (max-width: 999.98px) {
+    .section-docs {
+        &__header {
+            margin-bottom: 28px;
+        }
+
+        &__h1 {
+            font-size: 32px;
+        }
+
+        &__nav {
+            display: none;
+        }
     }
 }

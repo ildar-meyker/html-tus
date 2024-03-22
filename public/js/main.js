@@ -64,6 +64,27 @@ if (pubdate < new Date()) {
 
 /***/ }),
 
+/***/ "./src/js/modules/slider-docs.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/slider-docs.js ***!
+  \***************************************/
+/***/ (function() {
+
+$(function () {
+  $(".slider-docs").each(function () {
+    var $root = $(this).closest(".js-slider-root");
+    var swiper = new Swiper($(this).find(".swiper")[0], {
+      slidesPerView: "auto",
+      navigation: {
+        nextEl: $root.find(".js-slider-next")[0],
+        prevEl: $root.find(".js-slider-prev")[0]
+      }
+    });
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/modules/slider-news.js":
 /*!***************************************!*\
   !*** ./src/js/modules/slider-news.js ***!
@@ -248,6 +269,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider_plans__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_plans__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _modules_slider_news__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/slider-news */ "./src/js/modules/slider-news.js");
 /* harmony import */ var _modules_slider_news__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_news__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _modules_slider_docs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/slider-docs */ "./src/js/modules/slider-docs.js");
+/* harmony import */ var _modules_slider_docs__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_docs__WEBPACK_IMPORTED_MODULE_6__);
+
 
 
 
