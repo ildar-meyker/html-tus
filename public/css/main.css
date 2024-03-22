@@ -678,6 +678,35 @@ a {
     font-size: 14px;
   }
 }
+.btn-camera {
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  font-size: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff6100;
+  color: #fff;
+}
+.btn-camera .icon {
+  font-size: 0.3em;
+}
+.btn-camera:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 999.98px) {
+  .btn-camera {
+    font-size: 45px;
+  }
+}
 .card-doc {
   background: #fff;
   border: 1px solid #0000001a;
@@ -838,6 +867,9 @@ a {
 }
 
 @media (max-width: 999.98px) {
+  .card-payway {
+    padding: 20px;
+  }
   .card-payway__header {
     display: flex;
     flex-direction: row-reverse;
@@ -848,6 +880,7 @@ a {
   .card-payway__icon {
     margin: 0;
     font-size: 45px;
+    flex: 0 0 auto;
   }
   .card-payway__h1 {
     margin: 0;
@@ -860,6 +893,42 @@ a {
   .card-payway__btn-apply button,
 .card-payway__btn-apply a {
     width: 100%;
+  }
+}
+.card-camera__picture {
+  position: relative;
+}
+.card-camera__image {
+  padding-top: 100%;
+}
+.card-camera__image img {
+  border-radius: 16px;
+}
+.card-camera__btn-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card-camera__desc {
+  margin-top: 8px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+@media (max-width: 999.98px) {
+  .card-camera__image {
+    padding-top: 89%;
+  }
+  .card-camera__btn-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .card-camera__desc {
+    font-size: 14px;
   }
 }
 .nav-tabs ul {
@@ -982,7 +1051,7 @@ a {
     --gap: 8px;
   }
   .slider-docs .swiper-slide {
-    width: 100%;
+    width: 80vw;
   }
 }
 .slider-payways {
@@ -1016,6 +1085,39 @@ a {
   }
   .slider-payways .swiper-slide {
     width: 100%;
+  }
+}
+.slider-cameras {
+  --gap: 16px;
+}
+.slider-cameras .swiper {
+  margin: 0 calc(var(--gap) / 2 * -1);
+}
+.slider-cameras .swiper-slide {
+  width: 25%;
+  padding: 0 calc(var(--gap) / 2);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+.slider-cameras .swiper-slide > * {
+  flex-grow: 1;
+}
+
+@media (max-width: 1399.98px) {
+  .slider-cameras .swiper {
+    overflow: visible;
+  }
+  .slider-cameras .swiper-slide {
+    width: 50%;
+  }
+}
+@media (max-width: 999.98px) {
+  .slider-cameras {
+    --gap: 8px;
+  }
+  .slider-cameras .swiper-slide {
+    width: 80vw;
   }
 }
 .section-plans {
@@ -1171,6 +1273,29 @@ a {
     display: none;
   }
 }
+.section-cameras__header {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.section-cameras__h1 {
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 0.95;
+}
+@media (max-width: 999.98px) {
+  .section-cameras__header {
+    margin-bottom: 28px;
+  }
+  .section-cameras__h1 {
+    font-size: 32px;
+  }
+  .section-cameras__nav {
+    display: none;
+  }
+}
 .tabs-content {
   position: relative;
 }
@@ -1200,12 +1325,12 @@ a {
   margin: 0 auto;
 }
 
-.l-jk__plans, .l-jk__types, .l-jk__rooms, .l-jk__news {
-  margin: 80px 0;
+.l-jk__plans, .l-jk__types, .l-jk__rooms, .l-jk__cameras, .l-jk__payways, .l-jk__programs, .l-jk__docs, .l-jk__news {
+  margin: 40px 0;
 }
 
 @media (max-width: 999.98px) {
-  .l-jk__plans, .l-jk__types, .l-jk__rooms, .l-jk__news {
-    margin: 60px 0;
+  .l-jk__plans, .l-jk__types, .l-jk__rooms, .l-jk__cameras, .l-jk__payways, .l-jk__programs, .l-jk__docs, .l-jk__news {
+    margin: 30px 0;
   }
 }

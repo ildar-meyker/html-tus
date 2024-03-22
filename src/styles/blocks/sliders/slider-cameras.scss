@@ -1,12 +1,15 @@
-.slider-docs {
+.slider-cameras {
     --gap: 16px;
 
     .swiper {
         margin: 0 calc(var(--gap) / 2 * -1);
     }
 
+    .swiper-wrapper {
+    }
+
     .swiper-slide {
-        width: 33.33%;
+        width: 25%;
         padding: 0 calc(var(--gap) / 2);
         display: flex;
         flex-direction: column;
@@ -19,7 +22,7 @@
 }
 
 @media (max-width: 1399.98px) {
-    .slider-docs {
+    .slider-cameras {
         .swiper {
             overflow: visible;
         }
@@ -35,12 +38,14 @@
         }
     }
 }
-
 @media (max-width: 999.98px) {
-    .slider-docs {
+    .slider-cameras {
         --gap: 8px;
 
         .swiper {
+        }
+
+        .swiper-wrapper {
         }
 
         .swiper-slide {

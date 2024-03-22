@@ -1,0 +1,29 @@
+.btn-camera {
+    @include reset-btn;
+    width: 1em;
+    height: 1em;
+    font-size: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ff6100;
+    color: #fff;
+
+    .icon {
+        font-size: calc(24 / 80) + em;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 999.98px) {
+    .btn-camera {
+        font-size: 45px;
+
+        .icon {
+        }
+    }
+}

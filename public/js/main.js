@@ -64,6 +64,27 @@ if (pubdate < new Date()) {
 
 /***/ }),
 
+/***/ "./src/js/modules/slider-cameras.js":
+/*!******************************************!*\
+  !*** ./src/js/modules/slider-cameras.js ***!
+  \******************************************/
+/***/ (function() {
+
+$(function () {
+  $(".slider-cameras").each(function () {
+    var $root = $(this).closest(".js-slider-root");
+    var swiper = new Swiper($(this).find(".swiper")[0], {
+      slidesPerView: "auto",
+      navigation: {
+        nextEl: $root.find(".js-slider-next")[0],
+        prevEl: $root.find(".js-slider-prev")[0]
+      }
+    });
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/modules/slider-docs.js":
 /*!***************************************!*\
   !*** ./src/js/modules/slider-docs.js ***!
@@ -294,6 +315,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider_docs__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_docs__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _modules_slider_payways__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/slider-payways */ "./src/js/modules/slider-payways.js");
 /* harmony import */ var _modules_slider_payways__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_payways__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _modules_slider_cameras__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/slider-cameras */ "./src/js/modules/slider-cameras.js");
+/* harmony import */ var _modules_slider_cameras__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_cameras__WEBPACK_IMPORTED_MODULE_8__);
+
 
 
 

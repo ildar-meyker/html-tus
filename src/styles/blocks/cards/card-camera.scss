@@ -1,0 +1,49 @@
+.card-camera {
+    &__picture {
+        position: relative;
+    }
+
+    &__image {
+        padding-top: 100%;
+
+        img {
+            border-radius: 16px;
+        }
+    }
+
+    &__btn-play {
+        @include position-center;
+    }
+
+    &__desc {
+        margin-top: 8px;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: calc(28.8 / 24);
+    }
+}
+
+@media (max-width: 999.98px) {
+    .card-camera {
+        &__picture {
+        }
+
+        &__image {
+            padding-top: 89%;
+
+            img {
+            }
+        }
+
+        &__btn-play {
+            @include position-center;
+
+            &:hover {
+            }
+        }
+
+        &__desc {
+            font-size: 14px;
+        }
+    }
+}

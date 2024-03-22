@@ -2,8 +2,12 @@
     &__plans,
     &__types,
     &__rooms,
+    &__cameras,
+    &__payways,
+    &__programs,
+    &__docs,
     &__news {
-        margin: 80px 0;
+        margin: 40px 0;
     }
 }
 
@@ -12,8 +16,12 @@
         &__plans,
         &__types,
         &__rooms,
+        &__cameras,
+        &__payways,
+        &__programs,
+        &__docs,
         &__news {
-            margin: 60px 0;
+            margin: 30px 0;
         }
     }
 }
