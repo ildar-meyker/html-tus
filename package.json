@@ -55,7 +55,8 @@
         "terser-webpack-plugin": "^5.3.6",
         "vinyl-named": "^1.1.0",
         "webpack": "^5.66.0",
-        "webpack-stream": "^7.0.0"
+        "webpack-stream": "^7.0.0",
+        "rabbit": "github:ildar-meyker/rabbit"
     },
     "dependencies": {
         "swiper": "^7.4.1"

@@ -1,0 +1,27 @@
+.card-doc {
+    background: #fff;
+    border: 1px solid #0000001a;
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        margin-bottom: 44px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: calc(26.4 / 24);
+
+        .icon {
+            font-size: 26px;
+            opacity: 0.3;
+        }
+    }
+
+    &__btn-download {
+        margin-top: auto;
+    }
+}

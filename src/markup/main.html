@@ -5,15 +5,896 @@
 <!-- @@close-->
 
 <!-- @@block = styles-->
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
 <!-- @@close-->
 
 <!-- @@block = scripts-->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 <!-- @@close-->
 
 <!-- @@block = content-->
-<main>
-    <p>Hello, world!</p>
+<div class="wrapper">
+    <!-- @@include = ./partials/header.html -->
+
+    <div style="background: #333; height: 100vh"></div>
+
+    <div class="l-jk__types">
+        <!-- @@include = ./partials/section-types.html -->
+    </div>
+
+    <div class="l-jk__rooms">
+        <!-- @@include = ./partials/section-rooms.html -->
+    </div>
+
+    <div class="l-jk__plans">
+        <section class="section-plans js-slider-root">
+            <div class="container">
+                <div class="section-plans__header">
+                    <h2 class="section-plans__h1">Планировки</h2>
+                    <div class="section-plans__nav">
+                        <nav class="nav-arrows">
+                            <ul>
+                                <li>
+                                    <button class="btn-arrow js-slider-prev">
+                                        <svg class="icon">
+                                            <use
+                                                xlink:href="img/icons/general/sprite.svg#arrow-left"
+                                            ></use>
+                                        </svg>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="btn-arrow js-slider-next">
+                                        <svg class="icon flip-x">
+                                            <use
+                                                xlink:href="img/icons/general/sprite.svg#arrow-left"
+                                            ></use>
+                                        </svg>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="slider-plans">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="apartment-item">
+                                    <div class="apartment-item__head--reverse">
+                                        <div class="apartment-item__info">
+                                            <div
+                                                class="apartment-item__address"
+                                            >
+                                                <svg width="16" height="16">
+                                                    <use
+                                                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#pin"
+                                                    ></use>
+                                                </svg>
+                                                г. Белгород, ул. Щорса, д. 37в
+                                            </div>
+                                            <div class="apartment-item__square">
+                                                <div
+                                                    class="apartment-item__title"
+                                                >
+                                                    1 комнатная 62.22 м<sup
+                                                        >2</sup
+                                                    >
+                                                </div>
+                                                <div
+                                                    class="apartment-item__square__floor"
+                                                >
+                                                    16 этаж
+                                                </div>
+                                            </div>
+
+                                            <div class="apartment-item__jk">
+                                                <svg class="icon">
+                                                    <use
+                                                        xlink:href="img/icons/general/sprite.svg#house"
+                                                    ></use>
+                                                </svg>
+                                                <span>ЖК «Привилегия»</span>
+                                            </div>
+                                        </div>
+                                        <div class="apartment-item__statuses">
+                                            <div
+                                                class="apartment-item__status status status--border"
+                                            >
+                                                В ипотеку
+                                            </div>
+                                            <div
+                                                class="apartment-item__status status status--dark"
+                                            >
+                                                <div
+                                                    class="status__circle"
+                                                    style="
+                                                        --status-color: #32ce18;
+                                                    "
+                                                ></div>
+                                                <div class="status__text">
+                                                    Идут продажи
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="apartment-item__main">
+                                        <div class="apartment-item__img">
+                                            <picture
+                                                ><source
+                                                    srcset="
+                                                        https://transuyshstroy.netlify.app/img/apartments/a-scheme-01.webp
+                                                    "
+                                                    type="image/webp" />
+                                                <img
+                                                    src="https://transuyshstroy.netlify.app/img/apartments/a-scheme-01.png"
+                                                    alt=""
+                                            /></picture>
+                                        </div>
+                                    </div>
+                                    <div class="apartment-item__details">
+                                        <div
+                                            class="apartment-item__details-item"
+                                        >
+                                            10 871 600 ₽
+                                        </div>
+                                        <div
+                                            class="apartment-item__details-item apartment-item__details-item--light"
+                                        >
+                                            261 212 руб/м<sup>2</sup>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            class="apartment-item__fav"
+                                        >
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#fav"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                        <a href="#" class="apartment-item__add">
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="apartment-item">
+                                    <div class="apartment-item__head--reverse">
+                                        <div class="apartment-item__info">
+                                            <div
+                                                class="apartment-item__address"
+                                            >
+                                                <svg width="16" height="16">
+                                                    <use
+                                                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#pin"
+                                                    ></use>
+                                                </svg>
+                                                г. Белгород, ул. Щорса, д. 37в
+                                            </div>
+
+                                            <div class="apartment-item__square">
+                                                <div
+                                                    class="apartment-item__title"
+                                                >
+                                                    2 комнатная 66.9 м<sup
+                                                        >2</sup
+                                                    >
+                                                </div>
+                                                <div
+                                                    class="apartment-item__square__floor"
+                                                >
+                                                    16 этаж
+                                                </div>
+                                            </div>
+
+                                            <div class="apartment-item__jk">
+                                                <svg class="icon">
+                                                    <use
+                                                        xlink:href="img/icons/general/sprite.svg#house"
+                                                    ></use>
+                                                </svg>
+                                                <span>ЖК «Привилегия»</span>
+                                            </div>
+                                        </div>
+                                        <div class="apartment-item__statuses">
+                                            <div
+                                                class="apartment-item__status status status--border"
+                                            >
+                                                В ипотеку
+                                            </div>
+                                            <div
+                                                class="apartment-item__status status status--dark"
+                                            >
+                                                <div
+                                                    class="status__circle"
+                                                    style="
+                                                        --status-color: #32ce18;
+                                                    "
+                                                ></div>
+                                                <div class="status__text">
+                                                    Идут продажи
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="apartment-item__main">
+                                        <div class="apartment-item__img">
+                                            <picture
+                                                ><source
+                                                    srcset="
+                                                        https://transuyshstroy.netlify.app/img/apartments/a-scheme-02.webp
+                                                    "
+                                                    type="image/webp" />
+                                                <img
+                                                    src="https://transuyshstroy.netlify.app/img/apartments/a-scheme-02.png"
+                                                    alt=""
+                                            /></picture>
+                                        </div>
+                                    </div>
+                                    <div class="apartment-item__details">
+                                        <div
+                                            class="apartment-item__details-item"
+                                        >
+                                            27 909 698 ₽
+                                        </div>
+                                        <div
+                                            class="apartment-item__details-item apartment-item__details-item--light"
+                                        >
+                                            261 212 руб/м<sup>2</sup>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            class="apartment-item__fav"
+                                        >
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#fav"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                        <a href="#" class="apartment-item__add">
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="apartment-item">
+                                    <div class="apartment-item__head--reverse">
+                                        <div class="apartment-item__info">
+                                            <div
+                                                class="apartment-item__address"
+                                            >
+                                                <svg width="16" height="16">
+                                                    <use
+                                                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#pin"
+                                                    ></use>
+                                                </svg>
+                                                г. Белгород, ул. Щорса, д. 37в
+                                            </div>
+
+                                            <div class="apartment-item__square">
+                                                <div
+                                                    class="apartment-item__title"
+                                                >
+                                                    2 комнатная 77.1 м<sup
+                                                        >2</sup
+                                                    >
+                                                </div>
+                                                <div
+                                                    class="apartment-item__square__floor"
+                                                >
+                                                    16 этаж
+                                                </div>
+                                            </div>
+
+                                            <div class="apartment-item__jk">
+                                                <svg class="icon">
+                                                    <use
+                                                        xlink:href="img/icons/general/sprite.svg#house"
+                                                    ></use>
+                                                </svg>
+                                                <span>ЖК «Привилегия»</span>
+                                            </div>
+                                        </div>
+                                        <div class="apartment-item__statuses">
+                                            <div
+                                                class="apartment-item__status status status--border"
+                                            >
+                                                В ипотеку
+                                            </div>
+                                            <div
+                                                class="apartment-item__status status status--dark"
+                                            >
+                                                <div
+                                                    class="status__circle"
+                                                    style="
+                                                        --status-color: #32ce18;
+                                                    "
+                                                ></div>
+                                                <div class="status__text">
+                                                    Идут продажи
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="apartment-item__main">
+                                        <div class="apartment-item__img">
+                                            <picture
+                                                ><source
+                                                    srcset="
+                                                        https://transuyshstroy.netlify.app/img/apartments/a-scheme-03.webp
+                                                    "
+                                                    type="image/webp" />
+                                                <img
+                                                    src="https://transuyshstroy.netlify.app/img/apartments/a-scheme-03.png"
+                                                    alt=""
+                                            /></picture>
+                                        </div>
+                                    </div>
+                                    <div class="apartment-item__details">
+                                        <div
+                                            class="apartment-item__details-item"
+                                        >
+                                            27 909 698 ₽
+                                        </div>
+                                        <div
+                                            class="apartment-item__details-item apartment-item__details-item--light"
+                                        >
+                                            261 212 руб/м<sup>2</sup>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            class="apartment-item__fav"
+                                        >
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#fav"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                        <a href="#" class="apartment-item__add">
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="apartment-item">
+                                    <div class="apartment-item__head--reverse">
+                                        <div class="apartment-item__info">
+                                            <div
+                                                class="apartment-item__address"
+                                            >
+                                                <svg width="16" height="16">
+                                                    <use
+                                                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#pin"
+                                                    ></use>
+                                                </svg>
+                                                г. Белгород, ул. Щорса, д. 37в
+                                            </div>
+
+                                            <div class="apartment-item__square">
+                                                <div
+                                                    class="apartment-item__title"
+                                                >
+                                                    2 комнатная 77.1 м<sup
+                                                        >2</sup
+                                                    >
+                                                </div>
+                                                <div
+                                                    class="apartment-item__square__floor"
+                                                >
+                                                    16 этаж
+                                                </div>
+                                            </div>
+
+                                            <div class="apartment-item__jk">
+                                                <svg class="icon">
+                                                    <use
+                                                        xlink:href="img/icons/general/sprite.svg#house"
+                                                    ></use>
+                                                </svg>
+                                                <span>ЖК «Привилегия»</span>
+                                            </div>
+                                        </div>
+                                        <div class="apartment-item__statuses">
+                                            <div
+                                                class="apartment-item__status status status--border"
+                                            >
+                                                В ипотеку
+                                            </div>
+                                            <div
+                                                class="apartment-item__status status status--dark"
+                                            >
+                                                <div
+                                                    class="status__circle"
+                                                    style="
+                                                        --status-color: #32ce18;
+                                                    "
+                                                ></div>
+                                                <div class="status__text">
+                                                    Идут продажи
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="apartment-item__main">
+                                        <div class="apartment-item__img">
+                                            <picture
+                                                ><source
+                                                    srcset="
+                                                        https://transuyshstroy.netlify.app/img/apartments/a-scheme-03.webp
+                                                    "
+                                                    type="image/webp" />
+                                                <img
+                                                    src="https://transuyshstroy.netlify.app/img/apartments/a-scheme-03.png"
+                                                    alt=""
+                                            /></picture>
+                                        </div>
+                                    </div>
+                                    <div class="apartment-item__details">
+                                        <div
+                                            class="apartment-item__details-item"
+                                        >
+                                            27 909 698 ₽
+                                        </div>
+                                        <div
+                                            class="apartment-item__details-item apartment-item__details-item--light"
+                                        >
+                                            261 212 руб/м<sup>2</sup>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            class="apartment-item__fav"
+                                        >
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#fav"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                        <a href="#" class="apartment-item__add">
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="l-jk__programs">
+        <!-- @@include = ./partials/section-programs.html -->
+    </div>
+
+    <div class="l-jk__docs">
+        <section class="section-docs">
+            <div class="container">
+                <h2 class="section-docs__h1">Документация</h2>
+                <div class="grid-docs">
+                    <div>
+                        <article class="card-doc">
+                            <div class="card-doc__header">
+                                <svg class="icon">
+                                    <use
+                                        xlink:href="img/icons/general/sprite.svg#document"
+                                    ></use>
+                                </svg>
+                                <span>Жилой дом 1</span>
+                            </div>
+                            <div class="card-doc__btn-download">
+                                <a href="#" class="btn-download">
+                                    <span
+                                        >Скачать<span class="btn-download__ext"
+                                            >.pdf 2,6 Mb</span
+                                        ></span
+                                    >
+                                    <svg class="icon">
+                                        <use
+                                            xlink:href="img/icons/general/sprite.svg#upload-file"
+                                        ></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div>
+                        <article class="card-doc">
+                            <div class="card-doc__header">
+                                <svg class="icon">
+                                    <use
+                                        xlink:href="img/icons/general/sprite.svg#document"
+                                    ></use>
+                                </svg>
+                                <span
+                                    >Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Culpa, quidem! Sunt et
+                                    illum nisi sapiente perspiciatis vel modi?
+                                </span>
+                            </div>
+                            <div class="card-doc__btn-download">
+                                <a href="#" class="btn-download">
+                                    <span
+                                        >Скачать<span class="btn-download__ext"
+                                            >.pdf 2,6 Mb</span
+                                        ></span
+                                    >
+                                    <svg class="icon">
+                                        <use
+                                            xlink:href="img/icons/general/sprite.svg#upload-file"
+                                        ></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div>
+                        <article class="card-doc">
+                            <div class="card-doc__header">
+                                <svg class="icon">
+                                    <use
+                                        xlink:href="img/icons/general/sprite.svg#document"
+                                    ></use>
+                                </svg>
+                                <span>Паркинг</span>
+                            </div>
+                            <div class="card-doc__btn-download">
+                                <a href="#" class="btn-download">
+                                    <span
+                                        >Скачать<span class="btn-download__ext"
+                                            >.pdf 2,6 Mb</span
+                                        ></span
+                                    >
+                                    <svg class="icon">
+                                        <use
+                                            xlink:href="img/icons/general/sprite.svg#upload-file"
+                                        ></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="l-jk__news">
+        <section class="section-news js-slider-root">
+            <div class="container">
+                <div class="section-news__header">
+                    <h2 class="section-news__h1">Новости</h2>
+                    <div class="section-news__nav">
+                        <nav class="nav-arrows">
+                            <ul>
+                                <li>
+                                    <button class="btn-arrow js-slider-prev">
+                                        <svg class="icon">
+                                            <use
+                                                xlink:href="img/icons/general/sprite.svg#arrow-left"
+                                            ></use>
+                                        </svg>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="btn-arrow js-slider-next">
+                                        <svg class="icon flip-x">
+                                            <use
+                                                xlink:href="img/icons/general/sprite.svg#arrow-left"
+                                            ></use>
+                                        </svg>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="slider-news">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <article class="card-news">
+                                    <div class="card-news__body">
+                                        <div class="card-news__tags">
+                                            <div class="card-news__tags__item">
+                                                Новости
+                                            </div>
+                                        </div>
+
+                                        <h2 class="card-news__h1">
+                                            <a href="#"
+                                                >Старт продаж квартир в новых
+                                                корпусах проекта «Зелёный
+                                                парк»</a
+                                            >
+                                        </h2>
+                                        <div class="card-news__desc">
+                                            Мы строим дома для людей, в которых
+                                            хочется жить. Возводим
+                                            функциональные предприятия, в
+                                            которых комфортно работать.
+                                        </div>
+                                    </div>
+                                    <div class="card-news__footer">
+                                        <time class="card-news__date">
+                                            <div class="card-news__date__day">
+                                                18
+                                            </div>
+                                            <div class="card-news__date__month">
+                                                декабрь <br />
+                                                2023
+                                            </div>
+                                        </time>
+                                        <button class="btn-plus">
+                                            <svg class="icon">
+                                                <use
+                                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="card-news">
+                                    <div class="card-news__body">
+                                        <div class="card-news__tags">
+                                            <div class="card-news__tags__item">
+                                                Новости
+                                            </div>
+                                        </div>
+
+                                        <h2 class="card-news__h1">
+                                            <a href="#"
+                                                >Новая рассрочка на апарт-отель
+                                                «Вольта»</a
+                                            >
+                                        </h2>
+                                        <div class="card-news__desc">
+                                            Мы строим дома для людей, в которых
+                                            хочется жить. Возводим
+                                            функциональные предприятия, в
+                                            которых комфортно работать.
+                                        </div>
+                                    </div>
+                                    <div class="card-news__footer">
+                                        <time class="card-news__date">
+                                            <div class="card-news__date__day">
+                                                14
+                                            </div>
+                                            <div class="card-news__date__month">
+                                                декабрь <br />
+                                                2023
+                                            </div>
+                                        </time>
+                                        <button class="btn-plus">
+                                            <svg class="icon">
+                                                <use
+                                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="card-news">
+                                    <div class="card-news__body">
+                                        <div class="card-news__tags">
+                                            <div class="card-news__tags__item">
+                                                Новости
+                                            </div>
+                                        </div>
+
+                                        <h2 class="card-news__h1">
+                                            <a href="#"
+                                                >Новая программа «Ипотека 9%»</a
+                                            >
+                                        </h2>
+                                        <div class="card-news__desc">
+                                            Мы строим дома для людей, в которых
+                                            хочется жить. Возводим
+                                            функциональные предприятия, в
+                                            которых комфортно работать.
+                                        </div>
+                                    </div>
+                                    <div class="card-news__footer">
+                                        <time class="card-news__date">
+                                            <div class="card-news__date__day">
+                                                12
+                                            </div>
+                                            <div class="card-news__date__month">
+                                                декабрь <br />
+                                                2023
+                                            </div>
+                                        </time>
+                                        <button class="btn-plus">
+                                            <svg class="icon">
+                                                <use
+                                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="card-news">
+                                    <div class="card-news__body">
+                                        <div class="card-news__tags">
+                                            <div class="card-news__tags__item">
+                                                Новости
+                                            </div>
+                                        </div>
+
+                                        <h2 class="card-news__h1">
+                                            <a href="#"
+                                                >Старт продаж квартир в новых
+                                                корпусах проекта «Зелёный
+                                                парк»</a
+                                            >
+                                        </h2>
+                                        <div class="card-news__desc">
+                                            Мы строим дома для людей, в которых
+                                            хочется жить. Возводим
+                                            функциональные предприятия, в
+                                            которых комфортно работать.
+                                        </div>
+                                    </div>
+                                    <div class="card-news__footer">
+                                        <time class="card-news__date">
+                                            <div class="card-news__date__day">
+                                                18
+                                            </div>
+                                            <div class="card-news__date__month">
+                                                декабрь <br />
+                                                2023
+                                            </div>
+                                        </time>
+                                        <button class="btn-plus">
+                                            <svg class="icon">
+                                                <use
+                                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="card-news">
+                                    <div class="card-news__body">
+                                        <div class="card-news__tags">
+                                            <div class="card-news__tags__item">
+                                                Новости
+                                            </div>
+                                        </div>
+
+                                        <h2 class="card-news__h1">
+                                            <a href="#"
+                                                >Новая рассрочка на апарт-отель
+                                                «Вольта»</a
+                                            >
+                                        </h2>
+                                        <div class="card-news__desc">
+                                            Мы строим дома для людей, в которых
+                                            хочется жить. Возводим
+                                            функциональные предприятия, в
+                                            которых комфортно работать.
+                                        </div>
+                                    </div>
+                                    <div class="card-news__footer">
+                                        <time class="card-news__date">
+                                            <div class="card-news__date__day">
+                                                14
+                                            </div>
+                                            <div class="card-news__date__month">
+                                                декабрь <br />
+                                                2023
+                                            </div>
+                                        </time>
+                                        <button class="btn-plus">
+                                            <svg class="icon">
+                                                <use
+                                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="card-news">
+                                    <div class="card-news__body">
+                                        <div class="card-news__tags">
+                                            <div class="card-news__tags__item">
+                                                Новости
+                                            </div>
+                                        </div>
+
+                                        <h2 class="card-news__h1">
+                                            <a href="#"
+                                                >Новая программа «Ипотека 9%»</a
+                                            >
+                                        </h2>
+                                        <div class="card-news__desc">
+                                            Мы строим дома для людей, в которых
+                                            хочется жить. Возводим
+                                            функциональные предприятия, в
+                                            которых комфортно работать.
+                                        </div>
+                                    </div>
+                                    <div class="card-news__footer">
+                                        <time class="card-news__date">
+                                            <div class="card-news__date__day">
+                                                12
+                                            </div>
+                                            <div class="card-news__date__month">
+                                                декабрь <br />
+                                                2023
+                                            </div>
+                                        </time>
+                                        <button class="btn-plus">
+                                            <svg class="icon">
+                                                <use
+                                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-news__btn-more">
+                    <a href="#" class="btn btn--outline btn--wide"
+                        >Все новости</a
+                    >
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- @@include = ./partials/footer.html -->
-</main>
+</div>
+
 <!-- @@close-->

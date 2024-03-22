@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="webp">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,43 +9,2031 @@
 <title>Главная</title>
 
 
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+
+        <link
+            rel="stylesheet"
+            href="https://transuyshstroy.netlify.app/css/style.min.css?_v=20240320205057"
+        />
+
+        <link rel="stylesheet" href="css/main.css?t=1711111394944" />
+
         <script>
-            (function () {
-                function h() {
-                    document.documentElement.style.setProperty(
-                        "--100vh",
-                        window.innerHeight + "px"
-                    );
-                }
-
-                window.addEventListener("resize", h);
-                window.addEventListener("orientationchange", h);
-
-                h();
-            })();
+            var baseUrl = "./js/";
         </script>
-
-
-
-
-        <link rel="stylesheet" href="css/main.css?t=1711036254448" />
     </head>
 
     <body>
 
-<main>
-    <p>Hello, world!</p>
+<div class="wrapper">
+<header class="header">
+    <div class="container">
+        <a href="#" class="header__logo">
+            <svg width="145" height="65">
+                <use
+                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#logo"
+                ></use>
+            </svg>
+        </a>
+        <div class="header__menu">
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item header__dropdown">
+                        <a href="#">ЖК (Проекты)</a>
+                        <span class="header__dropdown-inner">
+                            <span class="header__dropdown-list">
+                                <span class="header__dropdown-item">
+                                    <a href="#" class="hover-link">
+                                        <picture
+                                            ><source
+                                                srcset="
+                                                    https://transuyshstroy.netlify.app/img/links/link-img-01.webp
+                                                "
+                                                type="image/webp" />
+                                            <img
+                                                src="https://transuyshstroy.netlify.app/img/links/link-img-01.jpg"
+                                                alt=""
+                                        /></picture>
+                                        <span>ЖК Привилегия</span>
+                                    </a>
+                                </span>
+                                <span class="header__dropdown-item">
+                                    <a href="#" class="hover-link">
+                                        <picture
+                                            ><source
+                                                srcset="
+                                                    https://transuyshstroy.netlify.app/img/links/link-img-02.webp
+                                                "
+                                                type="image/webp" />
+                                            <img
+                                                src="https://transuyshstroy.netlify.app/img/links/link-img-02.jpg"
+                                                alt=""
+                                        /></picture>
+                                        <span>ЖК Центр Парк</span>
+                                    </a>
+                                </span>
+                                <span class="header__dropdown-item">
+                                    <a href="#" class="hover-link">
+                                        <picture
+                                            ><source
+                                                srcset="
+                                                    https://transuyshstroy.netlify.app/img/links/link-img-03.webp
+                                                "
+                                                type="image/webp" />
+                                            <img
+                                                src="https://transuyshstroy.netlify.app/img/links/link-img-03.jpg"
+                                                alt=""
+                                        /></picture>
+                                        <span>ЖК Яковлева Роща</span>
+                                    </a>
+                                </span>
+                                <span class="header__dropdown-item">
+                                    <a href="#" class="hover-link">
+                                        <picture
+                                            ><source
+                                                srcset="
+                                                    https://transuyshstroy.netlify.app/img/links/link-img-04.webp
+                                                "
+                                                type="image/webp" />
+                                            <img
+                                                src="https://transuyshstroy.netlify.app/img/links/link-img-04.jpg"
+                                                alt=""
+                                        /></picture>
+                                        <span>мкр. Восточный</span>
+                                    </a>
+                                </span>
+                                <span class="header__dropdown-item">
+                                    <a href="#" class="hover-link">
+                                        <picture
+                                            ><source
+                                                srcset="
+                                                    https://transuyshstroy.netlify.app/img/links/link-img-05.webp
+                                                "
+                                                type="image/webp" />
+                                            <img
+                                                src="https://transuyshstroy.netlify.app/img/links/link-img-05.jpg"
+                                                alt=""
+                                        /></picture>
+                                        <span>ЖК Яковлева Роща</span>
+                                    </a>
+                                </span>
+                            </span>
+                        </span>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#">Ком.недвижимость </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#">Ипотека</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#">Сервисы</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#">О компании</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#">Контакты</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#">Медиа-центр</a>
+                    </li>
+                </ul>
+            </nav>
+            <address class="header__tel">
+                <div class="header__tel-schedule">Ежедневно с 9:00 – 19:00</div>
+                <a href="#" class="header__tel-num hover-link"
+                    ><span class="header__tel-num-accent">+7 (4722)</span>
+                    78-97-56</a
+                >
+            </address>
+            <div class="header__city">
+                <div class="header__city-icon">
+                    <svg width="16" height="16">
+                        <use
+                            xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#pin"
+                        ></use>
+                    </svg>
+                </div>
+                <div class="header__city-select">
+                    <div class="select _select-active" data-id="1">
+                        <select
+                            id="city"
+                            hidden=""
+                            data-id="1"
+                            data-speed="150"
+                        >
+                            <option value="1">Белгород</option>
+                            <option value="2">Казань</option>
+                            <option value="3">Строитель</option>
+                        </select>
+                        <div class="select__body">
+                            <button type="button" class="select__title">
+                                <span class="select__value"
+                                    ><span class="select__content"
+                                        >Белгород</span
+                                    ></span
+                                >
+                            </button>
+                            <div hidden="" class="select__options">
+                                <div class="select__scroll">
+                                    <button
+                                        hidden=""
+                                        class="select__option"
+                                        data-value="1"
+                                        type="button"
+                                    >
+                                        Белгород</button
+                                    ><button
+                                        class="select__option"
+                                        data-value="2"
+                                        type="button"
+                                    >
+                                        Казань</button
+                                    ><button
+                                        class="select__option"
+                                        data-value="3"
+                                        type="button"
+                                    >
+                                        Строитель
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="header__banner">
+                <span class="header__banner-title"
+                    >75 лучших новостроек города</span
+                >
+                <span
+                    class="header__banner-icon btn btn--icon btn--white btn--circle"
+                >
+                    <svg width="22" height="22">
+                        <use
+                            xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                        ></use>
+                    </svg>
+                </span>
+            </a>
+            <div class="header__socials socials">
+                <div class="socials__title">Наши соц. сети:</div>
+                <div class="socials__list">
+                    <a href="#" class="socials__link socials__link--dark">
+                        <svg width="16" height="16">
+                            <use
+                                xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#vk"
+                            ></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="socials__link socials__link--dark">
+                        <svg width="16" height="16">
+                            <use
+                                xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#telegram"
+                            ></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="socials__link socials__link--dark">
+                        <svg width="16" height="16">
+                            <use
+                                xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#insta"
+                            ></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header-action">
+            <a href="#" class="header__fav-btn btn-round">
+                <svg width="16" height="16">
+                    <use
+                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#fav"
+                    ></use>
+                </svg>
+            </a>
+            <button
+                type="button"
+                class="header__search-btn btn-round"
+                aria-label="Поиск"
+            >
+                <svg width="16" height="16">
+                    <use
+                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#search"
+                    ></use>
+                </svg>
+            </button>
+            <button
+                type="button"
+                aria-label="Бургер меню"
+                class="header__burger btn-round icon-menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
 
 
-</main>
+    <div style="background: #333; height: 100vh"></div>
+
+    <div class="l-jk__types">
+<section class="types section types--small">
+    <div class="container">
+        <div class="types__title section__title h3">Другая недвижимость</div>
+        <div class="types__content" data-role="tabs">
+            <div class="types__categories">
+                <div class="types__category is-active" data-tabs-control="2">
+                    <div class="types__category-preview">
+                        <picture
+                            ><source
+                                srcset="
+                                    https://transuyshstroy.netlify.app/img/types/cat-3.webp
+                                "
+                                type="image/webp" />
+                            <img
+                                src="https://transuyshstroy.netlify.app/img/types/cat-3.png"
+                                alt=""
+                        /></picture>
+                    </div>
+                    <div class="types__category-name">Кладовые</div>
+                    <button
+                        type="button"
+                        class="types__category-btn btn btn--circle btn--greylight"
+                    >
+                        <svg width="20" height="20">
+                            <use
+                                xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                            ></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="types__category" data-tabs-control="3">
+                    <div class="types__category-preview">
+                        <picture
+                            ><source
+                                srcset="
+                                    https://transuyshstroy.netlify.app/img/types/cat-2.webp
+                                "
+                                type="image/webp" />
+                            <img
+                                src="https://transuyshstroy.netlify.app/img/types/cat-2.png"
+                                alt=""
+                        /></picture>
+                    </div>
+                    <div class="types__category-name">Паркинг</div>
+                    <button
+                        type="button"
+                        class="types__category-btn btn btn--circle btn--greylight"
+                    >
+                        <svg width="20" height="20">
+                            <use
+                                xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                            ></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="types__main">
+                <div class="types__item is-open" data-tabs-panel="2">
+                    <div class="types__item-info">
+                        <div class="types__item-name">Кладовые</div>
+                        <div class="types__item-desc">
+                            Кладовки становятся все более востребованными
+                            помещениями в новостройках. Хранение домашнего
+                            инструмента, утвари и спортинвентаря требует
+                            дополнительных метров. Обычно кладовки проектируются
+                            в подземном паркинге, на специальном техническом
+                            этаже или в квартирах.
+                        </div>
+                        <div class="types__item-details">
+                            <div class="types__item-detail">
+                                <span>Площадь</span>
+                                от 120 м2
+                            </div>
+                            <div class="types__item-detail">
+                                <span>Стоимость</span>
+                                от 50 тыс.
+                            </div>
+                            <div class="types__item-detail">
+                                <span>Объектов</span>
+                                120 кладовых
+                            </div>
+                        </div>
+                        <a
+                            href="#"
+                            class="types__item-btn btn btn--wide btn--icon"
+                        >
+                            Подробнее
+                            <svg width="18" height="18">
+                                <use
+                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                ></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="types__item-img">
+                        <picture
+                            ><source
+                                srcset="
+                                    https://transuyshstroy.netlify.app/img/types/item-02.webp
+                                "
+                                type="image/webp" />
+                            <img
+                                src="https://transuyshstroy.netlify.app/img/types/item-02.png"
+                                alt=""
+                        /></picture>
+                    </div>
+                </div>
+                <div class="types__item" data-tabs-panel="3">
+                    <div class="types__item-info">
+                        <div class="types__item-name">Паркинг</div>
+                        <div class="types__item-desc">
+                            Место, отведённое под стоянку автомобилей. В
+                            новостройках предусмотрены подземные, как правило,
+                            многоуровневые помещения, в которых каждый резидент
+                            может оставить свой транспорт. В современных домах
+                            это делается для охраны автомобилей от внешних
+                            факторов и организации концепции «двор без машин».
+                        </div>
+                        <div class="types__item-details">
+                            <div class="types__item-detail">
+                                <span>Площадь</span>
+                                до 12 м2
+                            </div>
+                            <div class="types__item-detail">
+                                <span>Стоимость</span>
+                                от 50 тыс.
+                            </div>
+                            <div class="types__item-detail">
+                                <span>Объектов</span>
+                                534 мест для паркинга
+                            </div>
+                        </div>
+                        <a
+                            href="#"
+                            class="types__item-btn btn btn--wide btn--icon"
+                        >
+                            Подробнее
+                            <svg width="18" height="18">
+                                <use
+                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                ></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="types__item-img">
+                        <picture
+                            ><source
+                                srcset="
+                                    https://transuyshstroy.netlify.app/img/types/item-03.webp
+                                "
+                                type="image/webp" />
+                            <img
+                                src="https://transuyshstroy.netlify.app/img/types/item-03.png"
+                                alt=""
+                        /></picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </div>
+
+    <div class="l-jk__rooms">
+<section class="rooms section" data-role="tabs">
+    <div class="rooms__container">
+        <div class="rooms__head">
+            <h2 class="rooms__title h3">Пример отделки</h2>
+            <div class="rooms__tabs-controls tabs-controls">
+                <button
+                    type="button"
+                    class="tabs-controls__item is-active"
+                    data-tabs-control="guestroom"
+                >
+                    Гостинная
+                </button>
+                <button
+                    type="button"
+                    class="tabs-controls__item"
+                    data-tabs-control="badroom"
+                >
+                    Спальня
+                </button>
+                <button
+                    type="button"
+                    class="tabs-controls__item"
+                    data-tabs-control="kazan"
+                >
+                    Прихожая
+                </button>
+                <button
+                    type="button"
+                    class="tabs-controls__item"
+                    data-tabs-control="kitchen"
+                >
+                    Кухня
+                </button>
+                <button
+                    type="button"
+                    class="tabs-controls__item"
+                    data-tabs-control="wc"
+                >
+                    Санузел
+                </button>
+            </div>
+        </div>
+        <div class="rooms__content is-open" data-tabs-panel="guestroom">
+            <div class="rooms__item">
+                <div class="rooms__item-content">
+                    <div class="rooms__item-img">
+                        <picture
+                            ><source
+                                srcset="
+                                    https://transuyshstroy.netlify.app/img/rooms/room-01.webp
+                                "
+                                type="image/webp" />
+                            <img
+                                src="https://transuyshstroy.netlify.app/img/rooms/room-01.jpg"
+                                alt=""
+                        /></picture>
+                    </div>
+                    <div class="rooms__item-details">
+                        <div class="rooms__item-detail">
+                            <div class="rooms__item-detail-point">
+                                <span></span>
+                            </div>
+                            <div class="rooms__item-detail-text">
+                                Обои под покраску
+                            </div>
+                        </div>
+                        <div class="rooms__item-detail">
+                            <div class="rooms__item-detail-point">
+                                <span></span>
+                            </div>
+                            <div class="rooms__item-detail-text">Раковина</div>
+                        </div>
+                        <div class="rooms__item-detail">
+                            <div class="rooms__item-detail-point">
+                                <span></span>
+                            </div>
+                            <div class="rooms__item-detail-text">Шкаф</div>
+                        </div>
+                        <div class="rooms__item-detail">
+                            <div class="rooms__item-detail-point">
+                                <span></span>
+                            </div>
+                            <div class="rooms__item-detail-text">Плитка</div>
+                        </div>
+                        <div class="rooms__item-detail">
+                            <div class="rooms__item-detail-point">
+                                <span></span>
+                            </div>
+                            <div class="rooms__item-detail-text">Дверь</div>
+                        </div>
+                        <div
+                            class="rooms__item-detail rooms__item-detail--right"
+                        >
+                            <div class="rooms__item-detail-point">
+                                <span></span>
+                            </div>
+                            <div class="rooms__item-detail-text">Окно</div>
+                        </div>
+                        <div
+                            class="rooms__item-detail rooms__item-detail--right"
+                        >
+                            <div class="rooms__item-detail-point">
+                                <span></span>
+                            </div>
+                            <div class="rooms__item-detail-text">Диван</div>
+                        </div>
+                        <div
+                            class="rooms__item-detail rooms__item-detail--right"
+                        >
+                            <div class="rooms__item-detail-point">
+                                <span></span>
+                            </div>
+                            <div class="rooms__item-detail-text">Шкаф</div>
+                        </div>
+                        <div
+                            class="rooms__item-detail rooms__item-detail--right"
+                        >
+                            <div class="rooms__item-detail-point">
+                                <span></span>
+                            </div>
+                            <div class="rooms__item-detail-text">Потолок</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rooms__content" data-tabs-panel="badroom">
+            <div class="rooms__item">
+                <div class="rooms__item-content">
+                    <div class="rooms__item-img">
+                        <picture
+                            ><source
+                                srcset="
+                                    https://transuyshstroy.netlify.app/img/rooms/room-01.webp
+                                "
+                                type="image/webp" />
+                            <img
+                                src="https://transuyshstroy.netlify.app/img/rooms/room-01.jpg"
+                                alt=""
+                        /></picture>
+                    </div>
+                    <div class="rooms__item-details">
+                        <div class="rooms__item-detail">
+                            <div class="rooms__item-detail-point">
+                                <span></span>
+                            </div>
+                            <div class="rooms__item-detail-text">
+                                Обои под покраску 2
+                            </div>
+                        </div>
+                        <div class="rooms__item-detail">
+                            <div class="rooms__item-detail-point">
+                                <span></span>
+                            </div>
+                            <div class="rooms__item-detail-text">Окно 2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rooms__content" data-tabs-panel="kitchen">
+            <div class="rooms__item">
+                <div class="rooms__item-content">
+                    <div class="rooms__item-img">
+                        <picture
+                            ><source
+                                srcset="
+                                    https://transuyshstroy.netlify.app/img/rooms/room-01.webp
+                                "
+                                type="image/webp" />
+                            <img
+                                src="https://transuyshstroy.netlify.app/img/rooms/room-01.jpg"
+                                alt=""
+                        /></picture>
+                    </div>
+                    <div class="rooms__item-details">
+                        <div class="rooms__item-detail">
+                            <div class="rooms__item-detail-point">
+                                <span></span>
+                            </div>
+                            <div class="rooms__item-detail-text">
+                                Обои под покраску 4
+                            </div>
+                        </div>
+                        <div class="rooms__item-detail">
+                            <div class="rooms__item-detail-point">
+                                <span></span>
+                            </div>
+                            <div class="rooms__item-detail-text">Окно 4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rooms__text">
+            Все квартиры в ЖК «Центр Парк» сдаются с готовой отделкой. На полу
+            будет качественный ламинат, на стенах — обои под покраску, во всей
+            квартире — натяжной потолок, установлены межкомнатные двери и
+            входные двери с дополнительной шумоизоляцией.
+        </div>
+    </div>
+</section>
+
+    </div>
+
+    <div class="l-jk__plans">
+        <section class="section-plans js-slider-root">
+            <div class="container">
+                <div class="section-plans__header">
+                    <h2 class="section-plans__h1">Планировки</h2>
+                    <div class="section-plans__nav">
+                        <nav class="nav-arrows">
+                            <ul>
+                                <li>
+                                    <button class="btn-arrow js-slider-prev">
+                                        <svg class="icon">
+                                            <use
+                                                xlink:href="img/icons/general/sprite.svg#arrow-left"
+                                            ></use>
+                                        </svg>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="btn-arrow js-slider-next">
+                                        <svg class="icon flip-x">
+                                            <use
+                                                xlink:href="img/icons/general/sprite.svg#arrow-left"
+                                            ></use>
+                                        </svg>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="slider-plans">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="apartment-item">
+                                    <div class="apartment-item__head--reverse">
+                                        <div class="apartment-item__info">
+                                            <div
+                                                class="apartment-item__address"
+                                            >
+                                                <svg width="16" height="16">
+                                                    <use
+                                                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#pin"
+                                                    ></use>
+                                                </svg>
+                                                г. Белгород, ул. Щорса, д. 37в
+                                            </div>
+                                            <div class="apartment-item__square">
+                                                <div
+                                                    class="apartment-item__title"
+                                                >
+                                                    1 комнатная 62.22 м<sup
+                                                        >2</sup
+                                                    >
+                                                </div>
+                                                <div
+                                                    class="apartment-item__square__floor"
+                                                >
+                                                    16 этаж
+                                                </div>
+                                            </div>
+
+                                            <div class="apartment-item__jk">
+                                                <svg class="icon">
+                                                    <use
+                                                        xlink:href="img/icons/general/sprite.svg#house"
+                                                    ></use>
+                                                </svg>
+                                                <span>ЖК «Привилегия»</span>
+                                            </div>
+                                        </div>
+                                        <div class="apartment-item__statuses">
+                                            <div
+                                                class="apartment-item__status status status--border"
+                                            >
+                                                В ипотеку
+                                            </div>
+                                            <div
+                                                class="apartment-item__status status status--dark"
+                                            >
+                                                <div
+                                                    class="status__circle"
+                                                    style="
+                                                        --status-color: #32ce18;
+                                                    "
+                                                ></div>
+                                                <div class="status__text">
+                                                    Идут продажи
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="apartment-item__main">
+                                        <div class="apartment-item__img">
+                                            <picture
+                                                ><source
+                                                    srcset="
+                                                        https://transuyshstroy.netlify.app/img/apartments/a-scheme-01.webp
+                                                    "
+                                                    type="image/webp" />
+                                                <img
+                                                    src="https://transuyshstroy.netlify.app/img/apartments/a-scheme-01.png"
+                                                    alt=""
+                                            /></picture>
+                                        </div>
+                                    </div>
+                                    <div class="apartment-item__details">
+                                        <div
+                                            class="apartment-item__details-item"
+                                        >
+                                            10 871 600 ₽
+                                        </div>
+                                        <div
+                                            class="apartment-item__details-item apartment-item__details-item--light"
+                                        >
+                                            261 212 руб/м<sup>2</sup>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            class="apartment-item__fav"
+                                        >
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#fav"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                        <a href="#" class="apartment-item__add">
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="apartment-item">
+                                    <div class="apartment-item__head--reverse">
+                                        <div class="apartment-item__info">
+                                            <div
+                                                class="apartment-item__address"
+                                            >
+                                                <svg width="16" height="16">
+                                                    <use
+                                                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#pin"
+                                                    ></use>
+                                                </svg>
+                                                г. Белгород, ул. Щорса, д. 37в
+                                            </div>
+
+                                            <div class="apartment-item__square">
+                                                <div
+                                                    class="apartment-item__title"
+                                                >
+                                                    2 комнатная 66.9 м<sup
+                                                        >2</sup
+                                                    >
+                                                </div>
+                                                <div
+                                                    class="apartment-item__square__floor"
+                                                >
+                                                    16 этаж
+                                                </div>
+                                            </div>
+
+                                            <div class="apartment-item__jk">
+                                                <svg class="icon">
+                                                    <use
+                                                        xlink:href="img/icons/general/sprite.svg#house"
+                                                    ></use>
+                                                </svg>
+                                                <span>ЖК «Привилегия»</span>
+                                            </div>
+                                        </div>
+                                        <div class="apartment-item__statuses">
+                                            <div
+                                                class="apartment-item__status status status--border"
+                                            >
+                                                В ипотеку
+                                            </div>
+                                            <div
+                                                class="apartment-item__status status status--dark"
+                                            >
+                                                <div
+                                                    class="status__circle"
+                                                    style="
+                                                        --status-color: #32ce18;
+                                                    "
+                                                ></div>
+                                                <div class="status__text">
+                                                    Идут продажи
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="apartment-item__main">
+                                        <div class="apartment-item__img">
+                                            <picture
+                                                ><source
+                                                    srcset="
+                                                        https://transuyshstroy.netlify.app/img/apartments/a-scheme-02.webp
+                                                    "
+                                                    type="image/webp" />
+                                                <img
+                                                    src="https://transuyshstroy.netlify.app/img/apartments/a-scheme-02.png"
+                                                    alt=""
+                                            /></picture>
+                                        </div>
+                                    </div>
+                                    <div class="apartment-item__details">
+                                        <div
+                                            class="apartment-item__details-item"
+                                        >
+                                            27 909 698 ₽
+                                        </div>
+                                        <div
+                                            class="apartment-item__details-item apartment-item__details-item--light"
+                                        >
+                                            261 212 руб/м<sup>2</sup>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            class="apartment-item__fav"
+                                        >
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#fav"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                        <a href="#" class="apartment-item__add">
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="apartment-item">
+                                    <div class="apartment-item__head--reverse">
+                                        <div class="apartment-item__info">
+                                            <div
+                                                class="apartment-item__address"
+                                            >
+                                                <svg width="16" height="16">
+                                                    <use
+                                                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#pin"
+                                                    ></use>
+                                                </svg>
+                                                г. Белгород, ул. Щорса, д. 37в
+                                            </div>
+
+                                            <div class="apartment-item__square">
+                                                <div
+                                                    class="apartment-item__title"
+                                                >
+                                                    2 комнатная 77.1 м<sup
+                                                        >2</sup
+                                                    >
+                                                </div>
+                                                <div
+                                                    class="apartment-item__square__floor"
+                                                >
+                                                    16 этаж
+                                                </div>
+                                            </div>
+
+                                            <div class="apartment-item__jk">
+                                                <svg class="icon">
+                                                    <use
+                                                        xlink:href="img/icons/general/sprite.svg#house"
+                                                    ></use>
+                                                </svg>
+                                                <span>ЖК «Привилегия»</span>
+                                            </div>
+                                        </div>
+                                        <div class="apartment-item__statuses">
+                                            <div
+                                                class="apartment-item__status status status--border"
+                                            >
+                                                В ипотеку
+                                            </div>
+                                            <div
+                                                class="apartment-item__status status status--dark"
+                                            >
+                                                <div
+                                                    class="status__circle"
+                                                    style="
+                                                        --status-color: #32ce18;
+                                                    "
+                                                ></div>
+                                                <div class="status__text">
+                                                    Идут продажи
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="apartment-item__main">
+                                        <div class="apartment-item__img">
+                                            <picture
+                                                ><source
+                                                    srcset="
+                                                        https://transuyshstroy.netlify.app/img/apartments/a-scheme-03.webp
+                                                    "
+                                                    type="image/webp" />
+                                                <img
+                                                    src="https://transuyshstroy.netlify.app/img/apartments/a-scheme-03.png"
+                                                    alt=""
+                                            /></picture>
+                                        </div>
+                                    </div>
+                                    <div class="apartment-item__details">
+                                        <div
+                                            class="apartment-item__details-item"
+                                        >
+                                            27 909 698 ₽
+                                        </div>
+                                        <div
+                                            class="apartment-item__details-item apartment-item__details-item--light"
+                                        >
+                                            261 212 руб/м<sup>2</sup>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            class="apartment-item__fav"
+                                        >
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#fav"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                        <a href="#" class="apartment-item__add">
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="apartment-item">
+                                    <div class="apartment-item__head--reverse">
+                                        <div class="apartment-item__info">
+                                            <div
+                                                class="apartment-item__address"
+                                            >
+                                                <svg width="16" height="16">
+                                                    <use
+                                                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#pin"
+                                                    ></use>
+                                                </svg>
+                                                г. Белгород, ул. Щорса, д. 37в
+                                            </div>
+
+                                            <div class="apartment-item__square">
+                                                <div
+                                                    class="apartment-item__title"
+                                                >
+                                                    2 комнатная 77.1 м<sup
+                                                        >2</sup
+                                                    >
+                                                </div>
+                                                <div
+                                                    class="apartment-item__square__floor"
+                                                >
+                                                    16 этаж
+                                                </div>
+                                            </div>
+
+                                            <div class="apartment-item__jk">
+                                                <svg class="icon">
+                                                    <use
+                                                        xlink:href="img/icons/general/sprite.svg#house"
+                                                    ></use>
+                                                </svg>
+                                                <span>ЖК «Привилегия»</span>
+                                            </div>
+                                        </div>
+                                        <div class="apartment-item__statuses">
+                                            <div
+                                                class="apartment-item__status status status--border"
+                                            >
+                                                В ипотеку
+                                            </div>
+                                            <div
+                                                class="apartment-item__status status status--dark"
+                                            >
+                                                <div
+                                                    class="status__circle"
+                                                    style="
+                                                        --status-color: #32ce18;
+                                                    "
+                                                ></div>
+                                                <div class="status__text">
+                                                    Идут продажи
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="apartment-item__main">
+                                        <div class="apartment-item__img">
+                                            <picture
+                                                ><source
+                                                    srcset="
+                                                        https://transuyshstroy.netlify.app/img/apartments/a-scheme-03.webp
+                                                    "
+                                                    type="image/webp" />
+                                                <img
+                                                    src="https://transuyshstroy.netlify.app/img/apartments/a-scheme-03.png"
+                                                    alt=""
+                                            /></picture>
+                                        </div>
+                                    </div>
+                                    <div class="apartment-item__details">
+                                        <div
+                                            class="apartment-item__details-item"
+                                        >
+                                            27 909 698 ₽
+                                        </div>
+                                        <div
+                                            class="apartment-item__details-item apartment-item__details-item--light"
+                                        >
+                                            261 212 руб/м<sup>2</sup>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            class="apartment-item__fav"
+                                        >
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#fav"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                        <a href="#" class="apartment-item__add">
+                                            <svg width="20" height="20">
+                                                <use
+                                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="l-jk__programs">
+<section class="programs section">
+    <div class="container">
+        <h2 class="programs__title section__title h3">Ипотечные программы</h2>
+        <div class="programs__list cards">
+            <div class="programs-item card">
+                <div class="programs-item__img">
+                    <picture
+                        ><source
+                            srcset="
+                                https://transuyshstroy.netlify.app/img/programs/program-01.webp
+                            "
+                            type="image/webp" />
+                        <img
+                            src="https://transuyshstroy.netlify.app/img/programs/program-01.png"
+                            alt=""
+                    /></picture>
+                </div>
+                <div class="programs-item__info">
+                    <div class="programs-item__top">
+                        <div class="programs-item__desc">
+                            <a href="#" class="programs-item__title h3"
+                                >Господдержка</a
+                            >
+                            <div class="programs-item__subtitle">
+                                Ипотека со сниженной ставкой на весь срок
+                                кредита
+                            </div>
+                        </div>
+                        <div class="programs-item__icon">
+                            <svg width="24" height="24">
+                                <use
+                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#buildings"
+                                ></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="programs-item__panel">
+                        <dl class="programs-item__panel-list">
+                            <div class="programs-item__panel-info">
+                                <dt>от 15%</dt>
+                                <dd>Первоначальный взнос</dd>
+                            </div>
+                            <div class="programs-item__panel-info">
+                                <dt>5%</dt>
+                                <dd>Процентная ставка</dd>
+                            </div>
+                            <div class="programs-item__panel-info">
+                                <dt>до 30 лет</dt>
+                                <dd>Срок кредита</dd>
+                            </div>
+                            <div class="programs-item__panel-info">
+                                <dt>до 9 млн</dt>
+                                <dd>умма кредита</dd>
+                            </div>
+                        </dl>
+                        <a href="#" class="programs-item__panel-add">
+                            <span>Подробнее</span>
+                            <svg width="20" height="20">
+                                <use
+                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                ></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="programs-item card">
+                <div class="programs-item__img">
+                    <picture
+                        ><source
+                            srcset="
+                                https://transuyshstroy.netlify.app/img/programs/program-02.webp
+                            "
+                            type="image/webp" />
+                        <img
+                            src="https://transuyshstroy.netlify.app/img/programs/program-02.png"
+                            alt=""
+                    /></picture>
+                </div>
+                <div class="programs-item__info">
+                    <div class="programs-item__top">
+                        <div class="programs-item__desc">
+                            <a href="#" class="programs-item__title h3"
+                                >Семейная ипотека</a
+                            >
+                            <div class="programs-item__subtitle">
+                                Льготная ипотека для семей с детьми
+                            </div>
+                        </div>
+                        <div class="programs-item__icon">
+                            <svg width="24" height="24">
+                                <use
+                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#family"
+                                ></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="programs-item__panel">
+                        <dl class="programs-item__panel-list">
+                            <div class="programs-item__panel-info">
+                                <dt>от 15%</dt>
+                                <dd>Первоначальный взнос</dd>
+                            </div>
+                            <div class="programs-item__panel-info">
+                                <dt>5%</dt>
+                                <dd>Процентная ставка</dd>
+                            </div>
+                            <div class="programs-item__panel-info">
+                                <dt>до 30 лет</dt>
+                                <dd>Срок кредита</dd>
+                            </div>
+                            <div class="programs-item__panel-info">
+                                <dt>до 9 млн</dt>
+                                <dd>умма кредита</dd>
+                            </div>
+                        </dl>
+                        <a href="#" class="programs-item__panel-add">
+                            <span>Подробнее</span>
+                            <svg width="20" height="20">
+                                <use
+                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                ></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="programs-item card">
+                <div class="programs-item__img">
+                    <picture
+                        ><source
+                            srcset="
+                                https://transuyshstroy.netlify.app/img/programs/program-03.webp
+                            "
+                            type="image/webp" />
+                        <img
+                            src="https://transuyshstroy.netlify.app/img/programs/program-03.png"
+                            alt=""
+                    /></picture>
+                </div>
+                <div class="programs-item__info">
+                    <div class="programs-item__top">
+                        <div class="programs-item__desc">
+                            <a href="#" class="programs-item__title h3"
+                                >IT ипотека</a
+                            >
+                            <div class="programs-item__subtitle">
+                                Льготная ипотека для сотрудников IT компаний
+                            </div>
+                        </div>
+                        <div class="programs-item__icon">
+                            <svg width="24" height="24">
+                                <use
+                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#pc"
+                                ></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="programs-item__panel">
+                        <dl class="programs-item__panel-list">
+                            <div class="programs-item__panel-info">
+                                <dt>от 15%</dt>
+                                <dd>Первоначальный взнос</dd>
+                            </div>
+                            <div class="programs-item__panel-info">
+                                <dt>5%</dt>
+                                <dd>Процентная ставка</dd>
+                            </div>
+                            <div class="programs-item__panel-info">
+                                <dt>до 30 лет</dt>
+                                <dd>Срок кредита</dd>
+                            </div>
+                            <div class="programs-item__panel-info">
+                                <dt>до 9 млн</dt>
+                                <dd>умма кредита</dd>
+                            </div>
+                        </dl>
+                        <a href="#" class="programs-item__panel-add">
+                            <span>Подробнее</span>
+                            <svg width="20" height="20">
+                                <use
+                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                ></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="programs-item card">
+                <div class="programs-item__img">
+                    <picture
+                        ><source
+                            srcset="
+                                https://transuyshstroy.netlify.app/img/programs/program-04.webp
+                            "
+                            type="image/webp" />
+                        <img
+                            src="https://transuyshstroy.netlify.app/img/programs/program-04.png"
+                            alt=""
+                    /></picture>
+                </div>
+                <div class="programs-item__info">
+                    <div class="programs-item__top">
+                        <div class="programs-item__desc">
+                            <a href="#" class="programs-item__title h3"
+                                >Губернаторская</a
+                            >
+                            <div class="programs-item__subtitle">
+                                Субсидирование из областного бюджета для
+                                работников бюджетной сферы
+                            </div>
+                        </div>
+                        <div class="programs-item__icon">
+                            <svg width="24" height="24">
+                                <use
+                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#guber"
+                                ></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="programs-item__panel">
+                        <dl class="programs-item__panel-list">
+                            <div class="programs-item__panel-info">
+                                <dt>не выше 8%</dt>
+                                <dd>Процентная ставка</dd>
+                            </div>
+                            <div class="programs-item__panel-info">
+                                <dt>фикс 6%</dt>
+                                <dd>Первые 5 ле</dd>
+                            </div>
+                        </dl>
+                        <a href="#" class="programs-item__panel-add">
+                            <span>Подробнее</span>
+                            <svg width="20" height="20">
+                                <use
+                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                ></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </div>
+
+    <div class="l-jk__docs">
+        <section class="section-docs">
+            <div class="container">
+                <h2 class="section-docs__h1">Документация</h2>
+                <div class="grid-docs">
+                    <div>
+                        <article class="card-doc">
+                            <div class="card-doc__header">
+                                <svg class="icon">
+                                    <use
+                                        xlink:href="img/icons/general/sprite.svg#document"
+                                    ></use>
+                                </svg>
+                                <span>Жилой дом 1</span>
+                            </div>
+                            <div class="card-doc__btn-download">
+                                <a href="#" class="btn-download">
+                                    <span
+                                        >Скачать<span class="btn-download__ext"
+                                            >.pdf 2,6 Mb</span
+                                        ></span
+                                    >
+                                    <svg class="icon">
+                                        <use
+                                            xlink:href="img/icons/general/sprite.svg#upload-file"
+                                        ></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div>
+                        <article class="card-doc">
+                            <div class="card-doc__header">
+                                <svg class="icon">
+                                    <use
+                                        xlink:href="img/icons/general/sprite.svg#document"
+                                    ></use>
+                                </svg>
+                                <span
+                                    >Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Culpa, quidem! Sunt et
+                                    illum nisi sapiente perspiciatis vel modi?
+                                </span>
+                            </div>
+                            <div class="card-doc__btn-download">
+                                <a href="#" class="btn-download">
+                                    <span
+                                        >Скачать<span class="btn-download__ext"
+                                            >.pdf 2,6 Mb</span
+                                        ></span
+                                    >
+                                    <svg class="icon">
+                                        <use
+                                            xlink:href="img/icons/general/sprite.svg#upload-file"
+                                        ></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div>
+                        <article class="card-doc">
+                            <div class="card-doc__header">
+                                <svg class="icon">
+                                    <use
+                                        xlink:href="img/icons/general/sprite.svg#document"
+                                    ></use>
+                                </svg>
+                                <span>Паркинг</span>
+                            </div>
+                            <div class="card-doc__btn-download">
+                                <a href="#" class="btn-download">
+                                    <span
+                                        >Скачать<span class="btn-download__ext"
+                                            >.pdf 2,6 Mb</span
+                                        ></span
+                                    >
+                                    <svg class="icon">
+                                        <use
+                                            xlink:href="img/icons/general/sprite.svg#upload-file"
+                                        ></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="l-jk__news">
+        <section class="section-news js-slider-root">
+            <div class="container">
+                <div class="section-news__header">
+                    <h2 class="section-news__h1">Новости</h2>
+                    <div class="section-news__nav">
+                        <nav class="nav-arrows">
+                            <ul>
+                                <li>
+                                    <button class="btn-arrow js-slider-prev">
+                                        <svg class="icon">
+                                            <use
+                                                xlink:href="img/icons/general/sprite.svg#arrow-left"
+                                            ></use>
+                                        </svg>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="btn-arrow js-slider-next">
+                                        <svg class="icon flip-x">
+                                            <use
+                                                xlink:href="img/icons/general/sprite.svg#arrow-left"
+                                            ></use>
+                                        </svg>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="slider-news">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <article class="card-news">
+                                    <div class="card-news__body">
+                                        <div class="card-news__tags">
+                                            <div class="card-news__tags__item">
+                                                Новости
+                                            </div>
+                                        </div>
+
+                                        <h2 class="card-news__h1">
+                                            <a href="#"
+                                                >Старт продаж квартир в новых
+                                                корпусах проекта «Зелёный
+                                                парк»</a
+                                            >
+                                        </h2>
+                                        <div class="card-news__desc">
+                                            Мы строим дома для людей, в которых
+                                            хочется жить. Возводим
+                                            функциональные предприятия, в
+                                            которых комфортно работать.
+                                        </div>
+                                    </div>
+                                    <div class="card-news__footer">
+                                        <time class="card-news__date">
+                                            <div class="card-news__date__day">
+                                                18
+                                            </div>
+                                            <div class="card-news__date__month">
+                                                декабрь <br />
+                                                2023
+                                            </div>
+                                        </time>
+                                        <button class="btn-plus">
+                                            <svg class="icon">
+                                                <use
+                                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="card-news">
+                                    <div class="card-news__body">
+                                        <div class="card-news__tags">
+                                            <div class="card-news__tags__item">
+                                                Новости
+                                            </div>
+                                        </div>
+
+                                        <h2 class="card-news__h1">
+                                            <a href="#"
+                                                >Новая рассрочка на апарт-отель
+                                                «Вольта»</a
+                                            >
+                                        </h2>
+                                        <div class="card-news__desc">
+                                            Мы строим дома для людей, в которых
+                                            хочется жить. Возводим
+                                            функциональные предприятия, в
+                                            которых комфортно работать.
+                                        </div>
+                                    </div>
+                                    <div class="card-news__footer">
+                                        <time class="card-news__date">
+                                            <div class="card-news__date__day">
+                                                14
+                                            </div>
+                                            <div class="card-news__date__month">
+                                                декабрь <br />
+                                                2023
+                                            </div>
+                                        </time>
+                                        <button class="btn-plus">
+                                            <svg class="icon">
+                                                <use
+                                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="card-news">
+                                    <div class="card-news__body">
+                                        <div class="card-news__tags">
+                                            <div class="card-news__tags__item">
+                                                Новости
+                                            </div>
+                                        </div>
+
+                                        <h2 class="card-news__h1">
+                                            <a href="#"
+                                                >Новая программа «Ипотека 9%»</a
+                                            >
+                                        </h2>
+                                        <div class="card-news__desc">
+                                            Мы строим дома для людей, в которых
+                                            хочется жить. Возводим
+                                            функциональные предприятия, в
+                                            которых комфортно работать.
+                                        </div>
+                                    </div>
+                                    <div class="card-news__footer">
+                                        <time class="card-news__date">
+                                            <div class="card-news__date__day">
+                                                12
+                                            </div>
+                                            <div class="card-news__date__month">
+                                                декабрь <br />
+                                                2023
+                                            </div>
+                                        </time>
+                                        <button class="btn-plus">
+                                            <svg class="icon">
+                                                <use
+                                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="card-news">
+                                    <div class="card-news__body">
+                                        <div class="card-news__tags">
+                                            <div class="card-news__tags__item">
+                                                Новости
+                                            </div>
+                                        </div>
+
+                                        <h2 class="card-news__h1">
+                                            <a href="#"
+                                                >Старт продаж квартир в новых
+                                                корпусах проекта «Зелёный
+                                                парк»</a
+                                            >
+                                        </h2>
+                                        <div class="card-news__desc">
+                                            Мы строим дома для людей, в которых
+                                            хочется жить. Возводим
+                                            функциональные предприятия, в
+                                            которых комфортно работать.
+                                        </div>
+                                    </div>
+                                    <div class="card-news__footer">
+                                        <time class="card-news__date">
+                                            <div class="card-news__date__day">
+                                                18
+                                            </div>
+                                            <div class="card-news__date__month">
+                                                декабрь <br />
+                                                2023
+                                            </div>
+                                        </time>
+                                        <button class="btn-plus">
+                                            <svg class="icon">
+                                                <use
+                                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="card-news">
+                                    <div class="card-news__body">
+                                        <div class="card-news__tags">
+                                            <div class="card-news__tags__item">
+                                                Новости
+                                            </div>
+                                        </div>
+
+                                        <h2 class="card-news__h1">
+                                            <a href="#"
+                                                >Новая рассрочка на апарт-отель
+                                                «Вольта»</a
+                                            >
+                                        </h2>
+                                        <div class="card-news__desc">
+                                            Мы строим дома для людей, в которых
+                                            хочется жить. Возводим
+                                            функциональные предприятия, в
+                                            которых комфортно работать.
+                                        </div>
+                                    </div>
+                                    <div class="card-news__footer">
+                                        <time class="card-news__date">
+                                            <div class="card-news__date__day">
+                                                14
+                                            </div>
+                                            <div class="card-news__date__month">
+                                                декабрь <br />
+                                                2023
+                                            </div>
+                                        </time>
+                                        <button class="btn-plus">
+                                            <svg class="icon">
+                                                <use
+                                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="swiper-slide">
+                                <article class="card-news">
+                                    <div class="card-news__body">
+                                        <div class="card-news__tags">
+                                            <div class="card-news__tags__item">
+                                                Новости
+                                            </div>
+                                        </div>
+
+                                        <h2 class="card-news__h1">
+                                            <a href="#"
+                                                >Новая программа «Ипотека 9%»</a
+                                            >
+                                        </h2>
+                                        <div class="card-news__desc">
+                                            Мы строим дома для людей, в которых
+                                            хочется жить. Возводим
+                                            функциональные предприятия, в
+                                            которых комфортно работать.
+                                        </div>
+                                    </div>
+                                    <div class="card-news__footer">
+                                        <time class="card-news__date">
+                                            <div class="card-news__date__day">
+                                                12
+                                            </div>
+                                            <div class="card-news__date__month">
+                                                декабрь <br />
+                                                2023
+                                            </div>
+                                        </time>
+                                        <button class="btn-plus">
+                                            <svg class="icon">
+                                                <use
+                                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                                ></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-news__btn-more">
+                    <a href="#" class="btn btn--outline btn--wide"
+                        >Все новости</a
+                    >
+                </div>
+            </div>
+        </section>
+    </div>
+
+<footer class="footer">
+    <div class="footer__wrapper">
+        <div class="container">
+            <div class="footer__top">
+                <h2 class="footer__title h2">Остались вопросы?</h2>
+                <form action="#" class="footer__form">
+                    <div class="footer__form-row">
+                        <div class="form-group">
+                            <label for="f-name" class="form-label"></label>
+                            <input
+                                type="text"
+                                id="f-name"
+                                class="form-control form-control--transparent"
+                                placeholder="Ваше имя"
+                                data-required=""
+                                data-validate=""
+                            />
+                            <div class="form-error">
+                                <div class="form-error__icon">
+                                    <svg width="20" height="20">
+                                        <use
+                                            xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#info"
+                                        ></use>
+                                    </svg>
+                                </div>
+                                <div class="form-error__cloud">
+                                    Заполните поле
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="f-tel" class="form-label"></label>
+                            <input
+                                type="tel"
+                                id="f-tel"
+                                class="form-control form-control--transparent"
+                                placeholder="+7 999 999 99 99"
+                                data-required=""
+                                data-validate=""
+                                inputmode="text"
+                            />
+                            <div class="form-error">
+                                <div class="form-error__icon">
+                                    <svg width="20" height="20">
+                                        <use
+                                            xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#info"
+                                        ></use>
+                                    </svg>
+                                </div>
+                                <div class="form-error__cloud">
+                                    Текст ошибки
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="f-email" class="form-label"></label>
+                            <input
+                                type="email"
+                                id="f-email"
+                                class="form-control form-control--transparent"
+                                placeholder="Ваш e-mail"
+                                data-required=""
+                                data-validate=""
+                            />
+                            <div class="form-error">
+                                <div class="form-error__icon">
+                                    <svg width="20" height="20">
+                                        <use
+                                            xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#info"
+                                        ></use>
+                                    </svg>
+                                </div>
+                                <div class="form-error__cloud">
+                                    Текст ошибки
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            type="submit"
+                            class="footer__form-submit btn btn--icon"
+                        >
+                            Оставить заявку
+                            <svg width="18" height="18">
+                                <use
+                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus "
+                                ></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="form-agreement form-agreement--whte">
+                        Нажимая “Отправить” вы соглашаетесь с
+                        <a href="#" class="hover-link"
+                            >политикой конфиденциальности</a
+                        >
+                    </div>
+                </form>
+            </div>
+            <div class="footer__main">
+                <address class="footer__contacts">
+                    <span class="footer__contacts-section">
+                        <a
+                            href="tel:+7(4722)78-95-48"
+                            class="footer__contacts-tel hover-link"
+                            >+7 (4722) 78-95-48</a
+                        >
+                        <a
+                            href="mailto:sale@op.tus-pgs.ru"
+                            class="footer__contacts-email hover-link"
+                            >sale@op.tus-pgs.ru</a
+                        >
+                        <span class="footer__contacts-adress">
+                            <span class="footer__contacts-adress-icon">
+                                <svg width="22" height="22">
+                                    <use
+                                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#pin"
+                                    ></use>
+                                </svg>
+                            </span>
+                            <span class="footer__contacts-adress-name">
+                                г. Белгород, 308009, ул. Харьковская д.5, корп.
+                                1, кв. 12, ЖК Париж
+                            </span>
+                        </span>
+                        <span class="footer__contacts-adress">
+                            <span class="footer__contacts-adress-icon">
+                                <svg width="22" height="22">
+                                    <use
+                                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#timer"
+                                    ></use>
+                                </svg>
+                            </span>
+                            <span class="footer__contacts-adress-name">
+                                пн - пт : 9:00 - 18:00 <br />
+                                сб: 10:00 - 17:00
+                            </span>
+                        </span>
+                    </span>
+                    <span class="footer__contacts-section">
+                        <a
+                            href="tel:+7(495)169-69-69"
+                            class="footer__contacts-tel hover-link"
+                            >+7 (495) 169-69-69</a
+                        >
+                        <a
+                            href="mailto:sale@op.tus-pgs.ru"
+                            class="footer__contacts-email hover-link"
+                            >sale@op.tus-pgs.ru</a
+                        >
+                        <span class="footer__contacts-adress">
+                            <span class="footer__contacts-adress-icon">
+                                <svg width="22" height="22">
+                                    <use
+                                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#pin"
+                                    ></use>
+                                </svg>
+                            </span>
+                            <span class="footer__contacts-adress-name">
+                                г. Строитель, 309070, ул. Луговая, д. 1
+                            </span>
+                        </span>
+                        <span class="footer__contacts-adress">
+                            <span class="footer__contacts-adress-icon">
+                                <svg width="22" height="22">
+                                    <use
+                                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#timer"
+                                    ></use>
+                                </svg>
+                            </span>
+                            <span class="footer__contacts-adress-name">
+                                пн - пт : 9:00 - 18:00 <br />
+                                сб: 10:00 - 17:00
+                            </span>
+                        </span>
+                    </span>
+                </address>
+                <div class="footer__links">
+                    <nav class="footer__nav">
+                        <div class="footer__nav-col">
+                            <a href="" class="footer__nav-link hover-link"
+                                >ЖК (Проекты)</a
+                            >
+                            <a href="" class="footer__nav-link hover-link"
+                                >Ком.недвижимость
+                            </a>
+                            <a href="" class="footer__nav-link hover-link"
+                                >Ипотека</a
+                            >
+                            <a href="" class="footer__nav-link hover-link"
+                                >Сервисы</a
+                            >
+                        </div>
+                        <div class="footer__nav-col">
+                            <a href="" class="footer__nav-link hover-link"
+                                >О компании</a
+                            >
+                            <a href="" class="footer__nav-link hover-link"
+                                >Контакты</a
+                            >
+                            <a href="" class="footer__nav-link hover-link"
+                                >Медиа-центр</a
+                            >
+                        </div>
+                    </nav>
+                    <div class="footer__socials socials">
+                        <div class="socials__title">Наши соц. сети:</div>
+                        <div class="socials__list">
+                            <a href="" class="socials__link">
+                                <svg width="16" height="16">
+                                    <use
+                                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#vk"
+                                    ></use>
+                                </svg>
+                            </a>
+                            <a href="" class="socials__link">
+                                <svg width="16" height="16">
+                                    <use
+                                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#telegram"
+                                    ></use>
+                                </svg>
+                            </a>
+                            <a href="" class="socials__link">
+                                <svg width="16" height="16">
+                                    <use
+                                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#insta"
+                                    ></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <a href="#" class="footer__logo">
+                    <svg width="145" height="65">
+                        <use
+                            xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#logo"
+                        ></use>
+                    </svg>
+                </a>
+                <div class="footer__company">
+                    ООО «Специализированный застройщик «Трансюжстрой»
+                </div>
+                <a href="#" class="footer__policy"
+                    >Политика конфиденциальности</a
+                >
+                <div class="footer__developer">
+                    <span>Разработка сайта</span>
+                    <svg width="88" height="28">
+                        <use
+                            xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#developer"
+                        ></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</div>
 
 
-        <script src="https://api-maps.yandex.ru/2.1/?apikey=28814c4b-cb66-4cc3-8baa-48e067cad83a&lang=ru_RU"></script>
+
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
-        <script src="js/main.js?t=1711036254448"></script>
+        <script src="js/main.js?t=1711111394944"></script>
 
         <div id="notify" class="notify"></div>
 

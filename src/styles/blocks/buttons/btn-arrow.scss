@@ -1,0 +1,25 @@
+.btn-arrow {
+    @include reset-btn;
+    width: 60px;
+    height: 60px;
+    background: #f4f4f4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.swiper-button-disabled {
+        opacity: 0.5;
+    }
+
+    &:not(.swiper-button-disabled) {
+        &:hover {
+            background: #ff6100;
+            color: #fff;
+        }
+    }
+
+    .icon {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,19 @@
+.section-news {
+    &__header {
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__h1 {
+        font-size: 44px;
+        font-weight: 500;
+        line-height: calc(41.8 / 44);
+    }
+
+    &__btn-more {
+        margin-top: 16px;
+    }
+}

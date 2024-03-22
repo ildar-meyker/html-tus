@@ -2,7 +2,7 @@
     ul {
         display: flex;
         flex-wrap: wrap;
-        gap: 2rem;
+        gap: 20px;
     }
 
     li {
@@ -16,8 +16,7 @@
 
     a {
         display: block;
-        font-size: 1.7rem;
-        line-height: 3.8rem;
+        font-size: 16px;
         text-align: center;
         color: #a0a5b9;
 

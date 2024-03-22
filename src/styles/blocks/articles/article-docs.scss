@@ -1,9 +1,9 @@
 .article-docs {
-    padding: 2rem;
-    font-size: 1.6rem;
+    padding: 20px;
+    font-size: 16px;
 
     p {
-        margin: 2rem 0;
+        margin: 20px 0;
 
         &:first-child {
             margin-top: 0;
@@ -22,7 +22,7 @@
         list-style: disc inside;
 
         li {
-            margin: 1rem 0;
+            margin: 10px 0;
         }
     }
 }

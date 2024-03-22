@@ -1,0 +1,23 @@
+.btn-download {
+    @include reset-btn;
+    padding: 18px 34px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10em;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+
+    &:hover {
+        border-color: #000000;
+    }
+
+    &__ext {
+        color: #999999;
+    }
+
+    .icon {
+        font-size: 12px;
+        color: #808080;
+    }
+}

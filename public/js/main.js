@@ -64,6 +64,48 @@ if (pubdate < new Date()) {
 
 /***/ }),
 
+/***/ "./src/js/modules/slider-news.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/slider-news.js ***!
+  \***************************************/
+/***/ (function() {
+
+$(function () {
+  $(".slider-news").each(function () {
+    var $root = $(this).closest(".js-slider-root");
+    var swiper = new Swiper($(this).find(".swiper")[0], {
+      slidesPerView: "auto",
+      navigation: {
+        nextEl: $root.find(".js-slider-next")[0],
+        prevEl: $root.find(".js-slider-prev")[0]
+      }
+    });
+  });
+});
+
+/***/ }),
+
+/***/ "./src/js/modules/slider-plans.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/slider-plans.js ***!
+  \****************************************/
+/***/ (function() {
+
+$(function () {
+  $(".slider-plans").each(function () {
+    var $root = $(this).closest(".js-slider-root");
+    var swiper = new Swiper($(this).find(".swiper")[0], {
+      slidesPerView: "auto",
+      navigation: {
+        nextEl: $root.find(".js-slider-next")[0],
+        prevEl: $root.find(".js-slider-prev")[0]
+      }
+    });
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/modules/tabs.js":
 /*!********************************!*\
   !*** ./src/js/modules/tabs.js ***!
@@ -202,6 +244,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_api__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_api__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _modules_demo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/demo */ "./src/js/modules/demo.js");
 /* harmony import */ var _modules_demo__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_demo__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _modules_slider_plans__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/slider-plans */ "./src/js/modules/slider-plans.js");
+/* harmony import */ var _modules_slider_plans__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_plans__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _modules_slider_news__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/slider-news */ "./src/js/modules/slider-news.js");
+/* harmony import */ var _modules_slider_news__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_news__WEBPACK_IMPORTED_MODULE_5__);
+
+
 
 
 
