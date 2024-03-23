@@ -609,6 +609,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 14px;
+  font-family: inherit;
   font-size: 18px;
 }
 .btn-download:hover {
@@ -659,6 +660,7 @@ a {
   cursor: pointer;
   padding: 1em 2em;
   border-radius: 10em;
+  font-family: inherit;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.2;
@@ -668,6 +670,9 @@ a {
   align-items: center;
   gap: 10px;
   color: #fff;
+}
+.btn-apply:hover {
+  background: #dd5602;
 }
 .btn-apply .icon {
   font-size: 0.6111111111em;
@@ -707,6 +712,56 @@ a {
     font-size: 45px;
   }
 }
+.btn-heart {
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  font-size: 60px;
+  border-radius: 50%;
+  background: #dedede0d;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.btn-heart:hover {
+  background: rgba(222, 222, 222, 0.2);
+}
+.btn-heart .icon {
+  font-size: 0.3em;
+}
+
+.btn-select {
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  height: 60px;
+  padding: 0 43px;
+  border-radius: 10em;
+  display: inline-flex;
+  align-items: center;
+  background: #ff6100;
+  color: #fff;
+  white-space: nowrap;
+}
+.btn-select:hover {
+  background: #dd5602;
+}
+
 .card-doc {
   background: #fff;
   border: 1px solid #0000001a;
@@ -931,6 +986,45 @@ a {
     font-size: 14px;
   }
 }
+.intro-zhk {
+  padding-top: 89px;
+  background: linear-gradient(118.32deg, #342b29 0.67%, #1c1b1a 90.57%);
+}
+.intro-zhk__h1 {
+  margin-top: 32px;
+}
+.intro-zhk__info {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.intro-zhk__image {
+  margin-top: 72px;
+  padding-top: 93.39%;
+  transform-origin: 50% 0;
+  transform: scale(0.46);
+}
+.intro-zhk__image img {
+  border-radius: 16px;
+}
+.intro-zhk__menu {
+  position: sticky;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  transform: translateY(-96px);
+}
+.intro-zhk__menu__inner {
+  display: flex;
+  gap: 8px;
+}
+.intro-zhk__menu__col-menu {
+  min-width: 0;
+}
+
 .nav-tabs ul {
   display: flex;
   flex-wrap: wrap;
@@ -1120,6 +1214,75 @@ a {
     width: 80vw;
   }
 }
+.slider-menu {
+  overflow: auto;
+  background: #dedede0d;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 10em;
+}
+.slider-menu .swiper-slide {
+  width: auto;
+  margin: 0 -14px;
+}
+.slider-menu .swiper-slide:last-child {
+  margin-right: 0;
+}
+.slider-menu .swiper-slide:first-child {
+  margin-left: 0;
+}
+.slider-menu .swiper-slide.active {
+  margin: 0;
+}
+.slider-menu .swiper-slide.active a {
+  background: #fff;
+  color: #000000;
+}
+.slider-menu a {
+  display: block;
+  padding: 0 32px;
+  height: 60px;
+  border-radius: 10em;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 60px;
+  white-space: nowrap;
+  color: #fff;
+}
+.tags-zhk {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tags-zhk__item {
+  padding: 10px 20px;
+  border-radius: 10em;
+  background: #ffffff0d;
+  display: flex;
+  gap: 16px;
+}
+.tags-zhk__text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #fff;
+}
+.tags-zhk__text--opacity {
+  opacity: 0.7;
+}
+.tags-zhk__status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #32ce18;
+}
+.tags-zhk .icon {
+  font-size: 16px;
+}
+
 .section-plans {
   overflow: hidden;
 }
@@ -1155,16 +1318,16 @@ a {
   opacity: 0.5;
   white-space: nowrap;
 }
-.section-plans .apartment-item__jk {
+.section-plans .apartment-item__zhk {
   margin-top: 18px;
   margin-bottom: 20px;
   display: flex;
   gap: 10px;
 }
-.section-plans .apartment-item__jk .icon {
+.section-plans .apartment-item__zhk .icon {
   color: #cfcfcf;
 }
-.section-plans .apartment-item__jk span {
+.section-plans .apartment-item__zhk span {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.2;
@@ -1325,20 +1488,12 @@ a {
   margin: 0 auto;
 }
 
-.l-jk__plans, .l-jk__types, .l-jk__rooms, .l-jk__cameras, .l-jk__payways, .l-jk__programs, .l-jk__docs, .l-jk__news {
+.l-zhk__plans, .l-zhk__types, .l-zhk__rooms, .l-zhk__cameras, .l-zhk__payways, .l-zhk__programs, .l-zhk__docs, .l-zhk__news {
   margin: 40px 0;
 }
 
 @media (max-width: 999.98px) {
-  .l-jk__plans, .l-jk__types, .l-jk__rooms, .l-jk__cameras, .l-jk__payways, .l-jk__programs, .l-jk__docs, .l-jk__news {
+  .l-zhk__plans, .l-zhk__types, .l-zhk__rooms, .l-zhk__cameras, .l-zhk__payways, .l-zhk__programs, .l-zhk__docs, .l-zhk__news {
     margin: 30px 0;
   }
-}
-.test {
-  padding-top: 400px;
-}
-.test__image {
-  padding-top: 93.39%;
-  transform-origin: 50% 0;
-  transform: scale(0.46);
 }

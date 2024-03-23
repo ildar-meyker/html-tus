@@ -1,0 +1,45 @@
+.intro-zhk {
+    padding-top: 89px;
+    background: linear-gradient(118.32deg, #342b29 0.67%, #1c1b1a 90.57%);
+
+    &__h1 {
+        margin-top: 32px;
+    }
+
+    &__info {
+        margin-top: 32px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    &__image {
+        margin-top: 72px;
+        padding-top: 93.39%;
+        transform-origin: 50% 0;
+        transform: scale(0.46);
+
+        img {
+            border-radius: 16px;
+        }
+    }
+
+    &__menu {
+        position: sticky;
+        z-index: 100;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        transform: translateY(-96px);
+
+        &__inner {
+            display: flex;
+            gap: 8px;
+        }
+
+        &__col-menu {
+            min-width: 0;
+        }
+    }
+}

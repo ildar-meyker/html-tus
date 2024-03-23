@@ -1,0 +1,21 @@
+.btn-heart {
+    @include reset-btn;
+    width: 1em;
+    height: 1em;
+    font-size: 60px;
+    border-radius: 50%;
+    background: #dedede0d;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+
+    &:hover {
+        background: rgba(#dedede, 0.2);
+    }
+
+    .icon {
+        font-size: calc(18 / 60) + em;
+    }
+}

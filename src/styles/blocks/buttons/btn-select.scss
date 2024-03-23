@@ -1,0 +1,19 @@
+.btn-select {
+    @include reset-btn;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: calc(21.6 / 18);
+    height: 60px;
+    padding: 0 43px;
+    border-radius: 10em;
+    display: inline-flex;
+    align-items: center;
+    background: #ff6100;
+    color: #fff;
+    white-space: nowrap;
+
+    &:hover {
+        background: #dd5602;
+    }
+}

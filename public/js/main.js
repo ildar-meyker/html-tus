@@ -106,6 +106,28 @@ $(function () {
 
 /***/ }),
 
+/***/ "./src/js/modules/slider-menu.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/slider-menu.js ***!
+  \***************************************/
+/***/ (function() {
+
+$(function () {
+  $(".slider-menu").each(function () {
+    var $root = $(this).closest(".js-slider-root");
+    var swiper = new Swiper($(this).find(".swiper")[0], {
+      freeMode: true,
+      slidesPerView: "auto",
+      navigation: {
+        nextEl: $root.find(".js-slider-next")[0],
+        prevEl: $root.find(".js-slider-prev")[0]
+      }
+    });
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/modules/slider-news.js":
 /*!***************************************!*\
   !*** ./src/js/modules/slider-news.js ***!
@@ -317,6 +339,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider_payways__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_payways__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _modules_slider_cameras__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/slider-cameras */ "./src/js/modules/slider-cameras.js");
 /* harmony import */ var _modules_slider_cameras__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_cameras__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _modules_slider_menu__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/slider-menu */ "./src/js/modules/slider-menu.js");
+/* harmony import */ var _modules_slider_menu__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_menu__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -326,13 +350,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var offsetTop = $(".test__image").offset().top;
+
+var offsetTop = $(".intro-zhk__image").offset().top;
 $(window).on("scroll", function () {
   var scrollTop = $(window).scrollTop() + 0.1;
   var fullZoomDistance = offsetTop;
-  console.log(fullZoomDistance);
   var distancePercentage = scrollTop < fullZoomDistance ? scrollTop / fullZoomDistance : 1;
-  $(".test__image").css("transform", "scale(".concat(0.46 + 0.54 * distancePercentage, ")"));
+  $(".intro-zhk__image").css("transform", "scale(".concat(0.46 + 0.54 * distancePercentage, ")"));
 });
 }();
 /******/ })()

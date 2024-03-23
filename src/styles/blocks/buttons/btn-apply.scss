@@ -2,6 +2,7 @@
     @include reset-btn;
     padding: 1em 2em;
     border-radius: 10em;
+    font-family: inherit;
     font-size: 18px;
     font-weight: 500;
     line-height: calc(21.6 / 18);
@@ -11,6 +12,10 @@
     align-items: center;
     gap: 10px;
     color: #fff;
+
+    &:hover {
+        background: #dd5602;
+    }
 
     .icon {
         font-size: calc(11 / 18) + em;

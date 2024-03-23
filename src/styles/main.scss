@@ -64,6 +64,7 @@ a {
 @import "./blocks/forms/index.scss";
 @import "./blocks/grids/index.scss";
 @import "./blocks/inputs/index.scss";
+@import "./blocks/intros/index.scss";
 @import "./blocks/maps/index.scss";
 @import "./blocks/navs/index.scss";
 @import "./blocks/panels/index.scss";
@@ -73,6 +74,7 @@ a {
 @import "./blocks/selects/index.scss";
 @import "./blocks/sliders/index.scss";
 @import "./blocks/tables/index.scss";
+@import "./blocks/tags/index.scss";
 @import "./blocks/lists/index.scss";
 @import "./blocks/sections/index.scss";
 
@@ -82,13 +84,3 @@ a {
 @import "./blocks/page.scss";
 
 @import "./layouts/index.scss";
-
-.test {
-    padding-top: 400px;
-
-    &__image {
-        padding-top: 93.39%;
-        transform-origin: 50% 0;
-        transform: scale(0.46);
-    }
-}

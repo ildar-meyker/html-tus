@@ -1,0 +1,38 @@
+.tags-zhk {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    &__item {
+        padding: 10px 20px;
+        border-radius: 10em;
+        background: #ffffff0d;
+        display: flex;
+        gap: 16px;
+    }
+
+    &__text {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: calc(19.2 / 16);
+        color: #fff;
+
+        &--opacity {
+            opacity: 0.7;
+        }
+    }
+
+    &__status {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #32ce18;
+    }
+
+    .icon {
+        font-size: 16px;
+    }
+}
