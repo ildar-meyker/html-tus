@@ -353,7 +353,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var offsetTop = $(".intro-zhk__image").offset().top;
 $(window).on("scroll", function () {
-  var scrollTop = $(window).scrollTop() + 0.1;
+  var scrollTop = $(window).scrollTop() + 0.0000001;
   var fullZoomDistance = offsetTop;
   var distancePercentage = scrollTop < fullZoomDistance ? scrollTop / fullZoomDistance : 1;
   $(".intro-zhk__image").css("transform", "scale(".concat(0.46 + 0.54 * distancePercentage, ")"));

@@ -13,6 +13,14 @@
         gap: 20px;
     }
 
+    &__down {
+        position: fixed;
+        z-index: 10;
+        bottom: 20%;
+        right: calc(27% - 46px);
+        mix-blend-mode: color-dodge;
+    }
+
     &__image {
         margin-top: 72px;
         padding-top: 93.39%;
