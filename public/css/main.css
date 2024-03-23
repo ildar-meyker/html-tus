@@ -1334,3 +1334,11 @@ a {
     margin: 30px 0;
   }
 }
+.test {
+  padding-top: 400px;
+}
+.test__image {
+  padding-top: 93.39%;
+  transform-origin: 50% 0;
+  transform: scale(0.46);
+}

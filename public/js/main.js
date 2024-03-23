@@ -326,6 +326,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var offsetTop = $(".test__image").offset().top;
+$(window).on("scroll", function () {
+  var scrollTop = $(window).scrollTop() + 0.1;
+  var fullZoomDistance = offsetTop;
+  console.log(fullZoomDistance);
+  var distancePercentage = scrollTop < fullZoomDistance ? scrollTop / fullZoomDistance : 1;
+  $(".test__image").css("transform", "scale(".concat(0.46 + 0.54 * distancePercentage, ")"));
+});
 }();
 /******/ })()
 ;
