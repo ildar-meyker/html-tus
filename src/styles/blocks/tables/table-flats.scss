@@ -1,0 +1,40 @@
+.table-flats {
+    width: 100%;
+    color: #fff;
+
+    tr {
+        &:first-child {
+            td {
+                padding-top: 0;
+            }
+        }
+    }
+
+    td {
+        padding: 20px 0 5px 0;
+        border-bottom: 1px solid #ffffff66;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.2;
+
+        &:nth-child(1) {
+            width: 45%;
+        }
+
+        &:nth-child(2) {
+            opacity: 0.5;
+        }
+
+        &:last-child {
+            text-align: right;
+        }
+    }
+
+    &--dark {
+        color: #000000;
+
+        td {
+            border-bottom: 1px solid #00000066;
+        }
+    }
+}

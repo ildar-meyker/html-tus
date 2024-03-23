@@ -1,0 +1,26 @@
+.section-location {
+    &__header {
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__h1 {
+        font-size: 44px;
+        font-weight: 500;
+        line-height: calc(41.8 / 44);
+    }
+
+    &__desc {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: calc(22.4 / 16);
+    }
+
+    &__map {
+        height: 740px;
+    }
+
+    &__sidebar {
+    }
+}

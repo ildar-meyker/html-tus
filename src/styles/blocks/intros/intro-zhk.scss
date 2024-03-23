@@ -13,7 +13,7 @@
         gap: 20px;
     }
 
-    &__down {
+    &__btn-down {
         position: fixed;
         z-index: 10;
         bottom: 20%;
@@ -33,13 +33,11 @@
     }
 
     &__menu {
-        position: sticky;
+        position: fixed;
         z-index: 100;
-        bottom: 0;
+        bottom: 24px;
         left: 0;
         right: 0;
-        height: 0;
-        transform: translateY(-96px);
 
         &__inner {
             display: flex;

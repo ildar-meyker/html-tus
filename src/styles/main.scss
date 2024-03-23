@@ -1,3 +1,5 @@
+@import url("../fonts/uni-neue/stylesheet.css");
+
 @import "./vendor/meyer-reset.scss";
 @import "./helpers/reset.scss";
 @import "./helpers/mixins.scss";
@@ -18,6 +20,7 @@ html {
 body {
     text-size-adjust: none;
     min-width: 320px;
+    font-family: "Uni Neue", sans-serif;
     font-size: 16px;
 
     &.locked {
@@ -65,22 +68,24 @@ a {
 @import "./blocks/grids/index.scss";
 @import "./blocks/inputs/index.scss";
 @import "./blocks/intros/index.scss";
+@import "./blocks/lists/index.scss";
 @import "./blocks/maps/index.scss";
 @import "./blocks/navs/index.scss";
 @import "./blocks/panels/index.scss";
 @import "./blocks/popups/index.scss";
 @import "./blocks/promos/index.scss";
+@import "./blocks/props/index.scss";
 @import "./blocks/read/index.scss";
+@import "./blocks/sections/index.scss";
 @import "./blocks/selects/index.scss";
 @import "./blocks/sliders/index.scss";
 @import "./blocks/tables/index.scss";
 @import "./blocks/tags/index.scss";
-@import "./blocks/lists/index.scss";
-@import "./blocks/sections/index.scss";
 
 @import "./blocks/header.scss";
 @import "./blocks/footer.scss";
 @import "./blocks/tabs-content.scss";
 @import "./blocks/page.scss";
+@import "./blocks/apartment-item.scss";
 
 @import "./layouts/index.scss";

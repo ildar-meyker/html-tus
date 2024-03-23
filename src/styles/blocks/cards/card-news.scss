@@ -34,7 +34,7 @@
         margin-top: 24px;
         font-size: 18px;
         font-weight: 500;
-        line-height: calc(21.6 / 18);
+        line-height: 1.2;
     }
 
     &__footer {
@@ -61,7 +61,7 @@
         &__month {
             font-size: 14px;
             font-weight: 500;
-            line-height: calc(16.8 / 14);
+            line-height: 1.2;
         }
     }
 }

@@ -1,12 +1,13 @@
 .btn-plus {
     @include reset-btn;
-    width: 60px;
-    height: 60px;
+    width: 1em;
+    height: 1em;
     background: #f4f4f4;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 60px;
 
     &:hover {
         background: #ff6100;
@@ -14,6 +15,16 @@
     }
 
     .icon {
-        font-size: 12px;
+        font-size: calc(12 / 60) + em;
+    }
+
+    &--white {
+        background: #fff;
+        color: #ff6100;
+
+        &:hover {
+            background: #fff;
+            color: #ff6100;
+        }
     }
 }

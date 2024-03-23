@@ -17,67 +17,6 @@
 
     &__nav {
     }
-
-    .apartment-item {
-        display: flex;
-        flex-direction: column;
-
-        &__square {
-            display: flex;
-            justify-content: space-between;
-            margin-right: -18px;
-            gap: 20px;
-
-            &__floor {
-                padding-top: 10px;
-                padding-right: 18px;
-                border-top: 1px solid #0000001a;
-                font-size: 24px;
-                font-weight: 500;
-                line-height: calc(28.8 / 24);
-                opacity: 0.5;
-                white-space: nowrap;
-            }
-        }
-
-        &__zhk {
-            margin-top: 18px;
-            margin-bottom: 20px;
-            display: flex;
-            gap: 10px;
-
-            .icon {
-                color: #cfcfcf;
-            }
-
-            span {
-                font-size: 14px;
-                font-weight: 500;
-                line-height: calc(16.8 / 14);
-            }
-        }
-
-        &__head {
-            &--reverse {
-                display: flex;
-                flex-direction: column-reverse;
-                gap: 32px;
-            }
-        }
-
-        &__details {
-            margin-top: auto;
-        }
-
-        &__details-item {
-            font-size: 16px;
-        }
-
-        &__main {
-            min-height: 0;
-            justify-content: center;
-        }
-    }
 }
 
 @media (max-width: 999.98px) {
