@@ -1,4 +1,5 @@
 .slider-menu {
+    transition: all 0.2s;
     overflow: auto;
     background: #dedede0d;
     backdrop-filter: blur(5px);
@@ -44,5 +45,9 @@
 
         &:hover {
         }
+    }
+
+    &--dark {
+        background: #0000004d;
     }
 }

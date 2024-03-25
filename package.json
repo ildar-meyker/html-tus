@@ -59,6 +59,7 @@
         "webpack-stream": "^7.0.0"
     },
     "dependencies": {
-        "swiper": "^7.4.1"
+        "swiper": "^7.4.1",
+        "throttle-debounce": "^5.0.0"
     }
 }

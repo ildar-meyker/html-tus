@@ -13,10 +13,11 @@
 <!-- @@close-->
 
 <!-- @@block = content-->
+
 <div class="wrapper">
     <!-- @@include = ./partials/header.html -->
 
-    <section class="intro-zhk">
+    <section class="intro-zhk" id="intro-zhk">
         <div class="container">
             <div class="intro-zhk__h1">
                 <img src="img/intro-zhk/zhk-tcentr-park.svg" alt="" />
@@ -84,71 +85,58 @@
         <div class="image-box intro-zhk__image">
             <img src="img/intro-zhk/1.jpg" />
             <div class="intro-zhk__floors">
-                <div class="intro-zhk__floors__item"></div>
-                <div class="intro-zhk__floors__item"></div>
-                <div class="intro-zhk__floors__item"></div>
-                <div class="intro-zhk__floors__item"></div>
-                <div class="intro-zhk__floors__item"></div>
-                <div class="intro-zhk__floors__item"></div>
-                <div class="intro-zhk__floors__item"></div>
-                <div class="intro-zhk__floors__item"></div>
-                <div class="intro-zhk__floors__item"></div>
+                <div
+                    class="intro-zhk__floors__item"
+                    data-target="#intro-zhk__panel-11"
+                ></div>
+                <div
+                    class="intro-zhk__floors__item"
+                    data-target="#intro-zhk__panel-10"
+                ></div>
+                <div
+                    class="intro-zhk__floors__item"
+                    data-target="#intro-zhk__panel-9"
+                ></div>
+                <div
+                    class="intro-zhk__floors__item"
+                    data-target="#intro-zhk__panel-8"
+                ></div>
+                <div
+                    class="intro-zhk__floors__item"
+                    data-target="#intro-zhk__panel-7"
+                ></div>
+                <div
+                    class="intro-zhk__floors__item"
+                    data-target="#intro-zhk__panel-6"
+                ></div>
+                <div
+                    class="intro-zhk__floors__item"
+                    data-target="#intro-zhk__panel-5"
+                ></div>
+                <div
+                    class="intro-zhk__floors__item"
+                    data-target="#intro-zhk__panel-4"
+                ></div>
+                <div
+                    class="intro-zhk__floors__item"
+                    data-target="#intro-zhk__panel-3"
+                ></div>
+                <div
+                    class="intro-zhk__floors__item"
+                    data-target="#intro-zhk__panel-2"
+                ></div>
+                <div
+                    class="intro-zhk__floors__item"
+                    data-target="#intro-zhk__panel-1"
+                ></div>
             </div>
         </div>
 
-        <div class="intro-zhk__menu">
+        <div class="intro-zhk__menu" id="intro-zhk__menu">
             <div class="container">
                 <div class="intro-zhk__menu__inner">
                     <div class="intro-zhk__menu__col-menu">
-                        <nav class="slider-menu js-slider-root">
-                            <div class="swiper">
-                                <ul class="swiper-wrapper">
-                                    <li class="swiper-slide">
-                                        <a href="#">О проекте</a>
-                                    </li>
-
-                                    <li class="swiper-slide active">
-                                        <a href="#">Местоположение</a>
-                                    </li>
-
-                                    <li class="swiper-slide">
-                                        <a href="#">Видео</a>
-                                    </li>
-
-                                    <li class="swiper-slide">
-                                        <a href="#">Генплан</a>
-                                    </li>
-
-                                    <li class="swiper-slide">
-                                        <a href="#">Архитектура</a>
-                                    </li>
-
-                                    <li class="swiper-slide">
-                                        <a href="#">Лобби</a>
-                                    </li>
-
-                                    <li class="swiper-slide">
-                                        <a href="#">Благоустройство</a>
-                                    </li>
-
-                                    <li class="swiper-slide">
-                                        <a href="#">Паркинг</a>
-                                    </li>
-
-                                    <li class="swiper-slide">
-                                        <a href="#">Кладовая</a>
-                                    </li>
-
-                                    <li class="swiper-slide">
-                                        <a href="#">Вид из окна</a>
-                                    </li>
-
-                                    <li class="swiper-slide">
-                                        <a href="#">Ход строительства</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
+                        <!-- @@include = ./partials/slider-menu.html -->
                     </div>
 
                     <div>
@@ -185,6 +173,534 @@
                 ></path>
             </clipPath>
         </svg>
+
+        <div class="intro-zhk__panel" id="intro-zhk__panel-11">
+            <article class="panel-floor">
+                <div class="panel-floor__header">
+                    <div class="panel-floor__about">
+                        <div class="panel-floor__number">11</div>
+                        <div class="panel-floor__desc">
+                            <div class="panel-floor__floor">этаж</div>
+                            <div class="panel-floor__available">
+                                доступна 21 квартира
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn-plus btn-plus--white">
+                            <svg class="icon">
+                                <use
+                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                ></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <table class="table-flats">
+                    <tbody>
+                        <tr>
+                            <td>1 комнатная</td>
+                            <td>2</td>
+                            <td>от 10 909 698 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>2 комнатная</td>
+                            <td>11</td>
+                            <td>от 9 412 800 ₽</td>
+                        </tr>
+
+                        <tr>
+                            <td>3 комнатная</td>
+                            <td>3</td>
+                            <td>от 11 260 350 ₽</td>
+                        </tr>
+
+                        <tr>
+                            <td>4 комнатная</td>
+                            <td>5</td>
+                            <td>от 18 824 559 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="panel-floor__footer">
+                    <div class="panel-floor__label">План сдачи квартир:</div>
+                    <div class="panel-floor__time">3 квартал 2024 года</div>
+                </div>
+                <a href="#" class="link-area"></a>
+            </article>
+        </div>
+
+        <div class="intro-zhk__panel" id="intro-zhk__panel-10">
+            <article class="panel-floor">
+                <div class="panel-floor__header">
+                    <div class="panel-floor__about">
+                        <div class="panel-floor__number">10</div>
+                        <div class="panel-floor__desc">
+                            <div class="panel-floor__floor">этаж</div>
+                            <div class="panel-floor__available">
+                                доступна 21 квартира
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn-plus btn-plus--white">
+                            <svg class="icon">
+                                <use
+                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                ></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <table class="table-flats">
+                    <tbody>
+                        <tr>
+                            <td>1 комнатная</td>
+                            <td>2</td>
+                            <td>от 10 909 698 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>2 комнатная</td>
+                            <td>11</td>
+                            <td>от 9 412 800 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="panel-floor__footer">
+                    <div class="panel-floor__label">План сдачи квартир:</div>
+                    <div class="panel-floor__time">3 квартал 2024 года</div>
+                </div>
+
+                <a href="#" class="link-area"></a>
+            </article>
+        </div>
+
+        <div class="intro-zhk__panel" id="intro-zhk__panel-9">
+            <article class="panel-floor">
+                <div class="panel-floor__header">
+                    <div class="panel-floor__about">
+                        <div class="panel-floor__number">9</div>
+                        <div class="panel-floor__desc">
+                            <div class="panel-floor__floor">этаж</div>
+                            <div class="panel-floor__available">
+                                доступна 21 квартира
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn-plus btn-plus--white">
+                            <svg class="icon">
+                                <use
+                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                ></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <table class="table-flats">
+                    <tbody>
+                        <tr>
+                            <td>1 комнатная</td>
+                            <td>2</td>
+                            <td>от 10 909 698 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>2 комнатная</td>
+                            <td>11</td>
+                            <td>от 9 412 800 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="panel-floor__footer">
+                    <div class="panel-floor__label">План сдачи квартир:</div>
+                    <div class="panel-floor__time">3 квартал 2024 года</div>
+                </div>
+
+                <a href="#" class="link-area"></a>
+            </article>
+        </div>
+
+        <div class="intro-zhk__panel" id="intro-zhk__panel-8">
+            <article class="panel-floor">
+                <div class="panel-floor__header">
+                    <div class="panel-floor__about">
+                        <div class="panel-floor__number">8</div>
+                        <div class="panel-floor__desc">
+                            <div class="panel-floor__floor">этаж</div>
+                            <div class="panel-floor__available">
+                                доступна 21 квартира
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn-plus btn-plus--white">
+                            <svg class="icon">
+                                <use
+                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                ></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <table class="table-flats">
+                    <tbody>
+                        <tr>
+                            <td>1 комнатная</td>
+                            <td>2</td>
+                            <td>от 10 909 698 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>2 комнатная</td>
+                            <td>11</td>
+                            <td>от 9 412 800 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="panel-floor__footer">
+                    <div class="panel-floor__label">План сдачи квартир:</div>
+                    <div class="panel-floor__time">3 квартал 2024 года</div>
+                </div>
+
+                <a href="#" class="link-area"></a>
+            </article>
+        </div>
+
+        <div class="intro-zhk__panel" id="intro-zhk__panel-7">
+            <article class="panel-floor">
+                <div class="panel-floor__header">
+                    <div class="panel-floor__about">
+                        <div class="panel-floor__number">7</div>
+                        <div class="panel-floor__desc">
+                            <div class="panel-floor__floor">этаж</div>
+                            <div class="panel-floor__available">
+                                доступна 21 квартира
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn-plus btn-plus--white">
+                            <svg class="icon">
+                                <use
+                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                ></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <table class="table-flats">
+                    <tbody>
+                        <tr>
+                            <td>1 комнатная</td>
+                            <td>2</td>
+                            <td>от 10 909 698 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>2 комнатная</td>
+                            <td>11</td>
+                            <td>от 9 412 800 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="panel-floor__footer">
+                    <div class="panel-floor__label">План сдачи квартир:</div>
+                    <div class="panel-floor__time">3 квартал 2024 года</div>
+                </div>
+
+                <a href="#" class="link-area"></a>
+            </article>
+        </div>
+
+        <div class="intro-zhk__panel" id="intro-zhk__panel-6">
+            <article class="panel-floor">
+                <div class="panel-floor__header">
+                    <div class="panel-floor__about">
+                        <div class="panel-floor__number">6</div>
+                        <div class="panel-floor__desc">
+                            <div class="panel-floor__floor">этаж</div>
+                            <div class="panel-floor__available">
+                                доступна 21 квартира
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn-plus btn-plus--white">
+                            <svg class="icon">
+                                <use
+                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                ></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <table class="table-flats">
+                    <tbody>
+                        <tr>
+                            <td>1 комнатная</td>
+                            <td>2</td>
+                            <td>от 10 909 698 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>2 комнатная</td>
+                            <td>11</td>
+                            <td>от 9 412 800 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="panel-floor__footer">
+                    <div class="panel-floor__label">План сдачи квартир:</div>
+                    <div class="panel-floor__time">3 квартал 2024 года</div>
+                </div>
+
+                <a href="#" class="link-area"></a>
+            </article>
+        </div>
+
+        <div class="intro-zhk__panel" id="intro-zhk__panel-5">
+            <article class="panel-floor">
+                <div class="panel-floor__header">
+                    <div class="panel-floor__about">
+                        <div class="panel-floor__number">5</div>
+                        <div class="panel-floor__desc">
+                            <div class="panel-floor__floor">этаж</div>
+                            <div class="panel-floor__available">
+                                доступна 21 квартира
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn-plus btn-plus--white">
+                            <svg class="icon">
+                                <use
+                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                ></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <table class="table-flats">
+                    <tbody>
+                        <tr>
+                            <td>1 комнатная</td>
+                            <td>2</td>
+                            <td>от 10 909 698 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>2 комнатная</td>
+                            <td>11</td>
+                            <td>от 9 412 800 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="panel-floor__footer">
+                    <div class="panel-floor__label">План сдачи квартир:</div>
+                    <div class="panel-floor__time">3 квартал 2024 года</div>
+                </div>
+
+                <a href="#" class="link-area"></a>
+            </article>
+        </div>
+
+        <div class="intro-zhk__panel" id="intro-zhk__panel-4">
+            <article class="panel-floor">
+                <div class="panel-floor__header">
+                    <div class="panel-floor__about">
+                        <div class="panel-floor__number">4</div>
+                        <div class="panel-floor__desc">
+                            <div class="panel-floor__floor">этаж</div>
+                            <div class="panel-floor__available">
+                                доступна 21 квартира
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn-plus btn-plus--white">
+                            <svg class="icon">
+                                <use
+                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                ></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <table class="table-flats">
+                    <tbody>
+                        <tr>
+                            <td>1 комнатная</td>
+                            <td>2</td>
+                            <td>от 10 909 698 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>2 комнатная</td>
+                            <td>11</td>
+                            <td>от 9 412 800 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="panel-floor__footer">
+                    <div class="panel-floor__label">План сдачи квартир:</div>
+                    <div class="panel-floor__time">3 квартал 2024 года</div>
+                </div>
+
+                <a href="#" class="link-area"></a>
+            </article>
+        </div>
+
+        <div class="intro-zhk__panel" id="intro-zhk__panel-3">
+            <article class="panel-floor">
+                <div class="panel-floor__header">
+                    <div class="panel-floor__about">
+                        <div class="panel-floor__number">3</div>
+                        <div class="panel-floor__desc">
+                            <div class="panel-floor__floor">этаж</div>
+                            <div class="panel-floor__available">
+                                доступна 21 квартира
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn-plus btn-plus--white">
+                            <svg class="icon">
+                                <use
+                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                ></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <table class="table-flats">
+                    <tbody>
+                        <tr>
+                            <td>1 комнатная</td>
+                            <td>2</td>
+                            <td>от 10 909 698 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>2 комнатная</td>
+                            <td>11</td>
+                            <td>от 9 412 800 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="panel-floor__footer">
+                    <div class="panel-floor__label">План сдачи квартир:</div>
+                    <div class="panel-floor__time">3 квартал 2024 года</div>
+                </div>
+
+                <a href="#" class="link-area"></a>
+            </article>
+        </div>
+
+        <div class="intro-zhk__panel" id="intro-zhk__panel-2">
+            <article class="panel-floor">
+                <div class="panel-floor__header">
+                    <div class="panel-floor__about">
+                        <div class="panel-floor__number">2</div>
+                        <div class="panel-floor__desc">
+                            <div class="panel-floor__floor">этаж</div>
+                            <div class="panel-floor__available">
+                                доступна 21 квартира
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn-plus btn-plus--white">
+                            <svg class="icon">
+                                <use
+                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                ></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <table class="table-flats">
+                    <tbody>
+                        <tr>
+                            <td>1 комнатная</td>
+                            <td>2</td>
+                            <td>от 10 909 698 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>2 комнатная</td>
+                            <td>11</td>
+                            <td>от 9 412 800 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="panel-floor__footer">
+                    <div class="panel-floor__label">План сдачи квартир:</div>
+                    <div class="panel-floor__time">3 квартал 2024 года</div>
+                </div>
+
+                <a href="#" class="link-area"></a>
+            </article>
+        </div>
+
+        <div class="intro-zhk__panel" id="intro-zhk__panel-1">
+            <article class="panel-floor">
+                <div class="panel-floor__header">
+                    <div class="panel-floor__about">
+                        <div class="panel-floor__number">1</div>
+                        <div class="panel-floor__desc">
+                            <div class="panel-floor__floor">этаж</div>
+                            <div class="panel-floor__available">
+                                доступна 21 квартира
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn-plus btn-plus--white">
+                            <svg class="icon">
+                                <use
+                                    xlink:href="img/icons/general/sprite.svg#plus"
+                                ></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <table class="table-flats">
+                    <tbody>
+                        <tr>
+                            <td>1 комнатная</td>
+                            <td>2</td>
+                            <td>от 10 909 698 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>2 комнатная</td>
+                            <td>11</td>
+                            <td>от 9 412 800 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="panel-floor__footer">
+                    <div class="panel-floor__label">План сдачи квартир:</div>
+                    <div class="panel-floor__time">3 квартал 2024 года</div>
+                </div>
+
+                <a href="#" class="link-area"></a>
+            </article>
+        </div>
     </section>
 
     <div class="l-zhk__about">
@@ -218,7 +734,7 @@
                         <div class="section-about__picture">
                             <div class="image-box section-about__image">
                                 <img
-                                    src="https://loremflickr.com/600/1000/new-york?lock=1"
+                                    src="https://loremflickr.com/600/1000/construction?lock=1"
                                 />
                             </div>
                         </div>
@@ -229,7 +745,7 @@
                         >
                             <div class="image-box section-about__image">
                                 <img
-                                    src="https://loremflickr.com/600/1000/new-york?lock=1"
+                                    src="https://loremflickr.com/600/1000/construction?lock=1"
                                 />
                             </div>
                         </div>
@@ -565,5 +1081,7 @@
 
     <!-- @@include = ./partials/footer.html -->
 </div>
+
+<div class="page__locker active"></div>
 
 <!-- @@close-->

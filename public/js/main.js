@@ -21,6 +21,46 @@
 
 /***/ }),
 
+/***/ "./src/js/modules/bottom-menu.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/bottom-menu.js ***!
+  \***************************************/
+/***/ (function() {
+
+var $section = $();
+var $sliderMenu = $();
+var $btnHeart = $();
+
+function toggleMenuStyle() {
+  var scrollTop = $(window).scrollTop();
+  var isDarkMode = scrollTop > $section.outerHeight() - $(window).height();
+  $btnHeart.toggleClass("btn-heart--dark", isDarkMode);
+  $sliderMenu.toggleClass("slider-menu--dark", isDarkMode);
+}
+
+$(function () {
+  $section = $("#intro-zhk");
+  $sliderMenu = $("#intro-zhk__menu .slider-menu");
+  $btnHeart = $("#intro-zhk__menu .btn-heart");
+  if ($section.length === 0) return;
+
+  var callback = function callback(entries, observer) {
+    entries.forEach(function (entry) {
+      toggleMenuStyle();
+    });
+  };
+
+  var options = {
+    // root: по умолчанию window, но можно задать любой элемент-контейнер
+    rootMargin: "0px 0px 0px 0px",
+    threshold: 0
+  };
+  var observer = new IntersectionObserver(callback, options);
+  observer.observe(document.querySelector(".l-zhk__about"));
+});
+
+/***/ }),
+
 /***/ "./src/js/modules/demo.js":
 /*!********************************!*\
   !*** ./src/js/modules/demo.js ***!
@@ -61,6 +101,110 @@ function print() {
 if (pubdate < new Date()) {
   print();
 }
+
+/***/ }),
+
+/***/ "./src/js/modules/intro-zhk.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/intro-zhk.js ***!
+  \*************************************/
+/***/ (function() {
+
+var leaveTimer = null;
+var $section = $();
+var $image = $();
+var $panels = $();
+
+function transformScrollTopToStyles() {
+  var fullScaleAtScrollTop = $image.offset().top;
+  var scrollTop = $(window).scrollTop();
+  var initialScale = 0.46;
+  var restScale = 1 - initialScale;
+  var scrollProgress = scrollTop < fullScaleAtScrollTop ? scrollTop / fullScaleAtScrollTop : 1;
+  var initialBorderRadius = 16;
+  return {
+    newScale: initialScale + restScale * scrollProgress,
+    newBorderRadius: initialBorderRadius * (1 - scrollProgress)
+  };
+}
+
+function updateScrollDeps() {
+  var _transformScrollTopTo = transformScrollTopToStyles(),
+      newScale = _transformScrollTopTo.newScale,
+      newBorderRadius = _transformScrollTopTo.newBorderRadius;
+
+  $image.css({
+    transform: "scale(".concat(newScale, ")")
+  });
+  $image[0].style.setProperty("--border-radius", newBorderRadius + "px");
+  $section.toggleClass("intro-zhk--full-scale", newScale === 1);
+}
+
+function handleWindowScroll() {
+  updateScrollDeps();
+}
+
+function handlePanelEnter() {
+  clearTimeout(leaveTimer);
+}
+
+function handlePanelLeave() {
+  closeActivePanels();
+}
+
+function handleFloorEnter(e) {
+  closeActivePanels();
+  var target = $(e.target).data("target");
+  $(target).addClass("active");
+}
+
+function handleBuildingLeave(e) {
+  leaveTimer = setTimeout(function () {
+    closeActivePanels();
+  }, 200);
+}
+
+function closeActivePanels() {
+  $panels.filter(".active").removeClass("active");
+}
+
+function handleWindowLoad() {
+  $section.addClass("intro-zhk--loaded");
+  setTimeout(function () {
+    $image.addClass("intro-zhk__image--scalable");
+    $(".page__locker").removeClass("active");
+  }, 1200);
+}
+
+$(function () {
+  $section = $("#intro-zhk");
+  $image = $(".intro-zhk__image");
+  $panels = $(".intro-zhk__panel");
+  if ($section.length === 0) return;
+
+  var callback = function callback(entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        $(window).on("load scroll", handleWindowScroll);
+      } else {
+        $(window).off("load scroll", handleWindowScroll);
+      }
+    });
+  };
+
+  var options = {
+    // root: по умолчанию window, но можно задать любой элемент-контейнер
+    rootMargin: "0px 0px 0px 0px",
+    threshold: 0
+  };
+  var observer = new IntersectionObserver(callback, options);
+  observer.observe($section[0]);
+  $(document).on("mouseenter", ".intro-zhk__floors__item", handleFloorEnter);
+  $(document).on("mouseleave", ".intro-zhk__floors", handleBuildingLeave);
+  $(document).on("mouseenter", ".intro-zhk__panel", handlePanelEnter);
+  $(document).on("mouseleave", ".intro-zhk__panel", handlePanelLeave);
+  $(window).on("load", handleWindowLoad);
+});
 
 /***/ }),
 
@@ -341,6 +485,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider_cameras__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_cameras__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _modules_slider_menu__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/slider-menu */ "./src/js/modules/slider-menu.js");
 /* harmony import */ var _modules_slider_menu__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_menu__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _modules_intro_zhk__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/intro-zhk */ "./src/js/modules/intro-zhk.js");
+/* harmony import */ var _modules_intro_zhk__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_modules_intro_zhk__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _modules_bottom_menu__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/bottom-menu */ "./src/js/modules/bottom-menu.js");
+/* harmony import */ var _modules_bottom_menu__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_bottom_menu__WEBPACK_IMPORTED_MODULE_11__);
 
 
 
@@ -351,12 +499,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var offsetTop = $(".intro-zhk__image").offset().top;
-$(window).on("scroll", function () {
-  var scrollTop = $(window).scrollTop() + 0.1;
-  var fullZoomDistance = offsetTop;
-  var distancePercentage = scrollTop < fullZoomDistance ? scrollTop / fullZoomDistance : 1;
-  $(".intro-zhk__image").css("transform", "scale(".concat(0.46 + 0.54 * distancePercentage, ")"));
+
+
+window.history.scrollRestoration = "manual";
+$(window).on("beforeunload", function () {
+  $(window).scrollTop(0);
 });
 }();
 /******/ })()

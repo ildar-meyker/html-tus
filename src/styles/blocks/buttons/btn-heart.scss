@@ -18,4 +18,12 @@
     .icon {
         font-size: calc(18 / 60) + em;
     }
+
+    &--dark {
+        background: #0000004d;
+
+        &:hover {
+            background: rgba(#000000, 0.4);
+        }
+    }
 }

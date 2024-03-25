@@ -4,6 +4,12 @@
 
     &__h1 {
         margin-top: 32px;
+        overflow: hidden;
+
+        img {
+            transition: transform ease-out 1s;
+            transform: translateY(101%);
+        }
     }
 
     &__info {
@@ -11,6 +17,9 @@
         display: flex;
         justify-content: space-between;
         gap: 20px;
+        transition: opacity ease-out 0.5s;
+        transition-delay: 0.7s;
+        opacity: 0;
     }
 
     &__btn-down {
@@ -22,14 +31,21 @@
     }
 
     &__image {
+        --border-radius: 16px;
+
         margin-top: 72px;
         padding-top: 93.39%;
+        transition: transform ease-out 1s;
         transform-origin: 50% 0;
-        transform: scale(0.46);
+        transform: scale(0.3);
         position: relative;
 
         img {
-            border-radius: 16px;
+            border-radius: var(--border-radius);
+        }
+
+        &--scalable {
+            transition: none;
         }
     }
 
@@ -51,10 +67,11 @@
     }
 
     &__floors {
+        display: none;
         position: absolute;
-        bottom: 10%;
         left: 29.275%;
         width: 41.45%;
+        bottom: 10%;
         height: 58%;
 
         &__item {
@@ -84,5 +101,56 @@
         width: 0;
         height: 0;
         overflow: hidden;
+    }
+
+    &__panel {
+        transition: all 0.2s;
+        position: fixed;
+        z-index: 10;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 6vw;
+        margin-top: 20px;
+        visibility: hidden;
+        opacity: 0;
+        width: 350px;
+        display: none;
+
+        &.active {
+            transition-delay: 0.2s;
+            margin-top: 0;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &--loaded {
+        .intro-zhk__h1 {
+            img {
+                transform: translateY(0%);
+            }
+        }
+
+        .intro-zhk__info {
+            opacity: 1;
+        }
+
+        .intro-zhk__image {
+            transform: scale(0.46);
+        }
+    }
+
+    &--full-scale {
+        .intro-zhk__floors {
+            display: block;
+        }
+
+        .intro-zhk__panel {
+            display: block;
+        }
+
+        .slider-menu {
+            backdrop-filter: blur(10px);
+        }
     }
 }

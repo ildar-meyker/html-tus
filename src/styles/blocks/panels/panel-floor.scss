@@ -1,8 +1,12 @@
 .panel-floor {
+    position: relative;
     background: #ff6100;
     border-radius: 16px;
     padding: 24px;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 415px;
 
     &__header {
         margin-bottom: 50px;
@@ -41,7 +45,8 @@
     }
 
     &__footer {
-        margin-top: 50px;
+        margin-top: auto;
+        padding-top: 50px;
     }
 
     &__label {
