@@ -208,6 +208,30 @@ $(function () {
 
 /***/ }),
 
+/***/ "./src/js/modules/section-about.js":
+/*!*****************************************!*\
+  !*** ./src/js/modules/section-about.js ***!
+  \*****************************************/
+/***/ (function() {
+
+function handleWindowScroll() {
+  var initialShift = "-108"; // percent
+
+  var maxShift = "-210"; // percent
+
+  var $section = $(".section-about");
+  var scrollTop = $(window).scrollTop();
+  var scrollProgress = (scrollTop - $section.offset().top) / $section.outerHeight() * 2;
+  var newShift = scrollProgress < 0 ? initialShift : scrollProgress > 1 ? maxShift : initialShift - scrollProgress * (Math.abs(maxShift) - Math.abs(initialShift));
+  $section[0].style.setProperty("--name-shift", newShift + "%");
+}
+
+$(function () {
+  $(window).on("scroll", handleWindowScroll);
+});
+
+/***/ }),
+
 /***/ "./src/js/modules/slider-cameras.js":
 /*!******************************************!*\
   !*** ./src/js/modules/slider-cameras.js ***!
@@ -489,6 +513,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_intro_zhk__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_modules_intro_zhk__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _modules_bottom_menu__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/bottom-menu */ "./src/js/modules/bottom-menu.js");
 /* harmony import */ var _modules_bottom_menu__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_bottom_menu__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _modules_section_about__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/section-about */ "./src/js/modules/section-about.js");
+/* harmony import */ var _modules_section_about__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_modules_section_about__WEBPACK_IMPORTED_MODULE_12__);
+
 
 
 

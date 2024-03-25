@@ -10,6 +10,7 @@ import "./modules/slider-cameras";
 import "./modules/slider-menu";
 import "./modules/intro-zhk";
 import "./modules/bottom-menu";
+import "./modules/section-about";
 
 window.history.scrollRestoration = "manual";
 
