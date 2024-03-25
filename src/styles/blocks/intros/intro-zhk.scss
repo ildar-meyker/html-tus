@@ -26,6 +26,7 @@
         padding-top: 93.39%;
         transform-origin: 50% 0;
         transform: scale(0.46);
+        position: relative;
 
         img {
             border-radius: 16px;
@@ -47,5 +48,41 @@
         &__col-menu {
             min-width: 0;
         }
+    }
+
+    &__floors {
+        position: absolute;
+        bottom: 10%;
+        left: 29.275%;
+        width: 41.45%;
+        height: 58%;
+
+        &__item {
+            clip-path: url(#floor-clip-path);
+            margin-top: -8.5%;
+
+            &:first-child {
+                margin: 0;
+            }
+
+            &:hover {
+                background: url(../img/intro-zhk/floor.svg);
+                background-size: 100% 100%;
+                cursor: pointer;
+            }
+
+            &:before {
+                content: " ";
+                padding-top: 18.52%;
+                display: block;
+            }
+        }
+    }
+
+    &__svg {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
     }
 }

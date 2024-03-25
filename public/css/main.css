@@ -1,4 +1,101 @@
-@import url("../fonts/uni-neue/stylesheet.css");
+@font-face {
+  font-family: "Uni Neue";
+  src: url("../fonts/uni-neue/UniNeueHeavy.eot");
+  src: local("Uni Neue Heavy"), local("UniNeueHeavy"), url("../fonts/uni-neue/UniNeueHeavy.eot?#iefix") format("embedded-opentype"), url("../fonts/uni-neue/UniNeueHeavy.woff2") format("woff2"), url("../fonts/uni-neue/UniNeueHeavy.woff") format("woff"), url("../fonts/uni-neue/UniNeueHeavy.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Uni Neue Book";
+  src: url("../fonts/uni-neue/UniNeueBook.eot");
+  src: local("Uni Neue Book"), local("UniNeueBook"), url("../fonts/uni-neue/UniNeueBook.eot?#iefix") format("embedded-opentype"), url("../fonts/uni-neue/UniNeueBook.woff2") format("woff2"), url("../fonts/uni-neue/UniNeueBook.woff") format("woff"), url("../fonts/uni-neue/UniNeueBook.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Uni Neue";
+  src: url("../fonts/uni-neue/UniNeueRegular.eot");
+  src: local("Uni Neue Regular"), local("UniNeueRegular"), url("../fonts/uni-neue/UniNeueRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/uni-neue/UniNeueRegular.woff2") format("woff2"), url("../fonts/uni-neue/UniNeueRegular.woff") format("woff"), url("../fonts/uni-neue/UniNeueRegular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Uni Neue";
+  src: url("../fonts/uni-neue/UniNeueLight-Italic.eot");
+  src: local("Uni Neue Light Italic"), local("UniNeueLight-Italic"), url("../fonts/uni-neue/UniNeueLight-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/uni-neue/UniNeueLight-Italic.woff2") format("woff2"), url("../fonts/uni-neue/UniNeueLight-Italic.woff") format("woff"), url("../fonts/uni-neue/UniNeueLight-Italic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Uni Neue";
+  src: url("../fonts/uni-neue/UniNeueLight.eot");
+  src: local("Uni Neue Light"), local("UniNeueLight"), url("../fonts/uni-neue/UniNeueLight.eot?#iefix") format("embedded-opentype"), url("../fonts/uni-neue/UniNeueLight.woff2") format("woff2"), url("../fonts/uni-neue/UniNeueLight.woff") format("woff"), url("../fonts/uni-neue/UniNeueLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Uni Neue";
+  src: url("../fonts/uni-neue/UniNeueBold.eot");
+  src: local("Uni Neue Bold"), local("UniNeueBold"), url("../fonts/uni-neue/UniNeueBold.eot?#iefix") format("embedded-opentype"), url("../fonts/uni-neue/UniNeueBold.woff2") format("woff2"), url("../fonts/uni-neue/UniNeueBold.woff") format("woff"), url("../fonts/uni-neue/UniNeueBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Uni Neue";
+  src: url("../fonts/uni-neue/UniNeueHeavy-Italic.eot");
+  src: local("Uni Neue Heavy Italic"), local("UniNeueHeavy-Italic"), url("../fonts/uni-neue/UniNeueHeavy-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/uni-neue/UniNeueHeavy-Italic.woff2") format("woff2"), url("../fonts/uni-neue/UniNeueHeavy-Italic.woff") format("woff"), url("../fonts/uni-neue/UniNeueHeavy-Italic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Uni Neue Book";
+  src: url("../fonts/uni-neue/UniNeueBook-Italic.eot");
+  src: local("Uni Neue Book Italic"), local("UniNeueBook-Italic"), url("../fonts/uni-neue/UniNeueBook-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/uni-neue/UniNeueBook-Italic.woff2") format("woff2"), url("../fonts/uni-neue/UniNeueBook-Italic.woff") format("woff"), url("../fonts/uni-neue/UniNeueBook-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Uni Neue";
+  src: url("../fonts/uni-neue/UniNeueBlack-Italic.eot");
+  src: local("Uni Neue Black Italic"), local("UniNeueBlack-Italic"), url("../fonts/uni-neue/UniNeueBlack-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/uni-neue/UniNeueBlack-Italic.woff2") format("woff2"), url("../fonts/uni-neue/UniNeueBlack-Italic.woff") format("woff"), url("../fonts/uni-neue/UniNeueBlack-Italic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Uni Neue";
+  src: url("../fonts/uni-neue/UniNeueBold-Italic.eot");
+  src: local("Uni Neue Bold Italic"), local("UniNeueBold-Italic"), url("../fonts/uni-neue/UniNeueBold-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/uni-neue/UniNeueBold-Italic.woff2") format("woff2"), url("../fonts/uni-neue/UniNeueBold-Italic.woff") format("woff"), url("../fonts/uni-neue/UniNeueBold-Italic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Uni Neue";
+  src: url("../fonts/uni-neue/UniNeueRegular-Italic.eot");
+  src: local("Uni Neue Regular Italic"), local("UniNeueRegular-Italic"), url("../fonts/uni-neue/UniNeueRegular-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/uni-neue/UniNeueRegular-Italic.woff2") format("woff2"), url("../fonts/uni-neue/UniNeueRegular-Italic.woff") format("woff"), url("../fonts/uni-neue/UniNeueRegular-Italic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Uni Neue";
+  src: url("../fonts/uni-neue/UniNeueThin.eot");
+  src: local("Uni Neue Thin"), local("UniNeueThin"), url("../fonts/uni-neue/UniNeueThin.eot?#iefix") format("embedded-opentype"), url("../fonts/uni-neue/UniNeueThin.woff2") format("woff2"), url("../fonts/uni-neue/UniNeueThin.woff") format("woff"), url("../fonts/uni-neue/UniNeueThin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Uni Neue";
+  src: url("../fonts/uni-neue/UniNeueBlack.eot");
+  src: local("Uni Neue Black"), local("UniNeueBlack"), url("../fonts/uni-neue/UniNeueBlack.eot?#iefix") format("embedded-opentype"), url("../fonts/uni-neue/UniNeueBlack.woff2") format("woff2"), url("../fonts/uni-neue/UniNeueBlack.woff") format("woff"), url("../fonts/uni-neue/UniNeueBlack.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Uni Neue";
+  src: url("../fonts/uni-neue/UniNeueThin-Italic.eot");
+  src: local("Uni Neue Thin Italic"), local("UniNeueThin-Italic"), url("../fonts/uni-neue/UniNeueThin-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/uni-neue/UniNeueThin-Italic.woff2") format("woff2"), url("../fonts/uni-neue/UniNeueThin-Italic.woff") format("woff"), url("../fonts/uni-neue/UniNeueThin-Italic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -1043,6 +1140,7 @@ a {
   padding-top: 93.39%;
   transform-origin: 50% 0;
   transform: scale(0.46);
+  position: relative;
 }
 .intro-zhk__image img {
   border-radius: 16px;
@@ -1060,6 +1158,37 @@ a {
 }
 .intro-zhk__menu__col-menu {
   min-width: 0;
+}
+.intro-zhk__floors {
+  position: absolute;
+  bottom: 10%;
+  left: 29.275%;
+  width: 41.45%;
+  height: 58%;
+}
+.intro-zhk__floors__item {
+  -webkit-clip-path: url(#floor-clip-path);
+          clip-path: url(#floor-clip-path);
+  margin-top: -8.5%;
+}
+.intro-zhk__floors__item:first-child {
+  margin: 0;
+}
+.intro-zhk__floors__item:hover {
+  background: url(../img/intro-zhk/floor.svg);
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+.intro-zhk__floors__item:before {
+  content: " ";
+  padding-top: 18.52%;
+  display: block;
+}
+.intro-zhk__svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 .nav-tabs ul {
