@@ -56,7 +56,7 @@ $(function () {
     threshold: 0
   };
   var observer = new IntersectionObserver(callback, options);
-  observer.observe(document.querySelector(".l-zhk__about"));
+  observer.observe(document.querySelector(".section-about"));
 });
 
 /***/ }),

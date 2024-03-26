@@ -20,7 +20,7 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
         />
-        <link rel="stylesheet" href="css/main.css?t=1711468891353" />
+        <link rel="stylesheet" href="css/main.css?t=1711475095070" />
 
         <script>
             var baseUrl = "./js/";
@@ -1016,16 +1016,393 @@
         </div>
     </section>
 
+    <div class="l-zhk__filter">
+        <div class="container">
+            <form action="#" class="projects__filters">
+                <div class="projects__filters-top">
+                    <div class="filter-item d-sm-none">
+                        <div class="filter-item__label">Готовый вариант</div>
+                        <div class="filter-item__select">
+                            <div class="select" data-id="2">
+                                <select
+                                    name="filter-variant"
+                                    id="filter-variant"
+                                    class="filter-select"
+                                    hidden=""
+                                    data-id="2"
+                                    data-placeholder="Выбрать"
+                                    data-speed="150"
+                                >
+                                    <option value="">Выбрать</option>
+                                    <option value="1">Вариант 1</option>
+                                    <option value="2">Вариант 2</option>
+                                    <option value="3">Вариант 3</option>
+                                    <option value="4">Вариант 4</option>
+                                </select>
+                                <div class="select__body">
+                                    <button type="button" class="select__title">
+                                        <span class="select__value"
+                                            ><span class="select__content"
+                                                >Выбрать</span
+                                            ></span
+                                        >
+                                    </button>
+                                    <div hidden="" class="select__options">
+                                        <div class="select__scroll">
+                                            <button
+                                                class="select__option"
+                                                data-value="1"
+                                                type="button"
+                                            >
+                                                Вариант 1</button
+                                            ><button
+                                                class="select__option"
+                                                data-value="2"
+                                                type="button"
+                                            >
+                                                Вариант 2</button
+                                            ><button
+                                                class="select__option"
+                                                data-value="3"
+                                                type="button"
+                                            >
+                                                Вариант 3</button
+                                            ><button
+                                                class="select__option"
+                                                data-value="4"
+                                                type="button"
+                                            >
+                                                Вариант 4
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-item d-sm-none">
+                        <div class="filter-item__label">Город</div>
+                        <div class="filter-item__select">
+                            <div class="select" data-id="3">
+                                <select
+                                    name="filter-city"
+                                    id="filter-city"
+                                    class="filter-select"
+                                    hidden=""
+                                    data-id="3"
+                                    data-placeholder="Выбрать"
+                                    data-speed="150"
+                                >
+                                    <option value="">Выбрать</option>
+                                    <option value="1">Вариант 1</option>
+                                    <option value="2">Вариант 2</option>
+                                    <option value="3">Вариант 3</option>
+                                    <option value="4">Вариант 4</option>
+                                </select>
+                                <div class="select__body">
+                                    <button type="button" class="select__title">
+                                        <span class="select__value"
+                                            ><span class="select__content"
+                                                >Выбрать</span
+                                            ></span
+                                        >
+                                    </button>
+                                    <div hidden="" class="select__options">
+                                        <div class="select__scroll">
+                                            <button
+                                                class="select__option"
+                                                data-value="1"
+                                                type="button"
+                                            >
+                                                Вариант 1</button
+                                            ><button
+                                                class="select__option"
+                                                data-value="2"
+                                                type="button"
+                                            >
+                                                Вариант 2</button
+                                            ><button
+                                                class="select__option"
+                                                data-value="3"
+                                                type="button"
+                                            >
+                                                Вариант 3</button
+                                            ><button
+                                                class="select__option"
+                                                data-value="4"
+                                                type="button"
+                                            >
+                                                Вариант 4
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-item">
+                        <div class="filter-item__label">Количество комнат</div>
+                        <div class="filter-item__radio">
+                            <label
+                                for="filter-rooms-studio"
+                                class="filter-item__radio-btn"
+                            >
+                                <input
+                                    type="checkbox"
+                                    name="filter-rooms"
+                                    id="filter-rooms-studio"
+                                />
+                                <span>Студия</span>
+                            </label>
+                            <label
+                                for="filter-rooms-1"
+                                class="filter-item__radio-btn"
+                            >
+                                <input
+                                    type="checkbox"
+                                    name="filter-rooms"
+                                    id="filter-rooms-1"
+                                />
+                                <span>1</span>
+                            </label>
+                            <label
+                                for="filter-rooms-2"
+                                class="filter-item__radio-btn"
+                            >
+                                <input
+                                    type="checkbox"
+                                    name="filter-rooms"
+                                    id="filter-rooms-2"
+                                />
+                                <span>2</span>
+                            </label>
+                            <label
+                                for="filter-rooms-3"
+                                class="filter-item__radio-btn"
+                            >
+                                <input
+                                    type="checkbox"
+                                    name="filter-rooms"
+                                    id="filter-rooms-3"
+                                />
+                                <span>3</span>
+                            </label>
+                            <label
+                                for="filter-rooms-4"
+                                class="filter-item__radio-btn"
+                            >
+                                <input
+                                    type="checkbox"
+                                    name="filter-rooms"
+                                    id="filter-rooms-4"
+                                />
+                                <span>4</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter-item">
+                        <div class="filter-item__label">Стоимость</div>
+                        <div class="filter-item__range">
+                            <div class="filter-item__inputs">
+                                <input
+                                    type="number"
+                                    class="filter-item__input filter-item__input--left js-range-input-min"
+                                    placeholder="от"
+                                />
+                                <input
+                                    type="number"
+                                    class="filter-item__input filter-item__input--right js-range-input-max"
+                                    placeholder="до"
+                                />
+                            </div>
+                            <div
+                                class="range-slider noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"
+                                data-min="0"
+                                data-max="100"
+                            >
+                                <div class="noUi-base">
+                                    <div class="noUi-connects">
+                                        <div
+                                            class="noUi-connect"
+                                            style="
+                                                transform: translate(0%, 0px)
+                                                    scale(1, 1);
+                                            "
+                                        ></div>
+                                    </div>
+                                    <div
+                                        class="noUi-origin"
+                                        style="
+                                            transform: translate(-100%, 0px);
+                                            z-index: 5;
+                                        "
+                                    >
+                                        <div
+                                            class="noUi-handle noUi-handle-lower"
+                                            data-handle="0"
+                                            tabindex="0"
+                                            role="slider"
+                                            aria-orientation="horizontal"
+                                            aria-valuemin="0.0"
+                                            aria-valuemax="100.0"
+                                            aria-valuenow="0.0"
+                                            aria-valuetext="0"
+                                        >
+                                            <div class="noUi-touch-area"></div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="noUi-origin"
+                                        style="
+                                            transform: translate(0%, 0px);
+                                            z-index: 4;
+                                        "
+                                    >
+                                        <div
+                                            class="noUi-handle noUi-handle-upper"
+                                            data-handle="1"
+                                            tabindex="0"
+                                            role="slider"
+                                            aria-orientation="horizontal"
+                                            aria-valuemin="0.0"
+                                            aria-valuemax="100.0"
+                                            aria-valuenow="100.0"
+                                            aria-valuetext="100"
+                                        >
+                                            <div class="noUi-touch-area"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-item d-sm-none">
+                        <div class="filter-item__label">Площадь</div>
+                        <div class="filter-item__range">
+                            <div class="filter-item__inputs">
+                                <input
+                                    type="number"
+                                    class="filter-item__input filter-item__input--left js-range-input-min"
+                                    placeholder="от"
+                                />
+                                <input
+                                    type="number"
+                                    class="filter-item__input filter-item__input--right js-range-input-max"
+                                    placeholder="до"
+                                />
+                            </div>
+                            <div
+                                class="range-slider noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"
+                                data-min="0"
+                                data-max="10000"
+                            >
+                                <div class="noUi-base">
+                                    <div class="noUi-connects">
+                                        <div
+                                            class="noUi-connect"
+                                            style="
+                                                transform: translate(0%, 0px)
+                                                    scale(1, 1);
+                                            "
+                                        ></div>
+                                    </div>
+                                    <div
+                                        class="noUi-origin"
+                                        style="
+                                            transform: translate(-100%, 0px);
+                                            z-index: 5;
+                                        "
+                                    >
+                                        <div
+                                            class="noUi-handle noUi-handle-lower"
+                                            data-handle="0"
+                                            tabindex="0"
+                                            role="slider"
+                                            aria-orientation="horizontal"
+                                            aria-valuemin="0.0"
+                                            aria-valuemax="10000.0"
+                                            aria-valuenow="0.0"
+                                            aria-valuetext="0"
+                                        >
+                                            <div class="noUi-touch-area"></div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="noUi-origin"
+                                        style="
+                                            transform: translate(0%, 0px);
+                                            z-index: 4;
+                                        "
+                                    >
+                                        <div
+                                            class="noUi-handle noUi-handle-upper"
+                                            data-handle="1"
+                                            tabindex="0"
+                                            role="slider"
+                                            aria-orientation="horizontal"
+                                            aria-valuemin="0.0"
+                                            aria-valuemax="10000.0"
+                                            aria-valuenow="10000.0"
+                                            aria-valuetext="10000"
+                                        >
+                                            <div class="noUi-touch-area"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="filter-item-result btn">63 объекта</a>
+                </div>
+                <div class="projects__filters-controls">
+                    <button
+                        type="button"
+                        class="projects__filters-all"
+                        data-filter="open"
+                    >
+                        Все фильтры
+                    </button>
+                    <button type="reset" class="projects__filters-reset">
+                        Сбросить фильтры
+                        <svg width="24" height="24">
+                            <use
+                                xlink:href="../img/icons/icons.svg#cross"
+                            ></use>
+                        </svg>
+                    </button>
+                    <div class="projects__switcher">
+                        <button
+                            type="button"
+                            class="projects__switcher-btn reset-btn is-active"
+                        >
+                            <svg width="18" height="18">
+                                <use
+                                    xlink:href="../img/icons/icons.svg#coubs"
+                                ></use>
+                            </svg>
+                        </button>
+                        <button
+                            type="button"
+                            class="projects__switcher-btn reset-btn"
+                        >
+                            <svg width="18" height="18">
+                                <use
+                                    xlink:href="../img/icons/icons.svg#pin"
+                                ></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="l-zhk__about">
         <section class="section-about">
             <div class="container">
                 <div class="section-about__inner">
-                    <div class="section-about__tools">
-                        <img src="img/temp/filter.jpg" alt="" />
-                    </div>
-
                     <div class="section-about__row">
-                        <div class="section-about__col">
+                        <div class="section-about__col-desc">
                             <h2 class="section-about__h1">О проекте</h2>
 
                             <div class="section-about__desc">
@@ -1043,18 +1420,18 @@
                             <div class="section-about__props">
 <ul class="props-nums">
     <li class="props-nums__item">
-        <div class="props-nums__value">5,7 <sub>га</sub></div>
+        <div class="props-nums__value">5,7<sub>га</sub></div>
         <div class="props-nums__label">возводимая площадь</div>
     </li>
     <li class="props-nums__item">
-        <div class="props-nums__value">3 <sub>мин</sub></div>
+        <div class="props-nums__value">3<sub>мин</sub></div>
         <div class="props-nums__label">до парка им. Ленина</div>
     </li>
 </ul>
 
                             </div>
                         </div>
-                        <div class="section-about__col">
+                        <div class="section-about__col-image">
                             <div class="section-about__picture">
                                 <div
                                     class="image-box section-about__image"
@@ -1066,7 +1443,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="section-about__col">
+                        <div class="section-about__col-image">
                             <div
                                 class="section-about__picture section-about__picture--shift"
                             >
@@ -1235,6 +1612,12 @@
         </section>
     </div>
 
+    <div class="l-zhk__video">Видео</div>
+    <div class="l-zhk__genplan">Генплан</div>
+    <div class="l-zhk__people">Ваши будущие соседи</div>
+    <div class="l-zhk__design">aрхитектура</div>
+    <div class="l-zhk__tour">Лобби</div>
+
     <div class="l-zhk__types">
 <section class="types section types--small p-0">
     <div class="container">
@@ -1399,6 +1782,8 @@
 </section>
 
     </div>
+
+    <div class="l-zhk__view">вид из окна</div>
 
     <div class="l-zhk__rooms">
 <section class="rooms section p-0" data-role="tabs">
@@ -3167,7 +3552,7 @@
 
 
 
-        <script src="js/main.js?t=1711468891353"></script>
+        <script src="js/main.js?t=1711475095070"></script>
 
         <div id="notify" class="notify"></div>
 

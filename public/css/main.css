@@ -1385,12 +1385,23 @@ a {
   font-size: 0.24em;
 }
 .props-nums__label {
-  margin-top: 16px;
+  margin-top: 1em;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.4em;
 }
 
+@media (max-width: 999.98px) {
+  .props-nums {
+    gap: 36px;
+  }
+  .props-nums__value {
+    font-size: 50px;
+  }
+  .props-nums__label {
+    font-size: 14px;
+  }
+}
 .section-plans {
   overflow: hidden;
 }
@@ -1523,9 +1534,6 @@ a {
 .section-about__inner {
   position: relative;
 }
-.section-about__tools {
-  padding: 80px 0 120px 0;
-}
 .section-about__h1 {
   margin-bottom: 24px;
   font-size: 60px;
@@ -1541,11 +1549,17 @@ a {
   margin-top: 60px;
 }
 .section-about__row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  --gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(var(--gap) / 2 * -1);
 }
-.section-about__col:last-child {
+.section-about__col-desc, .section-about__col-image {
+  flex: 0 0 auto;
+  padding: 0 calc(var(--gap) / 2);
+  width: 33.33%;
+}
+.section-about__col-image:last-child {
   padding-top: clamp(0px, 8vw, 150px);
   z-index: 7;
 }
@@ -1574,6 +1588,33 @@ a {
   z-index: 10;
 }
 
+@media (max-width: 1399.98px) {
+  .section-about__col-desc {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .section-about__col-image {
+    width: 50%;
+  }
+  .section-about__name {
+    width: calc((100% - 16px) / 2);
+  }
+}
+@media (max-width: 999.98px) {
+  .section-about__h1 {
+    margin-bottom: 28px;
+    font-size: 32px;
+  }
+  .section-about__desc {
+    font-size: 14px;
+  }
+  .section-about__row {
+    --gap: 8px;
+  }
+  .section-about__image img {
+    border-radius: 6px;
+  }
+}
 .section-location__header {
   margin-bottom: 50px;
   display: flex;
@@ -1976,15 +2017,73 @@ a {
   justify-content: center;
 }
 
-.l-zhk__plans, .l-zhk__types, .l-zhk__rooms, .l-zhk__cameras, .l-zhk__payways, .l-zhk__programs, .l-zhk__docs, .l-zhk__news {
-  margin: 40px 0;
+@media (max-width: 61.99875em) {
+  .projects__filters-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+.l-zhk__filter {
+  margin-top: 80px;
+}
+.l-zhk__about {
+  margin-top: 120px;
 }
 .l-zhk__location {
-  margin: 120px 0;
+  margin-top: 114px;
+}
+.l-zhk__video {
+  margin-top: 120px;
+}
+.l-zhk__genplan {
+  margin-top: 120px;
+}
+.l-zhk__people {
+  margin-top: 90px;
+}
+.l-zhk__design {
+  margin-top: 160px;
+}
+.l-zhk__tour {
+  margin-top: 120px;
+}
+.l-zhk__types {
+  margin-top: 80px;
+}
+.l-zhk__view {
+  margin-top: 110px;
+}
+.l-zhk__rooms {
+  margin-top: 114px;
+}
+.l-zhk__plans {
+  margin-top: 80px;
+}
+.l-zhk__payways {
+  margin-top: 80px;
+}
+.l-zhk__programs {
+  margin-top: 80px;
+}
+.l-zhk__cameras {
+  margin-top: 90px;
+}
+.l-zhk__docs {
+  margin-top: 80px;
+}
+.l-zhk__news {
+  margin-top: 80px;
+}
+.l-zhk__offices {
+  margin-top: 80px;
 }
 
 @media (max-width: 999.98px) {
-  .l-zhk__plans, .l-zhk__types, .l-zhk__rooms, .l-zhk__cameras, .l-zhk__payways, .l-zhk__programs, .l-zhk__docs, .l-zhk__news {
-    margin: 30px 0;
+  .l-zhk__filter {
+    margin-top: 40px;
+  }
+  .l-zhk__about, .l-zhk__location, .l-zhk__video, .l-zhk__genplan, .l-zhk__people, .l-zhk__design, .l-zhk__tour, .l-zhk__types, .l-zhk__view, .l-zhk__rooms, .l-zhk__plans, .l-zhk__payways, .l-zhk__programs, .l-zhk__cameras, .l-zhk__docs, .l-zhk__news, .l-zhk__offices {
+    margin-top: 60px;
   }
 }

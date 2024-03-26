@@ -1,31 +1,101 @@
 .l-zhk {
-    &__plans,
-    &__types,
-    &__rooms,
-    &__cameras,
-    &__payways,
-    &__programs,
-    &__docs,
-    &__news {
-        margin: 40px 0;
+    &__filter {
+        margin-top: 80px;
+    }
+
+    &__about {
+        margin-top: 120px;
     }
 
     &__location {
-        margin: 120px 0;
+        margin-top: 114px;
+    }
+
+    &__video {
+        margin-top: 120px;
+    }
+
+    &__genplan {
+        margin-top: 120px;
+    }
+
+    &__people {
+        margin-top: 90px;
+    }
+
+    &__design {
+        margin-top: 160px;
+    }
+
+    &__tour {
+        margin-top: 120px;
+    }
+
+    &__types {
+        margin-top: 80px;
+    }
+
+    &__view {
+        margin-top: 110px;
+    }
+
+    &__rooms {
+        margin-top: 114px;
+    }
+
+    &__plans {
+        margin-top: 80px;
+    }
+
+    &__payways {
+        margin-top: 80px;
+    }
+
+    &__programs {
+        margin-top: 80px;
+    }
+
+    &__cameras {
+        margin-top: 90px;
+    }
+
+    &__docs {
+        margin-top: 80px;
+    }
+
+    &__news {
+        margin-top: 80px;
+    }
+
+    &__offices {
+        margin-top: 80px;
     }
 }
 
 @media (max-width: 999.98px) {
     .l-zhk {
-        &__plans,
+        &__filter {
+            margin-top: 40px;
+        }
+
+        &__about,
+        &__location,
+        &__video,
+        &__genplan,
+        &__people,
+        &__design,
+        &__tour,
         &__types,
+        &__view,
         &__rooms,
-        &__cameras,
+        &__plans,
         &__payways,
         &__programs,
+        &__cameras,
         &__docs,
-        &__news {
-            margin: 30px 0;
+        &__news,
+        &__offices {
+            margin-top: 60px;
         }
     }
 }
