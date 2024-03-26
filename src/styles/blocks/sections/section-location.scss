@@ -1,26 +1,40 @@
 .section-location {
     &__header {
         margin-bottom: 50px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
     }
 
     &__h1 {
         font-size: 44px;
         font-weight: 500;
         line-height: calc(41.8 / 44);
+        flex: 0 0 auto;
+        width: 50%;
     }
 
     &__desc {
         font-size: 16px;
         font-weight: 500;
         line-height: calc(22.4 / 16);
+        flex-grow: 1;
+        max-width: 510px;
     }
 
     &__map {
         height: 740px;
+        background: #f3f3f3;
+        border-radius: 20px;
+        position: relative;
     }
 
     &__sidebar {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        bottom: 16px;
+        padding: 32px;
+        border-radius: 16px;
+        background: #fff;
+        width: 378px;
     }
 }
