@@ -7,17 +7,7 @@
   \*******************************/
 /***/ (function() {
 
-// const Popup = {
-//     showSuccess() {
-//         $.magnificPopup.open({
-//             items: {
-//                 src: "#popup-success",
-//                 type: "inline",
-//             },
-//         });
-//     },
-// };
-// window.Popup = Popup;
+
 
 /***/ }),
 
@@ -67,16 +57,7 @@ $(function () {
   \********************************/
 /***/ (function() {
 
-// // #demo
-// $(function () {
-//     $(".btn-load").on("click", function (e) {
-//         e.preventDefault();
-//         $(this).addClass("loading");
-//         setTimeout(() => {
-//             $(this).removeClass("loading");
-//         }, 1500);
-//     });
-// });
+
 
 /***/ }),
 

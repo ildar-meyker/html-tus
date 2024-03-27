@@ -1,0 +1,46 @@
+.panel-location {
+    padding: 20px;
+    border-radius: 16px;
+    background: #fff;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__btn-close {
+    }
+
+    &__h1 {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: calc(19.2 / 16);
+    }
+
+    &__desc {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: calc(16.8 / 14);
+        letter-spacing: -0.02em;
+        margin-top: 12px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .panel-location {
+        &__header {
+        }
+
+        &__btn-close {
+            display: none;
+        }
+
+        &__h1 {
+        }
+
+        &__desc {
+        }
+    }
+}

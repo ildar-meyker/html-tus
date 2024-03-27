@@ -1,0 +1,21 @@
+.btn-close {
+    @include reset-btn;
+    width: 1em;
+    height: 1em;
+    background: #f4f4f4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+
+    &:hover {
+        background: #ff6100;
+        color: #fff;
+    }
+
+    .icon {
+        font-size: calc(10 / 45) + em;
+        transform: rotate(-45deg);
+    }
+}

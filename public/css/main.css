@@ -930,6 +930,31 @@ a {
   transform: rotate(0deg);
 }
 
+.btn-close {
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  background: #f4f4f4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+}
+.btn-close:hover {
+  background: #ff6100;
+  color: #fff;
+}
+.btn-close .icon {
+  font-size: 0.2222222222em;
+  transform: rotate(-45deg);
+}
+
 .card-doc {
   background: #fff;
   border: 1px solid #0000001a;
@@ -1535,6 +1560,35 @@ a {
   letter-spacing: -0.02em;
 }
 
+.panel-location {
+  padding: 20px;
+  border-radius: 16px;
+  background: #fff;
+}
+.panel-location__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.panel-location__h1 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.panel-location__desc {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-top: 12px;
+}
+
+@media (min-width: 1000px) {
+  .panel-location__btn-close {
+    display: none;
+  }
+}
 .props-nums {
   display: flex;
   gap: 54px;
