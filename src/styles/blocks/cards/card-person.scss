@@ -1,8 +1,11 @@
 .card-person {
     position: relative;
+    perspective: 500px;
 
     &__photo {
         padding-top: 100%;
+        transform-style: preserve-3d;
+        transition: transform 1s;
 
         img {
             border-radius: 16px;
@@ -16,6 +19,48 @@
     }
 }
 
+@media (min-width: 1000px) {
+    .card-person {
+        &.flipped {
+            .card-person__photo {
+                transform: rotateY(-180deg);
+                backface-visibility: hidden;
+            }
+
+            .card-person__btn-expand {
+                opacity: 0;
+            }
+        }
+
+        &.active {
+            .card-person__photo {
+                transform: rotateY(0deg);
+            }
+
+            .card-person__btn-expand {
+                opacity: 1;
+            }
+        }
+
+        &.delay-1 {
+            .card-person__photo {
+                transition-delay: 0.1s;
+            }
+        }
+
+        &.delay-2 {
+            .card-person__photo {
+                transition-delay: 0.2s;
+            }
+        }
+
+        &.delay-3 {
+            .card-person__photo {
+                transition-delay: 0.3s;
+            }
+        }
+    }
+}
 @media (max-width: 999.98px) {
     .card-person {
         &__photo {

@@ -1,9 +1,12 @@
 import { debounce } from "throttle-debounce";
 import { getRandomInt } from "./utils";
 
+let isInitialized = false;
 let $grids = $();
 
 function addEmptyCells() {
+    isInitialized = true;
+
     $grids.each(function () {
         const $allCells = $(this).find(" > div");
         const $originalCells = $allCells.not(".empty");
@@ -39,3 +42,13 @@ $(function () {
 
     $(window).on("resize orientationchange", debounce(200, handleWindowResize));
 });
+
+export const GridPeople = {
+    isInitialized() {
+        return isInitialized;
+    },
+
+    addEmptyCells() {
+        addEmptyCells();
+    },
+};

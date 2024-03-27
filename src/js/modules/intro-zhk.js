@@ -60,6 +60,7 @@ function handlePanelLeave() {
 function handleFloorEnter(e) {
     closeActivePanels();
     const target = $(e.target).data("target");
+    $(this).addClass("hover");
     $(target).addClass("active");
 }
 
@@ -71,6 +72,7 @@ function handleBuildingLeave(e) {
 
 function closeActivePanels() {
     $panels.filter(".active").removeClass("active");
+    $(".intro-zhk__floors__item.hover").removeClass("hover");
 }
 
 function handleWindowLoad() {

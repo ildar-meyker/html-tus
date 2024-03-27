@@ -12,6 +12,7 @@ import "./modules/slider-people";
 import "./modules/intro-zhk";
 import "./modules/bottom-menu";
 import "./modules/section-about";
+import "./modules/section-people";
 import "./modules/grid-people";
 
 window.history.scrollRestoration = "manual";
