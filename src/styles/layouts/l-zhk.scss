@@ -69,6 +69,7 @@
 
     &__offices {
         margin-top: 80px;
+        margin-bottom: 80px;
     }
 }
 
@@ -96,6 +97,10 @@
         &__news,
         &__offices {
             margin-top: 60px;
+        }
+
+        &__offices {
+            margin-bottom: 60px;
         }
     }
 }

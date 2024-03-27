@@ -16,8 +16,17 @@
         [class*="ymaps-2"][class*="copyrights-pane"] {
             display: none !important;
         }
+        [class*="ymaps-2"][class*="controls-pane"] {
+            right: 40px !important;
+            top: 50% !important;
+            transform: translateY(-50%);
+            left: auto !important;
+            width: auto !important;
+        }
+
         [class*="ymaps-2"][class*="controls__control"] {
-            inset: 40px 40px auto auto !important;
+            inset: 0 !important;
+            position: static !important;
         }
     }
 
@@ -26,16 +35,20 @@
         cursor: pointer;
         background: #fff;
         border-radius: 50%;
-        font-size: 4.8rem;
+        font-size: 62px;
         width: 1em;
         height: 1em;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #000;
+        color: #ff6100;
+
+        &:first-child {
+            margin-bottom: 12px;
+        }
 
         .icon {
-            font-size: 1.2rem;
+            font-size: calc(22 / 62) + em;
         }
     }
 }
