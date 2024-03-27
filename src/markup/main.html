@@ -1057,28 +1057,6 @@
                             ></use>
                         </svg>
                     </button>
-                    <div class="projects__switcher">
-                        <button
-                            type="button"
-                            class="projects__switcher-btn reset-btn is-active"
-                        >
-                            <svg width="18" height="18">
-                                <use
-                                    xlink:href="../img/icons/icons.svg#coubs"
-                                ></use>
-                            </svg>
-                        </button>
-                        <button
-                            type="button"
-                            class="projects__switcher-btn reset-btn"
-                        >
-                            <svg width="18" height="18">
-                                <use
-                                    xlink:href="../img/icons/icons.svg#pin"
-                                ></use>
-                            </svg>
-                        </button>
-                    </div>
                 </div>
             </form>
         </div>
@@ -1115,7 +1093,7 @@
                                     style="padding-top: 138%"
                                 >
                                     <img
-                                        src="https://loremflickr.com/600/1000/construction?random=1"
+                                        src="https://loremflickr.com/600/1000/construction?lock=1"
                                     />
                                 </div>
                             </div>
@@ -1129,7 +1107,7 @@
                                     style="padding-top: 155%"
                                 >
                                     <img
-                                        src="https://loremflickr.com/600/1000/construction?random=2"
+                                        src="https://loremflickr.com/600/1000/construction?lock=2"
                                     />
                                 </div>
                             </div>
@@ -1172,7 +1150,53 @@
 
     <div class="l-zhk__video">Видео</div>
     <div class="l-zhk__genplan">Генплан</div>
-    <div class="l-zhk__people">Ваши будущие соседи</div>
+    <div class="l-zhk__people">
+        <section class="section-people js-slider-root" id="section-people">
+            <div class="container">
+                <div class="section-people__header">
+                    <h2 class="section-people__h1">Ваши будущие соседи</h2>
+                    <div class="section-people__nav">
+                        <nav class="nav-arrows">
+                            <ul>
+                                <li>
+                                    <button class="btn-arrow js-slider-prev">
+                                        <svg class="icon">
+                                            <use
+                                                xlink:href="img/icons/general/sprite.svg#arrow-left"
+                                            ></use>
+                                        </svg>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="btn-arrow js-slider-next">
+                                        <svg class="icon flip-x">
+                                            <use
+                                                xlink:href="img/icons/general/sprite.svg#arrow-left"
+                                            ></use>
+                                        </svg>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="slider-people">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <!-- @@include = ./partials/grid-people.html -->
+                            </div>
+
+                            <div class="swiper-slide">
+                                <!-- @@include = ./partials/grid-people.html -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     <div class="l-zhk__design">aрхитектура</div>
     <div class="l-zhk__tour">Лобби</div>
 

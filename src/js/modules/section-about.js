@@ -22,8 +22,6 @@ function updateScrollDeps() {
               scrollProgress * (Math.abs(maxShift) - Math.abs(initialShift));
 
     $section[0].style.setProperty("--name-shift", -newShift + "px");
-
-    console.log("section-about:updateScrollDeps");
 }
 
 function handleWindowScroll() {

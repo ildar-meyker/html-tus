@@ -1,0 +1,31 @@
+.slider-people {
+    .swiper {
+    }
+    .swiper-wrapper {
+    }
+    .swiper-slide {
+    }
+}
+@media (max-width: 999.98px) {
+    .slider-people {
+        overflow: auto;
+        @include hide-scrollbar;
+        margin: 0 -20px;
+        padding: 0 20px;
+
+        .swiper {
+            overflow: visible;
+        }
+        .swiper-wrapper {
+        }
+        .swiper-slide {
+            width: auto;
+            display: inline-block;
+            margin-right: 10px;
+
+            &:last-child {
+                margin-right: 20px;
+            }
+        }
+    }
+}

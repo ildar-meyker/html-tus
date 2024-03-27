@@ -1,0 +1,35 @@
+.panel-person {
+    border-radius: 16px;
+    background: linear-gradient(100.43deg, #362825 -1.14%, #665551 105.39%);
+    padding: 24px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+
+    &__photo {
+        width: 1em;
+        height: 1em;
+        font-size: 87px;
+
+        img {
+            border-radius: 8px;
+        }
+    }
+
+    &__text {
+        margin-top: 16px;
+        opacity: 0.7;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: calc(22.4 / 16);
+    }
+
+    &__name {
+        margin-top: auto;
+        padding-top: 40px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: calc(21.6 / 18) + em;
+        letter-spacing: -0.02em;
+    }
+}

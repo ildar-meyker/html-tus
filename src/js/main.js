@@ -8,9 +8,11 @@ import "./modules/slider-docs";
 import "./modules/slider-payways";
 import "./modules/slider-cameras";
 import "./modules/slider-menu";
+import "./modules/slider-people";
 import "./modules/intro-zhk";
 import "./modules/bottom-menu";
 import "./modules/section-about";
+import "./modules/grid-people";
 
 window.history.scrollRestoration = "manual";
 

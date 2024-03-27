@@ -32,5 +32,5 @@ $(function () {
 
     const observer = new IntersectionObserver(callback, options);
 
-    observer.observe(document.querySelector(".section-about"));
+    observer.observe(document.querySelector("#section-about"));
 });

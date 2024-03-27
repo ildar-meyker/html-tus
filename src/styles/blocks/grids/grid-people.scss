@@ -1,0 +1,39 @@
+.grid-people {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-rows: 1fr 1fr;
+    grid-auto-rows: 0;
+    overflow: hidden;
+    margin: 0 -8px;
+
+    > div {
+        margin-bottom: 16px;
+        padding: 0 8px;
+    }
+}
+
+@media (max-width: 999.98px) {
+    .grid-people {
+        display: block;
+        white-space: nowrap;
+        margin: 0 -5px;
+        overflow: visible;
+
+        > div {
+            display: inline-block;
+            padding: 5px;
+            margin: 0;
+            width: clamp(84px, 23vw, 150px);
+
+            &.active {
+                .card-person {
+                    box-shadow: 0 0 0 2px #ff6100;
+                    border-radius: 10px;
+                }
+            }
+            &.empty {
+                display: none;
+            }
+        }
+    }
+}
