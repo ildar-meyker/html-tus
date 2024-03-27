@@ -23,11 +23,19 @@
     }
 
     &__btn-down {
+        transition: all 0.2s;
         position: fixed;
         z-index: 10;
         bottom: 20%;
         right: calc(27% - 46px);
         mix-blend-mode: color-dodge;
+        visibility: hidden;
+        opacity: 0;
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+        }
     }
 
     &__image {
@@ -151,6 +159,13 @@
 
         .slider-menu {
             backdrop-filter: blur(10px);
+        }
+    }
+
+    &--inactive {
+        .intro-zhk__floors,
+        .intro-zhk__panel {
+            display: none;
         }
     }
 }

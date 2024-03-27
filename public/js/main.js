@@ -33,7 +33,7 @@ var $btnHeart = $();
 
 function toggleMenuStyle() {
   var scrollTop = $(window).scrollTop();
-  var isDarkMode = scrollTop > $section.outerHeight() - $(window).height();
+  var isDarkMode = $section.outerHeight() < scrollTop + $(window).height();
   $btnHeart.toggleClass("btn-heart--dark", isDarkMode);
   $sliderMenu.toggleClass("slider-menu--dark", isDarkMode);
 }
@@ -56,7 +56,7 @@ $(function () {
     threshold: 0
   };
   var observer = new IntersectionObserver(callback, options);
-  observer.observe(document.querySelector("#section-about"));
+  observer.observe(document.querySelector(".l-zhk__filter"));
 });
 
 /***/ }),
@@ -160,6 +160,7 @@ var leaveTimer = null;
 var $section = $();
 var $image = $();
 var $panels = $();
+var $btnDown = $();
 
 function transformScrollTopToStyles() {
   var fullScaleAtScrollTop = $image.offset().top;
@@ -184,10 +185,18 @@ function updateScrollDeps() {
   });
   $image[0].style.setProperty("--border-radius", newBorderRadius + "px");
   $section.toggleClass("intro-zhk--full-scale", newScale === 1);
+  $btnDown.toggleClass("active", newScale < 0.8);
+}
+
+function toggleInactive() {
+  var scrollTop = $(window).scrollTop();
+  var isInactive = $section.outerHeight() < scrollTop + 700;
+  $section.toggleClass("intro-zhk--inactive", isInactive);
 }
 
 function handleWindowScroll() {
   updateScrollDeps();
+  toggleInactive();
 }
 
 function handlePanelEnter() {
@@ -222,9 +231,17 @@ function handleWindowLoad() {
   }, 1200);
 }
 
+function handleScrollDown() {
+  window.scroll({
+    top: $image.offset().top,
+    behavior: "smooth"
+  });
+}
+
 $(function () {
   $section = $("#intro-zhk");
   $image = $(".intro-zhk__image");
+  $btnDown = $(".intro-zhk__btn-down");
   $panels = $(".intro-zhk__panel");
   if ($section.length === 0) return;
 
@@ -249,6 +266,7 @@ $(function () {
   $(document).on("mouseleave", ".intro-zhk__floors", handleBuildingLeave);
   $(document).on("mouseenter", ".intro-zhk__panel", handlePanelEnter);
   $(document).on("mouseleave", ".intro-zhk__panel", handlePanelLeave);
+  $(document).on("click", ".intro-zhk__btn-down", handleScrollDown);
   $(window).on("load", handleWindowLoad);
 });
 

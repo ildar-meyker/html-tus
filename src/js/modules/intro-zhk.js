@@ -3,6 +3,7 @@ let leaveTimer = null;
 let $section = $();
 let $image = $();
 let $panels = $();
+let $btnDown = $();
 
 function transformScrollTopToStyles() {
     const fullScaleAtScrollTop = $image.offset().top;
@@ -31,10 +32,21 @@ function updateScrollDeps() {
     $image[0].style.setProperty("--border-radius", newBorderRadius + "px");
 
     $section.toggleClass("intro-zhk--full-scale", newScale === 1);
+
+    $btnDown.toggleClass("active", newScale < 0.8);
+}
+
+function toggleInactive() {
+    const scrollTop = $(window).scrollTop();
+
+    const isInactive = $section.outerHeight() < scrollTop + 700;
+
+    $section.toggleClass("intro-zhk--inactive", isInactive);
 }
 
 function handleWindowScroll() {
     updateScrollDeps();
+    toggleInactive();
 }
 
 function handlePanelEnter() {
@@ -70,9 +82,17 @@ function handleWindowLoad() {
     }, 1200);
 }
 
+function handleScrollDown() {
+    window.scroll({
+        top: $image.offset().top,
+        behavior: "smooth",
+    });
+}
+
 $(function () {
     $section = $("#intro-zhk");
     $image = $(".intro-zhk__image");
+    $btnDown = $(".intro-zhk__btn-down");
     $panels = $(".intro-zhk__panel");
 
     if ($section.length === 0) return;
@@ -101,5 +121,7 @@ $(function () {
     $(document).on("mouseleave", ".intro-zhk__floors", handleBuildingLeave);
     $(document).on("mouseenter", ".intro-zhk__panel", handlePanelEnter);
     $(document).on("mouseleave", ".intro-zhk__panel", handlePanelLeave);
+    $(document).on("click", ".intro-zhk__btn-down", handleScrollDown);
+
     $(window).on("load", handleWindowLoad);
 });

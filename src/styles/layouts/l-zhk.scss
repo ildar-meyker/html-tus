@@ -1,6 +1,6 @@
 .l-zhk {
     &__filter {
-        margin-top: 80px;
+        padding-top: 80px; // padding, because it affects on slider-menu's dark mode
     }
 
     &__about {
@@ -75,7 +75,7 @@
 @media (max-width: 999.98px) {
     .l-zhk {
         &__filter {
-            margin-top: 40px;
+            padding-top: 40px;
         }
 
         &__about,

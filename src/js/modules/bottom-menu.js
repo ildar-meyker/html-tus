@@ -5,10 +5,11 @@ let $btnHeart = $();
 function toggleMenuStyle() {
     const scrollTop = $(window).scrollTop();
 
-    const isDarkMode = scrollTop > $section.outerHeight() - $(window).height();
+    const isDarkMode = $section.outerHeight() < scrollTop + $(window).height();
 
     $btnHeart.toggleClass("btn-heart--dark", isDarkMode);
     $sliderMenu.toggleClass("slider-menu--dark", isDarkMode);
+
 }
 
 $(function () {
@@ -32,5 +33,5 @@ $(function () {
 
     const observer = new IntersectionObserver(callback, options);
 
-    observer.observe(document.querySelector("#section-about"));
+    observer.observe(document.querySelector(".l-zhk__filter"));
 });
