@@ -1,0 +1,65 @@
+.section-offices {
+    &__h1 {
+        margin-bottom: 40px;
+        font-size: 60px;
+        font-weight: 500;
+        line-height: calc(57 / 60);
+        letter-spacing: -0.02em;
+    }
+
+    &__tabs {
+        margin-bottom: 40px;
+    }
+
+    &__map {
+        position: relative;
+    }
+}
+
+@media (min-width: 1000px) {
+    .section-offices {
+        &__panel {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            bottom: 16px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 16px;
+            padding-right: 0;
+            width: 35%;
+            max-width: 570px;
+
+            &__scroll {
+                height: 100%;
+                overflow: auto;
+            }
+
+            &__inner {
+                margin-right: 16px;
+            }
+
+            .scrollbar-inner > .scroll-element.scroll-y {
+                right: 6px;
+                top: 20px;
+                width: 4px;
+                height: auto;
+                bottom: 20px;
+            }
+        }
+    }
+}
+@media (max-width: 999.98px) {
+    .section-offices {
+        &__h1 {
+            font-size: 38px;
+            margin-bottom: 28px;
+        }
+
+        &__tabs {
+        }
+
+        &__map {
+        }
+    }
+}

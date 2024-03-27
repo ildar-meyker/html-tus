@@ -1,0 +1,140 @@
+.list-offices {
+    --padding: 32px;
+
+    .acc_section {
+        margin-top: 16px;
+        border: 1px solid #0000001a;
+        border-radius: 12px;
+
+        &:not([class*="acc_active"]) {
+            .list-offices__btn-plus {
+                &:before {
+                    transform: rotate(-180deg);
+                }
+                &:after {
+                    transform: rotate(-90deg);
+                    opacity: 1;
+                }
+            }
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    .acc_head {
+        padding: var(--padding);
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        cursor: pointer;
+    }
+
+    &__btn-plus {
+        position: relative;
+        border-radius: 50%;
+        width: 1em;
+        height: 1em;
+        font-size: 60px;
+        background: #f4f4f4;
+
+        &:before,
+        &:after {
+            transition: all 0.2s;
+            transform-origin: 50% 50%;
+            content: " ";
+            height: 2px;
+            background: #000;
+            width: 1em;
+            position: absolute;
+            left: 50%;
+            margin-left: -0.5em;
+            top: 50%;
+            margin-top: -1px;
+            font-size: calc(12 / 60) + em;
+        }
+
+        &:after {
+            opacity: 0;
+        }
+    }
+
+    &__thumb {
+        width: 1em;
+        height: 1em;
+        font-size: 100px;
+
+        img {
+            border-radius: 6px;
+        }
+    }
+
+    &__name {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: calc(26.4 / 24);
+        letter-spacing: -0.02em;
+        flex-grow: 1;
+    }
+
+    &__body {
+        padding: var(--padding);
+        padding-top: 0;
+    }
+
+    &__btn-map {
+        margin-top: 28px;
+    }
+}
+
+@media (max-width: 1399.98px) {
+    .list-offices {
+        --padding: 20px;
+
+        .acc_section {
+            &:not([class*="acc_active"]) {
+                .list-offices__btn {
+                    &:before {
+                    }
+
+                    &:after {
+                    }
+                }
+            }
+        }
+
+        .acc_head {
+            font-size: 16px;
+            gap: 16px;
+        }
+
+        &__btn-plus {
+            font-size: 50px;
+
+            &:before,
+            &:after {
+            }
+
+            &:after {
+            }
+        }
+
+        &__thumb {
+            font-size: 60px;
+
+            img {
+            }
+        }
+
+        &__name {
+            font-size: 16px;
+        }
+
+        &__body {
+        }
+
+        &__btn-map {
+        }
+    }
+}

@@ -1,3 +1,9 @@
+window.history.scrollRestoration = "manual";
+
+$(window).on("beforeunload", function () {
+    $(window).scrollTop(0);
+});
+
 // $.extend(true, $.magnificPopup.defaults, {
 //     tClose: "", // Alt text on close button
 //     tLoading: "Загрузка...", // Text that is displayed during loading. Can contain %curr% and %total% keys

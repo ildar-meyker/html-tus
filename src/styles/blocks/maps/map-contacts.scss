@@ -1,0 +1,41 @@
+.map-contacts {
+    position: relative;
+    background: #f3f3f3;
+    border-radius: 16px;
+    overflow: hidden;
+
+    &:before {
+        content: " ";
+        padding-top: 56.41%;
+        display: block;
+    }
+
+    &__box {
+        @include fill;
+
+        [class*="ymaps-2"][class*="copyrights-pane"] {
+            display: none !important;
+        }
+        [class*="ymaps-2"][class*="controls__control"] {
+            inset: 40px 40px auto auto !important;
+        }
+    }
+
+    &__btn-zoom-in,
+    &__btn-zoom-out {
+        cursor: pointer;
+        background: #fff;
+        border-radius: 50%;
+        font-size: 4.8rem;
+        width: 1em;
+        height: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #000;
+
+        .icon {
+            font-size: 1.2rem;
+        }
+    }
+}

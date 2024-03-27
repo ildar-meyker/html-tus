@@ -1,6 +1,23 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/modules/accordion.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/accordion.js ***!
+  \*************************************/
+/***/ (function() {
+
+$(function () {
+  $(".js-accordion").each(function () {
+    $(this).accordionjs({
+      closeAble: true,
+      activeIndex: false
+    });
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/modules/api.js":
 /*!*******************************!*\
   !*** ./src/js/modules/api.js ***!
@@ -48,6 +65,45 @@ $(function () {
   var observer = new IntersectionObserver(callback, options);
   observer.observe(document.querySelector(".l-zhk__filter"));
 });
+
+/***/ }),
+
+/***/ "./src/js/modules/defaults.js":
+/*!************************************!*\
+  !*** ./src/js/modules/defaults.js ***!
+  \************************************/
+/***/ (function() {
+
+window.history.scrollRestoration = "manual";
+$(window).on("beforeunload", function () {
+  $(window).scrollTop(0);
+}); // $.extend(true, $.magnificPopup.defaults, {
+//     tClose: "", // Alt text on close button
+//     tLoading: "Загрузка...", // Text that is displayed during loading. Can contain %curr% and %total% keys
+//     gallery: {
+//         tPrev: "", // Alt text on left arrow
+//         tNext: "", // Alt text on right arrow
+//         tCounter: "%curr% из %total%", // Markup for "1 of 7" counter
+//     },
+//     image: {
+//         tError: 'Не удалось загрузить <a href="%url%">изображение</a>.', // Error message when image could not be loaded
+//     },
+//     ajax: {
+//         tError: 'Не удалось загрузить <a href="%url%">страницу</a>.', // Error message when ajax request failed
+//     },
+// });
+// $.validator.addMethod(
+//     "mobileRU",
+//     function (phone_number, element) {
+//         var ruPhone_number = phone_number.replace(/\(|\)|\s+|-/g, "");
+//         return (
+//             this.optional(element) ||
+//             (ruPhone_number.length > 9 &&
+//                 /^((\+7|7|8)+([0-9]){10})$/.test(ruPhone_number))
+//         );
+//     },
+//     "Пожалуйста укажите корректный номер."
+// );
 
 /***/ }),
 
@@ -267,6 +323,110 @@ $(function () {
   $(document).on("mouseleave", ".intro-zhk__panel", handlePanelLeave);
   $(document).on("click", ".intro-zhk__btn-down", handleScrollDown);
   $(window).on("load", handleWindowLoad);
+});
+
+/***/ }),
+
+/***/ "./src/js/modules/map-contacts.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/map-contacts.js ***!
+  \****************************************/
+/***/ (function() {
+
+if (typeof ymaps !== "undefined") {
+  ymaps.ready(init);
+}
+
+var CLASS_ZOOM_IN = "map-contacts__btn-zoom-in";
+var CLASS_ZOOM_OUT = "map-contacts__btn-zoom-out";
+
+function init() {
+  $(".map-contacts").each(function () {
+    var $root = $(this);
+
+    var _$root$data = $root.data(),
+        id = _$root$data.id,
+        center = _$root$data.center,
+        hint = _$root$data.hint;
+
+    var assetsUrl = $root.data("assets-url");
+    var myMap = new ymaps.Map(id, {
+      center: center,
+      controls: [],
+      zoom: 15
+    });
+    var myPlacemark = new ymaps.Placemark(center, {
+      hintContent: hint,
+      balloonContent: hint,
+      iconContent: ""
+    }, {
+      // Опции.
+      // Необходимо указать данный тип макета.
+      iconLayout: "default#image",
+      // Своё изображение иконки метки.
+      iconImageHref: assetsUrl + "img/map-marker.svg",
+      // Размеры метки.
+      iconImageSize: [80, 92],
+      // Смещение левого верхнего угла иконки относительно
+      // её "ножки" (точки привязки).
+      iconImageOffset: [-40, -92]
+    }); // Создадим пользовательский макет ползунка масштаба.
+
+    var ZoomLayout = ymaps.templateLayoutFactory.createClass("<div>\n                <div class='".concat(CLASS_ZOOM_IN, "'>\n                    <svg class=\"icon\">\n                        <use xlink:href=\"").concat(assetsUrl, "img/icons/general/sprite.svg#zoom-in\"></use>\n                    </svg>\n                </div>\n                <div class='").concat(CLASS_ZOOM_OUT, "'>\n                    <svg class=\"icon\">\n                        <use xlink:href=\"").concat(assetsUrl, "img/icons/general/sprite.svg#zoom-out\"></use>\n                    </svg>\n                </div>\n            \"</div>"), {
+      // Переопределяем методы макета, чтобы выполнять дополнительные действия
+      // при построении и очистке макета.
+      build: function build() {
+        // Вызываем родительский метод build.
+        ZoomLayout.superclass.build.call(this); // Привязываем функции-обработчики к контексту и сохраняем ссылки
+        // на них, чтобы потом отписаться от событий.
+
+        this.zoomInCallback = ymaps.util.bind(this.zoomIn, this);
+        this.zoomOutCallback = ymaps.util.bind(this.zoomOut, this); // Начинаем слушать клики на кнопках макета.
+
+        $root.find("." + CLASS_ZOOM_IN).on("click", this.zoomInCallback);
+        $root.find("." + CLASS_ZOOM_OUT).on("click", this.zoomOutCallback);
+      },
+      clear: function clear() {
+        // Снимаем обработчики кликов.
+        $root.find("." + CLASS_ZOOM_IN).off("click", this.zoomInCallback);
+        $root.find("." + CLASS_ZOOM_OUT).off("click", this.zoomOutCallback); // Вызываем родительский метод clear.
+
+        ZoomLayout.superclass.clear.call(this);
+      },
+      zoomIn: function zoomIn() {
+        var map = this.getData().control.getMap();
+        map.setZoom(map.getZoom() + 1, {
+          checkZoomRange: true
+        });
+      },
+      zoomOut: function zoomOut() {
+        var map = this.getData().control.getMap();
+        map.setZoom(map.getZoom() - 1, {
+          checkZoomRange: true
+        });
+      }
+    });
+    var zoomControl = new ymaps.control.ZoomControl({
+      options: {
+        layout: ZoomLayout
+      }
+    });
+    myMap.geoObjects.add(myPlacemark);
+    myMap.behaviors.disable("scrollZoom");
+    myMap.controls.add(zoomControl);
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/modules/scroll-jquery.js":
+/*!*****************************************!*\
+  !*** ./src/js/modules/scroll-jquery.js ***!
+  \*****************************************/
+/***/ (function() {
+
+$(function () {
+  $(".scroll-jquery").scrollbar();
 });
 
 /***/ }),
@@ -2248,36 +2408,44 @@ var __webpack_exports__ = {};
   !*** ./src/js/main.js ***!
   \************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_developers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/developers */ "./src/js/modules/developers.js");
-/* harmony import */ var _modules_developers__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_developers__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
-/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_tabs__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _modules_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/api */ "./src/js/modules/api.js");
-/* harmony import */ var _modules_api__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_api__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _modules_defaults__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/defaults */ "./src/js/modules/defaults.js");
+/* harmony import */ var _modules_defaults__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_defaults__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modules_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/api */ "./src/js/modules/api.js");
+/* harmony import */ var _modules_api__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_api__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _modules_developers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/developers */ "./src/js/modules/developers.js");
+/* harmony import */ var _modules_developers__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_developers__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _modules_demo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/demo */ "./src/js/modules/demo.js");
 /* harmony import */ var _modules_demo__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_demo__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _modules_slider_plans__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/slider-plans */ "./src/js/modules/slider-plans.js");
-/* harmony import */ var _modules_slider_plans__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_plans__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _modules_slider_news__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/slider-news */ "./src/js/modules/slider-news.js");
-/* harmony import */ var _modules_slider_news__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_news__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _modules_slider_docs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/slider-docs */ "./src/js/modules/slider-docs.js");
-/* harmony import */ var _modules_slider_docs__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_docs__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _modules_slider_payways__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/slider-payways */ "./src/js/modules/slider-payways.js");
-/* harmony import */ var _modules_slider_payways__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_payways__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _modules_slider_cameras__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/slider-cameras */ "./src/js/modules/slider-cameras.js");
-/* harmony import */ var _modules_slider_cameras__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_cameras__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _modules_slider_menu__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/slider-menu */ "./src/js/modules/slider-menu.js");
-/* harmony import */ var _modules_slider_menu__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_menu__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _modules_slider_people__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/slider-people */ "./src/js/modules/slider-people.js");
-/* harmony import */ var _modules_slider_people__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_people__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _modules_intro_zhk__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/intro-zhk */ "./src/js/modules/intro-zhk.js");
-/* harmony import */ var _modules_intro_zhk__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_intro_zhk__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _modules_bottom_menu__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/bottom-menu */ "./src/js/modules/bottom-menu.js");
-/* harmony import */ var _modules_bottom_menu__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_modules_bottom_menu__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _modules_section_about__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/section-about */ "./src/js/modules/section-about.js");
-/* harmony import */ var _modules_section_about__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_modules_section_about__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _modules_section_people__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/section-people */ "./src/js/modules/section-people.js");
-/* harmony import */ var _modules_grid_people__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules/grid-people */ "./src/js/modules/grid-people.js");
+/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
+/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_tabs__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _modules_slider_plans__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/slider-plans */ "./src/js/modules/slider-plans.js");
+/* harmony import */ var _modules_slider_plans__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_plans__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _modules_slider_news__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/slider-news */ "./src/js/modules/slider-news.js");
+/* harmony import */ var _modules_slider_news__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_news__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _modules_slider_docs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/slider-docs */ "./src/js/modules/slider-docs.js");
+/* harmony import */ var _modules_slider_docs__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_docs__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _modules_slider_payways__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/slider-payways */ "./src/js/modules/slider-payways.js");
+/* harmony import */ var _modules_slider_payways__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_payways__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _modules_slider_cameras__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/slider-cameras */ "./src/js/modules/slider-cameras.js");
+/* harmony import */ var _modules_slider_cameras__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_cameras__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _modules_slider_menu__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/slider-menu */ "./src/js/modules/slider-menu.js");
+/* harmony import */ var _modules_slider_menu__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_menu__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _modules_slider_people__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/slider-people */ "./src/js/modules/slider-people.js");
+/* harmony import */ var _modules_slider_people__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_people__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _modules_intro_zhk__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/intro-zhk */ "./src/js/modules/intro-zhk.js");
+/* harmony import */ var _modules_intro_zhk__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_modules_intro_zhk__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _modules_bottom_menu__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/bottom-menu */ "./src/js/modules/bottom-menu.js");
+/* harmony import */ var _modules_bottom_menu__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_modules_bottom_menu__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _modules_section_about__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/section-about */ "./src/js/modules/section-about.js");
+/* harmony import */ var _modules_section_about__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_modules_section_about__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _modules_section_people__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules/section-people */ "./src/js/modules/section-people.js");
+/* harmony import */ var _modules_grid_people__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/grid-people */ "./src/js/modules/grid-people.js");
+/* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/accordion */ "./src/js/modules/accordion.js");
+/* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_modules_accordion__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _modules_map_contacts__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/map-contacts */ "./src/js/modules/map-contacts.js");
+/* harmony import */ var _modules_map_contacts__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_modules_map_contacts__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/scroll-jquery */ "./src/js/modules/scroll-jquery.js");
+/* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_19__);
 
 
 
@@ -2294,10 +2462,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-window.history.scrollRestoration = "manual";
-$(window).on("beforeunload", function () {
-  $(window).scrollTop(0);
-});
+
+
+
+
 }();
 /******/ })()
 ;
