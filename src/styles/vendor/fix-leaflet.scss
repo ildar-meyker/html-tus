@@ -1,0 +1,45 @@
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+    position: relative;
+    width: 1em !important;
+    height: 1em !important;
+    font-size: 62px !important;
+    border-radius: 50% !important;
+    background: #fff !important;
+    text-indent: 1em;
+    overflow: hidden;
+
+    &:before {
+        content: " ";
+        @include position-center;
+        font-size: calc(22 / 62) + em;
+        width: 1em;
+        height: 1em;
+        background: url(../img/icons/general/zoom-out.svg) no-repeat 50% 50% /
+            contain;
+    }
+
+    &.leaflet-disabled {
+        opacity: 0.9;
+    }
+}
+
+.leaflet-control-zoom-in {
+    margin-bottom: 12px;
+
+    &:before {
+        background-image: url(../img/icons/general/zoom-in.svg);
+    }
+}
+
+.leaflet-touch .leaflet-bar {
+    margin: 0 !important;
+    border: 0 !important;
+}
+
+.leaflet-top.leaflet-left {
+    right: 40px !important;
+    top: 50% !important;
+    left: auto !important;
+    transform: translateY(-50%);
+}

@@ -419,6 +419,53 @@ function init() {
 
 /***/ }),
 
+/***/ "./src/js/modules/map-image.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/map-image.js ***!
+  \*************************************/
+/***/ (function() {
+
+// var point = xy(640, 360);
+// L.marker(point).addTo(map);
+function initMap(mapEl) {
+  var imageMaxSize = [4096, 2371];
+  var bounds = [[0, 0], [Math.floor(imageMaxSize[1] / 4), Math.floor(imageMaxSize[0] / 4)]];
+  var map = L.map(mapEl, {
+    minZoom: 1,
+    maxZoom: 4,
+    center: [0, 0],
+    zoom: 1,
+    maxBoundsViscosity: 1,
+    crs: L.CRS.Simple,
+    zoomControl: false
+  });
+  L.control.zoom({
+    zoomInTitle: "",
+    // Задаем текст для кнопки увеличения масштаба
+    zoomOutTitle: "" // Текст для кнопки уменьшения масштаба
+
+  }).addTo(map); // Добавляем изображение на карту
+
+  L.imageOverlay("img/map-image/1.jpeg", [[0, 0], bounds]).addTo(map);
+  map.setMaxBounds(new L.LatLngBounds(bounds));
+  var myIcon = L.divIcon({
+    className: "map-image__icon",
+    html: "<svg class=\"icon\">\n                <use\n                    xlink:href=\"img/icons/categories/sprite.svg#1\"\n                ></use>\n            </svg>"
+  });
+  L.marker([50.505, 30.57], {
+    icon: myIcon
+  }).bindPopup("<aside class=\"panel-location\">\n                <div class=\"panel-location__header\">\n                    <h2 class=\"panel-location__h1\">\n                        \u041F\u041A\u0438\u041E \u0438\u043C. \u0412.\u0418. \u041B\u0435\u043D\u0438\u043D\u0430\n                    </h2>\n                    <div class=\"panel-location__btn-close\">\n                        <button class=\"btn-close\">\n                            <svg class=\"icon\">\n                                <use\n                                    xlink:href=\"img/icons/general/sprite.svg#plus\"\n                                ></use>\n                            </svg>\n                        </button>\n                    </div>\n                </div>\n                <div class=\"panel-location__desc\">\n                    \u0411\u0435\u043B\u0433\u043E\u0440\u043E\u0434, \u0411\u0435\u043B\u0433\u043E\u0440\u043E\u0434\u0441\u043A\u0438\u0439 \u0433\u043E\u0440\u043E\u0434\u0441\u043A\u043E\u0439 \u043F\u0430\u0440\u043A \u043A\u0443\u043B\u044C\u0442\u0443\u0440\u044B\n                    \u0438\xA0\u043E\u0442\u0434\u044B\u0445\u0430\xA0\u0438\u043C. \u0412.\u0418. \u041B\u0435\u043D\u0438\u043D\u0430\n                </div>\n            </aside>").addTo(map);
+}
+
+$(function () {
+  $(".map-image").each(function () {
+    var mapEl = $(this).find(".map-image__box").get(0);
+    initMap(mapEl);
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/modules/scroll-jquery.js":
 /*!*****************************************!*\
   !*** ./src/js/modules/scroll-jquery.js ***!
@@ -2444,8 +2491,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_modules_accordion__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var _modules_map_contacts__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/map-contacts */ "./src/js/modules/map-contacts.js");
 /* harmony import */ var _modules_map_contacts__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_modules_map_contacts__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/scroll-jquery */ "./src/js/modules/scroll-jquery.js");
-/* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _modules_map_image__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/map-image */ "./src/js/modules/map-image.js");
+/* harmony import */ var _modules_map_image__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_modules_map_image__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/scroll-jquery */ "./src/js/modules/scroll-jquery.js");
+/* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20__);
+
 
 
 
