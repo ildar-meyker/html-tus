@@ -32,7 +32,7 @@
             href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css"
         />
 
-        <link rel="stylesheet" href="css/main.css?t=1711668005572" />
+        <link rel="stylesheet" href="css/main.css?t=1711686443291" />
     </head>
 
     <body>
@@ -1471,15 +1471,23 @@
                 </div>
 
                 <div class="section-location__map">
-                    <div class="section-location__sidebar">
+                    <div class="map-location">
+                        <div class="map-location__box"></div>
+                    </div>
+
+                    <div class="section-location__panel">
+                        <div
+                            class="scroll-jquery scrollbar-inner section-location__panel__scroll"
+                        >
+                            <div class="section-location__panel__inner">
 <nav class="nav-category">
     <ul>
         <li class="active">
-            <a href="#">
+            <a href="#" data-filter="all">
                 <span class="nav-category__icon">
                     <svg class="icon">
                         <use
-                            xlink:href="img/icons/categories/sprite.svg#1"
+                            xlink:href="img/icons/categories/sprite.svg#all"
                         ></use>
                     </svg>
                 </span>
@@ -1488,11 +1496,11 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="#" data-filter="pharmacy">
                 <span class="nav-category__icon">
                     <svg class="icon">
                         <use
-                            xlink:href="img/icons/categories/sprite.svg#2"
+                            xlink:href="img/icons/categories/sprite.svg#pharmacy"
                         ></use>
                     </svg>
                 </span>
@@ -1501,11 +1509,11 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="#" data-filter="food-store">
                 <span class="nav-category__icon">
                     <svg class="icon">
                         <use
-                            xlink:href="img/icons/categories/sprite.svg#3"
+                            xlink:href="img/icons/categories/sprite.svg#food-store"
                         ></use>
                     </svg>
                 </span>
@@ -1514,11 +1522,11 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="#" data-filter="school">
                 <span class="nav-category__icon">
                     <svg class="icon">
                         <use
-                            xlink:href="img/icons/categories/sprite.svg#4"
+                            xlink:href="img/icons/categories/sprite.svg#school"
                         ></use></svg
                 ></span>
                 <span>Школа</span>
@@ -1526,11 +1534,11 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="#" data-filter="kindergarden">
                 <span class="nav-category__icon">
                     <svg class="icon">
                         <use
-                            xlink:href="img/icons/categories/sprite.svg#5"
+                            xlink:href="img/icons/categories/sprite.svg#kindergarden"
                         ></use>
                     </svg>
                 </span>
@@ -1539,11 +1547,11 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="#" data-filter="park">
                 <span class="nav-category__icon">
                     <svg class="icon">
                         <use
-                            xlink:href="img/icons/categories/sprite.svg#6"
+                            xlink:href="img/icons/categories/sprite.svg#park"
                         ></use>
                     </svg>
                 </span>
@@ -1552,11 +1560,11 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="#" data-filter="metro">
                 <span class="nav-category__icon">
                     <svg class="icon">
                         <use
-                            xlink:href="img/icons/categories/sprite.svg#7"
+                            xlink:href="img/icons/categories/sprite.svg#metro"
                         ></use>
                     </svg>
                 </span>
@@ -1565,11 +1573,11 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="#" data-filter="bus-stop">
                 <span class="nav-category__icon">
                     <svg class="icon">
                         <use
-                            xlink:href="img/icons/categories/sprite.svg#8"
+                            xlink:href="img/icons/categories/sprite.svg#bus-stop"
                         ></use>
                     </svg>
                 </span>
@@ -1578,11 +1586,50 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="#" data-filter="sales-office">
                 <span class="nav-category__icon">
                     <svg class="icon">
                         <use
-                            xlink:href="img/icons/categories/sprite.svg#9"
+                            xlink:href="img/icons/categories/sprite.svg#sales-office"
+                        ></use>
+                    </svg>
+                </span>
+                <span>Офис продаж</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#" data-filter="metro">
+                <span class="nav-category__icon">
+                    <svg class="icon">
+                        <use
+                            xlink:href="img/icons/categories/sprite.svg#metro"
+                        ></use>
+                    </svg>
+                </span>
+                <span>Метро</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#" data-filter="bus-stop">
+                <span class="nav-category__icon">
+                    <svg class="icon">
+                        <use
+                            xlink:href="img/icons/categories/sprite.svg#bus-stop"
+                        ></use>
+                    </svg>
+                </span>
+                <span>Остановка</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#" data-filter="sales-office">
+                <span class="nav-category__icon">
+                    <svg class="icon">
+                        <use
+                            xlink:href="img/icons/categories/sprite.svg#sales-office"
                         ></use>
                     </svg>
                 </span>
@@ -1592,6 +1639,8 @@
     </ul>
 </nav>
 
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -4688,7 +4737,7 @@
 
 
 
-        <script src="js/main.js?t=1711668005572"></script>
+        <script src="js/main.js?t=1711686443291"></script>
 
         <div id="notify" class="notify"></div>
 

@@ -1547,11 +1547,11 @@ a {
   font-size: 0.3548387097em;
 }
 
-.map-image {
+.map-location {
   position: relative;
-  padding-top: 55%;
+  padding-top: 47.43%;
 }
-.map-image__box {
+.map-location__box {
   position: absolute;
   top: 0;
   left: 0;
@@ -1559,7 +1559,7 @@ a {
   height: 100%;
   border-radius: 20px;
 }
-.map-image__icon {
+.map-location__icon {
   box-sizing: content-box;
   background: #ff6100;
   border: 4px solid #fff;
@@ -1571,8 +1571,13 @@ a {
   align-items: center;
   color: #fff;
 }
-.map-image__icon .icon {
+.map-location__icon .icon {
   font-size: 18px;
+}
+.map-location__logo {
+  width: 120px !important;
+  height: 120px !important;
+  background: url("../img/map-location/logo.svg") no-repeat 50% 50%/contain;
 }
 
 .nav-tabs ul {
@@ -2024,20 +2029,30 @@ a {
   max-width: 510px;
 }
 .section-location__map {
-  height: 740px;
-  background: #f3f3f3;
-  border-radius: 20px;
   position: relative;
 }
-.section-location__sidebar {
+.section-location__panel {
   position: absolute;
+  z-index: 1000;
   top: 16px;
   left: 16px;
   bottom: 16px;
   padding: 32px;
+  padding-right: 0;
   border-radius: 16px;
   background: #fff;
   width: 378px;
+}
+.section-location__panel__scroll {
+  height: 100%;
+  overflow: auto;
+}
+.section-location__panel__inner {
+  margin-right: 32px;
+}
+.section-location__panel .scrollbar-inner > .scroll-element.scroll-y {
+  right: 6px;
+  width: 4px;
 }
 
 .section-people__header {
@@ -2621,4 +2636,8 @@ a {
   top: 50% !important;
   left: auto !important;
   transform: translateY(-50%);
+}
+
+.leaflet-popup-content {
+  margin: 0;
 }

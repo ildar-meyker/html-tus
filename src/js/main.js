@@ -19,5 +19,5 @@ import "./modules/section-people";
 import "./modules/grid-people";
 import "./modules/accordion";
 import "./modules/map-contacts";
-import "./modules/map-image";
+import "./modules/map-location";
 import "./modules/scroll-jquery";

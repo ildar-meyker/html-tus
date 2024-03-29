@@ -21,20 +21,33 @@
     }
 
     &__map {
-        height: 740px;
-        background: #f3f3f3;
-        border-radius: 20px;
         position: relative;
     }
 
-    &__sidebar {
+    &__panel {
         position: absolute;
+        z-index: 1000;
         top: 16px;
         left: 16px;
         bottom: 16px;
         padding: 32px;
+        padding-right: 0;
         border-radius: 16px;
         background: #fff;
         width: 378px;
+
+        &__scroll {
+            height: 100%;
+            overflow: auto;
+        }
+
+        &__inner {
+            margin-right: 32px;
+        }
+
+        .scrollbar-inner > .scroll-element.scroll-y {
+            right: 6px;
+            width: 4px;
+        }
     }
 }

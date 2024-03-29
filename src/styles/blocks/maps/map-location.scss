@@ -1,6 +1,6 @@
-.map-image {
+.map-location {
     position: relative;
-    padding-top: 55%;
+    padding-top: 47.43%;
 
     &__box {
         @include fill;
@@ -22,5 +22,12 @@
         .icon {
             font-size: 18px;
         }
+    }
+
+    &__logo {
+        width: 120px !important;
+        height: 120px !important;
+        background: url("../img/map-location/logo.svg") no-repeat 50% 50% /
+            contain;
     }
 }

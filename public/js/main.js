@@ -419,47 +419,140 @@ function init() {
 
 /***/ }),
 
-/***/ "./src/js/modules/map-image.js":
-/*!*************************************!*\
-  !*** ./src/js/modules/map-image.js ***!
-  \*************************************/
+/***/ "./src/js/modules/map-location.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/map-location.js ***!
+  \****************************************/
 /***/ (function() {
 
-// var point = xy(640, 360);
-// L.marker(point).addTo(map);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 function initMap(mapEl) {
   var imageMaxSize = [4096, 2371];
-  var bounds = [[0, 0], [Math.floor(imageMaxSize[1] / 4), Math.floor(imageMaxSize[0] / 4)]];
+  var sizeForZoom1 = imageMaxSize.map(function (value) {
+    return value / 4;
+  });
+  var bounds = [[0, 0], sizeForZoom1.reverse()];
   var map = L.map(mapEl, {
     minZoom: 1,
     maxZoom: 4,
-    center: [0, 0],
     zoom: 1,
+    zoomControl: false,
+    center: [357.29526544748063, 460],
     maxBoundsViscosity: 1,
-    crs: L.CRS.Simple,
-    zoomControl: false
+    // do not allow drag outside bounds
+    scrollWheelZoom: false,
+    crs: L.CRS.Simple
   });
+  map.setMaxBounds(new L.LatLngBounds(bounds));
+  map.on("click", showClickCoords);
+  addCustomZoom(map);
+  addImage(map, bounds);
+  addMarkers(map);
+  addLogo(map);
+}
+
+function showClickCoords(e) {
+  var _e$latlng = e.latlng,
+      lat = _e$latlng.lat,
+      lng = _e$latlng.lng;
+  console.log([lat, lng]);
+}
+
+function addCustomZoom(map) {
   L.control.zoom({
     zoomInTitle: "",
-    // Задаем текст для кнопки увеличения масштаба
-    zoomOutTitle: "" // Текст для кнопки уменьшения масштаба
+    zoomOutTitle: ""
+  }).addTo(map);
+}
 
-  }).addTo(map); // Добавляем изображение на карту
+function addImage(map, bounds) {
+  L.imageOverlay("img/map-location/1.jpeg", [[0, 0], bounds]).addTo(map);
+}
 
-  L.imageOverlay("img/map-image/1.jpeg", [[0, 0], bounds]).addTo(map);
-  map.setMaxBounds(new L.LatLngBounds(bounds));
-  var myIcon = L.divIcon({
-    className: "map-image__icon",
-    html: "<svg class=\"icon\">\n                <use\n                    xlink:href=\"img/icons/categories/sprite.svg#1\"\n                ></use>\n            </svg>"
+function addLogo(map) {
+  var divIcon = L.divIcon({
+    className: "map-location__logo",
+    iconAnchor: [60, 60]
   });
-  L.marker([50.505, 30.57], {
-    icon: myIcon
-  }).bindPopup("<aside class=\"panel-location\">\n                <div class=\"panel-location__header\">\n                    <h2 class=\"panel-location__h1\">\n                        \u041F\u041A\u0438\u041E \u0438\u043C. \u0412.\u0418. \u041B\u0435\u043D\u0438\u043D\u0430\n                    </h2>\n                    <div class=\"panel-location__btn-close\">\n                        <button class=\"btn-close\">\n                            <svg class=\"icon\">\n                                <use\n                                    xlink:href=\"img/icons/general/sprite.svg#plus\"\n                                ></use>\n                            </svg>\n                        </button>\n                    </div>\n                </div>\n                <div class=\"panel-location__desc\">\n                    \u0411\u0435\u043B\u0433\u043E\u0440\u043E\u0434, \u0411\u0435\u043B\u0433\u043E\u0440\u043E\u0434\u0441\u043A\u0438\u0439 \u0433\u043E\u0440\u043E\u0434\u0441\u043A\u043E\u0439 \u043F\u0430\u0440\u043A \u043A\u0443\u043B\u044C\u0442\u0443\u0440\u044B\n                    \u0438\xA0\u043E\u0442\u0434\u044B\u0445\u0430\xA0\u0438\u043C. \u0412.\u0418. \u041B\u0435\u043D\u0438\u043D\u0430\n                </div>\n            </aside>").addTo(map);
+  L.marker([356.79938336782527, 607], {
+    icon: divIcon
+  }).addTo(map);
+}
+
+function addMarkers(map) {
+  var points = [{
+    coords: [241.3476105503231, 534.375],
+    type: "park",
+    title: "ПКиО им. В.И. Ленина",
+    description: "Белгород, Белгородский городской парк культуры и отдыха им. В.И. Ленина"
+  }, {
+    coords: [371.7971026734806, 354.5],
+    type: "school",
+    title: "ПКиО им. В.И. Ленина",
+    description: "Белгород, Белгородский городской парк культуры и отдыха им. В.И. Ленина"
+  }, {
+    coords: [437.2972293787219, 530.5],
+    type: "park",
+    title: "ПКиО им. В.И. Ленина",
+    description: "Белгород, Белгородский городской парк культуры и отдыха им. В.И. Ленина"
+  }, {
+    coords: [500.29152764286016, 489.5],
+    type: "pharmacy",
+    title: "ПКиО им. В.И. Ленина",
+    description: "Белгород, Белгородский городской парк культуры и отдыха им. В.И. Ленина"
+  }];
+  var types = Object.keys(points.reduce(function (obj, point) {
+    obj[point.type] = true;
+    return obj;
+  }, {}));
+  types.forEach(function (type) {
+    map.createPane(type + "Markers");
+  });
+  points.forEach(function (point) {
+    var divIcon = L.divIcon({
+      className: "map-location__icon",
+      html: "<svg class=\"icon\">\n                    <use\n                        xlink:href=\"img/icons/categories/sprite.svg#".concat(point.type, "\"\n                    ></use>\n                </svg>"),
+      iconAnchor: [24, 48],
+      popupAnchor: [0, -48]
+    });
+    L.marker(point.coords, {
+      icon: divIcon,
+      pane: point.type + "Markers"
+    }).bindPopup("<aside class=\"panel-location\">\n                <div class=\"panel-location__header\">\n                    <h2 class=\"panel-location__h1\">\n                        ".concat(point.title, "\n                    </h2>\n                </div>\n                <div class=\"panel-location__desc\">\n                    ").concat(point.description, "\n                </div>\n            </aside>")).addTo(map);
+  });
+  $(document).on("click", ".nav-category a", function (e) {
+    e.preventDefault();
+    $(this).closest("li").addClass("active").siblings().removeClass("active");
+    var filterBy = $(this).data("filter");
+    var panes = map.getPanes();
+
+    for (var _i = 0, _Object$entries = Object.entries(panes); _i < _Object$entries.length; _i++) {
+      var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+          key = _Object$entries$_i[0],
+          pane = _Object$entries$_i[1];
+
+      if (!key.match(/Markers$/)) continue;
+      pane.style.display = filterBy === "all" || key === filterBy + "Markers" ? "block" : "none";
+    }
+
+    map.closePopup();
+  });
 }
 
 $(function () {
-  $(".map-image").each(function () {
-    var mapEl = $(this).find(".map-image__box").get(0);
+  $(".map-location").each(function () {
+    var mapEl = $(this).find(".map-location__box").get(0);
     initMap(mapEl);
   });
 });
@@ -2491,8 +2584,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_modules_accordion__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var _modules_map_contacts__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/map-contacts */ "./src/js/modules/map-contacts.js");
 /* harmony import */ var _modules_map_contacts__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_modules_map_contacts__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _modules_map_image__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/map-image */ "./src/js/modules/map-image.js");
-/* harmony import */ var _modules_map_image__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_modules_map_image__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _modules_map_location__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/map-location */ "./src/js/modules/map-location.js");
+/* harmony import */ var _modules_map_location__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_modules_map_location__WEBPACK_IMPORTED_MODULE_19__);
 /* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/scroll-jquery */ "./src/js/modules/scroll-jquery.js");
 /* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20__);
 
