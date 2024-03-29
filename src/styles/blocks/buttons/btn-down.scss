@@ -14,3 +14,12 @@
         font-size: calc(42 / 140) + em;
     }
 }
+
+@media (max-width: 999.98px) {
+    .btn-down {
+        font-size: clamp(50px, 12vw, 100px);
+
+        .icon {
+        }
+    }
+}

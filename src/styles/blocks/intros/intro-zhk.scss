@@ -14,9 +14,6 @@
 
     &__info {
         margin-top: 32px;
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
         transition: opacity ease-out 0.5s;
         transition-delay: 0.7s;
         opacity: 0;
@@ -169,6 +166,107 @@
         .intro-zhk__floors,
         .intro-zhk__panel {
             display: none;
+        }
+    }
+}
+
+@media (max-width: 999.98px) {
+    .intro-zhk {
+        padding-top: 82px;
+        min-height: 100vh;
+
+        &__h1 {
+            margin-top: 57px;
+
+            img {
+            }
+        }
+
+        &__info {
+            margin-top: 23px;
+        }
+
+        &__btn-down {
+            bottom: 30%;
+            right: 8px;
+
+            &.active {
+            }
+        }
+
+        &__image {
+            img {
+            }
+
+            &--scalable {
+            }
+        }
+
+        &__menu {
+            &__inner {
+            }
+
+            &__col-menu {
+            }
+
+            &__btn-plus {
+                button,
+                a {
+                    font-size: 45px;
+                }
+            }
+        }
+
+        &__floors {
+            &__item {
+                &:first-child {
+                }
+
+                &.hover {
+                }
+
+                &:before {
+                }
+            }
+        }
+
+        &__svg {
+        }
+
+        &__panel {
+            &.active {
+            }
+        }
+
+        &--loaded {
+            .intro-zhk__h1 {
+                img {
+                }
+            }
+
+            .intro-zhk__info {
+            }
+
+            .intro-zhk__image {
+                transform: scale(0.8);
+            }
+        }
+
+        &--full-scale {
+            .intro-zhk__floors {
+            }
+
+            .intro-zhk__panel {
+            }
+
+            .slider-menu {
+            }
+        }
+
+        &--inactive {
+            .intro-zhk__floors,
+            .intro-zhk__panel {
+            }
         }
     }
 }

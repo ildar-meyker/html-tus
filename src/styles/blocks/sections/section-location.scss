@@ -5,9 +5,6 @@
     }
 
     &__h1 {
-        font-size: 44px;
-        font-weight: 500;
-        line-height: calc(41.8 / 44);
         flex: 0 0 auto;
         width: 50%;
     }
@@ -48,6 +45,40 @@
         .scrollbar-inner > .scroll-element.scroll-y {
             right: 6px;
             width: 4px;
+        }
+    }
+}
+
+@media (max-width: 999.98px) {
+    .section-location {
+        &__header {
+            display: block;
+            margin-bottom: 40px;
+        }
+
+        &__h1 {
+            width: 100%;
+        }
+
+        &__desc {
+            width: 100%;
+            font-size: 14px;
+        }
+
+        &__map {
+        }
+
+        &__panel {
+            display: none;
+
+            &__scroll {
+            }
+
+            &__inner {
+            }
+
+            .scrollbar-inner > .scroll-element.scroll-y {
+            }
         }
     }
 }

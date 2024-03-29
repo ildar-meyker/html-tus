@@ -51,3 +51,41 @@
         background: #0000004d;
     }
 }
+
+@media (max-width: 999.98px) {
+    .slider-menu {
+        .swiper {
+        }
+
+        .swiper-wrapper {
+        }
+
+        .swiper-slide {
+            margin: 0;
+
+            &:last-child {
+            }
+
+            &:first-child {
+            }
+
+            &.active {
+                a {
+                }
+            }
+        }
+
+        a {
+            padding: 0 12px;
+            height: 45px;
+            line-height: 45px;
+            font-size: 14px;
+
+            &:hover {
+            }
+        }
+
+        &--dark {
+        }
+    }
+}

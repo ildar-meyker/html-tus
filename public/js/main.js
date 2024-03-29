@@ -438,20 +438,21 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function initMap(mapEl) {
-  var imageMaxSize = [4096, 2371];
-  var sizeForZoom1 = imageMaxSize.map(function (value) {
-    return value / 4;
+  var imageSize = [4096, 2371];
+  var maxZoom = 4;
+  var sizeForZoom1 = imageSize.map(function (value) {
+    return value / maxZoom;
   });
   var bounds = [[0, 0], sizeForZoom1.reverse()];
   var map = L.map(mapEl, {
-    minZoom: 1,
-    maxZoom: 4,
-    zoom: 1,
     zoomControl: false,
+    scrollWheelZoom: false,
+    zoom: 1,
+    minZoom: 1,
+    maxZoom: maxZoom,
     center: [357.29526544748063, 460],
     maxBoundsViscosity: 1,
     // do not allow drag outside bounds
-    scrollWheelZoom: false,
     crs: L.CRS.Simple
   });
   map.setMaxBounds(new L.LatLngBounds(bounds));

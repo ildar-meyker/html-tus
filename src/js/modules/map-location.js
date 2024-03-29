@@ -1,20 +1,21 @@
 function initMap(mapEl) {
-    const imageMaxSize = [4096, 2371];
+    const imageSize = [4096, 2371];
+    const maxZoom = 4;
 
-    const sizeForZoom1 = imageMaxSize.map((value) => {
-        return value / 4;
+    const sizeForZoom1 = imageSize.map((value) => {
+        return value / maxZoom;
     });
 
     const bounds = [[0, 0], sizeForZoom1.reverse()];
 
     const map = L.map(mapEl, {
-        minZoom: 1,
-        maxZoom: 4,
-        zoom: 1,
         zoomControl: false,
+        scrollWheelZoom: false,
+        zoom: 1,
+        minZoom: 1,
+        maxZoom,
         center: [357.29526544748063, 460],
         maxBoundsViscosity: 1, // do not allow drag outside bounds
-        scrollWheelZoom: false,
         crs: L.CRS.Simple,
     });
 

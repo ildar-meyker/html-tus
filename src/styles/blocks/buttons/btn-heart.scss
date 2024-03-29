@@ -27,3 +27,20 @@
         }
     }
 }
+
+@media (max-width: 999.98px) {
+    .btn-heart {
+        font-size: 45px;
+
+        &:hover {
+        }
+
+        .icon {
+        }
+
+        &--dark {
+            &:hover {
+            }
+        }
+    }
+}
