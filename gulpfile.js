@@ -193,6 +193,8 @@ function runServer(cb) {
         server: {
             baseDir: "public/",
         },
+        codeSync: true,
+        ghostMode: false,
     });
     cb();
 }

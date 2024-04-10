@@ -1,11 +1,11 @@
 import isDesktop from "../helpers/isDesktop";
 
-let leaveTimer = null;
-
 let $section = $();
 let $image = $();
 let $panels = $();
 let $btnDown = $();
+let $title = $();
+let $info = $();
 
 let initialScale;
 let fullScale;
@@ -23,11 +23,13 @@ function transformScrollTopToStyles() {
     return {
         newScale: initialScale + restScale * scrollProgress,
         newBorderRadius: initialBorderRadius * (1 - scrollProgress),
+        newTitleOpacity: 1 - scrollProgress * 3,
     };
 }
 
 function updateScrollDeps() {
-    const { newScale, newBorderRadius } = transformScrollTopToStyles();
+    const { newScale, newBorderRadius, newTitleOpacity } =
+        transformScrollTopToStyles();
 
     $image.css({
         transform: `scale(${newScale})`,
@@ -38,6 +40,10 @@ function updateScrollDeps() {
     $section.toggleClass("intro-zhk--full-scale", fullScale - newScale < 0.1);
 
     $btnDown.toggleClass("active", newScale < 0.8 * fullScale);
+
+    $title.css({
+        opacity: newTitleOpacity,
+    });
 }
 
 function toggleInactive() {
@@ -78,30 +84,16 @@ function handleWindowScroll() {
     });
 }
 
-function handlePanelEnter() {
-    clearTimeout(leaveTimer);
-}
-
-function handlePanelLeave() {
-    closeActivePanels();
-}
-
-function handleFloorEnter(e) {
+function handleFloorClick(e) {
     closeActivePanels();
     const target = $(e.target).data("target");
-    $(this).addClass("hover");
+    $(this).addClass("active");
     $(target).addClass("active");
-}
-
-function handleBuildingLeave(e) {
-    leaveTimer = setTimeout(() => {
-        closeActivePanels();
-    }, 200);
 }
 
 function closeActivePanels() {
     $panels.filter(".active").removeClass("active");
-    $(".intro-zhk__floors__item.hover").removeClass("hover");
+    $(".intro-zhk__floors__item.active").removeClass("active");
 }
 
 function handleWindowLoad() {
@@ -128,11 +120,25 @@ function handleScrollDown() {
     });
 }
 
+function handleOutsideClick(e) {
+    if ($(e.target).closest(".intro-zhk__floors, .intro-zhk__panel").length)
+        return;
+    closeActivePanels();
+}
+
+function handlePanelClose(e) {
+    e.preventDefault();
+
+    closeActivePanels();
+}
+
 $(function () {
     $section = $("#intro-zhk");
     $image = $section.find(".intro-zhk__image");
     $btnDown = $section.find(".intro-zhk__btn-down");
     $panels = $section.find(".intro-zhk__panel");
+    $title = $section.find(".intro-zhk__h1");
+    $info = $section.find(".intro-zhk__info");
 
     if ($section.length === 0) return;
 
@@ -156,11 +162,10 @@ $(function () {
 
     observer.observe($section[0]);
 
-    $(document).on("mouseenter", ".intro-zhk__floors__item", handleFloorEnter);
-    $(document).on("mouseleave", ".intro-zhk__floors", handleBuildingLeave);
-    $(document).on("mouseenter", ".intro-zhk__panel", handlePanelEnter);
-    $(document).on("mouseleave", ".intro-zhk__panel", handlePanelLeave);
+    $(document).on("click", ".intro-zhk__floors__item", handleFloorClick);
+    $(document).on("click", ".intro-zhk__btn-close", handlePanelClose);
     $(document).on("click", ".intro-zhk__btn-down", handleScrollDown);
+    $(document).on("click", ".intro-zhk", handleOutsideClick);
 
     $(window).on("load", handleWindowLoad);
     $(window).on("resize orientationchange", handleWindowResize);

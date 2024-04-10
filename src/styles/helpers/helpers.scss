@@ -149,12 +149,12 @@
 
 @media (max-width: 999.98px) {
     .d-sm-none {
-        display: none;
+        display: none !important;
     }
 }
 
 @media (min-width: 1000px) {
     .d-lg-none {
-        display: none;
+        display: none !important;
     }
 }
