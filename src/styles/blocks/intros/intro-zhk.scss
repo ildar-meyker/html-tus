@@ -8,7 +8,7 @@
 
         img {
             transition: transform ease-out 1s;
-            transform: translateY(101%);
+            transform: translateY(110%);
         }
     }
 
@@ -37,6 +37,7 @@
 
     &__image {
         --border-radius: 16px;
+        --initial-scale: 0.46;
 
         margin-top: 72px;
         padding-top: 93.39%;
@@ -144,7 +145,7 @@
         }
 
         .intro-zhk__image {
-            transform: scale(0.46);
+            transform: scale(var(--initial-scale));
         }
     }
 
@@ -195,6 +196,10 @@
         }
 
         &__image {
+            --initial-scale: 0.9;
+
+            transform: scale(0.5);
+
             img {
             }
 
@@ -248,7 +253,6 @@
             }
 
             .intro-zhk__image {
-                transform: scale(0.8);
             }
         }
 

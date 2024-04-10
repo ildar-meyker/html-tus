@@ -1,6 +1,23 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/helpers/isDesktop.js":
+/*!*************************************!*\
+  !*** ./src/js/helpers/isDesktop.js ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ isDesktop; }
+/* harmony export */ });
+function isDesktop() {
+  return $(window).width() >= 1000;
+}
+
+/***/ }),
+
 /***/ "./src/js/modules/accordion.js":
 /*!*************************************!*\
   !*** ./src/js/modules/accordion.js ***!
@@ -207,19 +224,24 @@ var GridPeople = {
 /*!*************************************!*\
   !*** ./src/js/modules/intro-zhk.js ***!
   \*************************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helpers_isDesktop__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers/isDesktop */ "./src/js/helpers/isDesktop.js");
 
 var leaveTimer = null;
 var $section = $();
 var $image = $();
 var $panels = $();
 var $btnDown = $();
+var initialScale;
+var fullScale;
 
 function transformScrollTopToStyles() {
   var fullScaleAtScrollTop = $image.offset().top;
   var scrollTop = $(window).scrollTop();
-  var initialScale = 0.46;
-  var restScale = 1 - initialScale;
+  var restScale = fullScale - initialScale;
   var scrollProgress = scrollTop < fullScaleAtScrollTop ? scrollTop / fullScaleAtScrollTop : 1;
   var initialBorderRadius = 16;
   return {
@@ -237,8 +259,8 @@ function updateScrollDeps() {
     transform: "scale(".concat(newScale, ")")
   });
   $image[0].style.setProperty("--border-radius", newBorderRadius + "px");
-  $section.toggleClass("intro-zhk--full-scale", newScale === 1);
-  $btnDown.toggleClass("active", newScale < 0.8);
+  $section.toggleClass("intro-zhk--full-scale", newScale === fullScale);
+  $btnDown.toggleClass("active", newScale < 0.8 * fullScale);
 }
 
 function toggleInactive() {
@@ -247,9 +269,27 @@ function toggleInactive() {
   $section.toggleClass("intro-zhk--inactive", isInactive);
 }
 
+function updateScaleVariables() {
+  initialScale = parseFloat(getComputedStyle($image.get(0)).getPropertyValue("--initial-scale"));
+  var windowHeight = $(window).height();
+
+  if ((0,_helpers_isDesktop__WEBPACK_IMPORTED_MODULE_0__["default"])()) {
+    fullScale = 1;
+    $section.get(0).style = "";
+  } else {
+    var imageRatio = 0.9339;
+    var imageHeight = $(window).width() * imageRatio;
+    fullScale = windowHeight / imageHeight;
+    $section.outerHeight($image.offset().top + windowHeight);
+  }
+}
+
 function handleWindowScroll() {
-  updateScrollDeps();
-  toggleInactive();
+  console.log("handleWindowScroll");
+  requestAnimationFrame(function () {
+    updateScrollDeps();
+    toggleInactive();
+  });
 }
 
 function handlePanelEnter() {
@@ -279,11 +319,17 @@ function closeActivePanels() {
 }
 
 function handleWindowLoad() {
+  console.log("handleWindowLoad");
+  updateScaleVariables();
   $section.addClass("intro-zhk--loaded");
   setTimeout(function () {
     $image.addClass("intro-zhk__image--scalable");
     $(".page__locker").removeClass("active");
   }, 1200);
+}
+
+function handleWindowResize() {
+  updateScaleVariables();
 }
 
 function handleScrollDown() {
@@ -295,17 +341,17 @@ function handleScrollDown() {
 
 $(function () {
   $section = $("#intro-zhk");
-  $image = $(".intro-zhk__image");
-  $btnDown = $(".intro-zhk__btn-down");
-  $panels = $(".intro-zhk__panel");
+  $image = $section.find(".intro-zhk__image");
+  $btnDown = $section.find(".intro-zhk__btn-down");
+  $panels = $section.find(".intro-zhk__panel");
   if ($section.length === 0) return;
 
   var callback = function callback(entries, observer) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        $(window).on("load scroll", handleWindowScroll);
+        $(window).on("scroll", handleWindowScroll);
       } else {
-        $(window).off("load scroll", handleWindowScroll);
+        $(window).off("scroll", handleWindowScroll);
       }
     });
   };
@@ -323,6 +369,7 @@ $(function () {
   $(document).on("mouseleave", ".intro-zhk__panel", handlePanelLeave);
   $(document).on("click", ".intro-zhk__btn-down", handleScrollDown);
   $(window).on("load", handleWindowLoad);
+  $(window).on("resize orientationchange", handleWindowResize);
 });
 
 /***/ }),
@@ -658,18 +705,20 @@ function markFlippedCards() {
 $(function () {
   $section = $("#section-people");
   if ($section.length === 0) return;
-  markFlippedCards(); // Инициализация контроллера ScrollMagic
-
-  var controller = new ScrollMagic.Controller(); // Создаем сцену ScrollMagic
-
-  var scene = new ScrollMagic.Scene({
-    triggerElement: "#section-people",
-    triggerHook: 0.5,
-    reverse: true
-  }) // Добавляем класс при входе в зону видимости
-  .setClassToggle(".card-person.flipped", "active") // Добавляем сцену к контроллеру
-  .addTo(controller); // Для отладки добавляем индикаторы
-  // .addIndicators();
+  markFlippedCards(); // // Инициализация контроллера ScrollMagic
+  // var controller = new ScrollMagic.Controller();
+  // // Создаем сцену ScrollMagic
+  // var scene = new ScrollMagic.Scene({
+  //     triggerElement: "#section-people",
+  //     triggerHook: 0.5,
+  //     reverse: true,
+  // })
+  //     // Добавляем класс при входе в зону видимости
+  //     .setClassToggle(".card-person.flipped", "active")
+  //     // Добавляем сцену к контроллеру
+  //     .addTo(controller);
+  // // Для отладки добавляем индикаторы
+  // // .addIndicators();
 });
 
 /***/ }),
@@ -2574,7 +2623,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider_people__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/slider-people */ "./src/js/modules/slider-people.js");
 /* harmony import */ var _modules_slider_people__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_slider_people__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _modules_intro_zhk__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/intro-zhk */ "./src/js/modules/intro-zhk.js");
-/* harmony import */ var _modules_intro_zhk__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_modules_intro_zhk__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _modules_bottom_menu__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/bottom-menu */ "./src/js/modules/bottom-menu.js");
 /* harmony import */ var _modules_bottom_menu__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_modules_bottom_menu__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _modules_section_about__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/section-about */ "./src/js/modules/section-about.js");

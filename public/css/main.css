@@ -1183,12 +1183,6 @@ a {
   .card-camera__image {
     padding-top: 89%;
   }
-  .card-camera__btn-play {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
   .card-camera__desc {
     font-size: 14px;
   }
@@ -1287,7 +1281,7 @@ a {
 }
 .intro-zhk__h1 img {
   transition: transform ease-out 1s;
-  transform: translateY(101%);
+  transform: translateY(110%);
 }
 .intro-zhk__info {
   margin-top: 32px;
@@ -1311,6 +1305,7 @@ a {
 }
 .intro-zhk__image {
   --border-radius: 16px;
+  --initial-scale: 0.46;
   margin-top: 72px;
   padding-top: 93.39%;
   transition: transform ease-out 1s;
@@ -1399,7 +1394,7 @@ a {
   opacity: 1;
 }
 .intro-zhk--loaded .intro-zhk__image {
-  transform: scale(0.46);
+  transform: scale(var(--initial-scale));
 }
 .intro-zhk--full-scale .intro-zhk__floors {
   display: block;
@@ -1431,11 +1426,13 @@ a {
     bottom: 30%;
     right: 8px;
   }
-  .intro-zhk__menu__btn-plus {
-    font-size: 45px;
+  .intro-zhk__image {
+    --initial-scale: 0.9;
+    transform: scale(0.5);
   }
-  .intro-zhk--loaded .intro-zhk__image {
-    transform: scale(0.8);
+  .intro-zhk__menu__btn-plus button,
+.intro-zhk__menu__btn-plus a {
+    font-size: 45px;
   }
 }
 .list-offices {

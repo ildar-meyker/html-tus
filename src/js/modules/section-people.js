@@ -36,19 +36,19 @@ $(function () {
 
     markFlippedCards();
 
-    // Инициализация контроллера ScrollMagic
-    var controller = new ScrollMagic.Controller();
+    // // Инициализация контроллера ScrollMagic
+    // var controller = new ScrollMagic.Controller();
 
-    // Создаем сцену ScrollMagic
-    var scene = new ScrollMagic.Scene({
-        triggerElement: "#section-people",
-        triggerHook: 0.5,
-        reverse: true,
-    })
-        // Добавляем класс при входе в зону видимости
-        .setClassToggle(".card-person.flipped", "active")
-        // Добавляем сцену к контроллеру
-        .addTo(controller);
-    // Для отладки добавляем индикаторы
-    // .addIndicators();
+    // // Создаем сцену ScrollMagic
+    // var scene = new ScrollMagic.Scene({
+    //     triggerElement: "#section-people",
+    //     triggerHook: 0.5,
+    //     reverse: true,
+    // })
+    //     // Добавляем класс при входе в зону видимости
+    //     .setClassToggle(".card-person.flipped", "active")
+    //     // Добавляем сцену к контроллеру
+    //     .addTo(controller);
+    // // Для отладки добавляем индикаторы
+    // // .addIndicators();
 });

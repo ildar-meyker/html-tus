@@ -1,3 +1,5 @@
+import isDesktop from "../helpers/isDesktop";
+
 let leaveTimer = null;
 
 let $section = $();
@@ -5,12 +7,14 @@ let $image = $();
 let $panels = $();
 let $btnDown = $();
 
+let initialScale;
+let fullScale;
+
 function transformScrollTopToStyles() {
     const fullScaleAtScrollTop = $image.offset().top;
     const scrollTop = $(window).scrollTop();
 
-    const initialScale = 0.46;
-    const restScale = 1 - initialScale;
+    const restScale = fullScale - initialScale;
     const scrollProgress =
         scrollTop < fullScaleAtScrollTop ? scrollTop / fullScaleAtScrollTop : 1;
 
@@ -31,9 +35,9 @@ function updateScrollDeps() {
 
     $image[0].style.setProperty("--border-radius", newBorderRadius + "px");
 
-    $section.toggleClass("intro-zhk--full-scale", newScale === 1);
+    $section.toggleClass("intro-zhk--full-scale", newScale === fullScale);
 
-    $btnDown.toggleClass("active", newScale < 0.8);
+    $btnDown.toggleClass("active", newScale < 0.8 * fullScale);
 }
 
 function toggleInactive() {
@@ -44,9 +48,34 @@ function toggleInactive() {
     $section.toggleClass("intro-zhk--inactive", isInactive);
 }
 
+function updateScaleVariables() {
+    initialScale = parseFloat(
+        getComputedStyle($image.get(0)).getPropertyValue("--initial-scale")
+    );
+
+    const windowHeight = $(window).height();
+
+    if (isDesktop()) {
+        fullScale = 1;
+
+        $section.get(0).style = "";
+    } else {
+        const imageRatio = 0.9339;
+        const imageHeight = $(window).width() * imageRatio;
+
+        fullScale = windowHeight / imageHeight;
+
+        $section.outerHeight($image.offset().top + windowHeight);
+    }
+}
+
 function handleWindowScroll() {
-    updateScrollDeps();
-    toggleInactive();
+    console.log("handleWindowScroll");
+
+    requestAnimationFrame(() => {
+        updateScrollDeps();
+        toggleInactive();
+    });
 }
 
 function handlePanelEnter() {
@@ -76,12 +105,20 @@ function closeActivePanels() {
 }
 
 function handleWindowLoad() {
+    console.log("handleWindowLoad");
+
+    updateScaleVariables();
+
     $section.addClass("intro-zhk--loaded");
 
     setTimeout(() => {
         $image.addClass("intro-zhk__image--scalable");
         $(".page__locker").removeClass("active");
     }, 1200);
+}
+
+function handleWindowResize() {
+    updateScaleVariables();
 }
 
 function handleScrollDown() {
@@ -93,18 +130,18 @@ function handleScrollDown() {
 
 $(function () {
     $section = $("#intro-zhk");
-    $image = $(".intro-zhk__image");
-    $btnDown = $(".intro-zhk__btn-down");
-    $panels = $(".intro-zhk__panel");
+    $image = $section.find(".intro-zhk__image");
+    $btnDown = $section.find(".intro-zhk__btn-down");
+    $panels = $section.find(".intro-zhk__panel");
 
     if ($section.length === 0) return;
 
     const callback = (entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                $(window).on("load scroll", handleWindowScroll);
+                $(window).on("scroll", handleWindowScroll);
             } else {
-                $(window).off("load scroll", handleWindowScroll);
+                $(window).off("scroll", handleWindowScroll);
             }
         });
     };
@@ -126,4 +163,5 @@ $(function () {
     $(document).on("click", ".intro-zhk__btn-down", handleScrollDown);
 
     $(window).on("load", handleWindowLoad);
+    $(window).on("resize orientationchange", handleWindowResize);
 });
