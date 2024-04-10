@@ -259,7 +259,7 @@ function updateScrollDeps() {
     transform: "scale(".concat(newScale, ")")
   });
   $image[0].style.setProperty("--border-radius", newBorderRadius + "px");
-  $section.toggleClass("intro-zhk--full-scale", newScale === fullScale);
+  $section.toggleClass("intro-zhk--full-scale", fullScale - newScale < 0.1);
   $btnDown.toggleClass("active", newScale < 0.8 * fullScale);
 }
 
@@ -323,7 +323,7 @@ function handleWindowLoad() {
   updateScaleVariables();
   $section.addClass("intro-zhk--loaded");
   setTimeout(function () {
-    $image.addClass("intro-zhk__image--scalable");
+    $image.addClass("intro-zhk__image--no-transition");
     $(".page__locker").removeClass("active");
   }, 1200);
 }
@@ -640,7 +640,9 @@ function updateScrollDeps() {
 }
 
 function handleWindowScroll() {
-  updateScrollDeps();
+  requestAnimationFrame(function () {
+    updateScrollDeps();
+  });
 }
 
 $(function () {
@@ -652,9 +654,9 @@ $(function () {
   var callback = function callback(entries, observer) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        $(window).on("load scroll", handleWindowScroll);
+        $(window).on("scroll", handleWindowScroll);
       } else {
-        $(window).off("load scroll", handleWindowScroll);
+        $(window).off("scroll", handleWindowScroll);
       }
     });
   };

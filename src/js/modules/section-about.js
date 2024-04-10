@@ -25,7 +25,9 @@ function updateScrollDeps() {
 }
 
 function handleWindowScroll() {
-    updateScrollDeps();
+    requestAnimationFrame(() => {
+        updateScrollDeps();
+    });
 }
 
 $(function () {
@@ -38,9 +40,9 @@ $(function () {
     const callback = (entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                $(window).on("load scroll", handleWindowScroll);
+                $(window).on("scroll", handleWindowScroll);
             } else {
-                $(window).off("load scroll", handleWindowScroll);
+                $(window).off("scroll", handleWindowScroll);
             }
         });
     };

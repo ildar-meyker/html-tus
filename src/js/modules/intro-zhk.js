@@ -35,7 +35,7 @@ function updateScrollDeps() {
 
     $image[0].style.setProperty("--border-radius", newBorderRadius + "px");
 
-    $section.toggleClass("intro-zhk--full-scale", newScale === fullScale);
+    $section.toggleClass("intro-zhk--full-scale", fullScale - newScale < 0.1);
 
     $btnDown.toggleClass("active", newScale < 0.8 * fullScale);
 }
@@ -112,7 +112,7 @@ function handleWindowLoad() {
     $section.addClass("intro-zhk--loaded");
 
     setTimeout(() => {
-        $image.addClass("intro-zhk__image--scalable");
+        $image.addClass("intro-zhk__image--no-transition");
         $(".page__locker").removeClass("active");
     }, 1200);
 }
