@@ -32,7 +32,7 @@
             href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css"
         />
 
-        <link rel="stylesheet" href="css/main.css?t=1712823882600" />
+        <link rel="stylesheet" href="css/main.css?t=1712828045146" />
     </head>
 
     <body>
@@ -42,9 +42,7 @@
     <div class="container">
         <a href="#" class="header__logo">
             <svg width="145" height="65">
-                <use
-                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#logo"
-                ></use>
+                <use xlink:href="../img/icons/icons.svg#logo"></use>
             </svg>
         </a>
         <div class="header__menu">
@@ -59,11 +57,11 @@
                                         <picture
                                             ><source
                                                 srcset="
-                                                    https://transuyshstroy.netlify.app/img/links/link-img-01.webp
+                                                    ../img/links/link-img-01.webp
                                                 "
                                                 type="image/webp" />
                                             <img
-                                                src="https://transuyshstroy.netlify.app/img/links/link-img-01.jpg"
+                                                src="../img/links/link-img-01.jpg"
                                                 alt=""
                                         /></picture>
                                         <span>ЖК Привилегия</span>
@@ -74,11 +72,11 @@
                                         <picture
                                             ><source
                                                 srcset="
-                                                    https://transuyshstroy.netlify.app/img/links/link-img-02.webp
+                                                    ../img/links/link-img-02.webp
                                                 "
                                                 type="image/webp" />
                                             <img
-                                                src="https://transuyshstroy.netlify.app/img/links/link-img-02.jpg"
+                                                src="../img/links/link-img-02.jpg"
                                                 alt=""
                                         /></picture>
                                         <span>ЖК Центр Парк</span>
@@ -89,11 +87,11 @@
                                         <picture
                                             ><source
                                                 srcset="
-                                                    https://transuyshstroy.netlify.app/img/links/link-img-03.webp
+                                                    ../img/links/link-img-03.webp
                                                 "
                                                 type="image/webp" />
                                             <img
-                                                src="https://transuyshstroy.netlify.app/img/links/link-img-03.jpg"
+                                                src="../img/links/link-img-03.jpg"
                                                 alt=""
                                         /></picture>
                                         <span>ЖК Яковлева Роща</span>
@@ -104,11 +102,11 @@
                                         <picture
                                             ><source
                                                 srcset="
-                                                    https://transuyshstroy.netlify.app/img/links/link-img-04.webp
+                                                    ../img/links/link-img-04.webp
                                                 "
                                                 type="image/webp" />
                                             <img
-                                                src="https://transuyshstroy.netlify.app/img/links/link-img-04.jpg"
+                                                src="../img/links/link-img-04.jpg"
                                                 alt=""
                                         /></picture>
                                         <span>мкр. Восточный</span>
@@ -119,11 +117,11 @@
                                         <picture
                                             ><source
                                                 srcset="
-                                                    https://transuyshstroy.netlify.app/img/links/link-img-05.webp
+                                                    ../img/links/link-img-05.webp
                                                 "
                                                 type="image/webp" />
                                             <img
-                                                src="https://transuyshstroy.netlify.app/img/links/link-img-05.jpg"
+                                                src="../img/links/link-img-05.jpg"
                                                 alt=""
                                         /></picture>
                                         <span>ЖК Яковлева Роща</span>
@@ -153,7 +151,9 @@
                 </ul>
             </nav>
             <address class="header__tel">
-                <div class="header__tel-schedule">Ежедневно с 9:00 – 19:00</div>
+                <div class="header__tel-schedule">
+                    Ежедневно с 9:00 &ndash; 19:00
+                </div>
                 <a href="#" class="header__tel-num hover-link"
                     ><span class="header__tel-num-accent">+7 (4722)</span>
                     78-97-56</a
@@ -162,57 +162,15 @@
             <div class="header__city">
                 <div class="header__city-icon">
                     <svg width="16" height="16">
-                        <use
-                            xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#pin"
-                        ></use>
+                        <use xlink:href="../img/icons/icons.svg#pin"></use>
                     </svg>
                 </div>
                 <div class="header__city-select">
-                    <div class="select _select-active" data-id="1">
-                        <select
-                            id="city"
-                            hidden=""
-                            data-id="1"
-                            data-speed="150"
-                        >
-                            <option value="1">Белгород</option>
-                            <option value="2">Казань</option>
-                            <option value="3">Строитель</option>
-                        </select>
-                        <div class="select__body">
-                            <button type="button" class="select__title">
-                                <span class="select__value"
-                                    ><span class="select__content"
-                                        >Белгород</span
-                                    ></span
-                                >
-                            </button>
-                            <div hidden="" class="select__options">
-                                <div class="select__scroll">
-                                    <button
-                                        hidden=""
-                                        class="select__option"
-                                        data-value="1"
-                                        type="button"
-                                    >
-                                        Белгород</button
-                                    ><button
-                                        class="select__option"
-                                        data-value="2"
-                                        type="button"
-                                    >
-                                        Казань</button
-                                    ><button
-                                        class="select__option"
-                                        data-value="3"
-                                        type="button"
-                                    >
-                                        Строитель
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <select id="city">
+                        <option value="1">Белгород</option>
+                        <option value="2">Казань</option>
+                        <option value="3">Строитель</option>
+                    </select>
                 </div>
             </div>
             <a href="#" class="header__banner">
@@ -223,9 +181,7 @@
                     class="header__banner-icon btn btn--icon btn--white btn--circle"
                 >
                     <svg width="22" height="22">
-                        <use
-                            xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
-                        ></use>
+                        <use xlink:href="../img/icons/icons.svg#plus"></use>
                     </svg>
                 </span>
             </a>
@@ -234,22 +190,20 @@
                 <div class="socials__list">
                     <a href="#" class="socials__link socials__link--dark">
                         <svg width="16" height="16">
+                            <use xlink:href="../img/icons/icons.svg#vk"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="socials__link socials__link--dark">
+                        <svg width="16" height="16">
                             <use
-                                xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#vk"
+                                xlink:href="../img/icons/icons.svg#telegram"
                             ></use>
                         </svg>
                     </a>
                     <a href="#" class="socials__link socials__link--dark">
                         <svg width="16" height="16">
                             <use
-                                xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#telegram"
-                            ></use>
-                        </svg>
-                    </a>
-                    <a href="#" class="socials__link socials__link--dark">
-                        <svg width="16" height="16">
-                            <use
-                                xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#insta"
+                                xlink:href="../img/icons/icons.svg#insta"
                             ></use>
                         </svg>
                     </a>
@@ -259,9 +213,7 @@
         <div class="header-action">
             <a href="#" class="header__fav-btn btn-round">
                 <svg width="16" height="16">
-                    <use
-                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#fav"
-                    ></use>
+                    <use xlink:href="../img/icons/icons.svg#fav"></use>
                 </svg>
             </a>
             <button
@@ -270,16 +222,13 @@
                 aria-label="Поиск"
             >
                 <svg width="16" height="16">
-                    <use
-                        xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#search"
-                    ></use>
+                    <use xlink:href="../img/icons/icons.svg#search"></use>
                 </svg>
             </button>
             <button
                 type="button"
                 aria-label="Бургер меню"
                 class="header__burger btn-round icon-menu"
-                aria-expanded="false"
             >
                 <span></span>
                 <span></span>
@@ -1111,130 +1060,40 @@
         </div>
     </section>
 
-    <div class="intro-zhk__scroll-height"></div>
-
     <div class="l-zhk__filter">
         <div class="container">
-            <form action="#" class="projects__filters m-0">
+            <form action="#" class="projects__filters">
                 <div class="projects__filters-top">
-                    <div class="filter-item d-sm-none">
+                    <div class="filter-item">
                         <div class="filter-item__label">Готовый вариант</div>
                         <div class="filter-item__select">
-                            <div class="select" data-id="2">
-                                <select
-                                    name="filter-variant"
-                                    id="filter-variant"
-                                    class="filter-select"
-                                    hidden=""
-                                    data-id="2"
-                                    data-placeholder="Выбрать"
-                                    data-speed="150"
-                                >
-                                    <option value="">Выбрать</option>
-                                    <option value="1">Вариант 1</option>
-                                    <option value="2">Вариант 2</option>
-                                    <option value="3">Вариант 3</option>
-                                    <option value="4">Вариант 4</option>
-                                </select>
-                                <div class="select__body">
-                                    <button type="button" class="select__title">
-                                        <span class="select__value"
-                                            ><span class="select__content"
-                                                >Выбрать</span
-                                            ></span
-                                        >
-                                    </button>
-                                    <div hidden="" class="select__options">
-                                        <div class="select__scroll">
-                                            <button
-                                                class="select__option"
-                                                data-value="1"
-                                                type="button"
-                                            >
-                                                Вариант 1</button
-                                            ><button
-                                                class="select__option"
-                                                data-value="2"
-                                                type="button"
-                                            >
-                                                Вариант 2</button
-                                            ><button
-                                                class="select__option"
-                                                data-value="3"
-                                                type="button"
-                                            >
-                                                Вариант 3</button
-                                            ><button
-                                                class="select__option"
-                                                data-value="4"
-                                                type="button"
-                                            >
-                                                Вариант 4
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <select
+                                name="filter-variant"
+                                id="filter-variant"
+                                class="filter-select"
+                            >
+                                <option value="">Выбрать</option>
+                                <option value="1">Вариант 1</option>
+                                <option value="2">Вариант 2</option>
+                                <option value="3">Вариант 3</option>
+                                <option value="4">Вариант 4</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="filter-item d-sm-none">
+                    <div class="filter-item">
                         <div class="filter-item__label">Город</div>
                         <div class="filter-item__select">
-                            <div class="select" data-id="3">
-                                <select
-                                    name="filter-city"
-                                    id="filter-city"
-                                    class="filter-select"
-                                    hidden=""
-                                    data-id="3"
-                                    data-placeholder="Выбрать"
-                                    data-speed="150"
-                                >
-                                    <option value="">Выбрать</option>
-                                    <option value="1">Вариант 1</option>
-                                    <option value="2">Вариант 2</option>
-                                    <option value="3">Вариант 3</option>
-                                    <option value="4">Вариант 4</option>
-                                </select>
-                                <div class="select__body">
-                                    <button type="button" class="select__title">
-                                        <span class="select__value"
-                                            ><span class="select__content"
-                                                >Выбрать</span
-                                            ></span
-                                        >
-                                    </button>
-                                    <div hidden="" class="select__options">
-                                        <div class="select__scroll">
-                                            <button
-                                                class="select__option"
-                                                data-value="1"
-                                                type="button"
-                                            >
-                                                Вариант 1</button
-                                            ><button
-                                                class="select__option"
-                                                data-value="2"
-                                                type="button"
-                                            >
-                                                Вариант 2</button
-                                            ><button
-                                                class="select__option"
-                                                data-value="3"
-                                                type="button"
-                                            >
-                                                Вариант 3</button
-                                            ><button
-                                                class="select__option"
-                                                data-value="4"
-                                                type="button"
-                                            >
-                                                Вариант 4
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <select
+                                name="filter-city"
+                                id="filter-city"
+                                class="filter-select"
+                            >
+                                <option value="">Выбрать</option>
+                                <option value="1">Вариант 1</option>
+                                <option value="2">Вариант 2</option>
+                                <option value="3">Вариант 3</option>
+                                <option value="4">Вариант 4</option>
+                            </select>
                         </div>
                     </div>
                     <div class="filter-item">
@@ -1313,67 +1172,13 @@
                                 />
                             </div>
                             <div
-                                class="range-slider noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"
+                                class="range-slider"
                                 data-min="0"
                                 data-max="100"
-                            >
-                                <div class="noUi-base">
-                                    <div class="noUi-connects">
-                                        <div
-                                            class="noUi-connect"
-                                            style="
-                                                transform: translate(0%, 0px)
-                                                    scale(1, 1);
-                                            "
-                                        ></div>
-                                    </div>
-                                    <div
-                                        class="noUi-origin"
-                                        style="
-                                            transform: translate(-100%, 0px);
-                                            z-index: 5;
-                                        "
-                                    >
-                                        <div
-                                            class="noUi-handle noUi-handle-lower"
-                                            data-handle="0"
-                                            tabindex="0"
-                                            role="slider"
-                                            aria-orientation="horizontal"
-                                            aria-valuemin="0.0"
-                                            aria-valuemax="100.0"
-                                            aria-valuenow="0.0"
-                                            aria-valuetext="0"
-                                        >
-                                            <div class="noUi-touch-area"></div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="noUi-origin"
-                                        style="
-                                            transform: translate(0%, 0px);
-                                            z-index: 4;
-                                        "
-                                    >
-                                        <div
-                                            class="noUi-handle noUi-handle-upper"
-                                            data-handle="1"
-                                            tabindex="0"
-                                            role="slider"
-                                            aria-orientation="horizontal"
-                                            aria-valuemin="0.0"
-                                            aria-valuemax="100.0"
-                                            aria-valuenow="100.0"
-                                            aria-valuetext="100"
-                                        >
-                                            <div class="noUi-touch-area"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            ></div>
                         </div>
                     </div>
-                    <div class="filter-item d-sm-none">
+                    <div class="filter-item">
                         <div class="filter-item__label">Площадь</div>
                         <div class="filter-item__range">
                             <div class="filter-item__inputs">
@@ -1389,64 +1194,10 @@
                                 />
                             </div>
                             <div
-                                class="range-slider noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"
+                                class="range-slider"
                                 data-min="0"
                                 data-max="10000"
-                            >
-                                <div class="noUi-base">
-                                    <div class="noUi-connects">
-                                        <div
-                                            class="noUi-connect"
-                                            style="
-                                                transform: translate(0%, 0px)
-                                                    scale(1, 1);
-                                            "
-                                        ></div>
-                                    </div>
-                                    <div
-                                        class="noUi-origin"
-                                        style="
-                                            transform: translate(-100%, 0px);
-                                            z-index: 5;
-                                        "
-                                    >
-                                        <div
-                                            class="noUi-handle noUi-handle-lower"
-                                            data-handle="0"
-                                            tabindex="0"
-                                            role="slider"
-                                            aria-orientation="horizontal"
-                                            aria-valuemin="0.0"
-                                            aria-valuemax="10000.0"
-                                            aria-valuenow="0.0"
-                                            aria-valuetext="0"
-                                        >
-                                            <div class="noUi-touch-area"></div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="noUi-origin"
-                                        style="
-                                            transform: translate(0%, 0px);
-                                            z-index: 4;
-                                        "
-                                    >
-                                        <div
-                                            class="noUi-handle noUi-handle-upper"
-                                            data-handle="1"
-                                            tabindex="0"
-                                            role="slider"
-                                            aria-orientation="horizontal"
-                                            aria-valuemin="0.0"
-                                            aria-valuemax="10000.0"
-                                            aria-valuenow="10000.0"
-                                            aria-valuetext="10000"
-                                        >
-                                            <div class="noUi-touch-area"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            ></div>
                         </div>
                     </div>
                     <a href="#" class="filter-item-result btn">63 объекта</a>
@@ -2147,12 +1898,40 @@
     <div class="l-zhk__tour">Лобби</div>
 
     <div class="l-zhk__types">
-<section class="types section types--small p-0">
+<section class="types section p-0">
     <div class="container">
-        <div class="types__title section__title h3">Другая недвижимость</div>
+        <div class="types__title section__title h3">
+            Другая <br />
+            недвижимость
+        </div>
         <div class="types__content" data-role="tabs">
             <div class="types__categories">
-                <div class="types__category is-active" data-tabs-control="2">
+                <div class="types__category is-active" data-tabs-control="1">
+                    <div class="types__category-preview">
+                        <picture
+                            ><source
+                                srcset="
+                                    https://transuyshstroy.netlify.app/img/types/cat-1.webp
+                                "
+                                type="image/webp" />
+                            <img
+                                src="https://transuyshstroy.netlify.app/img/types/cat-1.png"
+                                alt=""
+                        /></picture>
+                    </div>
+                    <div class="types__category-name">
+                        Коммерческая недвижимость
+                    </div>
+                    <button
+                        type="button"
+                        class="types__category-btn btn btn--circle btn--greylight"
+                    >
+                        <svg width="20" height="20">
+                            <use xlink:href="../img/icons/icons.svg#plus"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="types__category" data-tabs-control="2">
                     <div class="types__category-preview">
                         <picture
                             ><source
@@ -2171,9 +1950,7 @@
                         class="types__category-btn btn btn--circle btn--greylight"
                     >
                         <svg width="20" height="20">
-                            <use
-                                xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
-                            ></use>
+                            <use xlink:href="../img/icons/icons.svg#plus"></use>
                         </svg>
                     </button>
                 </div>
@@ -2196,15 +1973,65 @@
                         class="types__category-btn btn btn--circle btn--greylight"
                     >
                         <svg width="20" height="20">
-                            <use
-                                xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
-                            ></use>
+                            <use xlink:href="../img/icons/icons.svg#plus"></use>
                         </svg>
                     </button>
                 </div>
             </div>
             <div class="types__main">
-                <div class="types__item is-open" data-tabs-panel="2">
+                <div class="types__item is-open" data-tabs-panel="1">
+                    <div class="types__item-info">
+                        <div class="types__item-name">
+                            Коммерческая недвижимость
+                        </div>
+                        <div class="types__item-desc">
+                            Пoмeщeния, здaния, coopyжeния и yчacтки, кoтopыe
+                            пpeднaзнaчeны для извлeчeния пpибыли пyтeм cдaчи в
+                            apeндy или вeдeния пpeдпpинимaтeльcкoй дeятeльнocти
+                            нeпocpeдcтвeннo coбcтвeнникoм. Дoxoднocть
+                            кoммepчecкoй нeдвижимocти — этo глaвный кpитepий ее
+                            оценки
+                        </div>
+                        <div class="types__item-details">
+                            <div class="types__item-detail">
+                                <span>Площадь</span>
+                                от 120 м2
+                            </div>
+                            <div class="types__item-detail">
+                                <span>Стоимость</span>
+                                от 2,3 млн.
+                            </div>
+                            <div class="types__item-detail">
+                                <span>Объектов</span>
+                                154 помещений
+                            </div>
+                        </div>
+                        <a
+                            href="#"
+                            class="types__item-btn btn btn--wide btn--icon"
+                        >
+                            Подробнее
+                            <svg width="18" height="18">
+                                <use
+                                    xlink:href="../img/icons/icons.svg#plus"
+                                ></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="types__item-img">
+                        <picture
+                            ><source
+                                srcset="
+                                    https://transuyshstroy.netlify.app/img/types/item-01.webp
+                                "
+                                type="image/webp" />
+                            <img
+                                src="https://transuyshstroy.netlify.app/img/types/item-01.png"
+                                alt=""
+                        /></picture>
+                    </div>
+                </div>
+                <div class="types__item" data-tabs-panel="2">
                     <div class="types__item-info">
                         <div class="types__item-name">Кладовые</div>
                         <div class="types__item-desc">
@@ -2236,7 +2063,7 @@
                             Подробнее
                             <svg width="18" height="18">
                                 <use
-                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                    xlink:href="../img/icons/icons.svg#plus"
                                 ></use>
                             </svg>
                         </a>
@@ -2286,7 +2113,7 @@
                             Подробнее
                             <svg width="18" height="18">
                                 <use
-                                    xlink:href="https://transuyshstroy.netlify.app/img/icons/icons.svg#plus"
+                                    xlink:href="../img/icons/icons.svg#plus"
                                 ></use>
                             </svg>
                         </a>
@@ -2311,7 +2138,13 @@
 
     </div>
 
-    <div class="l-zhk__view">вид из окна</div>
+    <div class="l-zhk__view">
+        <div class="section-window-view">
+            <div class="container">
+                <div class="section-window-view__h1">вид из окна</div>
+            </div>
+        </div>
+    </div>
 
     <div class="l-zhk__rooms">
 <section class="rooms section p-0" data-role="tabs">
@@ -3052,7 +2885,7 @@
     </div>
 
     <div class="l-zhk__programs">
-<section class="programs section p-0">
+<section class="programs section">
     <div class="container">
         <h2 class="programs__title section__title h3">Ипотечные программы</h2>
         <div class="programs__list cards">
@@ -3089,24 +2922,32 @@
                         </div>
                     </div>
                     <div class="programs-item__panel">
-                        <dl class="programs-item__panel-list">
+                        <div class="programs-item__panel-list">
                             <div class="programs-item__panel-info">
-                                <dt>от 15%</dt>
-                                <dd>Первоначальный взнос</dd>
+                                <div class="programs-item__panel-cell">
+                                    от 15%
+                                    <span>Первоначальный взнос</span>
+                                </div>
                             </div>
                             <div class="programs-item__panel-info">
-                                <dt>5%</dt>
-                                <dd>Процентная ставка</dd>
+                                <div class="programs-item__panel-cell">
+                                    5%
+                                    <span>Процентная ставка</span>
+                                </div>
                             </div>
                             <div class="programs-item__panel-info">
-                                <dt>до 30 лет</dt>
-                                <dd>Срок кредита</dd>
+                                <div class="programs-item__panel-cell">
+                                    до 30 лет
+                                    <span>Срок кредита</span>
+                                </div>
                             </div>
                             <div class="programs-item__panel-info">
-                                <dt>до 9 млн</dt>
-                                <dd>умма кредита</dd>
+                                <div class="programs-item__panel-cell">
+                                    до 9 млн
+                                    <span>умма кредита</span>
+                                </div>
                             </div>
-                        </dl>
+                        </div>
                         <a href="#" class="programs-item__panel-add">
                             <span>Подробнее</span>
                             <svg width="20" height="20">
@@ -3150,24 +2991,32 @@
                         </div>
                     </div>
                     <div class="programs-item__panel">
-                        <dl class="programs-item__panel-list">
+                        <div class="programs-item__panel-list">
                             <div class="programs-item__panel-info">
-                                <dt>от 15%</dt>
-                                <dd>Первоначальный взнос</dd>
+                                <div class="programs-item__panel-cell">
+                                    от 15%
+                                    <span>Первоначальный взнос</span>
+                                </div>
                             </div>
                             <div class="programs-item__panel-info">
-                                <dt>5%</dt>
-                                <dd>Процентная ставка</dd>
+                                <div class="programs-item__panel-cell">
+                                    5%
+                                    <span>Процентная ставка</span>
+                                </div>
                             </div>
                             <div class="programs-item__panel-info">
-                                <dt>до 30 лет</dt>
-                                <dd>Срок кредита</dd>
+                                <div class="programs-item__panel-cell">
+                                    до 30 лет
+                                    <span>Срок кредита</span>
+                                </div>
                             </div>
                             <div class="programs-item__panel-info">
-                                <dt>до 9 млн</dt>
-                                <dd>умма кредита</dd>
+                                <div class="programs-item__panel-cell">
+                                    до 9 млн
+                                    <span>умма кредита</span>
+                                </div>
                             </div>
-                        </dl>
+                        </div>
                         <a href="#" class="programs-item__panel-add">
                             <span>Подробнее</span>
                             <svg width="20" height="20">
@@ -3211,24 +3060,32 @@
                         </div>
                     </div>
                     <div class="programs-item__panel">
-                        <dl class="programs-item__panel-list">
+                        <div class="programs-item__panel-list">
                             <div class="programs-item__panel-info">
-                                <dt>от 15%</dt>
-                                <dd>Первоначальный взнос</dd>
+                                <div class="programs-item__panel-cell">
+                                    от 15%
+                                    <span>Первоначальный взнос</span>
+                                </div>
                             </div>
                             <div class="programs-item__panel-info">
-                                <dt>5%</dt>
-                                <dd>Процентная ставка</dd>
+                                <div class="programs-item__panel-cell">
+                                    5%
+                                    <span>Процентная ставка</span>
+                                </div>
                             </div>
                             <div class="programs-item__panel-info">
-                                <dt>до 30 лет</dt>
-                                <dd>Срок кредита</dd>
+                                <div class="programs-item__panel-cell">
+                                    до 30 лет
+                                    <span>Срок кредита</span>
+                                </div>
                             </div>
                             <div class="programs-item__panel-info">
-                                <dt>до 9 млн</dt>
-                                <dd>умма кредита</dd>
+                                <div class="programs-item__panel-cell">
+                                    до 9 млн
+                                    <span>умма кредита</span>
+                                </div>
                             </div>
-                        </dl>
+                        </div>
                         <a href="#" class="programs-item__panel-add">
                             <span>Подробнее</span>
                             <svg width="20" height="20">
@@ -3273,16 +3130,20 @@
                         </div>
                     </div>
                     <div class="programs-item__panel">
-                        <dl class="programs-item__panel-list">
+                        <div class="programs-item__panel-list">
                             <div class="programs-item__panel-info">
-                                <dt>не выше 8%</dt>
-                                <dd>Процентная ставка</dd>
+                                <div class="programs-item__panel-cell">
+                                    не выше 8%
+                                    <span>Процентная ставка</span>
+                                </div>
                             </div>
                             <div class="programs-item__panel-info">
-                                <dt>фикс 6%</dt>
-                                <dd>Первые 5 ле</dd>
+                                <div class="programs-item__panel-cell">
+                                    фикс 6%
+                                    <span>Первые 5 ле</span>
+                                </div>
                             </div>
-                        </dl>
+                        </div>
                         <a href="#" class="programs-item__panel-add">
                             <span>Подробнее</span>
                             <svg width="20" height="20">
@@ -4811,11 +4672,6 @@
 <div class="page__locker active"></div>
 
 
-        <script
-            src="https://api-maps.yandex.ru/2.1/?apikey=4ee83d51-9c82-4832-ae32-283ef606144b
-    &lang=ru_RU"
-            type="text/javascript"
-        ></script>
 
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -4824,11 +4680,12 @@
         <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+        <script src="https://transuyshstroy.netlify.app/js/app.min.js?_v=20240405141104"></script>
 
 
 
 
-        <script src="js/main.js?t=1712823882600"></script>
+        <script src="js/main.js?t=1712828045146"></script>
 
         <div id="notify" class="notify"></div>
 

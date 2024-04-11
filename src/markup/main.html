@@ -790,130 +790,40 @@
         </div>
     </section>
 
-    <div class="intro-zhk__scroll-height"></div>
-
     <div class="l-zhk__filter">
         <div class="container">
-            <form action="#" class="projects__filters m-0">
+            <form action="#" class="projects__filters">
                 <div class="projects__filters-top">
-                    <div class="filter-item d-sm-none">
+                    <div class="filter-item">
                         <div class="filter-item__label">Готовый вариант</div>
                         <div class="filter-item__select">
-                            <div class="select" data-id="2">
-                                <select
-                                    name="filter-variant"
-                                    id="filter-variant"
-                                    class="filter-select"
-                                    hidden=""
-                                    data-id="2"
-                                    data-placeholder="Выбрать"
-                                    data-speed="150"
-                                >
-                                    <option value="">Выбрать</option>
-                                    <option value="1">Вариант 1</option>
-                                    <option value="2">Вариант 2</option>
-                                    <option value="3">Вариант 3</option>
-                                    <option value="4">Вариант 4</option>
-                                </select>
-                                <div class="select__body">
-                                    <button type="button" class="select__title">
-                                        <span class="select__value"
-                                            ><span class="select__content"
-                                                >Выбрать</span
-                                            ></span
-                                        >
-                                    </button>
-                                    <div hidden="" class="select__options">
-                                        <div class="select__scroll">
-                                            <button
-                                                class="select__option"
-                                                data-value="1"
-                                                type="button"
-                                            >
-                                                Вариант 1</button
-                                            ><button
-                                                class="select__option"
-                                                data-value="2"
-                                                type="button"
-                                            >
-                                                Вариант 2</button
-                                            ><button
-                                                class="select__option"
-                                                data-value="3"
-                                                type="button"
-                                            >
-                                                Вариант 3</button
-                                            ><button
-                                                class="select__option"
-                                                data-value="4"
-                                                type="button"
-                                            >
-                                                Вариант 4
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <select
+                                name="filter-variant"
+                                id="filter-variant"
+                                class="filter-select"
+                            >
+                                <option value="">Выбрать</option>
+                                <option value="1">Вариант 1</option>
+                                <option value="2">Вариант 2</option>
+                                <option value="3">Вариант 3</option>
+                                <option value="4">Вариант 4</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="filter-item d-sm-none">
+                    <div class="filter-item">
                         <div class="filter-item__label">Город</div>
                         <div class="filter-item__select">
-                            <div class="select" data-id="3">
-                                <select
-                                    name="filter-city"
-                                    id="filter-city"
-                                    class="filter-select"
-                                    hidden=""
-                                    data-id="3"
-                                    data-placeholder="Выбрать"
-                                    data-speed="150"
-                                >
-                                    <option value="">Выбрать</option>
-                                    <option value="1">Вариант 1</option>
-                                    <option value="2">Вариант 2</option>
-                                    <option value="3">Вариант 3</option>
-                                    <option value="4">Вариант 4</option>
-                                </select>
-                                <div class="select__body">
-                                    <button type="button" class="select__title">
-                                        <span class="select__value"
-                                            ><span class="select__content"
-                                                >Выбрать</span
-                                            ></span
-                                        >
-                                    </button>
-                                    <div hidden="" class="select__options">
-                                        <div class="select__scroll">
-                                            <button
-                                                class="select__option"
-                                                data-value="1"
-                                                type="button"
-                                            >
-                                                Вариант 1</button
-                                            ><button
-                                                class="select__option"
-                                                data-value="2"
-                                                type="button"
-                                            >
-                                                Вариант 2</button
-                                            ><button
-                                                class="select__option"
-                                                data-value="3"
-                                                type="button"
-                                            >
-                                                Вариант 3</button
-                                            ><button
-                                                class="select__option"
-                                                data-value="4"
-                                                type="button"
-                                            >
-                                                Вариант 4
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <select
+                                name="filter-city"
+                                id="filter-city"
+                                class="filter-select"
+                            >
+                                <option value="">Выбрать</option>
+                                <option value="1">Вариант 1</option>
+                                <option value="2">Вариант 2</option>
+                                <option value="3">Вариант 3</option>
+                                <option value="4">Вариант 4</option>
+                            </select>
                         </div>
                     </div>
                     <div class="filter-item">
@@ -992,67 +902,13 @@
                                 />
                             </div>
                             <div
-                                class="range-slider noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"
+                                class="range-slider"
                                 data-min="0"
                                 data-max="100"
-                            >
-                                <div class="noUi-base">
-                                    <div class="noUi-connects">
-                                        <div
-                                            class="noUi-connect"
-                                            style="
-                                                transform: translate(0%, 0px)
-                                                    scale(1, 1);
-                                            "
-                                        ></div>
-                                    </div>
-                                    <div
-                                        class="noUi-origin"
-                                        style="
-                                            transform: translate(-100%, 0px);
-                                            z-index: 5;
-                                        "
-                                    >
-                                        <div
-                                            class="noUi-handle noUi-handle-lower"
-                                            data-handle="0"
-                                            tabindex="0"
-                                            role="slider"
-                                            aria-orientation="horizontal"
-                                            aria-valuemin="0.0"
-                                            aria-valuemax="100.0"
-                                            aria-valuenow="0.0"
-                                            aria-valuetext="0"
-                                        >
-                                            <div class="noUi-touch-area"></div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="noUi-origin"
-                                        style="
-                                            transform: translate(0%, 0px);
-                                            z-index: 4;
-                                        "
-                                    >
-                                        <div
-                                            class="noUi-handle noUi-handle-upper"
-                                            data-handle="1"
-                                            tabindex="0"
-                                            role="slider"
-                                            aria-orientation="horizontal"
-                                            aria-valuemin="0.0"
-                                            aria-valuemax="100.0"
-                                            aria-valuenow="100.0"
-                                            aria-valuetext="100"
-                                        >
-                                            <div class="noUi-touch-area"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            ></div>
                         </div>
                     </div>
-                    <div class="filter-item d-sm-none">
+                    <div class="filter-item">
                         <div class="filter-item__label">Площадь</div>
                         <div class="filter-item__range">
                             <div class="filter-item__inputs">
@@ -1068,64 +924,10 @@
                                 />
                             </div>
                             <div
-                                class="range-slider noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"
+                                class="range-slider"
                                 data-min="0"
                                 data-max="10000"
-                            >
-                                <div class="noUi-base">
-                                    <div class="noUi-connects">
-                                        <div
-                                            class="noUi-connect"
-                                            style="
-                                                transform: translate(0%, 0px)
-                                                    scale(1, 1);
-                                            "
-                                        ></div>
-                                    </div>
-                                    <div
-                                        class="noUi-origin"
-                                        style="
-                                            transform: translate(-100%, 0px);
-                                            z-index: 5;
-                                        "
-                                    >
-                                        <div
-                                            class="noUi-handle noUi-handle-lower"
-                                            data-handle="0"
-                                            tabindex="0"
-                                            role="slider"
-                                            aria-orientation="horizontal"
-                                            aria-valuemin="0.0"
-                                            aria-valuemax="10000.0"
-                                            aria-valuenow="0.0"
-                                            aria-valuetext="0"
-                                        >
-                                            <div class="noUi-touch-area"></div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="noUi-origin"
-                                        style="
-                                            transform: translate(0%, 0px);
-                                            z-index: 4;
-                                        "
-                                    >
-                                        <div
-                                            class="noUi-handle noUi-handle-upper"
-                                            data-handle="1"
-                                            tabindex="0"
-                                            role="slider"
-                                            aria-orientation="horizontal"
-                                            aria-valuemin="0.0"
-                                            aria-valuemax="10000.0"
-                                            aria-valuenow="10000.0"
-                                            aria-valuetext="10000"
-                                        >
-                                            <div class="noUi-touch-area"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            ></div>
                         </div>
                     </div>
                     <a href="#" class="filter-item-result btn">63 объекта</a>
@@ -1307,7 +1109,13 @@
         <!-- @@include = ./partials/section-types.html -->
     </div>
 
-    <div class="l-zhk__view">вид из окна</div>
+    <div class="l-zhk__view">
+        <div class="section-window-view">
+            <div class="container">
+                <div class="section-window-view__h1">вид из окна</div>
+            </div>
+        </div>
+    </div>
 
     <div class="l-zhk__rooms">
         <!-- @@include = ./partials/section-rooms.html -->
