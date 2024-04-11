@@ -684,49 +684,23 @@ $(function () {
   \*****************************************/
 /***/ (function() {
 
-var $section = $();
-var $inner = $();
-var $name = $();
-
-function updateScrollDeps() {
-  var initialShift = 0;
-  var maxShift = $name.offset().left - $inner.offset().left;
-  var scrollReactionShift = 500;
-  var scrollTop = $(window).scrollTop();
-  var scrollProgress = (scrollTop - $section.offset().top + scrollReactionShift) / $section.outerHeight();
-  var newShift = scrollProgress < 0 ? initialShift : scrollProgress > 1 ? maxShift : initialShift + scrollProgress * (Math.abs(maxShift) - Math.abs(initialShift));
-  $section[0].style.setProperty("--name-shift", -newShift + "px");
-}
-
-function handleWindowScroll() {
-  requestAnimationFrame(function () {
-    updateScrollDeps();
-  });
-}
-
-$(function () {
-  $section = $("#section-about");
-  $inner = $section.find(".section-about__inner");
-  $name = $section.find(".section-about__name");
-  if ($section.length === 0) return;
-
-  var callback = function callback(entries, observer) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        $(window).on("scroll", handleWindowScroll);
-      } else {
-        $(window).off("scroll", handleWindowScroll);
-      }
-    });
-  };
-
-  var options = {
-    // root: по умолчанию window, но можно задать любой элемент-контейнер
-    rootMargin: "0px 0px 0px 0px",
-    threshold: 0
-  };
-  var observer = new IntersectionObserver(callback, options);
-  observer.observe($section[0]);
+$(window).on("load", function () {
+  gsap.timeline({
+    defaults: {
+      ease: "none"
+    },
+    scrollTrigger: {
+      trigger: ".section-about__title",
+      start: "top bottom",
+      end: "bottom+=200 top",
+      scrub: 0.5,
+      markers: true
+    }
+  }).addLabel("shift").to(".section-about__title", {
+    x: function x() {
+      return $(".section-about__title").offset().left * -2;
+    }
+  }, "shift");
 });
 
 /***/ }),

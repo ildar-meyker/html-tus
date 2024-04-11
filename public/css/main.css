@@ -1315,7 +1315,7 @@ a {
 @media (max-width: 699.98px) {
   .card-tour {
     flex-direction: column-reverse;
-    min-height: 470px;
+    min-height: 500px;
   }
   .card-tour__right {
     width: auto;
@@ -2172,7 +2172,6 @@ a {
   color: #ff6100;
   white-space: nowrap;
   z-index: 5;
-  text-indent: calc(var(--name-shift) - 0.08em);
 }
 .section-about__name--stroke {
   color: transparent;
