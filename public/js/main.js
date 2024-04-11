@@ -741,18 +741,18 @@ $(function () {
   $section = $("#section-people");
   if ($section.length === 0) return;
   markFlippedCards();
-  var $clippedCards = $(".card-person.flipped");
 });
 $(window).on("load", function () {
+  var $flippedCards = $(".card-person.flipped");
   ScrollTrigger.create({
     trigger: "#section-people",
     start: "top bottom",
     end: "bottom top",
     onEnter: function onEnter() {
-      $clippedCards.addClass("active");
+      $flippedCards.addClass("active");
     },
     onLeaveBack: function onLeaveBack() {
-      $clippedCards.removeClass("active");
+      $flippedCards.removeClass("active");
     },
     markers: false
   });
@@ -916,14 +916,19 @@ $(window).on("load", function () {
       start: "top center",
       end: "bottom top",
       onEnter: function onEnter() {
+        // setTimeout cares about visibility of initial rotation
         trackingTimer = setTimeout(function () {
           isTrackingAllowed = true;
         }, 1000);
       },
       onLeaveBack: function onLeaveBack() {
         clearTimeout(trackingTimer);
-        isTrackingAllowed = false;
-        $circle.get(0).style = "";
+        isTrackingAllowed = false; // setTimeout required, because reset available
+        // only when gsap completed tracking
+
+        setTimeout(function () {
+          $circle.get(0).style = "";
+        }, 1000);
       }
     }
   });

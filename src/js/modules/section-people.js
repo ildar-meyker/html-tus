@@ -35,20 +35,20 @@ $(function () {
     if ($section.length === 0) return;
 
     markFlippedCards();
-
-    const $clippedCards = $(".card-person.flipped");
 });
 
 $(window).on("load", () => {
+    const $flippedCards = $(".card-person.flipped");
+
     ScrollTrigger.create({
         trigger: "#section-people",
         start: "top bottom",
         end: "bottom top",
         onEnter: function () {
-            $clippedCards.addClass("active");
+            $flippedCards.addClass("active");
         },
         onLeaveBack: function () {
-            $clippedCards.removeClass("active");
+            $flippedCards.removeClass("active");
         },
         markers: false,
     });

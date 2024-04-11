@@ -172,6 +172,7 @@ $(window).on("load", () => {
             start: "top center",
             end: "bottom top",
             onEnter: () => {
+                // setTimeout cares about visibility of initial rotation
                 trackingTimer = setTimeout(() => {
                     isTrackingAllowed = true;
                 }, 1000);
@@ -181,7 +182,11 @@ $(window).on("load", () => {
 
                 isTrackingAllowed = false;
 
-                $circle.get(0).style = "";
+                // setTimeout required, because reset available
+                // only when gsap completed tracking
+                setTimeout(() => {
+                    $circle.get(0).style = "";
+                }, 1000);
             },
         },
     });
