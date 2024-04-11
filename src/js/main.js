@@ -21,3 +21,4 @@ import "./modules/accordion";
 import "./modules/map-contacts";
 import "./modules/map-location";
 import "./modules/scroll-jquery";
+import "./modules/section-tour";

@@ -95,11 +95,11 @@
 }
 
 .link-area {
-    @include fill;
+    @include position-fill;
 }
 
 .img-fill {
-    @include fill;
+    @include position-fill;
     object-fit: cover;
 }
 
@@ -112,7 +112,7 @@
     position: relative;
 
     img {
-        @include fill;
+        @include position-fill;
         object-fit: cover;
     }
 }
@@ -134,7 +134,7 @@
 }
 
 .overlay {
-    @include fill;
+    @include position-fill;
     background: #000000;
     opacity: 0.45;
 }

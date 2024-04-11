@@ -3,7 +3,7 @@
     padding-top: 47.43%;
 
     &__box {
-        @include fill;
+        @include position-fill;
         border-radius: 20px;
     }
 

@@ -1,6 +1,6 @@
 .section-window {
     &__h1 {
-        font-size: 298px;
+        font-size: clamp(60px, 16vw, 289px);
         font-weight: 500;
         line-height: 0.8;
         letter-spacing: -0.04em;

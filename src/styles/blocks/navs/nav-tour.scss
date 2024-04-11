@@ -1,0 +1,49 @@
+.nav-tour {
+    ul {
+    }
+    li {
+        transition: all 0.2s;
+        position: relative;
+        margin: 8px 0;
+
+        &.active {
+            padding-left: 20px;
+
+            a {
+                color: #000000;
+            }
+
+            &:before {
+                transition-delay: 0.2s;
+                opacity: 1;
+            }
+        }
+
+        &:hover {
+            a {
+                color: #000000;
+            }
+        }
+
+        &:before {
+            transition: all 0.2s;
+            content: " ";
+            @include position-middle;
+            left: 0;
+            width: 1em;
+            height: 1em;
+            font-size: 8px;
+            border-radius: 50%;
+            background: #ff6100;
+            opacity: 0;
+        }
+    }
+
+    a {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: calc(21.6 / 18);
+        letter-spacing: -0.02em;
+        color: #0000004d;
+    }
+}

@@ -1,0 +1,130 @@
+.section-tour {
+    position: relative;
+
+    &__bg {
+        @include position-fill;
+
+        &__item {
+            @include position-fill;
+            background: no-repeat 50% 50% / cover;
+            background-attachment: fixed;
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 10;
+    }
+
+    &__center {
+        position: relative;
+        padding: 123px 0;
+    }
+
+    &__circle {
+        position: absolute;
+        left: 12.5%;
+        top: 35%;
+        width: 1em;
+        height: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-50%);
+        font-size: 189px;
+
+        &__text {
+            @include position-fill;
+            background: url(../img/section-tour/circle-text.svg) no-repeat 50%
+                50% / contain;
+            animation: section-tour-circle-rotate 5s linear infinite;
+        }
+
+        &__btn {
+            position: relative;
+            z-index: 10;
+        }
+    }
+
+    &__slider {
+        margin-left: 25%;
+    }
+
+    &__tabs {
+        display: none;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .section-tour {
+        &__bg {
+            &__item {
+            }
+        }
+
+        &__content {
+        }
+
+        &__center {
+        }
+
+        &__circle {
+            display: none;
+
+            &__text {
+            }
+
+            &__btn {
+            }
+        }
+
+        &__slider {
+            margin-left: 0;
+        }
+    }
+}
+
+@media (max-width: 999.98px) {
+    .section-tour {
+        &__bg {
+            &__item {
+            }
+        }
+
+        &__content {
+        }
+
+        &__center {
+            padding: 80px 0;
+        }
+
+        &__circle {
+            &__text {
+            }
+
+            &__btn {
+            }
+        }
+
+        &__slider {
+        }
+
+        &__tabs {
+            display: flex;
+            padding: 0 20px;
+            margin: 0 -20px;
+            overflow-x: auto;
+            @include hide-scrollbar();
+            margin-bottom: 28px;
+        }
+    }
+}
+
+@keyframes section-tour-circle-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

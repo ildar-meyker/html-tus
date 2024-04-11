@@ -1,0 +1,56 @@
+.slider-tour {
+    position: relative;
+
+    &__slides {
+    }
+
+    &__slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        visibility: hidden;
+        transform-origin: 0% 50%;
+
+        &:first-child {
+            position: static;
+            visibility: visible;
+        }
+    }
+
+    &__ctrl-names {
+        position: absolute;
+        z-index: 50;
+        bottom: 0;
+        left: 0;
+        padding: 32px;
+    }
+
+    &__ctrl-btns {
+        position: absolute;
+        z-index: 50;
+        left: calc(50% - 50px);
+        bottom: 32px;
+        padding: 24px;
+    }
+}
+
+@media (max-width: 999.98px) {
+    .slider-tour {
+        &__slides {
+        }
+
+        &__slide {
+            &:first-child {
+            }
+        }
+
+        &__ctrl-names {
+            display: none;
+        }
+
+        &__ctrl-btns {
+            display: none;
+        }
+    }
+}

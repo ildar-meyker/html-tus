@@ -23,6 +23,12 @@
     .icon {
         font-size: calc(12 / 60) + em;
     }
+
+    &--blur {
+        backdrop-filter: blur(10px);
+        background: #ffffff66;
+        color: #fff;
+    }
 }
 
 @media (max-width: 999.98px) {

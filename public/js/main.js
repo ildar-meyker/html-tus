@@ -784,6 +784,131 @@ $(function () {
 
 /***/ }),
 
+/***/ "./src/js/modules/section-tour.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/section-tour.js ***!
+  \****************************************/
+/***/ (function() {
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var currentIndex = 0;
+var isAnimating = false;
+var $section = $();
+var leftState = {
+  autoAlpha: 0,
+  scale: 0.8,
+  x: -50
+};
+var middleState = {
+  autoAlpha: 1,
+  scale: 1,
+  x: 0
+};
+var rightState = {
+  autoAlpha: 0,
+  scale: 1.2,
+  x: 50
+};
+var comingZIndex = {
+  zIndex: 20
+};
+var leavingZIndex = {
+  zIndex: 10,
+  duration: 0.4
+};
+
+function slideTo(options) {
+  var direction = options.direction,
+      index = options.index;
+  if (isAnimating) return;
+  if (index === currentIndex) return;
+  isAnimating = true;
+  var $slides = $section.find(".slider-tour__slide");
+  var $currentSlide = $slides.eq(currentIndex);
+  var minIndex = 0;
+  var maxIndex = $slides.length - 1;
+  var nextIndex;
+
+  if (direction) {
+    nextIndex = currentIndex + direction;
+
+    if (direction === 1 && nextIndex > maxIndex) {
+      nextIndex = 0;
+    }
+
+    if (direction === -1 && nextIndex < minIndex) {
+      nextIndex = maxIndex;
+    }
+  } else {
+    nextIndex = index;
+    direction = index > currentIndex ? 1 : -1;
+  }
+
+  updateNav(nextIndex);
+  var $nextSlide = $slides.eq(nextIndex);
+
+  if (direction === 1) {
+    gsap.fromTo($nextSlide.get(0), _objectSpread(_objectSpread({}, rightState), comingZIndex), _objectSpread(_objectSpread({}, middleState), comingZIndex));
+    gsap.fromTo($currentSlide.get(0), _objectSpread(_objectSpread({}, middleState), leavingZIndex), _objectSpread(_objectSpread({}, leftState), leavingZIndex));
+  } else {
+    gsap.fromTo($nextSlide.get(0), _objectSpread(_objectSpread({}, leftState), comingZIndex), _objectSpread(_objectSpread({}, middleState), comingZIndex));
+    gsap.fromTo($currentSlide.get(0), _objectSpread(_objectSpread({}, middleState), leavingZIndex), _objectSpread(_objectSpread({}, rightState), leavingZIndex));
+  }
+
+  currentIndex = nextIndex;
+  setTimeout(function () {
+    isAnimating = false;
+  }, 500);
+}
+
+function updateNav(activeIndex) {
+  $section.find(".nav-tour li").eq(activeIndex).addClass("active").siblings().removeClass("active");
+  $section.find(".section-tour__tabs button").eq(activeIndex).addClass("is-active").siblings().removeClass("is-active");
+}
+
+function handlePrevBtn() {
+  slideTo({
+    direction: -1
+  });
+}
+
+function handleNextBtn() {
+  slideTo({
+    direction: 1
+  });
+}
+
+function handleNamesItem(e) {
+  e.preventDefault();
+  var index = $(this).closest("li").index();
+  slideTo({
+    index: index
+  });
+}
+
+function handleButtonItem() {
+  var index = $(this).index();
+  slideTo({
+    index: index
+  });
+}
+
+$(function () {
+  if ($("#section-tour").length === 0) return;
+  $section = $("#section-tour");
+  $(document).on("click", "#section-tour .js-slider-prev", handlePrevBtn);
+  $(document).on("click", "#section-tour .js-slider-next", handleNextBtn);
+  $(document).on("click", "#section-tour .nav-tour a ", handleNamesItem);
+  $(document).on("click", "#section-tour .section-tour__tabs button ", handleButtonItem);
+});
+
+/***/ }),
+
 /***/ "./src/js/modules/slider-cameras.js":
 /*!******************************************!*\
   !*** ./src/js/modules/slider-cameras.js ***!
@@ -2697,6 +2822,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_map_location__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_modules_map_location__WEBPACK_IMPORTED_MODULE_19__);
 /* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/scroll-jquery */ "./src/js/modules/scroll-jquery.js");
 /* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _modules_section_tour__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/section-tour */ "./src/js/modules/section-tour.js");
+/* harmony import */ var _modules_section_tour__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_modules_section_tour__WEBPACK_IMPORTED_MODULE_21__);
+
 
 
 

@@ -11,7 +11,7 @@
     }
 
     &__box {
-        @include fill;
+        @include position-fill;
 
         [class*="ymaps-2"][class*="copyrights-pane"] {
             display: none !important;
