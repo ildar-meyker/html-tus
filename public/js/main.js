@@ -18,6 +18,34 @@ function isDesktop() {
 
 /***/ }),
 
+/***/ "./src/js/helpers/loadScript.js":
+/*!**************************************!*\
+  !*** ./src/js/helpers/loadScript.js ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ loadScript; }
+/* harmony export */ });
+function loadScript(src, callback) {
+  var script = document.createElement("script");
+  script.src = src;
+
+  script.onload = function () {
+    return callback(null, script);
+  };
+
+  script.onerror = function () {
+    return callback(new Error("Script load error for ".concat(src)));
+  };
+
+  document.head.append(script);
+}
+
+/***/ }),
+
 /***/ "./src/js/modules/accordion.js":
 /*!*************************************!*\
   !*** ./src/js/modules/accordion.js ***!
@@ -381,11 +409,11 @@ $(function () {
 /*!****************************************!*\
   !*** ./src/js/modules/map-contacts.js ***!
   \****************************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-if (typeof ymaps !== "undefined") {
-  ymaps.ready(init);
-}
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helpers_loadScript__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers/loadScript */ "./src/js/helpers/loadScript.js");
 
 var CLASS_ZOOM_IN = "map-contacts__btn-zoom-in";
 var CLASS_ZOOM_OUT = "map-contacts__btn-zoom-out";
@@ -466,6 +494,34 @@ function init() {
     myMap.controls.add(zoomControl);
   });
 }
+
+var observer = new IntersectionObserver(function (entries, observer) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      if (typeof ymaps === "undefined") {
+        (0,_helpers_loadScript__WEBPACK_IMPORTED_MODULE_0__["default"])("https://api-maps.yandex.ru/2.1/?apikey=4ee83d51-9c82-4832-ae32-283ef606144b&lang=ru_RU", function (error, script) {
+          if (error) {
+            console.error(error);
+          } else {
+            ymaps.ready(init);
+          }
+        });
+      } else {
+        ymaps.ready(init);
+      }
+
+      observer.disconnect();
+    }
+  });
+}, {
+  rootMargin: "0px 0px 2000px 0px",
+  threshold: 0
+});
+$(function () {
+  document.querySelectorAll(".map-contacts").forEach(function (element) {
+    observer.observe(element);
+  });
+});
 
 /***/ }),
 
@@ -2637,7 +2693,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/accordion */ "./src/js/modules/accordion.js");
 /* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_modules_accordion__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var _modules_map_contacts__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/map-contacts */ "./src/js/modules/map-contacts.js");
-/* harmony import */ var _modules_map_contacts__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_modules_map_contacts__WEBPACK_IMPORTED_MODULE_18__);
 /* harmony import */ var _modules_map_location__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/map-location */ "./src/js/modules/map-location.js");
 /* harmony import */ var _modules_map_location__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_modules_map_location__WEBPACK_IMPORTED_MODULE_19__);
 /* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/scroll-jquery */ "./src/js/modules/scroll-jquery.js");

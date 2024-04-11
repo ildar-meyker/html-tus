@@ -1,6 +1,4 @@
-if (typeof ymaps !== "undefined") {
-    ymaps.ready(init);
-}
+import loadScript from "../helpers/loadScript";
 
 const CLASS_ZOOM_IN = "map-contacts__btn-zoom-in";
 const CLASS_ZOOM_OUT = "map-contacts__btn-zoom-out";
@@ -108,3 +106,38 @@ function init() {
         myMap.controls.add(zoomControl);
     });
 }
+
+const observer = new IntersectionObserver(
+    (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                if (typeof ymaps === "undefined") {
+                    loadScript(
+                        "https://api-maps.yandex.ru/2.1/?apikey=4ee83d51-9c82-4832-ae32-283ef606144b&lang=ru_RU",
+                        function (error, script) {
+                            if (error) {
+                                console.error(error);
+                            } else {
+                                ymaps.ready(init);
+                            }
+                        }
+                    );
+                } else {
+                    ymaps.ready(init);
+                }
+
+                observer.disconnect();
+            }
+        });
+    },
+    {
+        rootMargin: "0px 0px 2000px 0px",
+        threshold: 0,
+    }
+);
+
+$(function () {
+    document.querySelectorAll(".map-contacts").forEach((element) => {
+        observer.observe(element);
+    });
+});
