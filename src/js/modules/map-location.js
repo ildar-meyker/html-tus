@@ -1,3 +1,5 @@
+import loadScript from "../helpers/loadScript";
+
 function initMap(mapEl) {
     const imageSize = [4096, 2371];
     const maxZoom = 4;
@@ -153,9 +155,40 @@ function addMarkers(map) {
     });
 }
 
+const observer = new IntersectionObserver(
+    (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                console.log(entry);
+
+                loadScript(
+                    "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js",
+                    function (error, script) {
+                        if (error) {
+                            console.error(error);
+                        } else {
+                            $(".map-location").each(function () {
+                                const mapEl = $(this)
+                                    .find(".map-location__box")
+                                    .get(0);
+                                initMap(mapEl);
+                            });
+                        }
+                    }
+                );
+
+                observer.disconnect();
+            }
+        });
+    },
+    {
+        rootMargin: "0px 0px 1000px 0px",
+        threshold: 0,
+    }
+);
+
 $(function () {
-    $(".map-location").each(function () {
-        const mapEl = $(this).find(".map-location__box").get(0);
-        initMap(mapEl);
+    document.querySelectorAll(".map-location").forEach((element) => {
+        observer.observe(element);
     });
 });

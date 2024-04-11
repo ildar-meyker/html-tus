@@ -8,7 +8,6 @@
         &__item {
             @include position-fill;
             background: no-repeat 50% 50% / cover;
-            background-attachment: fixed;
         }
     }
 

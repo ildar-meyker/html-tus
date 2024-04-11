@@ -514,7 +514,7 @@ var observer = new IntersectionObserver(function (entries, observer) {
     }
   });
 }, {
-  rootMargin: "0px 0px 2000px 0px",
+  rootMargin: "0px 0px 1000px 0px",
   threshold: 0
 });
 $(function () {
@@ -529,8 +529,11 @@ $(function () {
 /*!****************************************!*\
   !*** ./src/js/modules/map-location.js ***!
   \****************************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helpers_loadScript__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers/loadScript */ "./src/js/helpers/loadScript.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -542,6 +545,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 function initMap(mapEl) {
   var imageSize = [4096, 2371];
@@ -657,10 +662,30 @@ function addMarkers(map) {
   });
 }
 
+var observer = new IntersectionObserver(function (entries, observer) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      console.log(entry);
+      (0,_helpers_loadScript__WEBPACK_IMPORTED_MODULE_0__["default"])("https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js", function (error, script) {
+        if (error) {
+          console.error(error);
+        } else {
+          $(".map-location").each(function () {
+            var mapEl = $(this).find(".map-location__box").get(0);
+            initMap(mapEl);
+          });
+        }
+      });
+      observer.disconnect();
+    }
+  });
+}, {
+  rootMargin: "0px 0px 1000px 0px",
+  threshold: 0
+});
 $(function () {
-  $(".map-location").each(function () {
-    var mapEl = $(this).find(".map-location__box").get(0);
-    initMap(mapEl);
+  document.querySelectorAll(".map-location").forEach(function (element) {
+    observer.observe(element);
   });
 });
 
@@ -2865,7 +2890,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_modules_accordion__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var _modules_map_contacts__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/map-contacts */ "./src/js/modules/map-contacts.js");
 /* harmony import */ var _modules_map_location__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/map-location */ "./src/js/modules/map-location.js");
-/* harmony import */ var _modules_map_location__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_modules_map_location__WEBPACK_IMPORTED_MODULE_19__);
 /* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/scroll-jquery */ "./src/js/modules/scroll-jquery.js");
 /* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20__);
 /* harmony import */ var _modules_section_tour__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/section-tour */ "./src/js/modules/section-tour.js");
