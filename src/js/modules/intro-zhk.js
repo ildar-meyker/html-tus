@@ -167,6 +167,7 @@ $(function () {
     $(document).on("click", ".intro-zhk__btn-down", handleScrollDown);
     $(document).on("click", ".intro-zhk", handleOutsideClick);
 
-    $(window).on("load", handleWindowLoad);
+    window.addEventListener("load", handleWindowLoad);
+
     $(window).on("resize orientationchange", handleWindowResize);
 });

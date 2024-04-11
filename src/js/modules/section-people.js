@@ -36,7 +36,7 @@ $(function () {
 
     markFlippedCards();
 
-    $(window).on("load", () => {
+    window.addEventListener("load", () => {
         const $flippedCards = $(".card-person.flipped");
 
         ScrollTrigger.create({

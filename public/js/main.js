@@ -339,6 +339,7 @@ function closeActivePanels() {
 }
 
 function handleWindowLoad() {
+  alert("loaded");
   console.log("handleWindowLoad");
   updateScaleVariables();
   $section.addClass("intro-zhk--loaded");
@@ -399,7 +400,7 @@ $(function () {
   $(document).on("click", ".intro-zhk__btn-close", handlePanelClose);
   $(document).on("click", ".intro-zhk__btn-down", handleScrollDown);
   $(document).on("click", ".intro-zhk", handleOutsideClick);
-  $(window).on("load", handleWindowLoad);
+  window.addEventListener("load", handleWindowLoad);
   $(window).on("resize orientationchange", handleWindowResize);
 });
 
@@ -709,7 +710,7 @@ $(function () {
   \*****************************************/
 /***/ (function() {
 
-$(window).on("load", function () {
+window.addEventListener("load", function () {
   gsap.timeline({
     defaults: {
       ease: "none"
@@ -766,7 +767,7 @@ $(function () {
   $section = $("#section-people");
   if ($section.length === 0) return;
   markFlippedCards();
-  $(window).on("load", function () {
+  window.addEventListener("load", function () {
     var $flippedCards = $(".card-person.flipped");
     ScrollTrigger.create({
       trigger: "#section-people",
@@ -930,7 +931,7 @@ $(function () {
   $(document).on("click", "#section-tour .nav-tour a ", handleNamesItem);
   $(document).on("click", "#section-tour .section-tour__tabs button ", handleButtonItem);
   $(document).on("mousemove", "#section-tour", handleMouseMove);
-  $(window).on("load", function () {
+  window.addEventListener("load", function () {
     gsap.timeline({
       defaults: {
         ease: "none"

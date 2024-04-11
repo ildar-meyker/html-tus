@@ -1,4 +1,4 @@
-$(window).on("load", () => {
+window.addEventListener("load", () => {
     gsap.timeline({
         defaults: {
             ease: "none",

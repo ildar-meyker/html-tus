@@ -161,7 +161,7 @@ $(function () {
 
     $(document).on("mousemove", "#section-tour", handleMouseMove);
 
-    $(window).on("load", () => {
+    window.addEventListener("load", () => {
         gsap.timeline({
             defaults: {
                 ease: "none",
