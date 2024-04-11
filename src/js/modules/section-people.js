@@ -37,7 +37,9 @@ $(function () {
     markFlippedCards();
 
     const $clippedCards = $(".card-person.flipped");
+});
 
+$(window).on("load", () => {
     ScrollTrigger.create({
         trigger: "#section-people",
         start: "top bottom",

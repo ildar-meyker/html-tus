@@ -742,6 +742,8 @@ $(function () {
   if ($section.length === 0) return;
   markFlippedCards();
   var $clippedCards = $(".card-person.flipped");
+});
+$(window).on("load", function () {
   ScrollTrigger.create({
     trigger: "#section-people",
     start: "top bottom",
@@ -775,8 +777,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var currentIndex = 0;
+var trackingTimer = null;
+var isTrackingAllowed = false;
 var isAnimating = false;
 var $section = $();
+var $center = $();
+var $circle = $();
 var leftState = {
   autoAlpha: 0,
   scale: 0.8,
@@ -879,13 +885,67 @@ function handleButtonItem() {
   });
 }
 
+function handleMouseMove(e) {
+  if (!isTrackingAllowed) return;
+  var pageX = e.pageX,
+      pageY = e.pageY;
+  gsap.to($circle.get(0), {
+    top: pageY - $section.offset().top,
+    left: pageX - $center.offset().left
+  });
+}
+
 $(function () {
   if ($("#section-tour").length === 0) return;
   $section = $("#section-tour");
+  $center = $section.find(".section-tour__center");
+  $circle = $section.find(".section-tour__circle");
   $(document).on("click", "#section-tour .js-slider-prev", handlePrevBtn);
   $(document).on("click", "#section-tour .js-slider-next", handleNextBtn);
   $(document).on("click", "#section-tour .nav-tour a ", handleNamesItem);
   $(document).on("click", "#section-tour .section-tour__tabs button ", handleButtonItem);
+  $(document).on("mousemove", "#section-tour", handleMouseMove);
+});
+$(window).on("load", function () {
+  gsap.timeline({
+    defaults: {
+      ease: "none"
+    },
+    scrollTrigger: {
+      trigger: "#section-tour",
+      start: "top center",
+      end: "bottom top",
+      onEnter: function onEnter() {
+        trackingTimer = setTimeout(function () {
+          isTrackingAllowed = true;
+        }, 1000);
+      },
+      onLeaveBack: function onLeaveBack() {
+        clearTimeout(trackingTimer);
+        isTrackingAllowed = false;
+        $circle.get(0).style = "";
+      }
+    }
+  });
+  gsap.timeline({
+    defaults: {
+      ease: "none"
+    },
+    scrollTrigger: {
+      trigger: ".section-tour__circle__text",
+      start: "top bottom",
+      end: "bottom+=200 top",
+      scrub: 0.5,
+      markers: true
+    }
+  }).addLabel("rotate").from(".section-tour__circle__text", {
+    scale: 0.8,
+    duration: 1,
+    delay: 1
+  }, "rotate").to(".section-tour__circle__text", {
+    rotate: 360,
+    duration: 5
+  }, "rotate");
 });
 
 /***/ }),

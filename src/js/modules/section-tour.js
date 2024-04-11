@@ -1,8 +1,12 @@
 import isDesktop from "../helpers/isDesktop";
 
 let currentIndex = 0;
+let trackingTimer = null;
+let isTrackingAllowed = false;
 let isAnimating = false;
 let $section = $();
+let $center = $();
+let $circle = $();
 
 const leftState = { autoAlpha: 0, scale: 0.8, x: -50 };
 const middleState = { autoAlpha: 1, scale: 1, x: 0 };
@@ -128,10 +132,23 @@ function handleButtonItem() {
     });
 }
 
+function handleMouseMove(e) {
+    if (!isTrackingAllowed) return;
+
+    const { pageX, pageY } = e;
+
+    gsap.to($circle.get(0), {
+        top: pageY - $section.offset().top,
+        left: pageX - $center.offset().left,
+    });
+}
+
 $(function () {
     if ($("#section-tour").length === 0) return;
 
     $section = $("#section-tour");
+    $center = $section.find(".section-tour__center");
+    $circle = $section.find(".section-tour__circle");
 
     $(document).on("click", "#section-tour .js-slider-prev", handlePrevBtn);
     $(document).on("click", "#section-tour .js-slider-next", handleNextBtn);
@@ -141,4 +158,62 @@ $(function () {
         "#section-tour .section-tour__tabs button ",
         handleButtonItem
     );
+
+    $(document).on("mousemove", "#section-tour", handleMouseMove);
+});
+
+$(window).on("load", () => {
+    gsap.timeline({
+        defaults: {
+            ease: "none",
+        },
+        scrollTrigger: {
+            trigger: "#section-tour",
+            start: "top center",
+            end: "bottom top",
+            onEnter: () => {
+                trackingTimer = setTimeout(() => {
+                    isTrackingAllowed = true;
+                }, 1000);
+            },
+            onLeaveBack: () => {
+                clearTimeout(trackingTimer);
+
+                isTrackingAllowed = false;
+
+                $circle.get(0).style = "";
+            },
+        },
+    });
+
+    gsap.timeline({
+        defaults: {
+            ease: "none",
+        },
+        scrollTrigger: {
+            trigger: ".section-tour__circle__text",
+            start: "top bottom",
+            end: "bottom+=200 top",
+            scrub: 0.5,
+            markers: true,
+        },
+    })
+        .addLabel("rotate")
+        .from(
+            ".section-tour__circle__text",
+            {
+                scale: 0.8,
+                duration: 1,
+                delay: 1,
+            },
+            "rotate"
+        )
+        .to(
+            ".section-tour__circle__text",
+            {
+                rotate: 360,
+                duration: 5,
+            },
+            "rotate"
+        );
 });
