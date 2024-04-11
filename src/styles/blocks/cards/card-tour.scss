@@ -41,8 +41,8 @@
 
     &__btn-plus {
         position: absolute;
-        bottom: 32px;
-        right: 32px;
+        bottom: 0;
+        right: 0;
         padding: 24px;
     }
 }
@@ -72,8 +72,6 @@
 
         &__btn-plus {
             padding: 16px;
-            right: 0;
-            bottom: 0;
 
             a,
             button {

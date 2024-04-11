@@ -762,13 +762,17 @@ $(function () {
 /*!****************************************!*\
   !*** ./src/js/modules/section-tour.js ***!
   \****************************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helpers_isDesktop__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers/isDesktop */ "./src/js/helpers/isDesktop.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 var currentIndex = 0;
 var isAnimating = false;
@@ -825,13 +829,16 @@ function slideTo(options) {
 
   updateNav(nextIndex);
   var $nextSlide = $slides.eq(nextIndex);
+  var mobileMixin = (0,_helpers_isDesktop__WEBPACK_IMPORTED_MODULE_0__["default"])() ? {} : {
+    duration: 0
+  };
 
   if (direction === 1) {
-    gsap.fromTo($nextSlide.get(0), _objectSpread(_objectSpread({}, rightState), comingZIndex), _objectSpread(_objectSpread({}, middleState), comingZIndex));
-    gsap.fromTo($currentSlide.get(0), _objectSpread(_objectSpread({}, middleState), leavingZIndex), _objectSpread(_objectSpread({}, leftState), leavingZIndex));
+    gsap.fromTo($nextSlide.get(0), _objectSpread(_objectSpread(_objectSpread({}, rightState), comingZIndex), mobileMixin), _objectSpread(_objectSpread(_objectSpread({}, middleState), comingZIndex), mobileMixin));
+    gsap.fromTo($currentSlide.get(0), _objectSpread(_objectSpread(_objectSpread({}, middleState), leavingZIndex), mobileMixin), _objectSpread(_objectSpread(_objectSpread({}, leftState), leavingZIndex), mobileMixin));
   } else {
-    gsap.fromTo($nextSlide.get(0), _objectSpread(_objectSpread({}, leftState), comingZIndex), _objectSpread(_objectSpread({}, middleState), comingZIndex));
-    gsap.fromTo($currentSlide.get(0), _objectSpread(_objectSpread({}, middleState), leavingZIndex), _objectSpread(_objectSpread({}, rightState), leavingZIndex));
+    gsap.fromTo($nextSlide.get(0), _objectSpread(_objectSpread(_objectSpread({}, leftState), comingZIndex), mobileMixin), _objectSpread(_objectSpread(_objectSpread({}, middleState), comingZIndex), mobileMixin));
+    gsap.fromTo($currentSlide.get(0), _objectSpread(_objectSpread(_objectSpread({}, middleState), leavingZIndex), mobileMixin), _objectSpread(_objectSpread(_objectSpread({}, rightState), leavingZIndex), mobileMixin));
   }
 
   currentIndex = nextIndex;
@@ -2797,7 +2804,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/scroll-jquery */ "./src/js/modules/scroll-jquery.js");
 /* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_20__);
 /* harmony import */ var _modules_section_tour__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/section-tour */ "./src/js/modules/section-tour.js");
-/* harmony import */ var _modules_section_tour__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_modules_section_tour__WEBPACK_IMPORTED_MODULE_21__);
 
 
 

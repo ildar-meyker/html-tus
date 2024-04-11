@@ -1,3 +1,5 @@
+import isDesktop from "../helpers/isDesktop";
+
 let currentIndex = 0;
 let isAnimating = false;
 let $section = $();
@@ -45,29 +47,31 @@ function slideTo(options) {
 
     const $nextSlide = $slides.eq(nextIndex);
 
+    const mobileMixin = isDesktop() ? {} : { duration: 0 };
+
     if (direction === 1) {
         gsap.fromTo(
             $nextSlide.get(0),
-            { ...rightState, ...comingZIndex },
-            { ...middleState, ...comingZIndex }
+            { ...rightState, ...comingZIndex, ...mobileMixin },
+            { ...middleState, ...comingZIndex, ...mobileMixin }
         );
 
         gsap.fromTo(
             $currentSlide.get(0),
-            { ...middleState, ...leavingZIndex },
-            { ...leftState, ...leavingZIndex }
+            { ...middleState, ...leavingZIndex, ...mobileMixin },
+            { ...leftState, ...leavingZIndex, ...mobileMixin }
         );
     } else {
         gsap.fromTo(
             $nextSlide.get(0),
-            { ...leftState, ...comingZIndex },
-            { ...middleState, ...comingZIndex }
+            { ...leftState, ...comingZIndex, ...mobileMixin },
+            { ...middleState, ...comingZIndex, ...mobileMixin }
         );
 
         gsap.fromTo(
             $currentSlide.get(0),
-            { ...middleState, ...leavingZIndex },
-            { ...rightState, ...leavingZIndex }
+            { ...middleState, ...leavingZIndex, ...mobileMixin },
+            { ...rightState, ...leavingZIndex, ...mobileMixin }
         );
     }
 

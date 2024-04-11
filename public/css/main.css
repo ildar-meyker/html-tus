@@ -1285,8 +1285,8 @@ a {
 }
 .card-tour__btn-plus {
   position: absolute;
-  bottom: 32px;
-  right: 32px;
+  bottom: 0;
+  right: 0;
   padding: 24px;
 }
 
@@ -1304,8 +1304,6 @@ a {
   }
   .card-tour__btn-plus {
     padding: 16px;
-    right: 0;
-    bottom: 0;
   }
   .card-tour__btn-plus a,
 .card-tour__btn-plus button {
