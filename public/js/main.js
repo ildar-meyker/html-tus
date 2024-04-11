@@ -584,7 +584,7 @@ function addCustomZoom(map) {
 }
 
 function addImage(map, bounds) {
-  L.imageOverlay("img/map-location/1.jpeg", [[0, 0], bounds]).addTo(map);
+  L.imageOverlay("img/map-location/1.jpg", [[0, 0], bounds]).addTo(map);
 }
 
 function addLogo(map) {
@@ -693,8 +693,8 @@ $(window).on("load", function () {
       trigger: ".section-about__title",
       start: "top bottom",
       end: "bottom+=200 top",
-      scrub: 0.5,
-      markers: true
+      scrub: 0 // markers: true,
+
     }
   }).addLabel("shift").to(".section-about__title", {
     x: function x() {
@@ -741,20 +741,20 @@ $(function () {
   $section = $("#section-people");
   if ($section.length === 0) return;
   markFlippedCards();
-});
-$(window).on("load", function () {
-  var $flippedCards = $(".card-person.flipped");
-  ScrollTrigger.create({
-    trigger: "#section-people",
-    start: "top bottom",
-    end: "bottom top",
-    onEnter: function onEnter() {
-      $flippedCards.addClass("active");
-    },
-    onLeaveBack: function onLeaveBack() {
-      $flippedCards.removeClass("active");
-    },
-    markers: false
+  $(window).on("load", function () {
+    var $flippedCards = $(".card-person.flipped");
+    ScrollTrigger.create({
+      trigger: "#section-people",
+      start: "top bottom",
+      end: "bottom top",
+      onEnter: function onEnter() {
+        $flippedCards.addClass("active");
+      },
+      onLeaveBack: function onLeaveBack() {
+        $flippedCards.removeClass("active");
+      } // markers: true,
+
+    });
   });
 });
 
@@ -905,52 +905,52 @@ $(function () {
   $(document).on("click", "#section-tour .nav-tour a ", handleNamesItem);
   $(document).on("click", "#section-tour .section-tour__tabs button ", handleButtonItem);
   $(document).on("mousemove", "#section-tour", handleMouseMove);
-});
-$(window).on("load", function () {
-  gsap.timeline({
-    defaults: {
-      ease: "none"
-    },
-    scrollTrigger: {
-      trigger: "#section-tour",
-      start: "top center",
-      end: "bottom top",
-      onEnter: function onEnter() {
-        // setTimeout cares about visibility of initial rotation
-        trackingTimer = setTimeout(function () {
-          isTrackingAllowed = true;
-        }, 1000);
+  $(window).on("load", function () {
+    gsap.timeline({
+      defaults: {
+        ease: "none"
       },
-      onLeaveBack: function onLeaveBack() {
-        clearTimeout(trackingTimer);
-        isTrackingAllowed = false; // setTimeout required, because reset available
-        // only when gsap completed tracking
+      scrollTrigger: {
+        trigger: "#section-tour",
+        start: "top center",
+        end: "bottom top",
+        onEnter: function onEnter() {
+          // setTimeout cares about visibility of initial rotation
+          trackingTimer = setTimeout(function () {
+            isTrackingAllowed = true;
+          }, 1000);
+        },
+        onLeaveBack: function onLeaveBack() {
+          clearTimeout(trackingTimer);
+          isTrackingAllowed = false; // setTimeout required, because reset available
+          // only when gsap completed tracking
 
-        setTimeout(function () {
-          $circle.get(0).style = "";
-        }, 1000);
+          setTimeout(function () {
+            $circle.get(0).style = "";
+          }, 1000);
+        }
       }
-    }
+    });
+    gsap.timeline({
+      defaults: {
+        ease: "none"
+      },
+      scrollTrigger: {
+        trigger: ".section-tour__circle__text",
+        start: "top bottom",
+        end: "bottom+=200 top",
+        scrub: 0.5 // markers: true,
+
+      }
+    }).addLabel("rotate").from(".section-tour__circle__text", {
+      scale: 0.8,
+      duration: 1,
+      delay: 1
+    }, "rotate").to(".section-tour__circle__text", {
+      rotate: 360,
+      duration: 5
+    }, "rotate");
   });
-  gsap.timeline({
-    defaults: {
-      ease: "none"
-    },
-    scrollTrigger: {
-      trigger: ".section-tour__circle__text",
-      start: "top bottom",
-      end: "bottom+=200 top",
-      scrub: 0.5,
-      markers: true
-    }
-  }).addLabel("rotate").from(".section-tour__circle__text", {
-    scale: 0.8,
-    duration: 1,
-    delay: 1
-  }, "rotate").to(".section-tour__circle__text", {
-    rotate: 360,
-    duration: 5
-  }, "rotate");
 });
 
 /***/ }),

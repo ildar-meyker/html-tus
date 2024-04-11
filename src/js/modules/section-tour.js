@@ -160,65 +160,65 @@ $(function () {
     );
 
     $(document).on("mousemove", "#section-tour", handleMouseMove);
-});
 
-$(window).on("load", () => {
-    gsap.timeline({
-        defaults: {
-            ease: "none",
-        },
-        scrollTrigger: {
-            trigger: "#section-tour",
-            start: "top center",
-            end: "bottom top",
-            onEnter: () => {
-                // setTimeout cares about visibility of initial rotation
-                trackingTimer = setTimeout(() => {
-                    isTrackingAllowed = true;
-                }, 1000);
+    $(window).on("load", () => {
+        gsap.timeline({
+            defaults: {
+                ease: "none",
             },
-            onLeaveBack: () => {
-                clearTimeout(trackingTimer);
+            scrollTrigger: {
+                trigger: "#section-tour",
+                start: "top center",
+                end: "bottom top",
+                onEnter: () => {
+                    // setTimeout cares about visibility of initial rotation
+                    trackingTimer = setTimeout(() => {
+                        isTrackingAllowed = true;
+                    }, 1000);
+                },
+                onLeaveBack: () => {
+                    clearTimeout(trackingTimer);
 
-                isTrackingAllowed = false;
+                    isTrackingAllowed = false;
 
-                // setTimeout required, because reset available
-                // only when gsap completed tracking
-                setTimeout(() => {
-                    $circle.get(0).style = "";
-                }, 1000);
+                    // setTimeout required, because reset available
+                    // only when gsap completed tracking
+                    setTimeout(() => {
+                        $circle.get(0).style = "";
+                    }, 1000);
+                },
             },
-        },
+        });
+
+        gsap.timeline({
+            defaults: {
+                ease: "none",
+            },
+            scrollTrigger: {
+                trigger: ".section-tour__circle__text",
+                start: "top bottom",
+                end: "bottom+=200 top",
+                scrub: 0.5,
+                // markers: true,
+            },
+        })
+            .addLabel("rotate")
+            .from(
+                ".section-tour__circle__text",
+                {
+                    scale: 0.8,
+                    duration: 1,
+                    delay: 1,
+                },
+                "rotate"
+            )
+            .to(
+                ".section-tour__circle__text",
+                {
+                    rotate: 360,
+                    duration: 5,
+                },
+                "rotate"
+            );
     });
-
-    gsap.timeline({
-        defaults: {
-            ease: "none",
-        },
-        scrollTrigger: {
-            trigger: ".section-tour__circle__text",
-            start: "top bottom",
-            end: "bottom+=200 top",
-            scrub: 0.5,
-            markers: true,
-        },
-    })
-        .addLabel("rotate")
-        .from(
-            ".section-tour__circle__text",
-            {
-                scale: 0.8,
-                duration: 1,
-                delay: 1,
-            },
-            "rotate"
-        )
-        .to(
-            ".section-tour__circle__text",
-            {
-                rotate: 360,
-                duration: 5,
-            },
-            "rotate"
-        );
 });

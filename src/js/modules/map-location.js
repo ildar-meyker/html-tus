@@ -44,7 +44,7 @@ function addCustomZoom(map) {
 }
 
 function addImage(map, bounds) {
-    L.imageOverlay("img/map-location/1.jpeg", [[0, 0], bounds]).addTo(map);
+    L.imageOverlay("img/map-location/1.jpg", [[0, 0], bounds]).addTo(map);
 }
 
 function addLogo(map) {

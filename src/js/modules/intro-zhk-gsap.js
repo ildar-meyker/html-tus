@@ -10,7 +10,7 @@ $(function () {
             start: 0,
             end: 1500,
             scrub: 0,
-            markers: true,
+            // markers: true,
             pin: true,
         },
     })

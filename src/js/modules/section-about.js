@@ -7,8 +7,8 @@ $(window).on("load", () => {
             trigger: ".section-about__title",
             start: "top bottom",
             end: "bottom+=200 top",
-            scrub: 0.5,
-            markers: true,
+            scrub: 0,
+            // markers: true,
         },
     })
         .addLabel("shift")

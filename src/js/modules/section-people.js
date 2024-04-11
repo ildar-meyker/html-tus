@@ -35,21 +35,21 @@ $(function () {
     if ($section.length === 0) return;
 
     markFlippedCards();
-});
 
-$(window).on("load", () => {
-    const $flippedCards = $(".card-person.flipped");
+    $(window).on("load", () => {
+        const $flippedCards = $(".card-person.flipped");
 
-    ScrollTrigger.create({
-        trigger: "#section-people",
-        start: "top bottom",
-        end: "bottom top",
-        onEnter: function () {
-            $flippedCards.addClass("active");
-        },
-        onLeaveBack: function () {
-            $flippedCards.removeClass("active");
-        },
-        markers: false,
+        ScrollTrigger.create({
+            trigger: "#section-people",
+            start: "top bottom",
+            end: "bottom top",
+            onEnter: function () {
+                $flippedCards.addClass("active");
+            },
+            onLeaveBack: function () {
+                $flippedCards.removeClass("active");
+            },
+            // markers: true,
+        });
     });
 });
