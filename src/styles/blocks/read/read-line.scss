@@ -1,0 +1,20 @@
+.read-line {
+    display: flex;
+    white-space: nowrap;
+
+    &__item {
+        animation: read-line 10s linear infinite;
+        span {
+            font-size: 0.8em;
+        }
+    }
+}
+
+@keyframes read-line {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
