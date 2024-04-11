@@ -766,20 +766,20 @@ function markFlippedCards() {
 $(function () {
   $section = $("#section-people");
   if ($section.length === 0) return;
-  markFlippedCards(); // // Инициализация контроллера ScrollMagic
-  // var controller = new ScrollMagic.Controller();
-  // // Создаем сцену ScrollMagic
-  // var scene = new ScrollMagic.Scene({
-  //     triggerElement: "#section-people",
-  //     triggerHook: 0.5,
-  //     reverse: true,
-  // })
-  //     // Добавляем класс при входе в зону видимости
-  //     .setClassToggle(".card-person.flipped", "active")
-  //     // Добавляем сцену к контроллеру
-  //     .addTo(controller);
-  // // Для отладки добавляем индикаторы
-  // // .addIndicators();
+  markFlippedCards();
+  var $clippedCards = $(".card-person.flipped");
+  ScrollTrigger.create({
+    trigger: "#section-people",
+    start: "top bottom",
+    end: "bottom top",
+    onEnter: function onEnter() {
+      $clippedCards.addClass("active");
+    },
+    onLeaveBack: function onLeaveBack() {
+      $clippedCards.removeClass("active");
+    },
+    markers: false
+  });
 });
 
 /***/ }),

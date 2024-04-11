@@ -36,19 +36,18 @@ $(function () {
 
     markFlippedCards();
 
-    // // Инициализация контроллера ScrollMagic
-    // var controller = new ScrollMagic.Controller();
+    const $clippedCards = $(".card-person.flipped");
 
-    // // Создаем сцену ScrollMagic
-    // var scene = new ScrollMagic.Scene({
-    //     triggerElement: "#section-people",
-    //     triggerHook: 0.5,
-    //     reverse: true,
-    // })
-    //     // Добавляем класс при входе в зону видимости
-    //     .setClassToggle(".card-person.flipped", "active")
-    //     // Добавляем сцену к контроллеру
-    //     .addTo(controller);
-    // // Для отладки добавляем индикаторы
-    // // .addIndicators();
+    ScrollTrigger.create({
+        trigger: "#section-people",
+        start: "top bottom",
+        end: "bottom top",
+        onEnter: function () {
+            $clippedCards.addClass("active");
+        },
+        onLeaveBack: function () {
+            $clippedCards.removeClass("active");
+        },
+        markers: false,
+    });
 });
