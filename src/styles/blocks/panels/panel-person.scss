@@ -32,4 +32,40 @@
         line-height: calc(21.6 / 18) + em;
         letter-spacing: -0.02em;
     }
+
+    &__btn-expand {
+        position: absolute;
+        bottom: 24px;
+        right: 24px;
+        display: none;
+    }
+
+    &--expanded {
+        .panel-person__btn-expand {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 999.98px) {
+    .panel-person {
+        padding: 20px;
+        border-radius: 10px;
+        min-height: 221px;
+
+        &__photo {
+            display: none;
+            img {
+            }
+        }
+
+        &__text {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        &__name {
+            font-size: 16px;
+        }
+    }
 }

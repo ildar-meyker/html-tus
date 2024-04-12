@@ -1340,17 +1340,19 @@ a {
   .grid-people {
     display: block;
     white-space: nowrap;
-    margin: 0 -5px;
+    margin: 0 -6px;
     overflow: visible;
+    font-size: 0;
   }
   .grid-people > div {
     display: inline-block;
-    padding: 5px;
+    padding: 5px 6px;
     margin: 0;
-    width: clamp(84px, 23vw, 150px);
+    width: clamp(86px, 23vw, 150px);
   }
   .grid-people > div.active .card-person {
-    box-shadow: 0 0 0 2px #ff6100;
+    outline: 1px solid #ff6100;
+    outline-offset: 2px;
     border-radius: 10px;
   }
   .grid-people > div.empty {
@@ -1921,7 +1923,33 @@ a {
   line-height: 1.2em;
   letter-spacing: -0.02em;
 }
+.panel-person__btn-expand {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  display: none;
+}
+.panel-person--expanded .panel-person__btn-expand {
+  display: block;
+}
 
+@media (max-width: 999.98px) {
+  .panel-person {
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 221px;
+  }
+  .panel-person__photo {
+    display: none;
+  }
+  .panel-person__text {
+    margin: 0;
+    font-size: 14px;
+  }
+  .panel-person__name {
+    font-size: 16px;
+  }
+}
 .panel-location {
   padding: 20px;
   border-radius: 16px;
@@ -2275,6 +2303,10 @@ a {
   font-weight: 500;
   line-height: 0.95;
 }
+.section-people__quotes {
+  display: none;
+}
+
 @media (max-width: 999.98px) {
   .section-people__header {
     margin-bottom: 28px;
@@ -2284,6 +2316,10 @@ a {
   }
   .section-people__nav {
     display: none;
+  }
+  .section-people__quotes {
+    margin-top: 28px;
+    display: block;
   }
 }
 .section-offices__h1 {
@@ -2684,6 +2720,9 @@ a {
     line-height: 45px;
     font-size: 14px;
   }
+}
+.slider-people {
+  position: relative;
 }
 @media (max-width: 999.98px) {
   .slider-people {

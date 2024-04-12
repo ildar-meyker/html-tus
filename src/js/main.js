@@ -12,6 +12,7 @@ import "./modules/slider-payways";
 import "./modules/slider-cameras";
 import "./modules/slider-menu";
 import "./modules/slider-people";
+import "./modules/slider-quotes";
 import "./modules/intro-zhk";
 import "./modules/bottom-menu";
 import "./modules/section-about";

@@ -15,6 +15,10 @@
 
     &__nav {
     }
+
+    &__quotes {
+        display: none;
+    }
 }
 
 @media (max-width: 999.98px) {
@@ -29,6 +33,11 @@
 
         &__nav {
             display: none;
+        }
+
+        &__quotes {
+            margin-top: 28px;
+            display: block;
         }
     }
 }

@@ -16,18 +16,20 @@
     .grid-people {
         display: block;
         white-space: nowrap;
-        margin: 0 -5px;
+        margin: 0 -6px;
         overflow: visible;
+        font-size: 0;
 
         > div {
             display: inline-block;
-            padding: 5px;
+            padding: 5px 6px;
             margin: 0;
-            width: clamp(84px, 23vw, 150px);
+            width: clamp(86px, 23vw, 150px);
 
             &.active {
                 .card-person {
-                    box-shadow: 0 0 0 2px #ff6100;
+                    outline: 1px solid #ff6100;
+                    outline-offset: 2px;
                     border-radius: 10px;
                 }
             }
