@@ -47,3 +47,14 @@
 .leaflet-popup-content {
     margin: 0;
 }
+
+@media (max-width: 999.98px) {
+    .leaflet-control-zoom-in,
+    .leaflet-control-zoom-out {
+        font-size: 40px !important;
+    }
+
+    .leaflet-top.leaflet-left {
+        right: 20px !important;
+    }
+}

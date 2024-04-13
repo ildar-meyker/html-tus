@@ -4,6 +4,8 @@ let currentIndex = 0;
 let trackingTimer = null;
 let isTrackingAllowed = false;
 let isAnimating = false;
+let circlePosition;
+
 let $section = $();
 let $center = $();
 let $circle = $();
@@ -137,10 +139,21 @@ function handleMouseMove(e) {
 
     const { pageX, pageY } = e;
 
-    gsap.to($circle.get(0), {
+    animateCircleTo({
         top: pageY - $section.offset().top,
         left: pageX - $center.offset().left,
     });
+}
+
+
+function animateCircleTo(position) {
+    gsap.to($circle.get(0), position);
+}
+
+function saveCirclePosition() {
+    const { top, left } = getComputedStyle($circle.get(0));
+
+    circlePosition = { top, left };
 }
 
 $(function () {
@@ -149,6 +162,8 @@ $(function () {
     $section = $("#section-tour");
     $center = $section.find(".section-tour__center");
     $circle = $section.find(".section-tour__circle");
+
+    saveCirclePosition();
 
     $(document).on("click", "#section-tour .js-slider-prev", handlePrevBtn);
     $(document).on("click", "#section-tour .js-slider-next", handleNextBtn);
@@ -184,8 +199,8 @@ $(function () {
                     // setTimeout required, because reset available
                     // only when gsap completed tracking
                     setTimeout(() => {
-                        $circle.get(0).style = "";
-                    }, 1000);
+                        animateCircleTo(circlePosition);
+                    }, 600);
                 },
             },
         });

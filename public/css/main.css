@@ -1410,7 +1410,7 @@ a {
 }
 .intro-zhk__menu {
   position: fixed;
-  z-index: 100;
+  z-index: 999;
   bottom: 24px;
   left: 0;
   right: 0;
@@ -3092,4 +3092,15 @@ a {
 
 .leaflet-popup-content {
   margin: 0;
+}
+
+@media (max-width: 999.98px) {
+  .leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+    font-size: 40px !important;
+  }
+
+  .leaflet-top.leaflet-left {
+    right: 20px !important;
+  }
 }

@@ -257,7 +257,8 @@ $(function () {
 
   _addEmptyCells();
 
-  $(window).on("resize orientationchange", (0,throttle_debounce__WEBPACK_IMPORTED_MODULE_0__.debounce)(200, handleWindowResize));
+  window.addEventListener("resize", (0,throttle_debounce__WEBPACK_IMPORTED_MODULE_0__.debounce)(200, handleWindowResize));
+  screen.orientation.addEventListener("change", (0,throttle_debounce__WEBPACK_IMPORTED_MODULE_0__.debounce)(200, handleWindowResize));
 });
 var GridPeople = {
   isInitialized: function isInitialized() {
@@ -422,7 +423,8 @@ $(function () {
   $(document).on("click", ".intro-zhk__btn-down", handleScrollDown);
   $(document).on("click", ".intro-zhk", handleOutsideClick);
   window.addEventListener("load", handleWindowLoad);
-  $(window).on("resize orientationchange", handleWindowResize);
+  window.addEventListener("resize", handleWindowResize);
+  screen.orientation.addEventListener("change", handleWindowResize);
 });
 
 /***/ }),
@@ -569,21 +571,40 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
+var scale;
 
-function initMap(mapEl) {
-  var imageSize = [4096, 2371];
-  var maxZoom = 4;
-  var sizeForZoom1 = imageSize.map(function (value) {
-    return value / maxZoom;
+function originalCoordsToScaled(coords) {
+  return [coords[0] * scale, coords[1] * scale];
+}
+
+function scaledCoordsToOriginal(coords) {
+  return [coords[0] / scale, coords[1] / scale];
+}
+
+function calculateInitialScale(rootEl, imageSize) {
+  var boxSize = [rootEl.offsetWidth, rootEl.offsetHeight];
+  return Math.max(boxSize[0] / imageSize[0], boxSize[1] / imageSize[1]);
+}
+
+function initMap(rootEl) {
+  var mapEl = rootEl.querySelector(".map-location__box");
+
+  var _$$data = $(rootEl).data(),
+      center = _$$data.center,
+      imageSize = _$$data.imageSize,
+      logoPosition = _$$data.logoPosition,
+      pointsUrl = _$$data.pointsUrl;
+
+  scale = calculateInitialScale(rootEl, imageSize);
+  var scaledImageSize = imageSize.map(function (value) {
+    return value * scale;
   });
-  var bounds = [[0, 0], sizeForZoom1.reverse()];
+  var bounds = [[0, 0], scaledImageSize.reverse()];
   var map = L.map(mapEl, {
     zoomControl: false,
     scrollWheelZoom: false,
-    zoom: 1,
-    minZoom: 1,
-    maxZoom: maxZoom,
-    center: [357.29526544748063, 460],
+    zoom: 0,
+    center: originalCoordsToScaled(center),
     maxBoundsViscosity: 1,
     // do not allow drag outside bounds
     crs: L.CRS.Simple
@@ -592,79 +613,8 @@ function initMap(mapEl) {
   map.on("click", showClickCoords);
   addCustomZoom(map);
   addImage(map, bounds);
-  addMarkers(map);
-  addLogo(map);
-}
-
-function showClickCoords(e) {
-  var _e$latlng = e.latlng,
-      lat = _e$latlng.lat,
-      lng = _e$latlng.lng;
-  console.log([lat, lng]);
-}
-
-function addCustomZoom(map) {
-  L.control.zoom({
-    zoomInTitle: "",
-    zoomOutTitle: ""
-  }).addTo(map);
-}
-
-function addImage(map, bounds) {
-  L.imageOverlay("img/map-location/1.jpg", [[0, 0], bounds]).addTo(map);
-}
-
-function addLogo(map) {
-  var divIcon = L.divIcon({
-    className: "map-location__logo",
-    iconAnchor: [60, 60]
-  });
-  L.marker([356.79938336782527, 607], {
-    icon: divIcon
-  }).addTo(map);
-}
-
-function addMarkers(map) {
-  var points = [{
-    coords: [241.3476105503231, 534.375],
-    type: "park",
-    title: "ПКиО им. В.И. Ленина",
-    description: "Белгород, Белгородский городской парк культуры и отдыха им. В.И. Ленина"
-  }, {
-    coords: [371.7971026734806, 354.5],
-    type: "school",
-    title: "ПКиО им. В.И. Ленина",
-    description: "Белгород, Белгородский городской парк культуры и отдыха им. В.И. Ленина"
-  }, {
-    coords: [437.2972293787219, 530.5],
-    type: "park",
-    title: "ПКиО им. В.И. Ленина",
-    description: "Белгород, Белгородский городской парк культуры и отдыха им. В.И. Ленина"
-  }, {
-    coords: [500.29152764286016, 489.5],
-    type: "pharmacy",
-    title: "ПКиО им. В.И. Ленина",
-    description: "Белгород, Белгородский городской парк культуры и отдыха им. В.И. Ленина"
-  }];
-  var types = Object.keys(points.reduce(function (obj, point) {
-    obj[point.type] = true;
-    return obj;
-  }, {}));
-  types.forEach(function (type) {
-    map.createPane(type + "Markers");
-  });
-  points.forEach(function (point) {
-    var divIcon = L.divIcon({
-      className: "map-location__icon",
-      html: "<svg class=\"icon\">\n                    <use\n                        xlink:href=\"img/icons/categories/sprite.svg#".concat(point.type, "\"\n                    ></use>\n                </svg>"),
-      iconAnchor: [24, 48],
-      popupAnchor: [0, -48]
-    });
-    L.marker(point.coords, {
-      icon: divIcon,
-      pane: point.type + "Markers"
-    }).bindPopup("<aside class=\"panel-location\">\n                <div class=\"panel-location__header\">\n                    <h2 class=\"panel-location__h1\">\n                        ".concat(point.title, "\n                    </h2>\n                </div>\n                <div class=\"panel-location__desc\">\n                    ").concat(point.description, "\n                </div>\n            </aside>")).addTo(map);
-  });
+  addMarkers(map, pointsUrl);
+  addLogo(map, logoPosition);
   $(document).on("click", ".nav-category a", function (e) {
     e.preventDefault();
     $(this).closest("li").addClass("active").siblings().removeClass("active");
@@ -684,6 +634,62 @@ function addMarkers(map) {
   });
 }
 
+function showClickCoords(e) {
+  var _e$latlng = e.latlng,
+      lat = _e$latlng.lat,
+      lng = _e$latlng.lng;
+  var coords = scaledCoordsToOriginal([lat, lng]);
+  var message = "You clicked at [".concat(coords, "]. Use this coords to bind points.");
+  console.log(message);
+}
+
+function addCustomZoom(map) {
+  L.control.zoom({
+    zoomInTitle: "",
+    zoomOutTitle: ""
+  }).addTo(map);
+}
+
+function addImage(map, bounds) {
+  L.imageOverlay("img/map-location/1.jpg", [[0, 0], bounds]).addTo(map);
+}
+
+function addLogo(map, logoPosition) {
+  var divIcon = L.divIcon({
+    className: "map-location__logo",
+    iconAnchor: [60, 60]
+  });
+  L.marker(originalCoordsToScaled(logoPosition), {
+    icon: divIcon
+  }).addTo(map);
+}
+
+function addMarkers(map, pointsUrl) {
+  $.getJSON(pointsUrl).done(function (points) {
+    var types = Object.keys(points.reduce(function (obj, point) {
+      obj[point.type] = true;
+      return obj;
+    }, {}));
+    types.forEach(function (type) {
+      map.createPane(type + "Markers");
+    });
+    points.forEach(function (point) {
+      var divIcon = L.divIcon({
+        className: "map-location__icon",
+        html: "<svg class=\"icon\">\n                        <use\n                            xlink:href=\"img/icons/categories/sprite.svg#".concat(point.type, "\"\n                        ></use>\n                    </svg>"),
+        iconAnchor: [24, 48],
+        popupAnchor: [0, -48]
+      });
+      L.marker(originalCoordsToScaled(point.coords), {
+        icon: divIcon,
+        pane: point.type + "Markers"
+      }).bindPopup("<aside class=\"panel-location\">\n                    <div class=\"panel-location__header\">\n                        <h2 class=\"panel-location__h1\">\n                            ".concat(point.title, "\n                        </h2>\n                    </div>\n                    <div class=\"panel-location__desc\">\n                        ").concat(point.description, "\n                    </div>\n                </aside>")).addTo(map);
+    });
+  }).fail(function () {
+    "Failing loading ".concat(pointsUrl);
+  });
+}
+
 var observer = new IntersectionObserver(function (entries, observer) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
@@ -693,8 +699,7 @@ var observer = new IntersectionObserver(function (entries, observer) {
           console.error(error);
         } else {
           $(".map-location").each(function () {
-            var mapEl = $(this).find(".map-location__box").get(0);
-            initMap(mapEl);
+            initMap(this);
           });
         }
       });
@@ -948,6 +953,7 @@ var currentIndex = 0;
 var trackingTimer = null;
 var isTrackingAllowed = false;
 var isAnimating = false;
+var circlePosition;
 var $section = $();
 var $center = $();
 var $circle = $();
@@ -1057,10 +1063,25 @@ function handleMouseMove(e) {
   if (!isTrackingAllowed) return;
   var pageX = e.pageX,
       pageY = e.pageY;
-  gsap.to($circle.get(0), {
+  animateCircleTo({
     top: pageY - $section.offset().top,
     left: pageX - $center.offset().left
   });
+}
+
+function animateCircleTo(position) {
+  gsap.to($circle.get(0), position);
+}
+
+function saveCirclePosition() {
+  var _getComputedStyle = getComputedStyle($circle.get(0)),
+      top = _getComputedStyle.top,
+      left = _getComputedStyle.left;
+
+  circlePosition = {
+    top: top,
+    left: left
+  };
 }
 
 $(function () {
@@ -1068,6 +1089,7 @@ $(function () {
   $section = $("#section-tour");
   $center = $section.find(".section-tour__center");
   $circle = $section.find(".section-tour__circle");
+  saveCirclePosition();
   $(document).on("click", "#section-tour .js-slider-prev", handlePrevBtn);
   $(document).on("click", "#section-tour .js-slider-next", handleNextBtn);
   $(document).on("click", "#section-tour .nav-tour a ", handleNamesItem);
@@ -1094,8 +1116,8 @@ $(function () {
           // only when gsap completed tracking
 
           setTimeout(function () {
-            $circle.get(0).style = "";
-          }, 1000);
+            animateCircleTo(circlePosition);
+          }, 600);
         }
       }
     });

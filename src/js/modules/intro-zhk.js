@@ -169,5 +169,6 @@ $(function () {
 
     window.addEventListener("load", handleWindowLoad);
 
-    $(window).on("resize orientationchange", handleWindowResize);
+    window.addEventListener("resize", handleWindowResize);
+    screen.orientation.addEventListener("change", handleWindowResize);
 });

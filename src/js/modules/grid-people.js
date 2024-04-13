@@ -40,7 +40,11 @@ $(function () {
 
     addEmptyCells();
 
-    $(window).on("resize orientationchange", debounce(200, handleWindowResize));
+    window.addEventListener("resize", debounce(200, handleWindowResize));
+    screen.orientation.addEventListener(
+        "change",
+        debounce(200, handleWindowResize)
+    );
 });
 
 export const GridPeople = {
