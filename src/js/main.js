@@ -23,3 +23,4 @@ import "./modules/map-contacts";
 import "./modules/map-location";
 import "./modules/scroll-jquery";
 import "./modules/section-tour";
+import "./modules/section-location";

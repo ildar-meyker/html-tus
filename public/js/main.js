@@ -68,6 +68,197 @@ function relativeOffset($item, $block) {
 
 /***/ }),
 
+/***/ "./src/js/modules/ImageMap.js":
+/*!************************************!*\
+  !*** ./src/js/modules/ImageMap.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ ImageMap; }
+/* harmony export */ });
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+var ImageMap = /*#__PURE__*/function () {
+  function ImageMap(options) {
+    _classCallCheck(this, ImageMap);
+
+    this._options = options;
+    this._rootEl = options.el;
+    this._mapEl = options.el.querySelector(".map-location__box");
+    this._data = $(options.el).data();
+    console.log(this._data);
+    this._scale = this._calculateImageScale();
+    this._bounds = this._calculateImageBounds();
+    this._map = L.map(this._mapEl, {
+      zoomControl: false,
+      scrollWheelZoom: false,
+      zoom: 0,
+      center: this._originalCoordsToScaled(this._data.center),
+      maxBoundsViscosity: 1,
+      // do not allow drag outside bounds
+      crs: L.CRS.Simple
+    });
+
+    this._map.setMaxBounds(new L.LatLngBounds(this._bounds));
+
+    this._addCustomZoom();
+
+    this._addImage();
+
+    this._addMarkers();
+
+    this._addLogo();
+
+    window.addEventListener("resize", this._handleWindowResize.bind(this));
+    screen.orientation.addEventListener("change", this._handleWindowResize.bind(this));
+
+    this._map.on("click", this._showClickCoords.bind(this));
+  }
+
+  _createClass(ImageMap, [{
+    key: "_handleWindowResize",
+    value: function _handleWindowResize() {
+      this._scale = this._calculateImageScale();
+      this._bounds = this._calculateImageBounds();
+
+      this._map.fitBounds(L.latLngBounds(this._bounds));
+    }
+  }, {
+    key: "_originalCoordsToScaled",
+    value: function _originalCoordsToScaled(coords) {
+      return [coords[0] * this._scale, coords[1] * this._scale];
+    }
+  }, {
+    key: "_scaledCoordsToOriginal",
+    value: function _scaledCoordsToOriginal(coords) {
+      return [coords[0] / this._scale, coords[1] / this._scale];
+    }
+  }, {
+    key: "_calculateImageBounds",
+    value: function _calculateImageBounds() {
+      var _this = this;
+
+      var scaledImageSize = this._data.imageSize.map(function (value) {
+        return value * _this._scale;
+      });
+
+      return [[0, 0], scaledImageSize.reverse()];
+    }
+  }, {
+    key: "_calculateImageScale",
+    value: function _calculateImageScale() {
+      var containerSize = [this._rootEl.offsetWidth, this._rootEl.offsetHeight];
+      return Math.max(containerSize[0] / this._data.imageSize[0], containerSize[1] / this._data.imageSize[1]);
+    }
+  }, {
+    key: "_showClickCoords",
+    value: function _showClickCoords(e) {
+      var _e$latlng = e.latlng,
+          lat = _e$latlng.lat,
+          lng = _e$latlng.lng;
+
+      var coords = this._scaledCoordsToOriginal([lat, lng]);
+
+      var message = "You clicked at [".concat(coords, "]. Use this coords to bind points.");
+      console.log(message);
+    }
+  }, {
+    key: "_addLogo",
+    value: function _addLogo() {
+      var divIcon = L.divIcon({
+        className: "map-location__logo",
+        iconAnchor: [60, 60]
+      });
+      L.marker(this._originalCoordsToScaled(this._data.logoPosition), {
+        icon: divIcon
+      }).addTo(this._map);
+    }
+  }, {
+    key: "_addCustomZoom",
+    value: function _addCustomZoom() {
+      L.control.zoom({
+        zoomInTitle: "",
+        zoomOutTitle: ""
+      }).addTo(this._map);
+    }
+  }, {
+    key: "_addImage",
+    value: function _addImage() {
+      L.imageOverlay(this._data.imageUrl, [[0, 0], this._bounds]).addTo(this._map);
+    }
+  }, {
+    key: "_addMarkers",
+    value: function _addMarkers() {
+      var _this2 = this;
+
+      $.getJSON(this._data.pointsUrl).done(function (points) {
+        var types = Object.keys(points.reduce(function (obj, point) {
+          obj[point.type] = true;
+          return obj;
+        }, {}));
+        types.forEach(function (type) {
+          _this2._map.createPane(type + "Markers");
+        });
+        points.forEach(function (point) {
+          var divIcon = L.divIcon({
+            className: "map-location__icon",
+            html: "<svg class=\"icon\">\n                            <use\n                                xlink:href=\"img/icons/categories/sprite.svg#".concat(point.type, "\"\n                            ></use>\n                        </svg>"),
+            iconAnchor: [24, 48],
+            popupAnchor: [0, -48]
+          });
+          L.marker(_this2._originalCoordsToScaled(point.coords), {
+            icon: divIcon,
+            pane: point.type + "Markers"
+          }).bindPopup("<aside class=\"panel-location\">\n                        <div class=\"panel-location__header\">\n                            <h2 class=\"panel-location__h1\">\n                                ".concat(point.title, "\n                            </h2>\n                        </div>\n                        <div class=\"panel-location__desc\">\n                            ").concat(point.description, "\n                        </div>\n                    </aside>")).addTo(_this2._map);
+        });
+      }).fail(function () {
+        "Failed loading ".concat(this._data.pointsUrl);
+      });
+    }
+  }, {
+    key: "filterPoints",
+    value: function filterPoints(filterBy) {
+      var panes = this._map.getPanes();
+
+      for (var _i = 0, _Object$entries = Object.entries(panes); _i < _Object$entries.length; _i++) {
+        var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+            key = _Object$entries$_i[0],
+            pane = _Object$entries$_i[1];
+
+        if (!key.match(/Markers$/)) continue;
+        pane.style.display = filterBy === "all" || key === filterBy + "Markers" ? "block" : "none";
+      }
+
+      this._map.closePopup();
+    }
+  }]);
+
+  return ImageMap;
+}();
+
+
+
+/***/ }),
+
 /***/ "./src/js/modules/accordion.js":
 /*!*************************************!*\
   !*** ./src/js/modules/accordion.js ***!
@@ -558,148 +749,21 @@ $(function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_loadScript__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers/loadScript */ "./src/js/helpers/loadScript.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+/* harmony import */ var _ImageMap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ImageMap */ "./src/js/modules/ImageMap.js");
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-var scale;
-
-function originalCoordsToScaled(coords) {
-  return [coords[0] * scale, coords[1] * scale];
-}
-
-function scaledCoordsToOriginal(coords) {
-  return [coords[0] / scale, coords[1] / scale];
-}
-
-function calculateInitialScale(rootEl, imageSize) {
-  var boxSize = [rootEl.offsetWidth, rootEl.offsetHeight];
-  return Math.max(boxSize[0] / imageSize[0], boxSize[1] / imageSize[1]);
-}
-
-function initMap(rootEl) {
-  var mapEl = rootEl.querySelector(".map-location__box");
-
-  var _$$data = $(rootEl).data(),
-      center = _$$data.center,
-      imageSize = _$$data.imageSize,
-      logoPosition = _$$data.logoPosition,
-      pointsUrl = _$$data.pointsUrl;
-
-  scale = calculateInitialScale(rootEl, imageSize);
-  var scaledImageSize = imageSize.map(function (value) {
-    return value * scale;
-  });
-  var bounds = [[0, 0], scaledImageSize.reverse()];
-  var map = L.map(mapEl, {
-    zoomControl: false,
-    scrollWheelZoom: false,
-    zoom: 0,
-    center: originalCoordsToScaled(center),
-    maxBoundsViscosity: 1,
-    // do not allow drag outside bounds
-    crs: L.CRS.Simple
-  });
-  map.setMaxBounds(new L.LatLngBounds(bounds));
-  map.on("click", showClickCoords);
-  addCustomZoom(map);
-  addImage(map, bounds);
-  addMarkers(map, pointsUrl);
-  addLogo(map, logoPosition);
-  $(document).on("click", ".nav-category a", function (e) {
-    e.preventDefault();
-    $(this).closest("li").addClass("active").siblings().removeClass("active");
-    var filterBy = $(this).data("filter");
-    var panes = map.getPanes();
-
-    for (var _i = 0, _Object$entries = Object.entries(panes); _i < _Object$entries.length; _i++) {
-      var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
-          key = _Object$entries$_i[0],
-          pane = _Object$entries$_i[1];
-
-      if (!key.match(/Markers$/)) continue;
-      pane.style.display = filterBy === "all" || key === filterBy + "Markers" ? "block" : "none";
-    }
-
-    map.closePopup();
-  });
-}
-
-function showClickCoords(e) {
-  var _e$latlng = e.latlng,
-      lat = _e$latlng.lat,
-      lng = _e$latlng.lng;
-  var coords = scaledCoordsToOriginal([lat, lng]);
-  var message = "You clicked at [".concat(coords, "]. Use this coords to bind points.");
-  console.log(message);
-}
-
-function addCustomZoom(map) {
-  L.control.zoom({
-    zoomInTitle: "",
-    zoomOutTitle: ""
-  }).addTo(map);
-}
-
-function addImage(map, bounds) {
-  L.imageOverlay("img/map-location/1.jpg", [[0, 0], bounds]).addTo(map);
-}
-
-function addLogo(map, logoPosition) {
-  var divIcon = L.divIcon({
-    className: "map-location__logo",
-    iconAnchor: [60, 60]
-  });
-  L.marker(originalCoordsToScaled(logoPosition), {
-    icon: divIcon
-  }).addTo(map);
-}
-
-function addMarkers(map, pointsUrl) {
-  $.getJSON(pointsUrl).done(function (points) {
-    var types = Object.keys(points.reduce(function (obj, point) {
-      obj[point.type] = true;
-      return obj;
-    }, {}));
-    types.forEach(function (type) {
-      map.createPane(type + "Markers");
-    });
-    points.forEach(function (point) {
-      var divIcon = L.divIcon({
-        className: "map-location__icon",
-        html: "<svg class=\"icon\">\n                        <use\n                            xlink:href=\"img/icons/categories/sprite.svg#".concat(point.type, "\"\n                        ></use>\n                    </svg>"),
-        iconAnchor: [24, 48],
-        popupAnchor: [0, -48]
-      });
-      L.marker(originalCoordsToScaled(point.coords), {
-        icon: divIcon,
-        pane: point.type + "Markers"
-      }).bindPopup("<aside class=\"panel-location\">\n                    <div class=\"panel-location__header\">\n                        <h2 class=\"panel-location__h1\">\n                            ".concat(point.title, "\n                        </h2>\n                    </div>\n                    <div class=\"panel-location__desc\">\n                        ").concat(point.description, "\n                    </div>\n                </aside>")).addTo(map);
-    });
-  }).fail(function () {
-    "Failing loading ".concat(pointsUrl);
-  });
-}
 
 var observer = new IntersectionObserver(function (entries, observer) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
-      console.log(entry);
       (0,_helpers_loadScript__WEBPACK_IMPORTED_MODULE_0__["default"])("https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js", function (error, script) {
         if (error) {
           console.error(error);
         } else {
           $(".map-location").each(function () {
-            initMap(this);
+            var instance = new _ImageMap__WEBPACK_IMPORTED_MODULE_1__["default"]({
+              el: this
+            });
+            $(this).data("image-map", instance);
           });
         }
       });
@@ -753,6 +817,27 @@ window.addEventListener("load", function () {
       return $(".section-about__title").offset().left * -2;
     }
   }, "shift");
+});
+
+/***/ }),
+
+/***/ "./src/js/modules/section-location.js":
+/*!********************************************!*\
+  !*** ./src/js/modules/section-location.js ***!
+  \********************************************/
+/***/ (function() {
+
+function handleFilterClick(e) {
+  e.preventDefault();
+  $(this).closest("li").addClass("active").siblings().removeClass("active");
+  var filterBy = $(this).data("filter");
+  var imageMap = $("#section-location .map-location").data("image-map");
+  imageMap.filterPoints(filterBy);
+}
+
+$(function () {
+  if ($("#section-location").length === 0) return;
+  $(document).on("click", "#section-location .nav-category a", handleFilterClick);
 });
 
 /***/ }),
@@ -3095,6 +3180,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/scroll-jquery */ "./src/js/modules/scroll-jquery.js");
 /* harmony import */ var _modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_modules_scroll_jquery__WEBPACK_IMPORTED_MODULE_21__);
 /* harmony import */ var _modules_section_tour__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/section-tour */ "./src/js/modules/section-tour.js");
+/* harmony import */ var _modules_section_location__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./modules/section-location */ "./src/js/modules/section-location.js");
+/* harmony import */ var _modules_section_location__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_modules_section_location__WEBPACK_IMPORTED_MODULE_23__);
+
 
 
 
