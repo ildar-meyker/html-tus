@@ -399,115 +399,6 @@ a {
   fill: currentColor;
 }
 
-.article-default {
-  font-size: 1.8rem;
-}
-.article-default *:first-child {
-  margin-top: 0;
-}
-.article-default *:last-child {
-  margin-bottom: 0;
-}
-.article-default p {
-  margin: 2.4rem 0;
-}
-.article-default ul {
-  margin: 5.6rem 0;
-}
-.article-default ul.ul-2-cols {
-  -moz-column-count: 2;
-       column-count: 2;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
-  margin-bottom: -2.4rem;
-}
-.article-default ul.ul-2-cols li {
-  -moz-column-break-inside: avoid;
-       break-inside: avoid-column;
-}
-.article-default ul.ul-closer li {
-  padding-bottom: 1.8rem;
-}
-.article-default ul li {
-  position: relative;
-  padding-bottom: 2.4rem;
-  padding-left: 4rem;
-}
-.article-default ul li:last-child {
-  padding-bottom: 0 !important;
-}
-.article-default ul li:before {
-  content: " ";
-  position: absolute;
-  left: 0;
-  top: 0.6em;
-  transform: translateY(-50%);
-  width: 0.5555555556em;
-  height: 0.5555555556em;
-  border: 2px solid #0047ba;
-  border-radius: 50%;
-}
-.article-default ol {
-  counter-reset: ol;
-}
-.article-default ol li {
-  position: relative;
-  margin: 3.2rem 0;
-  padding-left: 4rem;
-}
-.article-default ol li:before {
-  content: "0" counter(ol);
-  counter-increment: ol;
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #0047ba;
-}
-.article-default b,
-.article-default strong {
-  font-weight: bold;
-}
-.article-default .text-m {
-  margin: 3.2rem 0;
-  font-size: 2.2rem;
-}
-.article-default .text-l {
-  margin: 5.6rem 0;
-  font-size: 3.2rem;
-  font-weight: 500;
-}
-
-@media (max-width: 999.98px) {
-  .article-default {
-    font-size: 1.2rem;
-  }
-  .article-default ul {
-    margin: 3rem 0;
-    -moz-column-count: 1;
-         column-count: 1;
-  }
-  .article-default ul.ul-closer li {
-    padding-bottom: 1.6rem;
-  }
-  .article-default ul li {
-    padding-left: 2.6rem;
-  }
-  .article-default ul li:last-child {
-    margin-bottom: 0;
-  }
-  .article-default ol li {
-    margin: 1.6rem 0;
-    padding-left: 2.6rem;
-  }
-  .article-default .text-m {
-    margin: 2.4rem 0;
-    font-size: 1.4rem;
-  }
-  .article-default .text-l {
-    margin: 3rem 0;
-    font-size: 2rem;
-  }
-}
 .article-docs {
   padding: 20px;
   font-size: 16px;
@@ -2851,6 +2742,9 @@ a {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  .projects__filters-controls {
+    margin-top: 28px;
   }
 }
 .l-zhk__filter {
