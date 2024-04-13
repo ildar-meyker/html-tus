@@ -49,6 +49,14 @@
     }
 }
 
+@media (min-width: 1000px) {
+    .section-location {
+        &__select {
+            display: none;
+        }
+    }
+}
+
 @media (max-width: 999.98px) {
     .section-location {
         &__header {
@@ -79,6 +87,14 @@
 
             .scrollbar-inner > .scroll-element.scroll-y {
             }
+        }
+
+        &__select {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            z-index: 1000;
         }
     }
 }

@@ -1,3 +1,9 @@
+function filterPointsOnMap(filterBy) {
+    const mapInstance = $("#section-location .map-location").data("image-map");
+
+    mapInstance.filterPoints(filterBy);
+}
+
 function handleFilterClick(e) {
     e.preventDefault();
 
@@ -5,9 +11,13 @@ function handleFilterClick(e) {
 
     const filterBy = $(this).data("filter");
 
-    const imageMap = $("#section-location .map-location").data("image-map");
+    filterPointsOnMap(filterBy);
+}
 
-    imageMap.filterPoints(filterBy);
+function handleSelectItem(e) {
+    const filterBy = $(this).data("value");
+
+    filterPointsOnMap(filterBy);
 }
 
 $(function () {
@@ -17,5 +27,11 @@ $(function () {
         "click",
         "#section-location .nav-category a",
         handleFilterClick
+    );
+
+    $(document).on(
+        "click",
+        "#section-location .select__option",
+        handleSelectItem
     );
 });

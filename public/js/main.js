@@ -838,17 +838,27 @@ window.addEventListener("load", function () {
   \********************************************/
 /***/ (function() {
 
+function filterPointsOnMap(filterBy) {
+  var mapInstance = $("#section-location .map-location").data("image-map");
+  mapInstance.filterPoints(filterBy);
+}
+
 function handleFilterClick(e) {
   e.preventDefault();
   $(this).closest("li").addClass("active").siblings().removeClass("active");
   var filterBy = $(this).data("filter");
-  var imageMap = $("#section-location .map-location").data("image-map");
-  imageMap.filterPoints(filterBy);
+  filterPointsOnMap(filterBy);
+}
+
+function handleSelectItem(e) {
+  var filterBy = $(this).data("value");
+  filterPointsOnMap(filterBy);
 }
 
 $(function () {
   if ($("#section-location").length === 0) return;
   $(document).on("click", "#section-location .nav-category a", handleFilterClick);
+  $(document).on("click", "#section-location .select__option", handleSelectItem);
 });
 
 /***/ }),

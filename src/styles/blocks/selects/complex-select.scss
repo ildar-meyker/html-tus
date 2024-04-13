@@ -1,0 +1,44 @@
+.complex-select {
+    &--location {
+        .complex-select__head {
+            color: rgba(#000000, 0.7);
+            background: #fff;
+
+            .complex-select__arrow {
+                transform: rotate(-90deg);
+            }
+
+            &.is-active {
+                .complex-select__arrow {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+
+        .complex-select__item {
+            &__icon {
+                flex: 0 0 auto;
+                width: 1em;
+                height: 1em;
+                font-size: 30px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                outline: 1px solid #0000001a;
+                color: #ff6100;
+
+                .icon {
+                    transform: none;
+                    font-size: 12px;
+                }
+
+                &--choosen {
+                    outline: none;
+                    background: #ff6100;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
