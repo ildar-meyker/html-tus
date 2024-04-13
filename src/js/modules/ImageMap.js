@@ -1,3 +1,5 @@
+import { debounce } from "throttle-debounce";
+
 export default class ImageMap {
     constructor(options) {
         this._options = options;
@@ -6,8 +8,18 @@ export default class ImageMap {
         this._mapEl = options.el.querySelector(".map-location__box");
         this._data = $(options.el).data();
 
-        console.log(this._data);
+        this._scale;
+        this._bounds;
+        this._map;
 
+        this._initialize();
+
+        const debounced = debounce(500, this._handleWindowResize.bind(this));
+        window.addEventListener("resize", debounced);
+        screen.orientation.addEventListener("change", debounced);
+    }
+
+    _initialize() {
         this._scale = this._calculateImageScale();
         this._bounds = this._calculateImageBounds();
 
@@ -27,18 +39,13 @@ export default class ImageMap {
         this._addMarkers();
         this._addLogo();
 
-        window.addEventListener("resize", this._handleWindowResize.bind(this));
-        screen.orientation.addEventListener(
-            "change",
-            this._handleWindowResize.bind(this)
-        );
         this._map.on("click", this._showClickCoords.bind(this));
     }
 
     _handleWindowResize() {
-        this._scale = this._calculateImageScale();
-        this._bounds = this._calculateImageBounds();
-        this._map.fitBounds(L.latLngBounds(this._bounds));
+        this._map.remove();
+
+        this._initialize();
     }
 
     _originalCoordsToScaled(coords) {

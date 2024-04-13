@@ -79,6 +79,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ ImageMap; }
 /* harmony export */ });
+/* harmony import */ var throttle_debounce__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! throttle-debounce */ "./node_modules/throttle-debounce/esm/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -97,6 +98,8 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
+
+
 var ImageMap = /*#__PURE__*/function () {
   function ImageMap(options) {
     _classCallCheck(this, ImageMap);
@@ -105,42 +108,50 @@ var ImageMap = /*#__PURE__*/function () {
     this._rootEl = options.el;
     this._mapEl = options.el.querySelector(".map-location__box");
     this._data = $(options.el).data();
-    console.log(this._data);
-    this._scale = this._calculateImageScale();
-    this._bounds = this._calculateImageBounds();
-    this._map = L.map(this._mapEl, {
-      zoomControl: false,
-      scrollWheelZoom: false,
-      zoom: 0,
-      center: this._originalCoordsToScaled(this._data.center),
-      maxBoundsViscosity: 1,
-      // do not allow drag outside bounds
-      crs: L.CRS.Simple
-    });
+    this._scale;
+    this._bounds;
+    this._map;
 
-    this._map.setMaxBounds(new L.LatLngBounds(this._bounds));
+    this._initialize();
 
-    this._addCustomZoom();
-
-    this._addImage();
-
-    this._addMarkers();
-
-    this._addLogo();
-
-    window.addEventListener("resize", this._handleWindowResize.bind(this));
-    screen.orientation.addEventListener("change", this._handleWindowResize.bind(this));
-
-    this._map.on("click", this._showClickCoords.bind(this));
+    var debounced = (0,throttle_debounce__WEBPACK_IMPORTED_MODULE_0__.debounce)(500, this._handleWindowResize.bind(this));
+    window.addEventListener("resize", debounced);
+    screen.orientation.addEventListener("change", debounced);
   }
 
   _createClass(ImageMap, [{
-    key: "_handleWindowResize",
-    value: function _handleWindowResize() {
+    key: "_initialize",
+    value: function _initialize() {
       this._scale = this._calculateImageScale();
       this._bounds = this._calculateImageBounds();
+      this._map = L.map(this._mapEl, {
+        zoomControl: false,
+        scrollWheelZoom: false,
+        zoom: 0,
+        center: this._originalCoordsToScaled(this._data.center),
+        maxBoundsViscosity: 1,
+        // do not allow drag outside bounds
+        crs: L.CRS.Simple
+      });
 
-      this._map.fitBounds(L.latLngBounds(this._bounds));
+      this._map.setMaxBounds(new L.LatLngBounds(this._bounds));
+
+      this._addCustomZoom();
+
+      this._addImage();
+
+      this._addMarkers();
+
+      this._addLogo();
+
+      this._map.on("click", this._showClickCoords.bind(this));
+    }
+  }, {
+    key: "_handleWindowResize",
+    value: function _handleWindowResize() {
+      this._map.remove();
+
+      this._initialize();
     }
   }, {
     key: "_originalCoordsToScaled",
