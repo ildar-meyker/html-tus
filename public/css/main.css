@@ -2362,6 +2362,102 @@ a {
     width: 40%;
   }
 }
+.section-design {
+  --image-radius: 16px;
+}
+.section-design__row {
+  position: relative;
+  display: flex;
+  gap: clamp(30px, 5vw, 85px);
+  background: url(../img/section-design/lines.png) no-repeat;
+}
+.section-design__col-1 {
+  flex-grow: 1;
+}
+.section-design__col-2 {
+  flex: 0 0 auto;
+  width: 22.82%;
+  font-size: clamp(14px, 1.8vw, 24px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  opacity: 0.7;
+}
+.section-design__col-3 {
+  flex: 0 0 auto;
+  width: 50%;
+  position: relative;
+  z-index: 7;
+}
+.section-design__image-1 {
+  padding-top: 122.67%;
+}
+.section-design__image-1 img {
+  border-radius: var(--image-radius);
+}
+.section-design__image-2 {
+  padding-top: 109.71%;
+}
+.section-design__image-2 img {
+  border-radius: var(--image-radius);
+}
+.section-design__name {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  text-transform: uppercase;
+  font-size: clamp(70px, 15vw, 280px);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: #ff6100;
+  white-space: nowrap;
+  z-index: 5;
+}
+.section-design__name--stroke {
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+  overflow: hidden;
+  z-index: 10;
+}
+.section-design__ctrl {
+  position: absolute;
+  top: 13vw;
+  right: 5vw;
+}
+
+@media (max-width: 999.98px) {
+  .section-design {
+    --image-radius: 6px;
+  }
+  .section-design__row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .section-design__col-1 {
+    order: 2;
+  }
+  .section-design__col-2 {
+    order: 1;
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 14px;
+  }
+  .section-design__col-3 {
+    order: 2;
+    width: 60%;
+  }
+  .section-design__name {
+    width: 60%;
+  }
+  .section-design__name--stroke {
+    -webkit-text-stroke: 1px #fff;
+  }
+  .section-design__ctrl {
+    display: none;
+  }
+}
 .slider-plans {
   --gap: 16px;
 }
@@ -2800,6 +2896,25 @@ a {
   box-sizing: content-box;
   max-width: 1340px;
   margin: 0 auto;
+}
+.page__locker {
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  opacity: 0;
+  display: none;
+}
+.page__locker:before {
+  content: " ";
+  height: 1000vh;
+  display: block;
+}
+.page__locker.active {
+  display: block;
 }
 
 .apartment-item--for-plans {
