@@ -10,7 +10,7 @@
         font-weight: 500;
         line-height: 0.7;
 
-        sub {
+        span {
             font-size: calc(24 / 100) + em;
         }
     }
@@ -33,7 +33,7 @@
         &__value {
             font-size: 50px;
 
-            sub {
+            span {
             }
         }
 

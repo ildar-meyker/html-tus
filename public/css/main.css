@@ -1826,7 +1826,7 @@ a {
   font-weight: 500;
   line-height: 0.7;
 }
-.props-nums__value sub {
+.props-nums__value span {
   font-size: 0.24em;
 }
 .props-nums__label {
