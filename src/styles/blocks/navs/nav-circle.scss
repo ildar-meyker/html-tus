@@ -1,0 +1,27 @@
+.nav-circle {
+    width: 1em;
+    height: 1em;
+    font-size: 140px;
+    background: #ff6100;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+        display: flex;
+        gap: 30px;
+        font-size: 20px;
+        line-height: 0;
+    }
+
+    li {
+    }
+
+    a {
+        color: #fff;
+
+        .icon {
+        }
+    }
+}

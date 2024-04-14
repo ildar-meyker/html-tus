@@ -1,7 +1,7 @@
 .slider-tour {
     position: relative;
 
-    &__slides {
+    &__wrapper {
     }
 
     &__slide {
@@ -37,7 +37,7 @@
 
 @media (max-width: 999.98px) {
     .slider-tour {
-        &__slides {
+        &__wrapper {
         }
 
         &__slide {

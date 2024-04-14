@@ -32,7 +32,7 @@
             href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css"
         />
 
-        <link rel="stylesheet" href="css/main.css?t=1713087097799" />
+        <link rel="stylesheet" href="css/main.css?t=1713091616789" />
     </head>
 
     <body>
@@ -330,6 +330,18 @@
             </div>
             <div class="active" id="tab-buttons">
                 <div class="c__gap"></div>
+                <div class="c__h1">btn-play</div>
+                <div class="c__dark">
+                    <a href="#" class="btn-play">
+                        <svg class="icon">
+                            <use
+                                xlink:href="img/icons/general/sprite.svg#play"
+                            ></use>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="c__gap"></div>
                 <div class="c__h1">btn-expand</div>
                 <div class="c__dark">
                     <div class="c__row">
@@ -592,6 +604,12 @@
                             xlink:href="img/icons/general/sprite.svg#zoom-out"
                         ></use>
                     </svg>
+
+                    <svg class="icon">
+                        <use
+                            xlink:href="img/icons/general/sprite.svg#play"
+                        ></use>
+                    </svg>
                 </div>
 
                 <div class="c__gap"></div>
@@ -610,6 +628,25 @@
             </div>
             <div class="active" id="tab-articles"></div>
             <div class="active" id="tab-cards">
+                <div class="c__gap"></div>
+                <div class="c__h1">card-video</div>
+                <div class="c__500">
+                    <article class="card-video">
+                        <div class="image-box card-video__image">
+                            <img src="img/temp/section-tour/1.jpg" alt="" />
+                        </div>
+                        <div class="card-video__btn-play">
+                            <a href="#" class="btn-play">
+                                <svg class="icon">
+                                    <use
+                                        xlink:href="img/icons/general/sprite.svg#play"
+                                    ></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
                 <div class="c__gap"></div>
                 <div class="c__h1">card-tour</div>
                 <div class="c__dark">
@@ -804,6 +841,32 @@
                 </div>
             </div>
             <div class="active" id="tab-navs">
+                <div class="c__gap"></div>
+                <div class="c__h1">nav-circle</div>
+<nav class="nav-circle">
+    <ul>
+        <li>
+            <a href="#" class="js-slider-prev">
+                <svg class="icon">
+                    <use
+                        xlink:href="img/icons/general/sprite.svg#arrow-left-bold"
+                    ></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="js-slider-next">
+                <svg class="icon flip-x">
+                    <use
+                        xlink:href="img/icons/general/sprite.svg#arrow-left-bold"
+                    ></use>
+                </svg>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
                 <div class="c__gap"></div>
                 <div class="c__h1">nav-tour</div>
                 <nav class="nav-tour">
@@ -3158,7 +3221,7 @@
                 <div class="c__dark">
                     <div class="c__1200">
 <div class="slider-tour">
-    <div class="slider-tour__slides">
+    <div class="slider-tour__wrapper">
         <div class="slider-tour__slide">
             <article class="card-tour">
                 <div class="card-tour__left">
@@ -3174,7 +3237,7 @@
                 </div>
                 <div class="card-tour__right">
                     <div class="image-box card-tour__image">
-                        <img src="img/section-tour/4.jpg" />
+                        <img src="img/temp/section-tour/4.jpg" />
 
                         <div class="card-tour__btn-plus">
                             <button class="btn-plus btn-plus--orange">
@@ -3201,7 +3264,7 @@
                 </div>
                 <div class="card-tour__right">
                     <div class="image-box card-tour__image">
-                        <img src="img/section-tour/3.jpg " />
+                        <img src="img/temp/section-tour/3.jpg " />
 
                         <div class="card-tour__btn-plus">
                             <button class="btn-plus btn-plus--orange">
@@ -3229,7 +3292,7 @@
                 </div>
                 <div class="card-tour__right">
                     <div class="image-box card-tour__image">
-                        <img src="img/section-tour/2.jpg" alt="" />
+                        <img src="img/temp/section-tour/2.jpg" alt="" />
 
                         <div class="card-tour__btn-plus">
                             <button class="btn-plus btn-plus--orange">
@@ -3259,7 +3322,7 @@
                 </div>
                 <div class="card-tour__right">
                     <div class="image-box card-tour__image">
-                        <img src="img/section-tour/5.jpg" />
+                        <img src="img/temp/section-tour/5.jpg" />
 
                         <div class="card-tour__btn-plus">
                             <button class="btn-plus btn-plus--orange">
@@ -3453,7 +3516,7 @@
 
 
 
-        <script src="js/main.js?t=1713087097799"></script>
+        <script src="js/main.js?t=1713091616789"></script>
 
         <div id="notify" class="notify"></div>
 

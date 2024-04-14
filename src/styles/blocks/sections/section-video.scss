@@ -1,0 +1,25 @@
+.section-video {
+    &__center {
+        position: relative;
+    }
+
+    &__text {
+        position: absolute;
+        width: 50%;
+        right: 0;
+        bottom: -2vw;
+        text-align: center;
+        padding-left: 8px;
+    }
+}
+
+@media (max-width: 999.98px) {
+    .section-video {
+        &__center {
+        }
+
+        &__text {
+            width: 40%;
+        }
+    }
+}
