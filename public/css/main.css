@@ -2448,6 +2448,12 @@ a {
     order: 2;
     width: 60%;
   }
+  .section-design__image-1 {
+    padding-top: 111.62%;
+  }
+  .section-design__image-2 {
+    padding-top: 130.8%;
+  }
   .section-design__name {
     width: 60%;
   }
