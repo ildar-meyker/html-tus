@@ -33,15 +33,8 @@
             &__scroll {
                 height: 100%;
                 overflow: auto;
-            }
-
-            &__inner {
-                margin-right: 16px;
-            }
-
-            .scrollbar-inner > .scroll-element.scroll-y {
-                right: 6px;
-                width: 4px;
+                margin-right: 6px;
+                padding-right: 8px;
             }
         }
     }

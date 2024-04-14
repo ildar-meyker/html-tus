@@ -36,15 +36,8 @@
         &__scroll {
             height: 100%;
             overflow: auto;
-        }
-
-        &__inner {
-            margin-right: 32px;
-        }
-
-        .scrollbar-inner > .scroll-element.scroll-y {
-            right: 6px;
-            width: 4px;
+            margin-right: 5px;
+            padding-right: 25px;
         }
     }
 }
@@ -80,12 +73,6 @@
             display: none;
 
             &__scroll {
-            }
-
-            &__inner {
-            }
-
-            .scrollbar-inner > .scroll-element.scroll-y {
             }
         }
 

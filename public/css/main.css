@@ -278,6 +278,13 @@ input[type=number] {
   white-space: wrap;
 }
 
+.scroll-thin::-webkit-scrollbar {
+  width: 2px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+}
+
 @media (max-width: 999.98px) {
   .d-sm-none {
     display: none !important;
@@ -2022,13 +2029,8 @@ a {
 .section-location__panel__scroll {
   height: 100%;
   overflow: auto;
-}
-.section-location__panel__inner {
-  margin-right: 32px;
-}
-.section-location__panel .scrollbar-inner > .scroll-element.scroll-y {
-  right: 6px;
-  width: 4px;
+  margin-right: 5px;
+  padding-right: 25px;
 }
 
 @media (min-width: 1000px) {
@@ -2120,13 +2122,8 @@ a {
   .section-offices__panel__scroll {
     height: 100%;
     overflow: auto;
-  }
-  .section-offices__panel__inner {
-    margin-right: 16px;
-  }
-  .section-offices__panel .scrollbar-inner > .scroll-element.scroll-y {
-    right: 6px;
-    width: 4px;
+    margin-right: 6px;
+    padding-right: 8px;
   }
 }
 @media (max-width: 999.98px) {
@@ -2666,25 +2663,6 @@ a {
   box-sizing: content-box;
   max-width: 1340px;
   margin: 0 auto;
-}
-.page__locker {
-  position: fixed;
-  z-index: 999999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  opacity: 0;
-  display: none;
-}
-.page__locker:before {
-  content: " ";
-  height: 1000vh;
-  display: block;
-}
-.page__locker.active {
-  display: block;
 }
 
 .apartment-item--for-plans {
