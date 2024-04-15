@@ -23,8 +23,7 @@
         }
 
         &:nth-child(2) {
-            opacity: 0.5;
-            color: rgba(#000000, 0.5);
+            color: rgba(#ffffff, 0.5);
         }
 
         &:last-child {
@@ -37,6 +36,10 @@
 
         td {
             border-bottom: 1px solid #00000066;
+
+            &:nth-child(2) {
+                color: rgba(#000000, 0.5);
+            }
         }
     }
 }
