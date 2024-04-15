@@ -32,7 +32,11 @@
             href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css"
         />
 
-        <link rel="stylesheet" href="css/main.css?t=1713098095047" />
+        <link rel="stylesheet" href="css/main.css?t=1713188792893" />
+
+        <script>
+            var baseUrl = "./js/";
+        </script>
     </head>
 
     <body>
@@ -1630,7 +1634,85 @@
 </section>
 
     </div>
-    <div class="l-zhk__genplan">Генплан</div>
+    <div class="l-zhk__genplan">
+<section class="section-genplan" id="section-genplan">
+    <div class="section-genplan__header">
+        <div class="container">
+            <div class="section-genplan__header__inner">
+                <h2 class="section-genplan__h1">Генплан</h2>
+                <div class="section-genplan__ctrl">
+                    <div class="projects__switcher p-static">
+                        <button
+                            type="button"
+                            class="projects__switcher-btn reset-btn is-active"
+                        >
+                            3D
+                        </button>
+                        <button
+                            type="button"
+                            class="projects__switcher-btn reset-btn"
+                        >
+                            2D
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-genplan__scroll scroll-hidden">
+        <div class="section-genplan__image">
+            <div class="image-box" style="padding-top: 54.76%">
+                <img src="img/section-genplan/1.jpg" alt="" />
+            </div>
+
+            <svg
+                width="1680"
+                height="920"
+                viewBox="0 0 1680 920"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="section-genplan__mask"
+            >
+                <a href="#">
+                    <path
+                        d="M800.553 463.894L801.113 464.175L801.61 463.793L807.585 459.197L818.079 465.128L825.916 520.477L715.544 585.314L703.403 576.909L693.12 524.515L707.493 516.37L708 516.083V515.5V511.08L714.094 507.598L719.158 509.44L719.613 509.605L720.025 509.351L737.025 498.851L737.699 498.435L737.449 497.684L736.667 495.338L741.177 491.648L745.629 493.428L746.077 493.608L746.496 493.368L763.996 483.368L764.5 483.08V482.5V479.118L770.409 476.164L773.419 478.314L774.008 478.734L774.591 478.306L789.591 467.306L790 467.007V466.5V463.618L795 461.118L800.553 463.894Z"
+                        fill="#FF6100"
+                        fill-opacity="0.2"
+                        stroke="#FF6100"
+                        stroke-width="2"
+                        class="section-genplan__house"
+                        id="section-genplan__house-1"
+                        data-house-id="1"
+                        data-panel-url="ajax-genplan-panel-1.html"
+                    />
+                </a>
+            </svg>
+
+            <div
+                class="section-genplan__point"
+                id="section-genplan__point-1"
+                style="top: 54%; left: 39%"
+                data-house-id="1"
+                data-panel-url="ajax-genplan-panel-1.html"
+            >
+                1
+            </div>
+
+            <div
+                class="section-genplan__point"
+                id="section-genplan__point-2"
+                style="top: 44%; left: 29%"
+                data-house-id="2"
+                data-panel-url="ajax-genplan-panel-2.html"
+            >
+                2
+            </div>
+        </div>
+    </div>
+</section>
+
+    </div>
     <div class="l-zhk__people">
 <section class="section-people js-slider-root" id="section-people">
     <div class="container">
@@ -1662,7 +1744,7 @@
             </div>
         </div>
 
-        <div class="slider-people">
+        <div class="slider-people scroll-hidden">
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -2859,7 +2941,7 @@
     </div>
 
     <div class="l-zhk__view">
-<section class="section-window">
+<section class="section-window" id="section-window">
     <div class="section-window__h1">
         <div class="read-line">
             <span class="read-line__item"
@@ -3118,7 +3200,7 @@
     </div>
 
     <div class="l-zhk__plans">
-<section class="section-plans js-slider-root">
+<section class="section-plans js-slider-root" id="section-plans">
     <div class="container">
         <div class="section-plans__header">
             <h2 class="section-plans__h1">Планировки</h2>
@@ -3519,7 +3601,7 @@
     </div>
 
     <div class="l-zhk__payways">
-<section class="section-payways js-slider-root">
+<section class="section-payways js-slider-root" id="section-payways">
     <div class="container">
         <div class="section-payways__header">
             <h2 class="section-payways__h1">Способы покупки</h2>
@@ -3928,7 +4010,7 @@
     </div>
 
     <div class="l-zhk__cameras">
-<section class="section-cameras js-slider-root">
+<section class="section-cameras js-slider-root" id="section-cameras">
     <div class="container">
         <div class="section-cameras__header">
             <h2 class="section-cameras__h1">Ход строительства</h2>
@@ -4037,7 +4119,7 @@
     </div>
 
     <div class="l-zhk__docs">
-<section class="section-docs js-slider-root">
+<section class="section-docs js-slider-root" id="section-docs">
     <div class="container">
         <div class="section-docs__header">
             <h2 class="section-docs__h1">Документация</h2>
@@ -4164,7 +4246,7 @@
     </div>
 
     <div class="l-zhk__news">
-<section class="section-news js-slider-root">
+<section class="section-news js-slider-root" id="section-news">
     <div class="container">
         <div class="section-news__header">
             <h2 class="section-news__h1">Новости</h2>
@@ -4437,7 +4519,7 @@
     </div>
 
     <div class="l-zhk__offices">
-<section class="section-offices">
+<section class="section-offices" id="section-offices">
     <div class="container">
         <h2 class="section-offices__h1">Офисы продаж</h2>
 
@@ -5408,7 +5490,7 @@
 
 
 
-        <script src="js/main.js?t=1713098095047"></script>
+        <script src="js/main.js?t=1713188792893"></script>
 
         <div id="notify" class="notify"></div>
 

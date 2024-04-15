@@ -847,6 +847,72 @@ window.addEventListener("load", function () {
 
 /***/ }),
 
+/***/ "./src/js/modules/section-genplan.js":
+/*!*******************************************!*\
+  !*** ./src/js/modules/section-genplan.js ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helpers_relativeOffset__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers/relativeOffset */ "./src/js/helpers/relativeOffset.js");
+
+var lastActiveHouseId;
+var closingTimer;
+
+function handlePointEnter() {
+  var _$$data = $(this).data(),
+      houseId = _$$data.houseId,
+      panelUrl = _$$data.panelUrl;
+
+  clearTimeout(closingTimer);
+  if (houseId === lastActiveHouseId) return;
+  closeActivePanel();
+  showPanel(houseId, panelUrl);
+  lastActiveHouseId = houseId;
+}
+
+function handlePanelEnter() {
+  clearTimeout(closingTimer);
+}
+
+function handlePointLeave() {
+  closingTimer = setTimeout(function () {
+    closeActivePanel();
+    lastActiveHouseId = null;
+  }, 200);
+}
+
+function closeActivePanel() {
+  $("#section-genplan__house-" + lastActiveHouseId).removeClass("active");
+  $("#section-genplan__panel-" + lastActiveHouseId).remove();
+}
+
+function showPanel(houseId, panelUrl) {
+  $.get(panelUrl).done(function (html) {
+    $("#section-genplan__house-" + houseId).addClass("active");
+    var offset = (0,_helpers_relativeOffset__WEBPACK_IMPORTED_MODULE_0__["default"])($("#section-genplan__point-" + houseId), $("#section-genplan"));
+    var $panel = $(html);
+    $panel.appendTo("#section-genplan").css({
+      top: offset.top,
+      left: offset.left
+    });
+    setTimeout(function () {
+      $panel.addClass("active");
+    }, 100);
+  }).fail(function () {
+    "Failed loading ".concat(panelUrl);
+  });
+}
+
+$(function () {
+  $(document).on("mouseenter", ".section-genplan__point, .section-genplan__house", handlePointEnter);
+  $(document).on("mouseenter", ".section-genplan__panel", handlePanelEnter);
+  $(document).on("mouseleave", ".section-genplan__point, .section-genplan__house, .section-genplan__panel", handlePointLeave);
+});
+
+/***/ }),
+
 /***/ "./src/js/modules/section-location.js":
 /*!********************************************!*\
   !*** ./src/js/modules/section-location.js ***!
@@ -3218,6 +3284,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_section_location__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_modules_section_location__WEBPACK_IMPORTED_MODULE_22__);
 /* harmony import */ var _modules_section_design__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./modules/section-design */ "./src/js/modules/section-design.js");
 /* harmony import */ var _modules_section_design__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_modules_section_design__WEBPACK_IMPORTED_MODULE_23__);
+/* harmony import */ var _modules_section_genplan__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./modules/section-genplan */ "./src/js/modules/section-genplan.js");
+
 
 
 

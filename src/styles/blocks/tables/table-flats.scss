@@ -1,5 +1,6 @@
 .table-flats {
     width: 100%;
+    border-collapse: collapse;
     color: #fff;
 
     tr {
@@ -23,6 +24,7 @@
 
         &:nth-child(2) {
             opacity: 0.5;
+            color: rgba(#000000, 0.5);
         }
 
         &:last-child {

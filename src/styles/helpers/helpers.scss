@@ -91,7 +91,11 @@
 }
 
 .p-relative {
-    position: relative;
+    position: relative !important;
+}
+
+.p-static {
+    position: static !important;
 }
 
 .link-area {
@@ -158,6 +162,10 @@
     &::-webkit-scrollbar-thumb {
         background: #d9d9d9;
     }
+}
+
+.scroll-hidden {
+    @include hide-scrollbar;
 }
 
 @media (max-width: 999.98px) {

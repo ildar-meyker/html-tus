@@ -22,7 +22,7 @@
 
     &__about {
         display: flex;
-        gap: 3px;
+        gap: 10px;
     }
 
     &__number {
@@ -71,6 +71,47 @@
         .panel-floor__number,
         .panel-floor__floor {
             color: #ff6100;
+        }
+    }
+}
+
+@media (max-width: 999.98px) {
+    .panel-floor {
+        &__header {
+            a,
+            button {
+            }
+        }
+
+        &__about {
+        }
+
+        &__number {
+            font-size: 80px;
+        }
+
+        &__desc {
+        }
+
+        &__floor {
+        }
+
+        &__available {
+        }
+
+        &__footer {
+        }
+
+        &__label {
+        }
+
+        &__time {
+        }
+
+        &--white {
+            .panel-floor__number,
+            .panel-floor__floor {
+            }
         }
     }
 }

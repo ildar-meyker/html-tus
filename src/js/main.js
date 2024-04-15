@@ -24,3 +24,4 @@ import "./modules/section-people";
 import "./modules/section-tour";
 import "./modules/section-location";
 import "./modules/section-design";
+import "./modules/section-genplan";
